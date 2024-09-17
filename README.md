@@ -1,9 +1,9 @@
-# __Bestiario Mitológico__ 🐱‍🐉
+# Bestiario Mitológico 🐱‍🐉
 ## Tabla de Contenidos 📋
 1. [Descripción](#descripción)
 2. [Instalación](#instalación)
 3. [Estructura del Proyecto](#estructura-del-proyecto)
-
+4. [Autores](#autores)
 
 ## Descripción 📕
 Este proyecto está todavía bajo desarrollo. EL proyecto está enmarcado en el contexto de la asignatura de PAD-24-25 de la FDI UCM.<br>
@@ -20,3 +20,11 @@ Para obtener la aplicación basta con seguir los siguientes pasos:
 4. ¡Disfruta del mundo de la Mitología!: <br>¡Ahora solo queda disfrutar y aprender sobre las bestias mitológicas!
 
 ## Estructura del Proyecto 📁
+
+
+## Autores ✍️
+Este proyecto ha sido desarrollado por:
+<br>-**Pedro Antonio Martín Peláez**: [GitHub](https://github.com/PedroAMP22)
+
+> Asignatura: **[PROGRAMACIÓN DE APLICACIONES PARA DISPOSITIVOS MÓVILES]**  
+> Profesor: **María Cruz Valiente Blazquez**
