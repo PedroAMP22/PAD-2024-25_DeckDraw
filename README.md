@@ -1,9 +1,9 @@
 # Bestiario Mitológico 🐱‍🐉
 ## Tabla de Contenidos 📋
-1. [Descripción](#descripción)
-2. [Instalación](#instalación)
-3. [Estructura del Proyecto](#estructura-del-proyecto)
-4. [Autores](#autores)
+1. [Descripción](#descripción-📕)
+2. [Instalación](#instalación-⚙)
+3. [Estructura del Proyecto](#estructura-del-proyecto-📁)
+4. [Autores](#autores-✍️)
 
 ## Descripción 📕
 Este proyecto está todavía bajo desarrollo. EL proyecto está enmarcado en el contexto de la asignatura de PAD-24-25 de la FDI UCM.<br>
