@@ -1,4 +1,4 @@
-# Bestiario Mitológico 🐱‍🐉🦎
+# Bestiario Mitológico 🐱‍🐉
 
 ## Tabla de Contenidos 📋
 1. [Descripción](#Descripción)
