@@ -30,6 +30,10 @@ Para obtener la aplicación basta con seguir los siguientes pasos:
 ## Autores
 Este proyecto ha sido desarrollado por:
 <br>-**Pedro Antonio Martín Peláez**: [GitHub](https://github.com/PedroAMP22)
+<br>-**Gonzalo Bertolín Díez**: [GitHub](https://github.com/gonzalete1)
+<br>-**Washington Junnior Morocho Lema**: [GitHub](https://github.com/Washing-Mr8)
+<br>-**Álvaro Ray Martínez**: [GitHub](https://github.com/alvaroray)
+<br>-**Pablo Zapico García**: [GitHub](https://github.com/pzapico23)
 
 > Asignatura: **PROGRAMACIÓN DE APLICACIONES PARA DISPOSITIVOS MÓVILES**  
 > Profesora: **María Cruz Valiente Blazquez**
