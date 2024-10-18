@@ -7,7 +7,7 @@
 4. [🗂️ Estructura del Proyecto](#estructura-del-proyecto)
 5. [👥 Autores](#autores)
 
-## 📜 Descripción
+## Descripción
 🚧 **Advertencia:** Este proyecto aún está en desarrollo. 🚧
 
 En el contexto de la asignatura **PAD-24-25** de la **FDI UCM** 📚, el objetivo es desarrollar **DeckDraw**, una aplicación para **gestionar mazos de cartas** para **TCG** (Trading Card Games).
@@ -22,10 +22,10 @@ Nuestra aplicación, diseñada para **Android**, ofrece una plataforma fácil y 
 - 👤 **Creación de perfiles**: Personaliza tu perfil dentro de la comunidad.
 - ⚙️ **Gestión de perfiles**: Modifica y actualiza tu información cuando lo necesites.
 
-## 🎯 Motivación
+## Motivación
 💡 Movidos por nuestra pasión por los **TCG’s**, queremos hacer la experiencia de construir y compartir mazos más social y accesible. Queremos que DeckDraw sea el punto de encuentro para conectar con amigos y otros jugadores, compartir ideas y estrategias, y disfrutar más de nuestra pasión por las cartas.
 
-## ⚙️ Instalación
+## Instalación
 Para obtener la aplicación y empezar a disfrutar de **DeckDraw**, sigue estos pasos:
 
 1. 📥 **Descargar el archivo .apk**: Descarga el archivo apk en tu dispositivo Android.
@@ -33,10 +33,10 @@ Para obtener la aplicación y empezar a disfrutar de **DeckDraw**, sigue estos p
 3. 🛠️ **Instalar la aplicación**: Abre el archivo apk y selecciona "Instalar".
 4. 🎉 **¡Disfruta de DeckDraw!**: Ya puedes empezar a gestionar tus mazos y compartirlos con tus amigos.
 
-## 🗂️ Estructura del Proyecto
+## Estructura del Proyecto
 <!-- Añadir detalles de la estructura del proyecto -->
 
-## 👥 Autores
+## Autores
 Este proyecto ha sido desarrollado por:
 - **Pedro Antonio Martín Peláez**: [GitHub](https://github.com/PedroAMP22)
 - **Gonzalo Bertolín Díez**: [GitHub](https://github.com/gonzalete1)
