@@ -1,0 +1,4569 @@
+FORMATOS DISPONIBLES:
+- Standard
+- Future
+- Historic
+- Timeless
+- Gladiator
+- Pioneer
+- Explorer
+- Modern
+- Legacy
+- Pauper
+- Vintage
+- Penny
+- Commander
+- Oathbreaker
+- Standard Brawl
+- Brawl
+- Alchemy
+- Pauper Commander
+- Duel
+- Old School
+- Premodern
+- PreDH
+
+TIPOS DE CARTA DISPONIBLES:
+- Artifact
+- Battle
+- Conspiracy
+- Creature
+- Dungeon
+- Emblem
+- Enchantment
+- Hero
+- Instant
+- Kindred
+- Land
+- Phenomenon
+- Plane
+- Planeswalker
+- Scheme
+- Sorcery
+- Vanguard
+
+TIPOS DE MANA: 
+{w} {u} {b} {r} {g} {c} 
+ ---------------------------------------------------------------------------------------
+
+BUSQUEDA DE CARTAS EN CUALQUIER FORMATO, COLOR Y TIPO QUE SE LLAMEN AVACYN
+q=avacyn
+https://api.scryfall.com/cards/search?q=avacyn
+Total de cartas encontradas: 13
+¿Hay más páginas? false
+Numero de Cartas en la lista: 13
+-----------------------------------------------
+Detalles de la carta doble:
+Layout: transform
+Colors: [R, W]
+
+Front Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/front/a/e/ae155ee2-008f-4dc6-82bf-476be7baa224.jpg?1576383667
+Normal Image URL: https://cards.scryfall.io/normal/front/a/e/ae155ee2-008f-4dc6-82bf-476be7baa224.jpg?1576383667
+Small Image URL: https://cards.scryfall.io/small/front/a/e/ae155ee2-008f-4dc6-82bf-476be7baa224.jpg?1576383667
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/e/ae155ee2-008f-4dc6-82bf-476be7baa224.jpg?1576383667
+Language: 
+Layout: 
+Legal: true
+Mana Cost: {3}{W}{W}
+Name: Archangel Avacyn
+Power: 4
+Toughness: 4
+Artist: James Ryman
+Border Color: 
+Type: Legendary Creature â€” Angel
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: Flash
+Flying, vigilance
+When Archangel Avacyn enters, creatures you control gain indestructible until end of turn.
+When a non-Angel creature you control dies, transform Archangel Avacyn at the beginning of the next upkeep.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+
+Back Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/back/a/e/ae155ee2-008f-4dc6-82bf-476be7baa224.jpg?1576383667
+Normal Image URL: https://cards.scryfall.io/normal/back/a/e/ae155ee2-008f-4dc6-82bf-476be7baa224.jpg?1576383667
+Small Image URL: https://cards.scryfall.io/small/back/a/e/ae155ee2-008f-4dc6-82bf-476be7baa224.jpg?1576383667
+Art Crop Image URL: https://cards.scryfall.io/art_crop/back/a/e/ae155ee2-008f-4dc6-82bf-476be7baa224.jpg?1576383667
+Language: 
+Layout: 
+Legal: true
+Mana Cost: 
+Name: Avacyn, the Purifier
+Power: 6
+Toughness: 5
+Artist: James Ryman
+Border Color: 
+Type: Legendary Creature â€” Angel
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: Flying
+When this creature transforms into Avacyn, the Purifier, it deals 3 damage to each other creature and each opponent.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 317f1133-7cf8-4b7a-919e-88c45f8c2c3a
+Large Image URL: https://cards.scryfall.io/large/front/3/1/317f1133-7cf8-4b7a-919e-88c45f8c2c3a.jpg?1689995555
+Normal Image URL: https://cards.scryfall.io/normal/front/3/1/317f1133-7cf8-4b7a-919e-88c45f8c2c3a.jpg?1689995555
+Small Image URL: https://cards.scryfall.io/small/front/3/1/317f1133-7cf8-4b7a-919e-88c45f8c2c3a.jpg?1689995555
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/1/317f1133-7cf8-4b7a-919e-88c45f8c2c3a.jpg?1689995555
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {5}{W}{W}{W}
+Name: Avacyn, Angel of Hope
+Power: 8
+Toughness: 8
+Artist: Jason Chan
+Border Color: black
+Type: Legendary Creature â€” Angel
+Set Name: Commander Masters
+Rarity: mythic
+CMC: 8.0
+Text: Flying, vigilance, indestructible
+Other permanents you control have indestructible.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: a79662d5-3b6f-4c5a-8540-63c201027b66
+Large Image URL: https://cards.scryfall.io/large/front/a/7/a79662d5-3b6f-4c5a-8540-63c201027b66.jpg?1562792303
+Normal Image URL: https://cards.scryfall.io/normal/front/a/7/a79662d5-3b6f-4c5a-8540-63c201027b66.jpg?1562792303
+Small Image URL: https://cards.scryfall.io/small/front/a/7/a79662d5-3b6f-4c5a-8540-63c201027b66.jpg?1562792303
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/7/a79662d5-3b6f-4c5a-8540-63c201027b66.jpg?1562792303
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}{W}{W}
+Name: Avacyn, Guardian Angel
+Power: 5
+Toughness: 4
+Artist: Winona Nelson
+Border Color: black
+Type: Legendary Creature â€” Angel
+Set Name: Magic 2015
+Rarity: rare
+CMC: 5.0
+Text: Flying, vigilance
+{1}{W}: Prevent all damage that would be dealt to another target creature this turn by sources of the color of your choice.
+{5}{W}{W}: Prevent all damage that would be dealt to target player or planeswalker this turn by sources of the color of your choice.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+Detalles de la carta doble:
+Layout: transform
+Colors: [W]
+
+Front Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/front/1/0/1001e708-e4f9-456a-8b9d-3421a2a3833d.jpg?1576383680
+Normal Image URL: https://cards.scryfall.io/normal/front/1/0/1001e708-e4f9-456a-8b9d-3421a2a3833d.jpg?1576383680
+Small Image URL: https://cards.scryfall.io/small/front/1/0/1001e708-e4f9-456a-8b9d-3421a2a3833d.jpg?1576383680
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/0/1001e708-e4f9-456a-8b9d-3421a2a3833d.jpg?1576383680
+Language: 
+Layout: 
+Legal: true
+Mana Cost: {3}{W}
+Name: Avacynian Missionaries
+Power: 3
+Toughness: 3
+Artist: Wayne Reynolds
+Border Color: 
+Type: Creature â€” Human Cleric
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: At the beginning of your end step, if Avacynian Missionaries is equipped, transform it.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+
+Back Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/back/1/0/1001e708-e4f9-456a-8b9d-3421a2a3833d.jpg?1576383680
+Normal Image URL: https://cards.scryfall.io/normal/back/1/0/1001e708-e4f9-456a-8b9d-3421a2a3833d.jpg?1576383680
+Small Image URL: https://cards.scryfall.io/small/back/1/0/1001e708-e4f9-456a-8b9d-3421a2a3833d.jpg?1576383680
+Art Crop Image URL: https://cards.scryfall.io/art_crop/back/1/0/1001e708-e4f9-456a-8b9d-3421a2a3833d.jpg?1576383680
+Language: 
+Layout: 
+Legal: true
+Mana Cost: 
+Name: Lunarch Inquisitors
+Power: 4
+Toughness: 4
+Artist: Wayne Reynolds
+Border Color: 
+Type: Creature â€” Human Cleric
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: When this creature transforms into Lunarch Inquisitors, you may exile another target creature until Lunarch Inquisitors leaves the battlefield.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 08a47828-a79a-4189-9eef-2a5fc5125b61
+Large Image URL: https://cards.scryfall.io/large/front/0/8/08a47828-a79a-4189-9eef-2a5fc5125b61.jpg?1562825813
+Normal Image URL: https://cards.scryfall.io/normal/front/0/8/08a47828-a79a-4189-9eef-2a5fc5125b61.jpg?1562825813
+Small Image URL: https://cards.scryfall.io/small/front/0/8/08a47828-a79a-4189-9eef-2a5fc5125b61.jpg?1562825813
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/8/08a47828-a79a-4189-9eef-2a5fc5125b61.jpg?1562825813
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Avacynian Priest
+Power: 1
+Toughness: 2
+Artist: Greg Staples
+Border Color: black
+Type: Creature â€” Human Cleric
+Set Name: Innistrad
+Rarity: common
+CMC: 2.0
+Text: {1}, {T}: Tap target non-Human creature.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 972e9a78-204b-4012-b394-b40fd0edac4c
+Large Image URL: https://cards.scryfall.io/large/front/9/7/972e9a78-204b-4012-b394-b40fd0edac4c.jpg?1562930603
+Normal Image URL: https://cards.scryfall.io/normal/front/9/7/972e9a78-204b-4012-b394-b40fd0edac4c.jpg?1562930603
+Small Image URL: https://cards.scryfall.io/small/front/9/7/972e9a78-204b-4012-b394-b40fd0edac4c.jpg?1562930603
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/7/972e9a78-204b-4012-b394-b40fd0edac4c.jpg?1562930603
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}
+Name: Avacyn's Collar
+Power: 
+Toughness: 
+Artist: James Paick
+Border Color: black
+Type: Artifact â€” Equipment
+Set Name: Dark Ascension
+Rarity: uncommon
+CMC: 1.0
+Text: Equipped creature gets +1/+0 and has vigilance.
+Whenever equipped creature dies, if it was a Human, create a 1/1 white Spirit creature token with flying.
+Equip {2}
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 2642eb44-becf-4e99-934f-7241fcc32dee
+Large Image URL: https://cards.scryfall.io/large/front/2/6/2642eb44-becf-4e99-934f-7241fcc32dee.jpg?1641603042
+Normal Image URL: https://cards.scryfall.io/normal/front/2/6/2642eb44-becf-4e99-934f-7241fcc32dee.jpg?1641603042
+Small Image URL: https://cards.scryfall.io/small/front/2/6/2642eb44-becf-4e99-934f-7241fcc32dee.jpg?1641603042
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/6/2642eb44-becf-4e99-934f-7241fcc32dee.jpg?1641603042
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{R}
+Name: Avacyn's Judgment
+Power: 
+Toughness: 
+Artist: Victor Adame Minguez
+Border Color: black
+Type: Sorcery
+Set Name: Crimson Vow Commander
+Rarity: rare
+CMC: 2.0
+Text: Madness {X}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)
+Avacyn's Judgment deals 2 damage divided as you choose among any number of targets. If this spell's madness cost was paid, it deals X damage divided as you choose among those permanents and/or players instead.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: c8134a08-4c7f-419e-940d-95bc9f630ae2
+Large Image URL: https://cards.scryfall.io/large/front/c/8/c8134a08-4c7f-419e-940d-95bc9f630ae2.jpg?1637628619
+Normal Image URL: https://cards.scryfall.io/normal/front/c/8/c8134a08-4c7f-419e-940d-95bc9f630ae2.jpg?1637628619
+Small Image URL: https://cards.scryfall.io/small/front/c/8/c8134a08-4c7f-419e-940d-95bc9f630ae2.jpg?1637628619
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/8/c8134a08-4c7f-419e-940d-95bc9f630ae2.jpg?1637628619
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {5}{W}{W}{W}
+Name: Avacyn's Memorial
+Power: 
+Toughness: 
+Artist: Kasia 'Kafis' ZieliÅ„ska
+Border Color: black
+Type: Legendary Artifact
+Set Name: Midnight Hunt Commander
+Rarity: mythic
+CMC: 8.0
+Text: Indestructible
+Other legendary permanents you control have indestructible.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: a390a7df-b8da-41aa-93e5-2c0db938a27e
+Large Image URL: https://cards.scryfall.io/large/front/a/3/a390a7df-b8da-41aa-93e5-2c0db938a27e.jpg?1637630879
+Normal Image URL: https://cards.scryfall.io/normal/front/a/3/a390a7df-b8da-41aa-93e5-2c0db938a27e.jpg?1637630879
+Small Image URL: https://cards.scryfall.io/small/front/a/3/a390a7df-b8da-41aa-93e5-2c0db938a27e.jpg?1637630879
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/3/a390a7df-b8da-41aa-93e5-2c0db938a27e.jpg?1637630879
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {G}
+Name: Avacyn's Pilgrim
+Power: 1
+Toughness: 1
+Artist: Jana Schirmer & Johannes Voss
+Border Color: black
+Type: Creature â€” Human Monk
+Set Name: Midnight Hunt Commander
+Rarity: common
+CMC: 1.0
+Text: {T}: Add {W}.
+Colors: G W 
+----------------------------------------------------------------------------------------------
+
+ID: b7848325-c46e-4e63-90d0-c9524380eb63
+Large Image URL: https://cards.scryfall.io/large/front/b/7/b7848325-c46e-4e63-90d0-c9524380eb63.jpg?1692516503
+Normal Image URL: https://cards.scryfall.io/normal/front/b/7/b7848325-c46e-4e63-90d0-c9524380eb63.jpg?1692516503
+Small Image URL: https://cards.scryfall.io/small/front/b/7/b7848325-c46e-4e63-90d0-c9524380eb63.jpg?1692516503
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/7/b7848325-c46e-4e63-90d0-c9524380eb63.jpg?1692516503
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}{W}
+Name: Greymond, Avacyn's Stalwart
+Power: 3
+Toughness: 4
+Artist: Bram Sels
+Border Color: black
+Type: Legendary Creature â€” Human Soldier
+Set Name: Universes Within
+Rarity: mythic
+CMC: 4.0
+Text: As Greymond, Avacyn's Stalwart enters, choose two abilities from among first strike, vigilance, and lifelink.
+Humans you control have each of the chosen abilities.
+As long as you control four or more Humans, Humans you control get +2/+2.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 0aa1b193-c80e-4026-bd82-f16314e14431
+Large Image URL: https://cards.scryfall.io/large/front/0/a/0aa1b193-c80e-4026-bd82-f16314e14431.jpg?1608917838
+Normal Image URL: https://cards.scryfall.io/normal/front/0/a/0aa1b193-c80e-4026-bd82-f16314e14431.jpg?1608917838
+Small Image URL: https://cards.scryfall.io/small/front/0/a/0aa1b193-c80e-4026-bd82-f16314e14431.jpg?1608917838
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/a/0aa1b193-c80e-4026-bd82-f16314e14431.jpg?1608917838
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}
+Name: Mask of Avacyn
+Power: 
+Toughness: 
+Artist: James Paick
+Border Color: black
+Type: Artifact â€” Equipment
+Set Name: Commander Legends
+Rarity: uncommon
+CMC: 2.0
+Text: Equipped creature gets +1/+2 and has hexproof. (It can't be the target of spells or abilities your opponents control.)
+Equip {3}
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 2a2d0981-0af6-42d6-b926-16f8f2327320
+Large Image URL: https://cards.scryfall.io/large/front/2/a/2a2d0981-0af6-42d6-b926-16f8f2327320.jpg?1601080969
+Normal Image URL: https://cards.scryfall.io/normal/front/2/a/2a2d0981-0af6-42d6-b926-16f8f2327320.jpg?1601080969
+Small Image URL: https://cards.scryfall.io/small/front/2/a/2a2d0981-0af6-42d6-b926-16f8f2327320.jpg?1601080969
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/a/2a2d0981-0af6-42d6-b926-16f8f2327320.jpg?1601080969
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}
+Name: Scroll of Avacyn
+Power: 
+Toughness: 
+Artist: Cliff Childs
+Border Color: black
+Type: Artifact
+Set Name: Jumpstart
+Rarity: common
+CMC: 1.0
+Text: {1}, Sacrifice Scroll of Avacyn: Draw a card. If you control an Angel, you gain 5 life.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 27d701aa-df93-4f0e-b1e3-d081487eb456
+Large Image URL: https://cards.scryfall.io/large/front/2/7/27d701aa-df93-4f0e-b1e3-d081487eb456.jpg?1720196507
+Normal Image URL: https://cards.scryfall.io/normal/front/2/7/27d701aa-df93-4f0e-b1e3-d081487eb456.jpg?1720196507
+Small Image URL: https://cards.scryfall.io/small/front/2/7/27d701aa-df93-4f0e-b1e3-d081487eb456.jpg?1720196507
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/7/27d701aa-df93-4f0e-b1e3-d081487eb456.jpg?1720196507
+Language: en
+Layout: saga
+Legal: true
+Mana Cost: {1}{B}{B}
+Name: The Creation of Avacyn
+Power: 
+Toughness: 
+Artist: Franz Vohwinkel
+Border Color: black
+Type: Enchantment â€” Saga
+Set Name: Modern Horizons 3
+Rarity: uncommon
+CMC: 3.0
+Text: (As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)
+I â€” Search your library for a card, exile it face down, then shuffle.
+II â€” Turn the exiled card face up. If it's a creature card, you lose life equal to its mana value.
+III â€” You may put the exiled card onto the battlefield if it's a creature card. If you don't put it onto the battlefield, put it into its owner's hand.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+BUSQUEDA DE CARTAS DE COMMANDER SIN COLOR O TIPO (DEVUELVE 175 CARTAS DE 27987)
+q=+f%3ACommander
+https://api.scryfall.com/cards/search?q=+f%3ACommander
+Total de cartas encontradas: 27987
+¿Hay más páginas? true
+Numero de Cartas en la lista: 175
+-----------------------------------------------
+ID: e882c9f9-bf30-46b6-bedc-379d2c80e5cb
+Large Image URL: https://cards.scryfall.io/large/front/e/8/e882c9f9-bf30-46b6-bedc-379d2c80e5cb.jpg?1627701221
+Normal Image URL: https://cards.scryfall.io/normal/front/e/8/e882c9f9-bf30-46b6-bedc-379d2c80e5cb.jpg?1627701221
+Small Image URL: https://cards.scryfall.io/small/front/e/8/e882c9f9-bf30-46b6-bedc-379d2c80e5cb.jpg?1627701221
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/e/8/e882c9f9-bf30-46b6-bedc-379d2c80e5cb.jpg?1627701221
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: +2 Mace
+Power: 
+Toughness: 
+Artist: Jarel Threat
+Border Color: black
+Type: Artifact â€” Equipment
+Set Name: Adventures in the Forgotten Realms
+Rarity: common
+CMC: 2.0
+Text: Equipped creature gets +2/+2.
+Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 2a83882c-3e03-4e85-aaac-97fa1d08a772
+Large Image URL: https://cards.scryfall.io/large/front/2/a/2a83882c-3e03-4e85-aaac-97fa1d08a772.jpg?1722040128
+Normal Image URL: https://cards.scryfall.io/normal/front/2/a/2a83882c-3e03-4e85-aaac-97fa1d08a772.jpg?1722040128
+Small Image URL: https://cards.scryfall.io/small/front/2/a/2a83882c-3e03-4e85-aaac-97fa1d08a772.jpg?1722040128
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/a/2a83882c-3e03-4e85-aaac-97fa1d08a772.jpg?1722040128
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{U}
+Name: Aarakocra Sneak
+Power: 1
+Toughness: 4
+Artist: Andrea Radeck
+Border Color: black
+Type: Creature â€” Bird Rogue
+Set Name: Commander Legends: Battle for Baldur's Gate
+Rarity: common
+CMC: 4.0
+Text: Flying
+When Aarakocra Sneak enters, you take the initiative.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: c9f1fc97-00c0-492b-a4a3-b179afc2f95d
+Large Image URL: https://cards.scryfall.io/large/front/c/9/c9f1fc97-00c0-492b-a4a3-b179afc2f95d.jpg?1674058353
+Normal Image URL: https://cards.scryfall.io/normal/front/c/9/c9f1fc97-00c0-492b-a4a3-b179afc2f95d.jpg?1674058353
+Small Image URL: https://cards.scryfall.io/small/front/c/9/c9f1fc97-00c0-492b-a4a3-b179afc2f95d.jpg?1674058353
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/9/c9f1fc97-00c0-492b-a4a3-b179afc2f95d.jpg?1674058353
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}{B}{R}
+Name: Abaddon the Despoiler
+Power: 5
+Toughness: 5
+Artist: Johan Grenier
+Border Color: black
+Type: Legendary Creature â€” Astartes Warrior
+Set Name: Warhammer 40,000 Commander
+Rarity: mythic
+CMC: 5.0
+Text: Trample
+Mark of Chaos Ascendant â€” During your turn, spells you cast from your hand with mana value X or less have cascade, where X is the total amount of life your opponents have lost this turn.
+Colors: B R U 
+----------------------------------------------------------------------------------------------
+
+ID: ee0565f5-ebdb-43f9-bbb4-0485b1968937
+Large Image URL: https://cards.scryfall.io/large/front/e/e/ee0565f5-ebdb-43f9-bbb4-0485b1968937.jpg?1726286826
+Normal Image URL: https://cards.scryfall.io/normal/front/e/e/ee0565f5-ebdb-43f9-bbb4-0485b1968937.jpg?1726286826
+Small Image URL: https://cards.scryfall.io/small/front/e/e/ee0565f5-ebdb-43f9-bbb4-0485b1968937.jpg?1726286826
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/e/e/ee0565f5-ebdb-43f9-bbb4-0485b1968937.jpg?1726286826
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: 
+Name: Abandoned Campground
+Power: 
+Toughness: 
+Artist: Cristi Balanescu
+Border Color: black
+Type: Land
+Set Name: Duskmourn: House of Horror
+Rarity: common
+CMC: 0.0
+Text: Abandoned Campground enters tapped unless a player has 13 or less life.
+{T}: Add {W} or {U}.
+Colors: U W 
+----------------------------------------------------------------------------------------------
+
+ID: 4945031e-1158-474c-9e50-1ec817acc767
+Large Image URL: https://cards.scryfall.io/large/front/4/9/4945031e-1158-474c-9e50-1ec817acc767.jpg?1562908368
+Normal Image URL: https://cards.scryfall.io/normal/front/4/9/4945031e-1158-474c-9e50-1ec817acc767.jpg?1562908368
+Small Image URL: https://cards.scryfall.io/small/front/4/9/4945031e-1158-474c-9e50-1ec817acc767.jpg?1562908368
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/9/4945031e-1158-474c-9e50-1ec817acc767.jpg?1562908368
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: 
+Name: Abandoned Outpost
+Power: 
+Toughness: 
+Artist: Edward P. Beard, Jr.
+Border Color: black
+Type: Land
+Set Name: Odyssey
+Rarity: common
+CMC: 0.0
+Text: Abandoned Outpost enters tapped.
+{T}: Add {W}.
+{T}, Sacrifice Abandoned Outpost: Add one mana of any color.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 23b587f3-5eac-45a7-a048-dd73d2a2b74f
+Large Image URL: https://cards.scryfall.io/large/front/2/3/23b587f3-5eac-45a7-a048-dd73d2a2b74f.jpg?1591321543
+Normal Image URL: https://cards.scryfall.io/normal/front/2/3/23b587f3-5eac-45a7-a048-dd73d2a2b74f.jpg?1591321543
+Small Image URL: https://cards.scryfall.io/small/front/2/3/23b587f3-5eac-45a7-a048-dd73d2a2b74f.jpg?1591321543
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/3/23b587f3-5eac-45a7-a048-dd73d2a2b74f.jpg?1591321543
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}
+Name: Abandoned Sarcophagus
+Power: 
+Toughness: 
+Artist: Daarken
+Border Color: black
+Type: Artifact
+Set Name: Commander 2020
+Rarity: rare
+CMC: 3.0
+Text: You may cast spells that have a cycling ability from your graveyard.
+If a card that has a cycling ability would be put into your graveyard from anywhere and it wasn't cycled, exile it instead.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 942cf220-472c-48f6-8f60-993939ea5ab8
+Large Image URL: https://cards.scryfall.io/large/front/9/4/942cf220-472c-48f6-8f60-993939ea5ab8.jpg?1562055436
+Normal Image URL: https://cards.scryfall.io/normal/front/9/4/942cf220-472c-48f6-8f60-993939ea5ab8.jpg?1562055436
+Small Image URL: https://cards.scryfall.io/small/front/9/4/942cf220-472c-48f6-8f60-993939ea5ab8.jpg?1562055436
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/4/942cf220-472c-48f6-8f60-993939ea5ab8.jpg?1562055436
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {X}{1}{B}
+Name: Abandon Hope
+Power: 
+Toughness: 
+Artist: Alan Pollack
+Border Color: black
+Type: Sorcery
+Set Name: Tempest
+Rarity: uncommon
+CMC: 2.0
+Text: As an additional cost to cast this spell, discard X cards.
+Look at target opponent's hand and choose X cards from it. That player discards those cards.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 18c0b3b3-bb62-42c5-9869-386af0540a9b
+Large Image URL: https://cards.scryfall.io/large/front/1/8/18c0b3b3-bb62-42c5-9869-386af0540a9b.jpg?1576384496
+Normal Image URL: https://cards.scryfall.io/normal/front/1/8/18c0b3b3-bb62-42c5-9869-386af0540a9b.jpg?1576384496
+Small Image URL: https://cards.scryfall.io/small/front/1/8/18c0b3b3-bb62-42c5-9869-386af0540a9b.jpg?1576384496
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/8/18c0b3b3-bb62-42c5-9869-386af0540a9b.jpg?1576384496
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{R}
+Name: Abandon Reason
+Power: 
+Toughness: 
+Artist: Josh Hass
+Border Color: black
+Type: Instant
+Set Name: Eldritch Moon
+Rarity: uncommon
+CMC: 3.0
+Text: Up to two target creatures each get +1/+0 and gain first strike until end of turn.
+Madness {1}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 983da138-f0f5-46c4-90c2-d3c34cc37d1f
+Large Image URL: https://cards.scryfall.io/large/front/9/8/983da138-f0f5-46c4-90c2-d3c34cc37d1f.jpg?1634350355
+Normal Image URL: https://cards.scryfall.io/normal/front/9/8/983da138-f0f5-46c4-90c2-d3c34cc37d1f.jpg?1634350355
+Small Image URL: https://cards.scryfall.io/small/front/9/8/983da138-f0f5-46c4-90c2-d3c34cc37d1f.jpg?1634350355
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/8/983da138-f0f5-46c4-90c2-d3c34cc37d1f.jpg?1634350355
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{R}
+Name: Abandon the Post
+Power: 
+Toughness: 
+Artist: Zoltan Boros
+Border Color: black
+Type: Sorcery
+Set Name: Innistrad: Midnight Hunt
+Rarity: common
+CMC: 2.0
+Text: Up to two target creatures can't block this turn.
+Flashback {3}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 43297ddd-276f-4d2d-9d9c-937603d0e376
+Large Image URL: https://cards.scryfall.io/large/front/4/3/43297ddd-276f-4d2d-9d9c-937603d0e376.jpg?1592763119
+Normal Image URL: https://cards.scryfall.io/normal/front/4/3/43297ddd-276f-4d2d-9d9c-937603d0e376.jpg?1592763119
+Small Image URL: https://cards.scryfall.io/small/front/4/3/43297ddd-276f-4d2d-9d9c-937603d0e376.jpg?1592763119
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/3/43297ddd-276f-4d2d-9d9c-937603d0e376.jpg?1592763119
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{B}
+Name: Abattoir Ghoul
+Power: 3
+Toughness: 2
+Artist: Volkan BaÇµa
+Border Color: black
+Type: Creature â€” Zombie
+Set Name: Duel Decks: Blessed vs. Cursed
+Rarity: uncommon
+CMC: 4.0
+Text: First strike
+Whenever a creature dealt damage by Abattoir Ghoul this turn dies, you gain life equal to that creature's toughness.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 8d80663b-ea3f-4f7a-bff1-8fde04c05bce
+Large Image URL: https://cards.scryfall.io/large/front/8/d/8d80663b-ea3f-4f7a-bff1-8fde04c05bce.jpg?1562869525
+Normal Image URL: https://cards.scryfall.io/normal/front/8/d/8d80663b-ea3f-4f7a-bff1-8fde04c05bce.jpg?1562869525
+Small Image URL: https://cards.scryfall.io/small/front/8/d/8d80663b-ea3f-4f7a-bff1-8fde04c05bce.jpg?1562869525
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/d/8d80663b-ea3f-4f7a-bff1-8fde04c05bce.jpg?1562869525
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}{W}{W}
+Name: Abbey Gargoyles
+Power: 3
+Toughness: 4
+Artist: Christopher Rush
+Border Color: black
+Type: Creature â€” Gargoyle
+Set Name: Masters Edition II
+Rarity: uncommon
+CMC: 5.0
+Text: Flying, protection from red
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: bf87803b-e7c6-4122-add4-72e596167b7e
+Large Image URL: https://cards.scryfall.io/large/front/b/f/bf87803b-e7c6-4122-add4-72e596167b7e.jpg?1562836433
+Normal Image URL: https://cards.scryfall.io/normal/front/b/f/bf87803b-e7c6-4122-add4-72e596167b7e.jpg?1562836433
+Small Image URL: https://cards.scryfall.io/small/front/b/f/bf87803b-e7c6-4122-add4-72e596167b7e.jpg?1562836433
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/f/bf87803b-e7c6-4122-add4-72e596167b7e.jpg?1562836433
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}
+Name: Abbey Griffin
+Power: 2
+Toughness: 2
+Artist: Jaime Jones
+Border Color: black
+Type: Creature â€” Griffin
+Set Name: Innistrad
+Rarity: common
+CMC: 4.0
+Text: Flying, vigilance
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 158caa84-da2e-4c4c-b24d-0c035c900e20
+Large Image URL: https://cards.scryfall.io/large/front/1/5/158caa84-da2e-4c4c-b24d-0c035c900e20.jpg?1562587048
+Normal Image URL: https://cards.scryfall.io/normal/front/1/5/158caa84-da2e-4c4c-b24d-0c035c900e20.jpg?1562587048
+Small Image URL: https://cards.scryfall.io/small/front/1/5/158caa84-da2e-4c4c-b24d-0c035c900e20.jpg?1562587048
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/5/158caa84-da2e-4c4c-b24d-0c035c900e20.jpg?1562587048
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}
+Name: Abbey Matron
+Power: 1
+Toughness: 3
+Artist: Mike Kimble
+Border Color: black
+Type: Creature â€” Human Cleric
+Set Name: Homelands
+Rarity: common
+CMC: 3.0
+Text: {W}, {T}: Abbey Matron gets +0/+3 until end of turn.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: cd94f624-9b35-4468-829f-106366f61c1a
+Large Image URL: https://cards.scryfall.io/large/front/c/d/cd94f624-9b35-4468-829f-106366f61c1a.jpg?1673147716
+Normal Image URL: https://cards.scryfall.io/normal/front/c/d/cd94f624-9b35-4468-829f-106366f61c1a.jpg?1673147716
+Small Image URL: https://cards.scryfall.io/small/front/c/d/cd94f624-9b35-4468-829f-106366f61c1a.jpg?1673147716
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/d/cd94f624-9b35-4468-829f-106366f61c1a.jpg?1673147716
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{R}
+Name: Abbot of Keral Keep
+Power: 2
+Toughness: 1
+Artist: Deruchenko Alexander
+Border Color: black
+Type: Creature â€” Human Monk
+Set Name: Double Masters 2022
+Rarity: rare
+CMC: 2.0
+Text: Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)
+When Abbot of Keral Keep enters, exile the top card of your library. Until end of turn, you may play that card.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 396f9198-67b6-45d8-91b4-dc853bff9623
+Large Image URL: https://cards.scryfall.io/large/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.jpg?1674134856
+Normal Image URL: https://cards.scryfall.io/normal/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.jpg?1674134856
+Small Image URL: https://cards.scryfall.io/small/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.jpg?1674134856
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.jpg?1674134856
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{W}
+Name: Abdel Adrian, Gorion's Ward
+Power: 4
+Toughness: 4
+Artist: Karl Kopinski
+Border Color: black
+Type: Legendary Creature â€” Human Warrior
+Set Name: Commander Legends: Battle for Baldur's Gate
+Rarity: uncommon
+CMC: 5.0
+Text: When Abdel Adrian, Gorion's Ward enters, exile any number of other nonland permanents you control until Abdel Adrian leaves the battlefield. Create a 1/1 white Soldier creature token for each permanent exiled this way.
+Choose a Background (You can have a Background as a second commander.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 63c82bef-50d6-4d25-bc3f-dda2826fc99c
+Large Image URL: https://cards.scryfall.io/large/front/6/3/63c82bef-50d6-4d25-bc3f-dda2826fc99c.jpg?1562818344
+Normal Image URL: https://cards.scryfall.io/normal/front/6/3/63c82bef-50d6-4d25-bc3f-dda2826fc99c.jpg?1562818344
+Small Image URL: https://cards.scryfall.io/small/front/6/3/63c82bef-50d6-4d25-bc3f-dda2826fc99c.jpg?1562818344
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/3/63c82bef-50d6-4d25-bc3f-dda2826fc99c.jpg?1562818344
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}{U}
+Name: Abduction
+Power: 
+Toughness: 
+Artist: Colin MacNeil
+Border Color: white
+Type: Enchantment â€” Aura
+Set Name: Classic Sixth Edition
+Rarity: uncommon
+CMC: 4.0
+Text: Enchant creature
+When Abduction enters, untap enchanted creature.
+You control enchanted creature.
+When enchanted creature dies, return that card to the battlefield under its owner's control.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 49dfee68-c242-4579-94b1-c23238f8c87d
+Large Image URL: https://cards.scryfall.io/large/front/4/9/49dfee68-c242-4579-94b1-c23238f8c87d.jpg?1673309085
+Normal Image URL: https://cards.scryfall.io/normal/front/4/9/49dfee68-c242-4579-94b1-c23238f8c87d.jpg?1673309085
+Small Image URL: https://cards.scryfall.io/small/front/4/9/49dfee68-c242-4579-94b1-c23238f8c87d.jpg?1673309085
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/9/49dfee68-c242-4579-94b1-c23238f8c87d.jpg?1673309085
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {X}{1}{G}
+Name: Aberrant
+Power: 0
+Toughness: 0
+Artist: Games Workshop
+Border Color: black
+Type: Creature â€” Tyranid Mutant
+Set Name: Warhammer 40,000 Commander
+Rarity: uncommon
+CMC: 2.0
+Text: Ravenous (This creature enters with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.)
+Trample
+Heavy Power Hammer â€” Whenever Aberrant deals combat damage to a player, destroy target artifact or enchantment that player controls.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: d9c6401a-e152-4acf-a2ca-75c484f296d5
+Large Image URL: https://cards.scryfall.io/large/front/d/9/d9c6401a-e152-4acf-a2ca-75c484f296d5.jpg?1627702765
+Normal Image URL: https://cards.scryfall.io/normal/front/d/9/d9c6401a-e152-4acf-a2ca-75c484f296d5.jpg?1627702765
+Small Image URL: https://cards.scryfall.io/small/front/d/9/d9c6401a-e152-4acf-a2ca-75c484f296d5.jpg?1627702765
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/9/d9c6401a-e152-4acf-a2ca-75c484f296d5.jpg?1627702765
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{U}
+Name: Aberrant Mind Sorcerer
+Power: 3
+Toughness: 4
+Artist: Lius Lasahido
+Border Color: black
+Type: Creature â€” Human Elf Shaman
+Set Name: Adventures in the Forgotten Realms
+Rarity: uncommon
+CMC: 5.0
+Text: Psionic Spells â€” When Aberrant Mind Sorcerer enters, choose target instant or sorcery card in your graveyard, then roll a d20.
+1â€”9 | You may put that card on top of your library.
+10â€”20 | Return that card to your hand.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+Detalles de la carta doble:
+Layout: transform
+Colors: [U]
+
+Front Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/front/b/5/b5c9649e-9ae5-4926-bf08-71ba23aa37f1.jpg?1576383982
+Normal Image URL: https://cards.scryfall.io/normal/front/b/5/b5c9649e-9ae5-4926-bf08-71ba23aa37f1.jpg?1576383982
+Small Image URL: https://cards.scryfall.io/small/front/b/5/b5c9649e-9ae5-4926-bf08-71ba23aa37f1.jpg?1576383982
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/5/b5c9649e-9ae5-4926-bf08-71ba23aa37f1.jpg?1576383982
+Language: 
+Layout: 
+Legal: true
+Mana Cost: {3}{U}
+Name: Aberrant Researcher
+Power: 3
+Toughness: 2
+Artist: Nils Hamm
+Border Color: 
+Type: Creature â€” Human Insect
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: Flying
+At the beginning of your upkeep, mill a card. If an instant or sorcery card was milled this way, transform Aberrant Researcher.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+
+Back Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/back/b/5/b5c9649e-9ae5-4926-bf08-71ba23aa37f1.jpg?1576383982
+Normal Image URL: https://cards.scryfall.io/normal/back/b/5/b5c9649e-9ae5-4926-bf08-71ba23aa37f1.jpg?1576383982
+Small Image URL: https://cards.scryfall.io/small/back/b/5/b5c9649e-9ae5-4926-bf08-71ba23aa37f1.jpg?1576383982
+Art Crop Image URL: https://cards.scryfall.io/art_crop/back/b/5/b5c9649e-9ae5-4926-bf08-71ba23aa37f1.jpg?1576383982
+Language: 
+Layout: 
+Legal: true
+Mana Cost: 
+Name: Perfected Form
+Power: 5
+Toughness: 4
+Artist: Nils Hamm
+Border Color: 
+Type: Creature â€” Insect Horror
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: Flying
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 125a355d-bfcf-4125-aa6c-35e7dea6f63e
+Large Image URL: https://cards.scryfall.io/large/front/1/2/125a355d-bfcf-4125-aa6c-35e7dea6f63e.jpg?1562799430
+Normal Image URL: https://cards.scryfall.io/normal/front/1/2/125a355d-bfcf-4125-aa6c-35e7dea6f63e.jpg?1562799430
+Small Image URL: https://cards.scryfall.io/small/front/1/2/125a355d-bfcf-4125-aa6c-35e7dea6f63e.jpg?1562799430
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/2/125a355d-bfcf-4125-aa6c-35e7dea6f63e.jpg?1562799430
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Abeyance
+Power: 
+Toughness: 
+Artist: Thomas Gianni
+Border Color: black
+Type: Instant
+Set Name: Weatherlight
+Rarity: rare
+CMC: 2.0
+Text: Until end of turn, target player can't cast instant or sorcery spells, and that player can't activate abilities that aren't mana abilities.
+Draw a card.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: d2705b43-a94a-44c0-8740-82e0b296820c
+Large Image URL: https://cards.scryfall.io/large/front/d/2/d2705b43-a94a-44c0-8740-82e0b296820c.jpg?1726286015
+Normal Image URL: https://cards.scryfall.io/normal/front/d/2/d2705b43-a94a-44c0-8740-82e0b296820c.jpg?1726286015
+Small Image URL: https://cards.scryfall.io/small/front/d/2/d2705b43-a94a-44c0-8740-82e0b296820c.jpg?1726286015
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/2/d2705b43-a94a-44c0-8740-82e0b296820c.jpg?1726286015
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}
+Name: Abhorrent Oculus
+Power: 5
+Toughness: 5
+Artist: Bryan Sola
+Border Color: black
+Type: Creature â€” Eye
+Set Name: Duskmourn: House of Horror
+Rarity: mythic
+CMC: 3.0
+Text: As an additional cost to cast this spell, exile six cards from your graveyard.
+Flying
+At the beginning of each opponent's upkeep, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 4415d050-7a76-4f8b-bf78-e33dd21fe4f1
+Large Image URL: https://cards.scryfall.io/large/front/4/4/4415d050-7a76-4f8b-bf78-e33dd21fe4f1.jpg?1562817335
+Normal Image URL: https://cards.scryfall.io/normal/front/4/4/4415d050-7a76-4f8b-bf78-e33dd21fe4f1.jpg?1562817335
+Small Image URL: https://cards.scryfall.io/small/front/4/4/4415d050-7a76-4f8b-bf78-e33dd21fe4f1.jpg?1562817335
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/4/4415d050-7a76-4f8b-bf78-e33dd21fe4f1.jpg?1562817335
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {5}{B}{B}
+Name: Abhorrent Overlord
+Power: 6
+Toughness: 6
+Artist: Slawomir Maniak
+Border Color: black
+Type: Creature â€” Demon
+Set Name: Theros
+Rarity: rare
+CMC: 7.0
+Text: Flying
+When Abhorrent Overlord enters, create a number of 1/1 black Harpy creature tokens with flying equal to your devotion to black. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.)
+At the beginning of your upkeep, sacrifice a creature.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: db113c47-c403-4c7f-9fa9-212c977df8d1
+Large Image URL: https://cards.scryfall.io/large/front/d/b/db113c47-c403-4c7f-9fa9-212c977df8d1.jpg?1626093205
+Normal Image URL: https://cards.scryfall.io/normal/front/d/b/db113c47-c403-4c7f-9fa9-212c977df8d1.jpg?1626093205
+Small Image URL: https://cards.scryfall.io/small/front/d/b/db113c47-c403-4c7f-9fa9-212c977df8d1.jpg?1626093205
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/b/db113c47-c403-4c7f-9fa9-212c977df8d1.jpg?1626093205
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}
+Name: Abiding Grace
+Power: 
+Toughness: 
+Artist: Ravenna Tran
+Border Color: black
+Type: Enchantment
+Set Name: Modern Horizons 2
+Rarity: uncommon
+CMC: 3.0
+Text: At the beginning of your end step, choose one â€”
+â€¢ You gain 1 life.
+â€¢ Return target creature card with mana value 1 from your graveyard to the battlefield.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: fbad9449-d09c-4fd0-b2ad-2aa3a29e03bf
+Large Image URL: https://cards.scryfall.io/large/front/f/b/fbad9449-d09c-4fd0-b2ad-2aa3a29e03bf.jpg?1562804357
+Normal Image URL: https://cards.scryfall.io/normal/front/f/b/fbad9449-d09c-4fd0-b2ad-2aa3a29e03bf.jpg?1562804357
+Small Image URL: https://cards.scryfall.io/small/front/f/b/fbad9449-d09c-4fd0-b2ad-2aa3a29e03bf.jpg?1562804357
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/b/fbad9449-d09c-4fd0-b2ad-2aa3a29e03bf.jpg?1562804357
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {U}
+Name: Abjure
+Power: 
+Toughness: 
+Artist: Ted Naifeh
+Border Color: black
+Type: Instant
+Set Name: Weatherlight
+Rarity: common
+CMC: 1.0
+Text: As an additional cost to cast this spell, sacrifice a blue permanent.
+Counter target spell.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: de2de2bd-9ba7-4b6f-94c2-dafb2011a48e
+Large Image URL: https://cards.scryfall.io/large/front/d/e/de2de2bd-9ba7-4b6f-94c2-dafb2011a48e.jpg?1562304790
+Normal Image URL: https://cards.scryfall.io/normal/front/d/e/de2de2bd-9ba7-4b6f-94c2-dafb2011a48e.jpg?1562304790
+Small Image URL: https://cards.scryfall.io/small/front/d/e/de2de2bd-9ba7-4b6f-94c2-dafb2011a48e.jpg?1562304790
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/e/de2de2bd-9ba7-4b6f-94c2-dafb2011a48e.jpg?1562304790
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{B}
+Name: Abnormal Endurance
+Power: 
+Toughness: 
+Artist: Tomasz Jedruszek
+Border Color: black
+Type: Instant
+Set Name: Core Set 2019
+Rarity: common
+CMC: 2.0
+Text: Until end of turn, target creature gets +2/+0 and gains "When this creature dies, return it to the battlefield tapped under its owner's control."
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 51889b3f-082a-40e9-8be7-11f8c1a7a9a8
+Large Image URL: https://cards.scryfall.io/large/front/5/1/51889b3f-082a-40e9-8be7-11f8c1a7a9a8.jpg?1722108652
+Normal Image URL: https://cards.scryfall.io/normal/front/5/1/51889b3f-082a-40e9-8be7-11f8c1a7a9a8.jpg?1722108652
+Small Image URL: https://cards.scryfall.io/small/front/5/1/51889b3f-082a-40e9-8be7-11f8c1a7a9a8.jpg?1722108652
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/5/1/51889b3f-082a-40e9-8be7-11f8c1a7a9a8.jpg?1722108652
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}
+Name: Aboleth Spawn
+Power: 2
+Toughness: 3
+Artist: Sam Burley
+Border Color: black
+Type: Creature â€” Fish Horror
+Set Name: Commander Legends: Battle for Baldur's Gate
+Rarity: rare
+CMC: 3.0
+Text: Flash
+Ward {2}
+Probing Telepathy â€” Whenever a creature entering under an opponent's control causes a triggered ability of that creature to trigger, you may copy that ability. You may choose new targets for the copy.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 842e7e6a-c89a-463d-a6e8-743a953c827c
+Large Image URL: https://cards.scryfall.io/large/front/8/4/842e7e6a-c89a-463d-a6e8-743a953c827c.jpg?1562270242
+Normal Image URL: https://cards.scryfall.io/normal/front/8/4/842e7e6a-c89a-463d-a6e8-743a953c827c.jpg?1562270242
+Small Image URL: https://cards.scryfall.io/small/front/8/4/842e7e6a-c89a-463d-a6e8-743a953c827c.jpg?1562270242
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/4/842e7e6a-c89a-463d-a6e8-743a953c827c.jpg?1562270242
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}{W}
+Name: Abolish
+Power: 
+Toughness: 
+Artist: Kev Walker
+Border Color: black
+Type: Instant
+Set Name: Duel Decks: Elspeth vs. Tezzeret
+Rarity: uncommon
+CMC: 3.0
+Text: You may discard a Plains card rather than pay this spell's mana cost.
+Destroy target artifact or enchantment.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 1eddb834-ea01-44e2-afca-bd9a4ebbdb94
+Large Image URL: https://cards.scryfall.io/large/front/1/e/1eddb834-ea01-44e2-afca-bd9a4ebbdb94.jpg?1562202283
+Normal Image URL: https://cards.scryfall.io/normal/front/1/e/1eddb834-ea01-44e2-afca-bd9a4ebbdb94.jpg?1562202283
+Small Image URL: https://cards.scryfall.io/small/front/1/e/1eddb834-ea01-44e2-afca-bd9a4ebbdb94.jpg?1562202283
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/e/1eddb834-ea01-44e2-afca-bd9a4ebbdb94.jpg?1562202283
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{G}{U}
+Name: Abominable Treefolk
+Power: *
+Toughness: *
+Artist: Jonas De Ro
+Border Color: black
+Type: Snow Creature â€” Treefolk
+Set Name: Modern Horizons
+Rarity: uncommon
+CMC: 4.0
+Text: Trample
+Abominable Treefolk's power and toughness are each equal to the number of snow permanents you control.
+When Abominable Treefolk enters, tap target creature an opponent controls. That creature doesn't untap during its controller's next untap step.
+Colors: G U 
+----------------------------------------------------------------------------------------------
+
+ID: a363bc91-8278-448e-9d5c-564e4b51eb62
+Large Image URL: https://cards.scryfall.io/large/front/a/3/a363bc91-8278-448e-9d5c-564e4b51eb62.jpg?1559603880
+Normal Image URL: https://cards.scryfall.io/normal/front/a/3/a363bc91-8278-448e-9d5c-564e4b51eb62.jpg?1559603880
+Small Image URL: https://cards.scryfall.io/small/front/a/3/a363bc91-8278-448e-9d5c-564e4b51eb62.jpg?1559603880
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/3/a363bc91-8278-448e-9d5c-564e4b51eb62.jpg?1559603880
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{B}{B}
+Name: Abomination
+Power: 2
+Toughness: 6
+Artist: Mark Tedin
+Border Color: white
+Type: Creature â€” Horror
+Set Name: Fourth Edition
+Rarity: uncommon
+CMC: 5.0
+Text: Whenever Abomination blocks or becomes blocked by a green or white creature, destroy that creature at end of combat.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 7df9759e-1072-4a6a-be57-f73b15bf3847
+Large Image URL: https://cards.scryfall.io/large/front/7/d/7df9759e-1072-4a6a-be57-f73b15bf3847.jpg?1562789157
+Normal Image URL: https://cards.scryfall.io/normal/front/7/d/7df9759e-1072-4a6a-be57-f73b15bf3847.jpg?1562789157
+Small Image URL: https://cards.scryfall.io/small/front/7/d/7df9759e-1072-4a6a-be57-f73b15bf3847.jpg?1562789157
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/d/7df9759e-1072-4a6a-be57-f73b15bf3847.jpg?1562789157
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{B}{G}{U}
+Name: Abomination of Gudul
+Power: 3
+Toughness: 4
+Artist: Erica Yang
+Border Color: black
+Type: Creature â€” Horror
+Set Name: Khans of Tarkir
+Rarity: common
+CMC: 6.0
+Text: Flying
+Whenever Abomination of Gudul deals combat damage to a player, you may draw a card. If you do, discard a card.
+Morph {2}{B}{G}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+Colors: B G U 
+----------------------------------------------------------------------------------------------
+
+ID: 4b68bc46-5591-44dd-becc-eca154066925
+Large Image URL: https://cards.scryfall.io/large/front/4/b/4b68bc46-5591-44dd-becc-eca154066925.jpg?1631235320
+Normal Image URL: https://cards.scryfall.io/normal/front/4/b/4b68bc46-5591-44dd-becc-eca154066925.jpg?1631235320
+Small Image URL: https://cards.scryfall.io/small/front/4/b/4b68bc46-5591-44dd-becc-eca154066925.jpg?1631235320
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/b/4b68bc46-5591-44dd-becc-eca154066925.jpg?1631235320
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{B}{G}
+Name: Abomination of Llanowar
+Power: *
+Toughness: *
+Artist: Vincent Proce
+Border Color: black
+Type: Legendary Creature â€” Elf Horror
+Set Name: Kaldheim Commander
+Rarity: uncommon
+CMC: 3.0
+Text: Vigilance; menace (This creature can't be blocked except by two or more creatures.)
+Abomination of Llanowar's power and toughness are each equal to the number of Elves you control plus the number of Elf cards in your graveyard.
+Colors: B G 
+----------------------------------------------------------------------------------------------
+
+ID: 8c72ac67-e4fb-49a1-b1e5-cd2e414bec28
+Large Image URL: https://cards.scryfall.io/large/front/8/c/8c72ac67-e4fb-49a1-b1e5-cd2e414bec28.jpg?1562802060
+Normal Image URL: https://cards.scryfall.io/normal/front/8/c/8c72ac67-e4fb-49a1-b1e5-cd2e414bec28.jpg?1562802060
+Small Image URL: https://cards.scryfall.io/small/front/8/c/8c72ac67-e4fb-49a1-b1e5-cd2e414bec28.jpg?1562802060
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/c/8c72ac67-e4fb-49a1-b1e5-cd2e414bec28.jpg?1562802060
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{G}{G}
+Name: Aboroth
+Power: 9
+Toughness: 9
+Artist: Brom
+Border Color: black
+Type: Creature â€” Elemental
+Set Name: Weatherlight
+Rarity: rare
+CMC: 6.0
+Text: Cumulative upkeepâ€”Put a -1/-1 counter on Aboroth. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 82db4a41-03e8-4f0c-946c-a98fc5c9f7c8
+Large Image URL: https://cards.scryfall.io/large/front/8/2/82db4a41-03e8-4f0c-946c-a98fc5c9f7c8.jpg?1562919289
+Normal Image URL: https://cards.scryfall.io/normal/front/8/2/82db4a41-03e8-4f0c-946c-a98fc5c9f7c8.jpg?1562919289
+Small Image URL: https://cards.scryfall.io/small/front/8/2/82db4a41-03e8-4f0c-946c-a98fc5c9f7c8.jpg?1562919289
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/2/82db4a41-03e8-4f0c-946c-a98fc5c9f7c8.jpg?1562919289
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{U}{U}
+Name: Aboshan, Cephalid Emperor
+Power: 3
+Toughness: 3
+Artist: Christopher Moeller
+Border Color: black
+Type: Legendary Creature â€” Octopus Noble
+Set Name: Odyssey
+Rarity: rare
+CMC: 6.0
+Text: Tap an untapped Octopus you control: Tap target permanent.
+{U}{U}{U}: Tap all creatures without flying.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 137b701e-6140-463e-84b5-58d8a728df40
+Large Image URL: https://cards.scryfall.io/large/front/1/3/137b701e-6140-463e-84b5-58d8a728df40.jpg?1562898738
+Normal Image URL: https://cards.scryfall.io/normal/front/1/3/137b701e-6140-463e-84b5-58d8a728df40.jpg?1562898738
+Small Image URL: https://cards.scryfall.io/small/front/1/3/137b701e-6140-463e-84b5-58d8a728df40.jpg?1562898738
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/3/137b701e-6140-463e-84b5-58d8a728df40.jpg?1562898738
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {U}
+Name: Aboshan's Desire
+Power: 
+Toughness: 
+Artist: Ciruelo
+Border Color: black
+Type: Enchantment â€” Aura
+Set Name: Odyssey
+Rarity: common
+CMC: 1.0
+Text: Enchant creature
+Enchanted creature has flying.
+Threshold â€” Enchanted creature has shroud as long as seven or more cards are in your graveyard. (It can't be the target of spells or abilities.)
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 85e71828-095b-4729-ab11-c6c39ba29aab
+Large Image URL: https://cards.scryfall.io/large/front/8/5/85e71828-095b-4729-ab11-c6c39ba29aab.jpg?1562863291
+Normal Image URL: https://cards.scryfall.io/normal/front/8/5/85e71828-095b-4729-ab11-c6c39ba29aab.jpg?1562863291
+Small Image URL: https://cards.scryfall.io/small/front/8/5/85e71828-095b-4729-ab11-c6c39ba29aab.jpg?1562863291
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/5/85e71828-095b-4729-ab11-c6c39ba29aab.jpg?1562863291
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {R}
+Name: About Face
+Power: 
+Toughness: 
+Artist: Melissa A. Benson
+Border Color: black
+Type: Instant
+Set Name: Urza's Legacy
+Rarity: common
+CMC: 1.0
+Text: Switch target creature's power and toughness until end of turn.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 47f39b5e-2e85-4f31-bbab-0b0bf58f701d
+Large Image URL: https://cards.scryfall.io/large/front/4/7/47f39b5e-2e85-4f31-bbab-0b0bf58f701d.jpg?1699044218
+Normal Image URL: https://cards.scryfall.io/normal/front/4/7/47f39b5e-2e85-4f31-bbab-0b0bf58f701d.jpg?1699044218
+Small Image URL: https://cards.scryfall.io/small/front/4/7/47f39b5e-2e85-4f31-bbab-0b0bf58f701d.jpg?1699044218
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/7/47f39b5e-2e85-4f31-bbab-0b0bf58f701d.jpg?1699044218
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{R}
+Name: Abrade
+Power: 
+Toughness: 
+Artist: Bartek Fedyczak
+Border Color: black
+Type: Instant
+Set Name: The Lost Caverns of Ixalan
+Rarity: common
+CMC: 2.0
+Text: Choose one â€”
+â€¢ Abrade deals 3 damage to target creature.
+â€¢ Destroy target artifact.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 19e96521-b4ce-4a36-a887-200e05ccc804
+Large Image URL: https://cards.scryfall.io/large/front/1/9/19e96521-b4ce-4a36-a887-200e05ccc804.jpg?1712356303
+Normal Image URL: https://cards.scryfall.io/normal/front/1/9/19e96521-b4ce-4a36-a887-200e05ccc804.jpg?1712356303
+Small Image URL: https://cards.scryfall.io/small/front/1/9/19e96521-b4ce-4a36-a887-200e05ccc804.jpg?1712356303
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/9/19e96521-b4ce-4a36-a887-200e05ccc804.jpg?1712356303
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: 
+Name: Abraded Bluffs
+Power: 
+Toughness: 
+Artist: Piotr Dura
+Border Color: black
+Type: Land â€” Desert
+Set Name: Outlaws of Thunder Junction
+Rarity: common
+CMC: 0.0
+Text: Abraded Bluffs enters tapped.
+When Abraded Bluffs enters, it deals 1 damage to target opponent.
+{T}: Add {R} or {W}.
+Colors: R W 
+----------------------------------------------------------------------------------------------
+
+ID: a8e328c6-3a84-49cf-a1a3-1d1e5373d274
+Large Image URL: https://cards.scryfall.io/large/front/a/8/a8e328c6-3a84-49cf-a1a3-1d1e5373d274.jpg?1593814035
+Normal Image URL: https://cards.scryfall.io/normal/front/a/8/a8e328c6-3a84-49cf-a1a3-1d1e5373d274.jpg?1593814035
+Small Image URL: https://cards.scryfall.io/small/front/a/8/a8e328c6-3a84-49cf-a1a3-1d1e5373d274.jpg?1593814035
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/8/a8e328c6-3a84-49cf-a1a3-1d1e5373d274.jpg?1593814035
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {B}{G}
+Name: Abrupt Decay
+Power: 
+Toughness: 
+Artist: Svetlin Velinov
+Border Color: black
+Type: Instant
+Set Name: Modern Masters 2017
+Rarity: rare
+CMC: 2.0
+Text: This spell can't be countered.
+Destroy target nonland permanent with mana value 3 or less.
+Colors: B G 
+----------------------------------------------------------------------------------------------
+
+ID: fe7d1839-7180-4b4c-8ddb-7df24573f740
+Large Image URL: https://cards.scryfall.io/large/front/f/e/fe7d1839-7180-4b4c-8ddb-7df24573f740.jpg?1562948889
+Normal Image URL: https://cards.scryfall.io/normal/front/f/e/fe7d1839-7180-4b4c-8ddb-7df24573f740.jpg?1562948889
+Small Image URL: https://cards.scryfall.io/small/front/f/e/fe7d1839-7180-4b4c-8ddb-7df24573f740.jpg?1562948889
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/e/fe7d1839-7180-4b4c-8ddb-7df24573f740.jpg?1562948889
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Absolute Grace
+Power: 
+Toughness: 
+Artist: Jeff Miracola
+Border Color: black
+Type: Enchantment
+Set Name: Urza's Saga
+Rarity: uncommon
+CMC: 2.0
+Text: All creatures have protection from black.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 59d1f05b-f165-47c7-8a78-3b60ee3298ca
+Large Image URL: https://cards.scryfall.io/large/front/5/9/59d1f05b-f165-47c7-8a78-3b60ee3298ca.jpg?1562913728
+Normal Image URL: https://cards.scryfall.io/normal/front/5/9/59d1f05b-f165-47c7-8a78-3b60ee3298ca.jpg?1562913728
+Small Image URL: https://cards.scryfall.io/small/front/5/9/59d1f05b-f165-47c7-8a78-3b60ee3298ca.jpg?1562913728
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/5/9/59d1f05b-f165-47c7-8a78-3b60ee3298ca.jpg?1562913728
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Absolute Law
+Power: 
+Toughness: 
+Artist: Mark Zug
+Border Color: black
+Type: Enchantment
+Set Name: Urza's Saga
+Rarity: uncommon
+CMC: 2.0
+Text: All creatures have protection from red.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 711979c3-e70b-4973-a4f1-020db534fc73
+Large Image URL: https://cards.scryfall.io/large/front/7/1/711979c3-e70b-4973-a4f1-020db534fc73.jpg?1593271812
+Normal Image URL: https://cards.scryfall.io/normal/front/7/1/711979c3-e70b-4973-a4f1-020db534fc73.jpg?1593271812
+Small Image URL: https://cards.scryfall.io/small/front/7/1/711979c3-e70b-4973-a4f1-020db534fc73.jpg?1593271812
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/1/711979c3-e70b-4973-a4f1-020db534fc73.jpg?1593271812
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}
+Name: Absolver Thrull
+Power: 2
+Toughness: 3
+Artist: Rob Alexander
+Border Color: black
+Type: Creature â€” Thrull Cleric
+Set Name: Guildpact
+Rarity: common
+CMC: 4.0
+Text: Haunt (When this creature dies, exile it haunting target creature.)
+When Absolver Thrull enters or the creature it haunts dies, destroy target enchantment.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: bd6e71a1-713e-4eca-bd65-9f0638c16794
+Large Image URL: https://cards.scryfall.io/large/front/b/d/bd6e71a1-713e-4eca-bd65-9f0638c16794.jpg?1706389555
+Normal Image URL: https://cards.scryfall.io/normal/front/b/d/bd6e71a1-713e-4eca-bd65-9f0638c16794.jpg?1706389555
+Small Image URL: https://cards.scryfall.io/small/front/b/d/bd6e71a1-713e-4eca-bd65-9f0638c16794.jpg?1706389555
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/d/bd6e71a1-713e-4eca-bd65-9f0638c16794.jpg?1706389555
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{W}
+Name: Absolving Lammasu
+Power: 4
+Toughness: 3
+Artist: Izzy
+Border Color: black
+Type: Creature â€” Lammasu
+Set Name: Murders at Karlov Manor
+Rarity: uncommon
+CMC: 5.0
+Text: Flying
+When Absolving Lammasu enters, all suspected creatures are no longer suspected.
+When Absolving Lammasu dies, you gain 3 life and suspect up to one target creature an opponent controls. (A suspected creature has menace and can't block.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 21892cbc-1af2-4ea1-8907-cec514b53004
+Large Image URL: https://cards.scryfall.io/large/front/2/1/21892cbc-1af2-4ea1-8907-cec514b53004.jpg?1675200625
+Normal Image URL: https://cards.scryfall.io/normal/front/2/1/21892cbc-1af2-4ea1-8907-cec514b53004.jpg?1675200625
+Small Image URL: https://cards.scryfall.io/small/front/2/1/21892cbc-1af2-4ea1-8907-cec514b53004.jpg?1675200625
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/1/21892cbc-1af2-4ea1-8907-cec514b53004.jpg?1675200625
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {W}{U}{U}
+Name: Absorb
+Power: 
+Toughness: 
+Artist: Andrew Goldhawk
+Border Color: black
+Type: Instant
+Set Name: Dominaria Remastered
+Rarity: rare
+CMC: 3.0
+Text: Counter target spell. You gain 3 life.
+Colors: U W 
+----------------------------------------------------------------------------------------------
+
+ID: aa1c6bcc-2d43-4ea9-a93f-019793616869
+Large Image URL: https://cards.scryfall.io/large/front/a/a/aa1c6bcc-2d43-4ea9-a93f-019793616869.jpg?1631057274
+Normal Image URL: https://cards.scryfall.io/normal/front/a/a/aa1c6bcc-2d43-4ea9-a93f-019793616869.jpg?1631057274
+Small Image URL: https://cards.scryfall.io/small/front/a/a/aa1c6bcc-2d43-4ea9-a93f-019793616869.jpg?1631057274
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/a/aa1c6bcc-2d43-4ea9-a93f-019793616869.jpg?1631057274
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{U}
+Name: Absorb Identity
+Power: 
+Toughness: 
+Artist: Matt Stewart
+Border Color: black
+Type: Instant
+Set Name: Kaldheim
+Rarity: uncommon
+CMC: 2.0
+Text: Return target creature to its owner's hand. You may have Shapeshifters you control become copies of that creature until end of turn.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: e319956e-982b-4bba-829a-67bf4ef79d74
+Large Image URL: https://cards.scryfall.io/large/front/e/3/e319956e-982b-4bba-829a-67bf4ef79d74.jpg?1576382565
+Normal Image URL: https://cards.scryfall.io/normal/front/e/3/e319956e-982b-4bba-829a-67bf4ef79d74.jpg?1576382565
+Small Image URL: https://cards.scryfall.io/small/front/e/3/e319956e-982b-4bba-829a-67bf4ef79d74.jpg?1576382565
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/e/3/e319956e-982b-4bba-829a-67bf4ef79d74.jpg?1576382565
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {6}{B}
+Name: Absorb Vis
+Power: 
+Toughness: 
+Artist: Brandon Kitkouski
+Border Color: black
+Type: Sorcery
+Set Name: Conspiracy: Take the Crown
+Rarity: common
+CMC: 7.0
+Text: Target player loses 4 life and you gain 4 life.
+Basic landcycling {1}{B} ({1}{B}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 4d197866-7633-493c-80dd-ec3a09165934
+Large Image URL: https://cards.scryfall.io/large/front/4/d/4d197866-7633-493c-80dd-ec3a09165934.jpg?1721424262
+Normal Image URL: https://cards.scryfall.io/normal/front/4/d/4d197866-7633-493c-80dd-ec3a09165934.jpg?1721424262
+Small Image URL: https://cards.scryfall.io/small/front/4/d/4d197866-7633-493c-80dd-ec3a09165934.jpg?1721424262
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/d/4d197866-7633-493c-80dd-ec3a09165934.jpg?1721424262
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: 
+Name: Abstergo Entertainment
+Power: 
+Toughness: 
+Artist: Alexander Gering
+Border Color: black
+Type: Legendary Land
+Set Name: Assassin's Creed
+Rarity: rare
+CMC: 0.0
+Text: {T}: Add {C}.
+{1}, {T}: Add one mana of any color.
+{3}, {T}, Exile Abstergo Entertainment: Return up to one target historic card from your graveyard to your hand, then exile all graveyards. (Artifacts, legendaries, and Sagas are historic.)
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: d7149359-bb3f-413c-b21d-e4cd88618e56
+Large Image URL: https://cards.scryfall.io/large/front/d/7/d7149359-bb3f-413c-b21d-e4cd88618e56.jpg?1717012641
+Normal Image URL: https://cards.scryfall.io/normal/front/d/7/d7149359-bb3f-413c-b21d-e4cd88618e56.jpg?1717012641
+Small Image URL: https://cards.scryfall.io/small/front/d/7/d7149359-bb3f-413c-b21d-e4cd88618e56.jpg?1717012641
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/7/d7149359-bb3f-413c-b21d-e4cd88618e56.jpg?1717012641
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}{B}
+Name: Abstruse Appropriation
+Power: 
+Toughness: 
+Artist: Jason Rainville
+Border Color: black
+Type: Instant
+Set Name: Modern Horizons 3
+Rarity: rare
+CMC: 4.0
+Text: Devoid (This card has no color.)
+Exile target nonland permanent. You may cast that card for as long as it remains exiled, and you may spend colorless mana as though it were mana of any color to cast that spell.
+Colors: B W 
+----------------------------------------------------------------------------------------------
+
+ID: 1fc2871b-c685-4951-b8e2-7370b9668f7e
+Large Image URL: https://cards.scryfall.io/large/front/1/f/1fc2871b-c685-4951-b8e2-7370b9668f7e.jpg?1690002945
+Normal Image URL: https://cards.scryfall.io/normal/front/1/f/1fc2871b-c685-4951-b8e2-7370b9668f7e.jpg?1690002945
+Small Image URL: https://cards.scryfall.io/small/front/1/f/1fc2871b-c685-4951-b8e2-7370b9668f7e.jpg?1690002945
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/f/1fc2871b-c685-4951-b8e2-7370b9668f7e.jpg?1690002945
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}
+Name: Abstruse Archaic
+Power: 3
+Toughness: 4
+Artist: Hristo D. Chukov
+Border Color: black
+Type: Creature â€” Avatar
+Set Name: Commander Masters
+Rarity: rare
+CMC: 4.0
+Text: Vigilance
+{1}, {T}: Copy target activated or triggered ability you control from a colorless source. You may choose new targets for the copy. (Mana abilities can't be targeted.)
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 249a7be3-311e-4ce6-97dc-97242463ae23
+Large Image URL: https://cards.scryfall.io/large/front/2/4/249a7be3-311e-4ce6-97dc-97242463ae23.jpg?1562902357
+Normal Image URL: https://cards.scryfall.io/normal/front/2/4/249a7be3-311e-4ce6-97dc-97242463ae23.jpg?1562902357
+Small Image URL: https://cards.scryfall.io/small/front/2/4/249a7be3-311e-4ce6-97dc-97242463ae23.jpg?1562902357
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/4/249a7be3-311e-4ce6-97dc-97242463ae23.jpg?1562902357
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}
+Name: Abstruse Interference
+Power: 
+Toughness: 
+Artist: Igor Kieryluk
+Border Color: black
+Type: Instant
+Set Name: Oath of the Gatewatch
+Rarity: common
+CMC: 3.0
+Text: Devoid (This card has no color.)
+Counter target spell unless its controller pays {1}. You create a 1/1 colorless Eldrazi Scion creature token. It has "Sacrifice this creature: Add {C}." ({C} represents colorless mana.)
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 40eee689-2514-421a-8056-eb7668be66ff
+Large Image URL: https://cards.scryfall.io/large/front/4/0/40eee689-2514-421a-8056-eb7668be66ff.jpg?1699044511
+Normal Image URL: https://cards.scryfall.io/normal/front/4/0/40eee689-2514-421a-8056-eb7668be66ff.jpg?1699044511
+Small Image URL: https://cards.scryfall.io/small/front/4/0/40eee689-2514-421a-8056-eb7668be66ff.jpg?1699044511
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/0/40eee689-2514-421a-8056-eb7668be66ff.jpg?1699044511
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}{U}
+Name: Abuelo, Ancestral Echo
+Power: 2
+Toughness: 2
+Artist: Victor Adame Minguez
+Border Color: black
+Type: Legendary Creature â€” Spirit
+Set Name: The Lost Caverns of Ixalan
+Rarity: rare
+CMC: 3.0
+Text: Flying, ward {2}
+{1}{W}{U}: Exile another target creature or artifact you control. Return it to the battlefield under its owner's control at the beginning of the next end step.
+Colors: U W 
+----------------------------------------------------------------------------------------------
+
+ID: f93b725e-2b9c-4830-ac54-b2562afe09bb
+Large Image URL: https://cards.scryfall.io/large/front/f/9/f93b725e-2b9c-4830-ac54-b2562afe09bb.jpg?1699043056
+Normal Image URL: https://cards.scryfall.io/normal/front/f/9/f93b725e-2b9c-4830-ac54-b2562afe09bb.jpg?1699043056
+Small Image URL: https://cards.scryfall.io/small/front/f/9/f93b725e-2b9c-4830-ac54-b2562afe09bb.jpg?1699043056
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/9/f93b725e-2b9c-4830-ac54-b2562afe09bb.jpg?1699043056
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {X}{3}{W}
+Name: Abuelo's Awakening
+Power: 
+Toughness: 
+Artist: Eelis Kyttanen
+Border Color: black
+Type: Sorcery
+Set Name: The Lost Caverns of Ixalan
+Rarity: rare
+CMC: 4.0
+Text: Return target artifact or non-Aura enchantment card from your graveyard to the battlefield with X additional +1/+1 counters on it. It's a 1/1 Spirit creature with flying in addition to its other types.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 023b5e6f-10de-422d-8431-11f1fdeca246
+Large Image URL: https://cards.scryfall.io/large/front/0/2/023b5e6f-10de-422d-8431-11f1fdeca246.jpg?1562895407
+Normal Image URL: https://cards.scryfall.io/normal/front/0/2/023b5e6f-10de-422d-8431-11f1fdeca246.jpg?1562895407
+Small Image URL: https://cards.scryfall.io/small/front/0/2/023b5e6f-10de-422d-8431-11f1fdeca246.jpg?1562895407
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/2/023b5e6f-10de-422d-8431-11f1fdeca246.jpg?1562895407
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {W}
+Name: Abu Ja'far
+Power: 0
+Toughness: 1
+Artist: Ken Meyer, Jr.
+Border Color: white
+Type: Creature â€” Human
+Set Name: Chronicles
+Rarity: uncommon
+CMC: 1.0
+Text: When Abu Ja'far dies, destroy all creatures blocking or blocked by it. They can't be regenerated.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 9e17bbf7-00c0-46f2-9718-2762fd7388d3
+Large Image URL: https://cards.scryfall.io/large/front/9/e/9e17bbf7-00c0-46f2-9718-2762fd7388d3.jpg?1562820968
+Normal Image URL: https://cards.scryfall.io/normal/front/9/e/9e17bbf7-00c0-46f2-9718-2762fd7388d3.jpg?1562820968
+Small Image URL: https://cards.scryfall.io/small/front/9/e/9e17bbf7-00c0-46f2-9718-2762fd7388d3.jpg?1562820968
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/e/9e17bbf7-00c0-46f2-9718-2762fd7388d3.jpg?1562820968
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Abuna Acolyte
+Power: 1
+Toughness: 1
+Artist: Igor Kieryluk
+Border Color: black
+Type: Creature â€” Cat Cleric
+Set Name: Scars of Mirrodin
+Rarity: uncommon
+CMC: 2.0
+Text: {T}: Prevent the next 1 damage that would be dealt to any target this turn.
+{T}: Prevent the next 2 damage that would be dealt to target artifact creature this turn.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: b9e0bf63-0399-40d6-9162-4562d7bcdd0e
+Large Image URL: https://cards.scryfall.io/large/front/b/9/b9e0bf63-0399-40d6-9162-4562d7bcdd0e.jpg?1562879415
+Normal Image URL: https://cards.scryfall.io/normal/front/b/9/b9e0bf63-0399-40d6-9162-4562d7bcdd0e.jpg?1562879415
+Small Image URL: https://cards.scryfall.io/small/front/b/9/b9e0bf63-0399-40d6-9162-4562d7bcdd0e.jpg?1562879415
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/9/b9e0bf63-0399-40d6-9162-4562d7bcdd0e.jpg?1562879415
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}
+Name: Abuna's Chant
+Power: 
+Toughness: 
+Artist: John Matson
+Border Color: black
+Type: Instant
+Set Name: Fifth Dawn
+Rarity: common
+CMC: 4.0
+Text: Choose one â€”
+â€¢ You gain 5 life.
+â€¢ Prevent the next 5 damage that would be dealt to target creature this turn.
+Entwine {2} (Choose both if you pay the entwine cost.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 9bc359b0-8886-415b-a497-e98a2241084e
+Large Image URL: https://cards.scryfall.io/large/front/9/b/9bc359b0-8886-415b-a497-e98a2241084e.jpg?1690004728
+Normal Image URL: https://cards.scryfall.io/normal/front/9/b/9bc359b0-8886-415b-a497-e98a2241084e.jpg?1690004728
+Small Image URL: https://cards.scryfall.io/small/front/9/b/9bc359b0-8886-415b-a497-e98a2241084e.jpg?1690004728
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/b/9bc359b0-8886-415b-a497-e98a2241084e.jpg?1690004728
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{G}{G}
+Name: Abundance
+Power: 
+Toughness: 
+Artist: Rebecca Guay
+Border Color: black
+Type: Enchantment
+Set Name: Commander Masters
+Rarity: rare
+CMC: 4.0
+Text: If you would draw a card, you may instead choose land or nonland and reveal cards from the top of your library until you reveal a card of the chosen kind. Put that card into your hand and put all other cards revealed this way on the bottom of your library in any order.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 6dba2d06-13af-464d-b007-9027cade1cdf
+Large Image URL: https://cards.scryfall.io/large/front/6/d/6dba2d06-13af-464d-b007-9027cade1cdf.jpg?1673305331
+Normal Image URL: https://cards.scryfall.io/normal/front/6/d/6dba2d06-13af-464d-b007-9027cade1cdf.jpg?1673305331
+Small Image URL: https://cards.scryfall.io/small/front/6/d/6dba2d06-13af-464d-b007-9027cade1cdf.jpg?1673305331
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/d/6dba2d06-13af-464d-b007-9027cade1cdf.jpg?1673305331
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {G}
+Name: Abundant Growth
+Power: 
+Toughness: 
+Artist: Vincent Proce
+Border Color: black
+Type: Enchantment â€” Aura
+Set Name: Dominaria United Commander
+Rarity: common
+CMC: 1.0
+Text: Enchant land
+When Abundant Growth enters, draw a card.
+Enchanted land has "{T}: Add one mana of any color."
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 516e137a-d9d9-4ba7-89fb-e680ddb2c2d1
+Large Image URL: https://cards.scryfall.io/large/front/5/1/516e137a-d9d9-4ba7-89fb-e680ddb2c2d1.jpg?1689998315
+Normal Image URL: https://cards.scryfall.io/normal/front/5/1/516e137a-d9d9-4ba7-89fb-e680ddb2c2d1.jpg?1689998315
+Small Image URL: https://cards.scryfall.io/small/front/5/1/516e137a-d9d9-4ba7-89fb-e680ddb2c2d1.jpg?1689998315
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/5/1/516e137a-d9d9-4ba7-89fb-e680ddb2c2d1.jpg?1689998315
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {G}
+Name: Abundant Harvest
+Power: 
+Toughness: 
+Artist: Iris Compiet
+Border Color: black
+Type: Sorcery
+Set Name: Commander Masters
+Rarity: common
+CMC: 1.0
+Text: Choose land or nonland. Reveal cards from the top of your library until you reveal a card of the chosen kind. Put that card into your hand and the rest on the bottom of your library in a random order.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 8a4e7ef7-7958-4d7c-b319-4d3db7955002
+Large Image URL: https://cards.scryfall.io/large/front/8/a/8a4e7ef7-7958-4d7c-b319-4d3db7955002.jpg?1576383697
+Normal Image URL: https://cards.scryfall.io/normal/front/8/a/8a4e7ef7-7958-4d7c-b319-4d3db7955002.jpg?1576383697
+Small Image URL: https://cards.scryfall.io/small/front/8/a/8a4e7ef7-7958-4d7c-b319-4d3db7955002.jpg?1576383697
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/a/8a4e7ef7-7958-4d7c-b319-4d3db7955002.jpg?1576383697
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {8}
+Name: Abundant Maw
+Power: 6
+Toughness: 4
+Artist: Greg Staples
+Border Color: black
+Type: Creature â€” Eldrazi Leech
+Set Name: Eldritch Moon
+Rarity: uncommon
+CMC: 8.0
+Text: Emerge {6}{B} (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.)
+When you cast this spell, target opponent loses 3 life and you gain 3 life.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 6d2a66f0-1afe-41e6-a597-ec2e95685191
+Large Image URL: https://cards.scryfall.io/large/front/6/d/6d2a66f0-1afe-41e6-a597-ec2e95685191.jpg?1561771503
+Normal Image URL: https://cards.scryfall.io/normal/front/6/d/6d2a66f0-1afe-41e6-a597-ec2e95685191.jpg?1561771503
+Small Image URL: https://cards.scryfall.io/small/front/6/d/6d2a66f0-1afe-41e6-a597-ec2e95685191.jpg?1561771503
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/d/6d2a66f0-1afe-41e6-a597-ec2e95685191.jpg?1561771503
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{B}
+Name: Abyssal Gatekeeper
+Power: 1
+Toughness: 1
+Artist: Mark Tedin
+Border Color: black
+Type: Creature â€” Horror
+Set Name: Duel Decks Anthology: Divine vs. Demonic
+Rarity: common
+CMC: 2.0
+Text: When Abyssal Gatekeeper dies, each player sacrifices a creature.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: a559f77f-1f10-475b-9361-7f297d50f254
+Large Image URL: https://cards.scryfall.io/large/front/a/5/a559f77f-1f10-475b-9361-7f297d50f254.jpg?1699044037
+Normal Image URL: https://cards.scryfall.io/normal/front/a/5/a559f77f-1f10-475b-9361-7f297d50f254.jpg?1699044037
+Small Image URL: https://cards.scryfall.io/small/front/a/5/a559f77f-1f10-475b-9361-7f297d50f254.jpg?1699044037
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/5/a559f77f-1f10-475b-9361-7f297d50f254.jpg?1699044037
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{B}{B}
+Name: Abyssal Gorestalker
+Power: 6
+Toughness: 6
+Artist: Maxime Minard
+Border Color: black
+Type: Creature â€” Horror
+Set Name: The Lost Caverns of Ixalan
+Rarity: uncommon
+CMC: 6.0
+Text: When Abyssal Gorestalker enters, each player sacrifices two creatures.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: ccb42943-f599-4068-a364-a023e70c4ed2
+Large Image URL: https://cards.scryfall.io/large/front/c/c/ccb42943-f599-4068-a364-a023e70c4ed2.jpg?1562248139
+Normal Image URL: https://cards.scryfall.io/normal/front/c/c/ccb42943-f599-4068-a364-a023e70c4ed2.jpg?1562248139
+Small Image URL: https://cards.scryfall.io/small/front/c/c/ccb42943-f599-4068-a364-a023e70c4ed2.jpg?1562248139
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/c/ccb42943-f599-4068-a364-a023e70c4ed2.jpg?1562248139
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{B}{B}
+Name: Abyssal Horror
+Power: 2
+Toughness: 2
+Artist: Daren Bader
+Border Color: white
+Type: Creature â€” Horror
+Set Name: Seventh Edition
+Rarity: rare
+CMC: 6.0
+Text: Flying
+When Abyssal Horror enters, target player discards two cards.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 3c3f6ad7-4782-40db-8eb3-e71d71ec3388
+Large Image URL: https://cards.scryfall.io/large/front/3/c/3c3f6ad7-4782-40db-8eb3-e71d71ec3388.jpg?1562816627
+Normal Image URL: https://cards.scryfall.io/normal/front/3/c/3c3f6ad7-4782-40db-8eb3-e71d71ec3388.jpg?1562816627
+Small Image URL: https://cards.scryfall.io/small/front/3/c/3c3f6ad7-4782-40db-8eb3-e71d71ec3388.jpg?1562816627
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/c/3c3f6ad7-4782-40db-8eb3-e71d71ec3388.jpg?1562816627
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{B}
+Name: Abyssal Hunter
+Power: 1
+Toughness: 1
+Artist: Steve Luke
+Border Color: white
+Type: Creature â€” Human Assassin
+Set Name: Classic Sixth Edition
+Rarity: rare
+CMC: 4.0
+Text: {B}, {T}: Tap target creature. Abyssal Hunter deals damage equal to Abyssal Hunter's power to that creature.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 0b688039-7441-490b-ad06-8a72086c4023
+Large Image URL: https://cards.scryfall.io/large/front/0/b/0b688039-7441-490b-ad06-8a72086c4023.jpg?1562897564
+Normal Image URL: https://cards.scryfall.io/normal/front/0/b/0b688039-7441-490b-ad06-8a72086c4023.jpg?1562897564
+Small Image URL: https://cards.scryfall.io/small/front/0/b/0b688039-7441-490b-ad06-8a72086c4023.jpg?1562897564
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/b/0b688039-7441-490b-ad06-8a72086c4023.jpg?1562897564
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{B}
+Name: Abyssal Nightstalker
+Power: 2
+Toughness: 2
+Artist: Sam Wood
+Border Color: black
+Type: Creature â€” Nightstalker
+Set Name: Portal Second Age
+Rarity: uncommon
+CMC: 4.0
+Text: Whenever Abyssal Nightstalker attacks and isn't blocked, defending player discards a card.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: fe094903-45a6-4b11-b80e-aabe915c4b7c
+Large Image URL: https://cards.scryfall.io/large/front/f/e/fe094903-45a6-4b11-b80e-aabe915c4b7c.jpg?1593272142
+Normal Image URL: https://cards.scryfall.io/normal/front/f/e/fe094903-45a6-4b11-b80e-aabe915c4b7c.jpg?1593272142
+Small Image URL: https://cards.scryfall.io/small/front/f/e/fe094903-45a6-4b11-b80e-aabe915c4b7c.jpg?1593272142
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/e/fe094903-45a6-4b11-b80e-aabe915c4b7c.jpg?1593272142
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{B}{B}
+Name: Abyssal Nocturnus
+Power: 2
+Toughness: 2
+Artist: Jon Foster
+Border Color: black
+Type: Creature â€” Horror
+Set Name: Guildpact
+Rarity: rare
+CMC: 3.0
+Text: Whenever an opponent discards a card, Abyssal Nocturnus gets +2/+2 and gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 9f2b9f27-459c-4585-9051-b83ffe053a74
+Large Image URL: https://cards.scryfall.io/large/front/9/f/9f2b9f27-459c-4585-9051-b83ffe053a74.jpg?1562852094
+Normal Image URL: https://cards.scryfall.io/normal/front/9/f/9f2b9f27-459c-4585-9051-b83ffe053a74.jpg?1562852094
+Small Image URL: https://cards.scryfall.io/small/front/9/f/9f2b9f27-459c-4585-9051-b83ffe053a74.jpg?1562852094
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/f/9f2b9f27-459c-4585-9051-b83ffe053a74.jpg?1562852094
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{B}{B}
+Name: Abyssal Persecutor
+Power: 6
+Toughness: 6
+Artist: Chippy
+Border Color: black
+Type: Creature â€” Demon
+Set Name: Iconic Masters
+Rarity: rare
+CMC: 4.0
+Text: Flying, trample
+You can't win the game and your opponents can't lose the game.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 69a41bec-7fb0-4060-918a-38cbbb329543
+Large Image URL: https://cards.scryfall.io/large/front/6/9/69a41bec-7fb0-4060-918a-38cbbb329543.jpg?1593813204
+Normal Image URL: https://cards.scryfall.io/normal/front/6/9/69a41bec-7fb0-4060-918a-38cbbb329543.jpg?1593813204
+Small Image URL: https://cards.scryfall.io/small/front/6/9/69a41bec-7fb0-4060-918a-38cbbb329543.jpg?1593813204
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/9/69a41bec-7fb0-4060-918a-38cbbb329543.jpg?1593813204
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{B}{B}
+Name: Abyssal Specter
+Power: 2
+Toughness: 3
+Artist: Daarken
+Border Color: black
+Type: Creature â€” Specter
+Set Name: Modern Masters 2017
+Rarity: uncommon
+CMC: 4.0
+Text: Flying
+Whenever Abyssal Specter deals damage to a player, that player discards a card.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 3ffd46f5-afd1-4130-b019-d8822e61fdfa
+Large Image URL: https://cards.scryfall.io/large/front/3/f/3ffd46f5-afd1-4130-b019-d8822e61fdfa.jpg?1562824524
+Normal Image URL: https://cards.scryfall.io/normal/front/3/f/3ffd46f5-afd1-4130-b019-d8822e61fdfa.jpg?1562824524
+Small Image URL: https://cards.scryfall.io/small/front/3/f/3ffd46f5-afd1-4130-b019-d8822e61fdfa.jpg?1562824524
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/f/3ffd46f5-afd1-4130-b019-d8822e61fdfa.jpg?1562824524
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Abzan Advantage
+Power: 
+Toughness: 
+Artist: Winona Nelson
+Border Color: black
+Type: Instant
+Set Name: Fate Reforged
+Rarity: common
+CMC: 2.0
+Text: Target player sacrifices an enchantment. Bolster 1. (Choose a creature with the least toughness among creatures you control and put a +1/+1 counter on it.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 80b722d9-be9d-463c-929e-78f7156af9c6
+Large Image URL: https://cards.scryfall.io/large/front/8/0/80b722d9-be9d-463c-929e-78f7156af9c6.jpg?1673148234
+Normal Image URL: https://cards.scryfall.io/normal/front/8/0/80b722d9-be9d-463c-929e-78f7156af9c6.jpg?1673148234
+Small Image URL: https://cards.scryfall.io/small/front/8/0/80b722d9-be9d-463c-929e-78f7156af9c6.jpg?1673148234
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/0/80b722d9-be9d-463c-929e-78f7156af9c6.jpg?1673148234
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {W}{B}{G}
+Name: Abzan Ascendancy
+Power: 
+Toughness: 
+Artist: Mark Winters
+Border Color: black
+Type: Enchantment
+Set Name: Double Masters 2022
+Rarity: rare
+CMC: 3.0
+Text: When Abzan Ascendancy enters, put a +1/+1 counter on each creature you control.
+Whenever a nontoken creature you control dies, create a 1/1 white Spirit creature token with flying.
+Colors: B G W 
+----------------------------------------------------------------------------------------------
+
+ID: 7855528a-ede9-49a9-8749-795a004fd927
+Large Image URL: https://cards.scryfall.io/large/front/7/8/7855528a-ede9-49a9-8749-795a004fd927.jpg?1562788826
+Normal Image URL: https://cards.scryfall.io/normal/front/7/8/7855528a-ede9-49a9-8749-795a004fd927.jpg?1562788826
+Small Image URL: https://cards.scryfall.io/small/front/7/8/7855528a-ede9-49a9-8749-795a004fd927.jpg?1562788826
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/8/7855528a-ede9-49a9-8749-795a004fd927.jpg?1562788826
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}
+Name: Abzan Banner
+Power: 
+Toughness: 
+Artist: Daniel Ljunggren
+Border Color: black
+Type: Artifact
+Set Name: Khans of Tarkir
+Rarity: common
+CMC: 3.0
+Text: {T}: Add {W}, {B}, or {G}.
+{W}{B}{G}, {T}, Sacrifice Abzan Banner: Draw a card.
+Colors: B G W 
+----------------------------------------------------------------------------------------------
+
+ID: c0fb53e6-441f-4faa-bf0e-0847cf83279d
+Large Image URL: https://cards.scryfall.io/large/front/c/0/c0fb53e6-441f-4faa-bf0e-0847cf83279d.jpg?1682208222
+Normal Image URL: https://cards.scryfall.io/normal/front/c/0/c0fb53e6-441f-4faa-bf0e-0847cf83279d.jpg?1682208222
+Small Image URL: https://cards.scryfall.io/small/front/c/0/c0fb53e6-441f-4faa-bf0e-0847cf83279d.jpg?1682208222
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/0/c0fb53e6-441f-4faa-bf0e-0847cf83279d.jpg?1682208222
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}
+Name: Abzan Battle Priest
+Power: 3
+Toughness: 2
+Artist: Chris Rahn
+Border Color: black
+Type: Creature â€” Human Cleric
+Set Name: March of the Machine Commander
+Rarity: uncommon
+CMC: 4.0
+Text: Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)
+Each creature you control with a +1/+1 counter on it has lifelink.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 219c4ab2-1f7c-469b-a72a-d435213f130c
+Large Image URL: https://cards.scryfall.io/large/front/2/1/219c4ab2-1f7c-469b-a72a-d435213f130c.jpg?1562823232
+Normal Image URL: https://cards.scryfall.io/normal/front/2/1/219c4ab2-1f7c-469b-a72a-d435213f130c.jpg?1562823232
+Small Image URL: https://cards.scryfall.io/small/front/2/1/219c4ab2-1f7c-469b-a72a-d435213f130c.jpg?1562823232
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/1/219c4ab2-1f7c-469b-a72a-d435213f130c.jpg?1562823232
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{G}
+Name: Abzan Beastmaster
+Power: 2
+Toughness: 1
+Artist: Winona Nelson
+Border Color: black
+Type: Creature â€” Dog Shaman
+Set Name: Fate Reforged
+Rarity: uncommon
+CMC: 3.0
+Text: At the beginning of your upkeep, draw a card if you control the creature with the greatest toughness or tied for the greatest toughness.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: bd5b386e-e71e-492d-8456-6cd178ef5b3d
+Large Image URL: https://cards.scryfall.io/large/front/b/d/bd5b386e-e71e-492d-8456-6cd178ef5b3d.jpg?1673305419
+Normal Image URL: https://cards.scryfall.io/normal/front/b/d/bd5b386e-e71e-492d-8456-6cd178ef5b3d.jpg?1673305419
+Small Image URL: https://cards.scryfall.io/small/front/b/d/bd5b386e-e71e-492d-8456-6cd178ef5b3d.jpg?1673305419
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/d/bd5b386e-e71e-492d-8456-6cd178ef5b3d.jpg?1673305419
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {W}{B}{G}
+Name: Abzan Charm
+Power: 
+Toughness: 
+Artist: Mathias Kollros
+Border Color: black
+Type: Instant
+Set Name: Dominaria United Commander
+Rarity: uncommon
+CMC: 3.0
+Text: Choose one â€”
+â€¢ Exile target creature with power 3 or greater.
+â€¢ You draw two cards and you lose 2 life.
+â€¢ Distribute two +1/+1 counters among one or two target creatures.
+Colors: B G W 
+----------------------------------------------------------------------------------------------
+
+ID: f7e2b0e1-c9ea-4f91-b19e-73b1bd6a0884
+Large Image URL: https://cards.scryfall.io/large/front/f/7/f7e2b0e1-c9ea-4f91-b19e-73b1bd6a0884.jpg?1682208232
+Normal Image URL: https://cards.scryfall.io/normal/front/f/7/f7e2b0e1-c9ea-4f91-b19e-73b1bd6a0884.jpg?1682208232
+Small Image URL: https://cards.scryfall.io/small/front/f/7/f7e2b0e1-c9ea-4f91-b19e-73b1bd6a0884.jpg?1682208232
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/7/f7e2b0e1-c9ea-4f91-b19e-73b1bd6a0884.jpg?1682208232
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}
+Name: Abzan Falconer
+Power: 2
+Toughness: 3
+Artist: Steven Belledin
+Border Color: black
+Type: Creature â€” Human Soldier
+Set Name: March of the Machine Commander
+Rarity: uncommon
+CMC: 3.0
+Text: Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)
+Each creature you control with a +1/+1 counter on it has flying.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 1b7f7158-4a31-4a1c-bf3b-574c0b09276a
+Large Image URL: https://cards.scryfall.io/large/front/1/b/1b7f7158-4a31-4a1c-bf3b-574c0b09276a.jpg?1562783275
+Normal Image URL: https://cards.scryfall.io/normal/front/1/b/1b7f7158-4a31-4a1c-bf3b-574c0b09276a.jpg?1562783275
+Small Image URL: https://cards.scryfall.io/small/front/1/b/1b7f7158-4a31-4a1c-bf3b-574c0b09276a.jpg?1562783275
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/b/1b7f7158-4a31-4a1c-bf3b-574c0b09276a.jpg?1562783275
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}{B}{G}
+Name: Abzan Guide
+Power: 4
+Toughness: 4
+Artist: Steve Prescott
+Border Color: black
+Type: Creature â€” Human Warrior
+Set Name: Khans of Tarkir
+Rarity: common
+CMC: 6.0
+Text: Lifelink (Damage dealt by this creature also causes you to gain that much life.)
+Morph {2}{W}{B}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+Colors: B G W 
+----------------------------------------------------------------------------------------------
+
+ID: cec0ef55-57fd-404f-b9f6-b5d41e77b58c
+Large Image URL: https://cards.scryfall.io/large/front/c/e/cec0ef55-57fd-404f-b9f6-b5d41e77b58c.jpg?1562830002
+Normal Image URL: https://cards.scryfall.io/normal/front/c/e/cec0ef55-57fd-404f-b9f6-b5d41e77b58c.jpg?1562830002
+Small Image URL: https://cards.scryfall.io/small/front/c/e/cec0ef55-57fd-404f-b9f6-b5d41e77b58c.jpg?1562830002
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/e/cec0ef55-57fd-404f-b9f6-b5d41e77b58c.jpg?1562830002
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{G}
+Name: Abzan Kin-Guard
+Power: 3
+Toughness: 3
+Artist: Craig J Spearing
+Border Color: black
+Type: Creature â€” Human Warrior
+Set Name: Fate Reforged
+Rarity: uncommon
+CMC: 4.0
+Text: Abzan Kin-Guard has lifelink as long as you control a white or black permanent.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: fe356261-3126-41f1-ae71-b69ca5641f84
+Large Image URL: https://cards.scryfall.io/large/front/f/e/fe356261-3126-41f1-ae71-b69ca5641f84.jpg?1562831932
+Normal Image URL: https://cards.scryfall.io/normal/front/f/e/fe356261-3126-41f1-ae71-b69ca5641f84.jpg?1562831932
+Small Image URL: https://cards.scryfall.io/small/front/f/e/fe356261-3126-41f1-ae71-b69ca5641f84.jpg?1562831932
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/e/fe356261-3126-41f1-ae71-b69ca5641f84.jpg?1562831932
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}
+Name: Abzan Runemark
+Power: 
+Toughness: 
+Artist: James Ryman
+Border Color: black
+Type: Enchantment â€” Aura
+Set Name: Fate Reforged
+Rarity: common
+CMC: 3.0
+Text: Enchant creature
+Enchanted creature gets +2/+2.
+Enchanted creature has vigilance as long as you control a black or green permanent.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: c4195373-e902-4fc3-aead-1f6e728dbbae
+Large Image URL: https://cards.scryfall.io/large/front/c/4/c4195373-e902-4fc3-aead-1f6e728dbbae.jpg?1562829610
+Normal Image URL: https://cards.scryfall.io/normal/front/c/4/c4195373-e902-4fc3-aead-1f6e728dbbae.jpg?1562829610
+Small Image URL: https://cards.scryfall.io/small/front/c/4/c4195373-e902-4fc3-aead-1f6e728dbbae.jpg?1562829610
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/4/c4195373-e902-4fc3-aead-1f6e728dbbae.jpg?1562829610
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}
+Name: Abzan Skycaptain
+Power: 2
+Toughness: 2
+Artist: Matt Stewart
+Border Color: black
+Type: Creature â€” Bird Soldier
+Set Name: Fate Reforged
+Rarity: common
+CMC: 4.0
+Text: Flying
+When Abzan Skycaptain dies, bolster 2. (Choose a creature with the least toughness among creatures you control and put two +1/+1 counters on it.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 4620cc3b-e401-4096-b310-fed080806344
+Large Image URL: https://cards.scryfall.io/large/front/4/6/4620cc3b-e401-4096-b310-fed080806344.jpg?1624591542
+Normal Image URL: https://cards.scryfall.io/normal/front/4/6/4620cc3b-e401-4096-b310-fed080806344.jpg?1624591542
+Small Image URL: https://cards.scryfall.io/small/front/4/6/4620cc3b-e401-4096-b310-fed080806344.jpg?1624591542
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/6/4620cc3b-e401-4096-b310-fed080806344.jpg?1624591542
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {R}
+Name: Academic Dispute
+Power: 
+Toughness: 
+Artist: Manuel CastaÃ±Ã³n
+Border Color: black
+Type: Instant
+Set Name: Strixhaven: School of Mages
+Rarity: uncommon
+CMC: 1.0
+Text: Target creature blocks this turn if able. You may have it gain reach until end of turn.
+Learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 05521edf-f47f-4e7a-aec5-cdc4ae7368c2
+Large Image URL: https://cards.scryfall.io/large/front/0/5/05521edf-f47f-4e7a-aec5-cdc4ae7368c2.jpg?1637082074
+Normal Image URL: https://cards.scryfall.io/normal/front/0/5/05521edf-f47f-4e7a-aec5-cdc4ae7368c2.jpg?1637082074
+Small Image URL: https://cards.scryfall.io/small/front/0/5/05521edf-f47f-4e7a-aec5-cdc4ae7368c2.jpg?1637082074
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/5/05521edf-f47f-4e7a-aec5-cdc4ae7368c2.jpg?1637082074
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Academic Probation
+Power: 
+Toughness: 
+Artist: Cristi Balanescu
+Border Color: black
+Type: Sorcery â€” Lesson
+Set Name: Strixhaven: School of Mages
+Rarity: rare
+CMC: 2.0
+Text: Choose one â€”
+â€¢ Choose a nonland card name. Opponents can't cast spells with the chosen name until your next turn.
+â€¢ Choose target nonland permanent. Until your next turn, it can't attack or block, and its activated abilities can't be activated.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: f8bacb12-da46-4b00-804f-9ff6bff452bc
+Large Image URL: https://cards.scryfall.io/large/front/f/8/f8bacb12-da46-4b00-804f-9ff6bff452bc.jpg?1562745962
+Normal Image URL: https://cards.scryfall.io/normal/front/f/8/f8bacb12-da46-4b00-804f-9ff6bff452bc.jpg?1562745962
+Small Image URL: https://cards.scryfall.io/small/front/f/8/f8bacb12-da46-4b00-804f-9ff6bff452bc.jpg?1562745962
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/8/f8bacb12-da46-4b00-804f-9ff6bff452bc.jpg?1562745962
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}
+Name: Academy Drake
+Power: 2
+Toughness: 2
+Artist: Svetlin Velinov
+Border Color: black
+Type: Creature â€” Drake
+Set Name: Dominaria
+Rarity: common
+CMC: 3.0
+Text: Kicker {4} (You may pay an additional {4} as you cast this spell.)
+Flying
+If Academy Drake was kicked, it enters with two +1/+1 counters on it.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: f3728fbb-3a99-443a-b514-40f9990669c5
+Large Image URL: https://cards.scryfall.io/large/front/f/3/f3728fbb-3a99-443a-b514-40f9990669c5.jpg?1562425779
+Normal Image URL: https://cards.scryfall.io/normal/front/f/3/f3728fbb-3a99-443a-b514-40f9990669c5.jpg?1562425779
+Small Image URL: https://cards.scryfall.io/small/front/f/3/f3728fbb-3a99-443a-b514-40f9990669c5.jpg?1562425779
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/3/f3728fbb-3a99-443a-b514-40f9990669c5.jpg?1562425779
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{U}
+Name: Academy Elite
+Power: 0
+Toughness: 0
+Artist: Volkan BaÇµa
+Border Color: black
+Type: Creature â€” Human Wizard
+Set Name: Commander 2016
+Rarity: rare
+CMC: 4.0
+Text: Academy Elite enters with X +1/+1 counters on it, where X is the number of instant and sorcery cards in all graveyards.
+{2}{U}, Remove a +1/+1 counter from Academy Elite: Draw a card, then discard a card.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: a46a65e0-66a3-4896-8acc-0ad5e9927c40
+Large Image URL: https://cards.scryfall.io/large/front/a/4/a46a65e0-66a3-4896-8acc-0ad5e9927c40.jpg?1562740666
+Normal Image URL: https://cards.scryfall.io/normal/front/a/4/a46a65e0-66a3-4896-8acc-0ad5e9927c40.jpg?1562740666
+Small Image URL: https://cards.scryfall.io/small/front/a/4/a46a65e0-66a3-4896-8acc-0ad5e9927c40.jpg?1562740666
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/4/a46a65e0-66a3-4896-8acc-0ad5e9927c40.jpg?1562740666
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{U}
+Name: Academy Journeymage
+Power: 3
+Toughness: 2
+Artist: Magali Villeneuve
+Border Color: black
+Type: Creature â€” Human Wizard
+Set Name: Dominaria
+Rarity: common
+CMC: 5.0
+Text: This spell costs {1} less to cast if you control a Wizard.
+When Academy Journeymage enters, return target creature an opponent controls to its owner's hand.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 9fca4c4f-a77b-483e-9da4-574ba2e3d179
+Large Image URL: https://cards.scryfall.io/large/front/9/f/9fca4c4f-a77b-483e-9da4-574ba2e3d179.jpg?1673306639
+Normal Image URL: https://cards.scryfall.io/normal/front/9/f/9fca4c4f-a77b-483e-9da4-574ba2e3d179.jpg?1673306639
+Small Image URL: https://cards.scryfall.io/small/front/9/f/9fca4c4f-a77b-483e-9da4-574ba2e3d179.jpg?1673306639
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/f/9fca4c4f-a77b-483e-9da4-574ba2e3d179.jpg?1673306639
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {U}{U}
+Name: Academy Loremaster
+Power: 2
+Toughness: 3
+Artist: Marcela Medeiros
+Border Color: black
+Type: Creature â€” Human Wizard
+Set Name: Dominaria United
+Rarity: rare
+CMC: 2.0
+Text: At the beginning of each player's draw step, that player may draw an additional card. If they do, spells they cast this turn cost {2} more to cast.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 76480f4d-ad6d-4ed6-82c6-fa12abc22557
+Large Image URL: https://cards.scryfall.io/large/front/7/6/76480f4d-ad6d-4ed6-82c6-fa12abc22557.jpg?1712354835
+Normal Image URL: https://cards.scryfall.io/normal/front/7/6/76480f4d-ad6d-4ed6-82c6-fa12abc22557.jpg?1712354835
+Small Image URL: https://cards.scryfall.io/small/front/7/6/76480f4d-ad6d-4ed6-82c6-fa12abc22557.jpg?1712354835
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/6/76480f4d-ad6d-4ed6-82c6-fa12abc22557.jpg?1712354835
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}
+Name: Academy Manufactor
+Power: 1
+Toughness: 3
+Artist: Campbell White
+Border Color: black
+Type: Artifact Creature â€” Assembly-Worker
+Set Name: Outlaws of Thunder Junction Commander
+Rarity: rare
+CMC: 3.0
+Text: If you would create a Clue, Food, or Treasure token, instead create one of each.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 6652ed29-ee90-4abc-a6cf-6b18a6cbae86
+Large Image URL: https://cards.scryfall.io/large/front/6/6/6652ed29-ee90-4abc-a6cf-6b18a6cbae86.jpg?1562830238
+Normal Image URL: https://cards.scryfall.io/normal/front/6/6/6652ed29-ee90-4abc-a6cf-6b18a6cbae86.jpg?1562830238
+Small Image URL: https://cards.scryfall.io/small/front/6/6/6652ed29-ee90-4abc-a6cf-6b18a6cbae86.jpg?1562830238
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/6/6652ed29-ee90-4abc-a6cf-6b18a6cbae86.jpg?1562830238
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{R}
+Name: Academy Raider
+Power: 1
+Toughness: 1
+Artist: Karl Kopinski
+Border Color: black
+Type: Creature â€” Human Warrior
+Set Name: Magic 2014
+Rarity: common
+CMC: 3.0
+Text: Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)
+Whenever Academy Raider deals combat damage to a player, you may discard a card. If you do, draw a card.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 4367bc78-0912-4abd-8edd-bc792558d01a
+Large Image URL: https://cards.scryfall.io/large/front/4/3/4367bc78-0912-4abd-8edd-bc792558d01a.jpg?1562443755
+Normal Image URL: https://cards.scryfall.io/normal/front/4/3/4367bc78-0912-4abd-8edd-bc792558d01a.jpg?1562443755
+Small Image URL: https://cards.scryfall.io/small/front/4/3/4367bc78-0912-4abd-8edd-bc792558d01a.jpg?1562443755
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/3/4367bc78-0912-4abd-8edd-bc792558d01a.jpg?1562443755
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}
+Name: Academy Rector
+Power: 1
+Toughness: 2
+Artist: Heather Hudson
+Border Color: black
+Type: Creature â€” Human Cleric
+Set Name: Urza's Destiny
+Rarity: rare
+CMC: 4.0
+Text: When Academy Rector dies, you may exile it. If you do, search your library for an enchantment card, put that card onto the battlefield, then shuffle.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: b62ca800-ec24-476e-b56f-834eef9622a9
+Large Image URL: https://cards.scryfall.io/large/front/b/6/b62ca800-ec24-476e-b56f-834eef9622a9.jpg?1562553915
+Normal Image URL: https://cards.scryfall.io/normal/front/b/6/b62ca800-ec24-476e-b56f-834eef9622a9.jpg?1562553915
+Small Image URL: https://cards.scryfall.io/small/front/b/6/b62ca800-ec24-476e-b56f-834eef9622a9.jpg?1562553915
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/6/b62ca800-ec24-476e-b56f-834eef9622a9.jpg?1562553915
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{U}{U}
+Name: Academy Researchers
+Power: 2
+Toughness: 2
+Artist: Stephen Daniele
+Border Color: black
+Type: Creature â€” Human Wizard
+Set Name: Tenth Edition
+Rarity: uncommon
+CMC: 3.0
+Text: When Academy Researchers enters, you may put an Aura card from your hand onto the battlefield attached to Academy Researchers.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: a95b7645-154f-4904-bf71-db7eb24d4df2
+Large Image URL: https://cards.scryfall.io/large/front/a/9/a95b7645-154f-4904-bf71-db7eb24d4df2.jpg?1599710297
+Normal Image URL: https://cards.scryfall.io/normal/front/a/9/a95b7645-154f-4904-bf71-db7eb24d4df2.jpg?1599710297
+Small Image URL: https://cards.scryfall.io/small/front/a/9/a95b7645-154f-4904-bf71-db7eb24d4df2.jpg?1599710297
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/9/a95b7645-154f-4904-bf71-db7eb24d4df2.jpg?1599710297
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: 
+Name: Academy Ruins
+Power: 
+Toughness: 
+Artist: Zoltan Boros & Gabor Szikszai
+Border Color: black
+Type: Legendary Land
+Set Name: Double Masters
+Rarity: rare
+CMC: 0.0
+Text: {T}: Add {C}.
+{1}{U}, {T}: Put target artifact card from your graveyard on top of your library.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: d2028115-f0de-4e8b-99bc-7369352e1e07
+Large Image URL: https://cards.scryfall.io/large/front/d/2/d2028115-f0de-4e8b-99bc-7369352e1e07.jpg?1673306647
+Normal Image URL: https://cards.scryfall.io/normal/front/d/2/d2028115-f0de-4e8b-99bc-7369352e1e07.jpg?1673306647
+Small Image URL: https://cards.scryfall.io/small/front/d/2/d2028115-f0de-4e8b-99bc-7369352e1e07.jpg?1673306647
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/2/d2028115-f0de-4e8b-99bc-7369352e1e07.jpg?1673306647
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}
+Name: Academy Wall
+Power: 0
+Toughness: 5
+Artist: Adam Paquette
+Border Color: black
+Type: Creature â€” Wall
+Set Name: Dominaria United
+Rarity: common
+CMC: 3.0
+Text: Defender
+Whenever you cast an instant or sorcery spell, you may draw a card. If you do, discard a card. This ability triggers only once each turn.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 6a28dd88-db90-4f02-8aa9-39051d2c4763
+Large Image URL: https://cards.scryfall.io/large/front/6/a/6a28dd88-db90-4f02-8aa9-39051d2c4763.jpg?1562630166
+Normal Image URL: https://cards.scryfall.io/normal/front/6/a/6a28dd88-db90-4f02-8aa9-39051d2c4763.jpg?1562630166
+Small Image URL: https://cards.scryfall.io/small/front/6/a/6a28dd88-db90-4f02-8aa9-39051d2c4763.jpg?1562630166
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/a/6a28dd88-db90-4f02-8aa9-39051d2c4763.jpg?1562630166
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{R}
+Name: Accelerate
+Power: 
+Toughness: 
+Artist: Gary Ruddell
+Border Color: black
+Type: Instant
+Set Name: Torment
+Rarity: common
+CMC: 2.0
+Text: Target creature gains haste until end of turn.
+Draw a card.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 282f808c-0b58-4b98-aeda-f606a10d1a4b
+Large Image URL: https://cards.scryfall.io/large/front/2/8/282f808c-0b58-4b98-aeda-f606a10d1a4b.jpg?1562526627
+Normal Image URL: https://cards.scryfall.io/normal/front/2/8/282f808c-0b58-4b98-aeda-f606a10d1a4b.jpg?1562526627
+Small Image URL: https://cards.scryfall.io/small/front/2/8/282f808c-0b58-4b98-aeda-f606a10d1a4b.jpg?1562526627
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/8/282f808c-0b58-4b98-aeda-f606a10d1a4b.jpg?1562526627
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{G}{G}
+Name: Accelerated Mutation
+Power: 
+Toughness: 
+Artist: Edward P. Beard, Jr.
+Border Color: black
+Type: Instant
+Set Name: Scourge
+Rarity: common
+CMC: 5.0
+Text: Target creature gets +X/+X until end of turn, where X is the highest mana value among permanents you control.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 9082bfb8-0ab0-4378-976d-a2c9d3c35a5e
+Large Image URL: https://cards.scryfall.io/large/front/9/0/9082bfb8-0ab0-4378-976d-a2c9d3c35a5e.jpg?1562921827
+Normal Image URL: https://cards.scryfall.io/normal/front/9/0/9082bfb8-0ab0-4378-976d-a2c9d3c35a5e.jpg?1562921827
+Small Image URL: https://cards.scryfall.io/small/front/9/0/9082bfb8-0ab0-4378-976d-a2c9d3c35a5e.jpg?1562921827
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/0/9082bfb8-0ab0-4378-976d-a2c9d3c35a5e.jpg?1562921827
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{R}
+Name: Acceptable Losses
+Power: 
+Toughness: 
+Artist: Mike Ploog
+Border Color: black
+Type: Sorcery
+Set Name: Odyssey
+Rarity: common
+CMC: 4.0
+Text: As an additional cost to cast this spell, discard a card at random.
+Acceptable Losses deals 5 damage to target creature.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 1642df77-6fe8-47cf-b750-ca4dd9b331ba
+Large Image URL: https://cards.scryfall.io/large/front/1/6/1642df77-6fe8-47cf-b750-ca4dd9b331ba.jpg?1651655225
+Normal Image URL: https://cards.scryfall.io/normal/front/1/6/1642df77-6fe8-47cf-b750-ca4dd9b331ba.jpg?1651655225
+Small Image URL: https://cards.scryfall.io/small/front/1/6/1642df77-6fe8-47cf-b750-ca4dd9b331ba.jpg?1651655225
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/6/1642df77-6fe8-47cf-b750-ca4dd9b331ba.jpg?1651655225
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{U}{U}
+Name: Access Denied
+Power: 
+Toughness: 
+Artist: Johan Grenier
+Border Color: black
+Type: Instant
+Set Name: Neon Dynasty Commander
+Rarity: rare
+CMC: 5.0
+Text: Counter target spell. Create X 1/1 colorless Thopter artifact creature tokens with flying, where X is that spell's mana value.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: de71e040-bf32-4469-bc18-567dace97dc8
+Large Image URL: https://cards.scryfall.io/large/front/d/e/de71e040-bf32-4469-bc18-567dace97dc8.jpg?1712354912
+Normal Image URL: https://cards.scryfall.io/normal/front/d/e/de71e040-bf32-4469-bc18-567dace97dc8.jpg?1712354912
+Small Image URL: https://cards.scryfall.io/small/front/d/e/de71e040-bf32-4469-bc18-567dace97dc8.jpg?1712354912
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/e/de71e040-bf32-4469-bc18-567dace97dc8.jpg?1712354912
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: 
+Name: Access Tunnel
+Power: 
+Toughness: 
+Artist: Alayna Danner
+Border Color: black
+Type: Land
+Set Name: Outlaws of Thunder Junction Commander
+Rarity: uncommon
+CMC: 0.0
+Text: {T}: Add {C}.
+{3}, {T}: Target creature with power 3 or less can't be blocked this turn.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: a508ffbe-aa58-4dae-b366-fea688b60755
+Large Image URL: https://cards.scryfall.io/large/front/a/5/a508ffbe-aa58-4dae-b366-fea688b60755.jpg?1682208242
+Normal Image URL: https://cards.scryfall.io/normal/front/a/5/a508ffbe-aa58-4dae-b366-fea688b60755.jpg?1682208242
+Small Image URL: https://cards.scryfall.io/small/front/a/5/a508ffbe-aa58-4dae-b366-fea688b60755.jpg?1682208242
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/5/a508ffbe-aa58-4dae-b366-fea688b60755.jpg?1682208242
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}
+Name: Acclaimed Contender
+Power: 3
+Toughness: 3
+Artist: David Gaillet
+Border Color: black
+Type: Creature â€” Human Knight
+Set Name: March of the Machine Commander
+Rarity: rare
+CMC: 3.0
+Text: When Acclaimed Contender enters, if you control another Knight, look at the top five cards of your library. You may reveal a Knight, Aura, Equipment, or legendary artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 0d7b7830-b65e-4c53-98e8-152026764e4b
+Large Image URL: https://cards.scryfall.io/large/front/0/d/0d7b7830-b65e-4c53-98e8-152026764e4b.jpg?1629218987
+Normal Image URL: https://cards.scryfall.io/normal/front/0/d/0d7b7830-b65e-4c53-98e8-152026764e4b.jpg?1629218987
+Small Image URL: https://cards.scryfall.io/small/front/0/d/0d7b7830-b65e-4c53-98e8-152026764e4b.jpg?1629218987
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/d/0d7b7830-b65e-4c53-98e8-152026764e4b.jpg?1629218987
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{G}
+Name: Accomplished Alchemist
+Power: 2
+Toughness: 5
+Artist: Randy Vargas
+Border Color: black
+Type: Creature â€” Elf Druid
+Set Name: Strixhaven: School of Mages
+Rarity: rare
+CMC: 4.0
+Text: {T}: Add one mana of any color.
+{T}: Add X mana of any one color, where X is the amount of life you gained this turn.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: aa453daf-6ceb-4e45-bfb3-f6f45835ac11
+Large Image URL: https://cards.scryfall.io/large/front/a/a/aa453daf-6ceb-4e45-bfb3-f6f45835ac11.jpg?1599708650
+Normal Image URL: https://cards.scryfall.io/normal/front/a/a/aa453daf-6ceb-4e45-bfb3-f6f45835ac11.jpg?1599708650
+Small Image URL: https://cards.scryfall.io/small/front/a/a/aa453daf-6ceb-4e45-bfb3-f6f45835ac11.jpg?1599708650
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/a/aa453daf-6ceb-4e45-bfb3-f6f45835ac11.jpg?1599708650
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {7}
+Name: Accomplished Automaton
+Power: 5
+Toughness: 7
+Artist: Daarken
+Border Color: black
+Type: Artifact Creature â€” Construct
+Set Name: Double Masters
+Rarity: common
+CMC: 7.0
+Text: Fabricate 1 (When this creature enters, put a +1/+1 counter on it or create a 1/1 colorless Servo artifact creature token.)
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: df0a4370-729d-40e7-b68b-21902648492d
+Large Image URL: https://cards.scryfall.io/large/front/d/f/df0a4370-729d-40e7-b68b-21902648492d.jpg?1562615434
+Normal Image URL: https://cards.scryfall.io/normal/front/d/f/df0a4370-729d-40e7-b68b-21902648492d.jpg?1562615434
+Small Image URL: https://cards.scryfall.io/small/front/d/f/df0a4370-729d-40e7-b68b-21902648492d.jpg?1562615434
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/f/df0a4370-729d-40e7-b68b-21902648492d.jpg?1562615434
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Accorder Paladin
+Power: 3
+Toughness: 1
+Artist: Kekai Kotaki
+Border Color: black
+Type: Creature â€” Human Knight
+Set Name: Mirrodin Besieged
+Rarity: uncommon
+CMC: 2.0
+Text: Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: c5a4c2ab-c5bc-4e07-8671-a688ebd5471c
+Large Image URL: https://cards.scryfall.io/large/front/c/5/c5a4c2ab-c5bc-4e07-8671-a688ebd5471c.jpg?1689349658
+Normal Image URL: https://cards.scryfall.io/normal/front/c/5/c5a4c2ab-c5bc-4e07-8671-a688ebd5471c.jpg?1689349658
+Small Image URL: https://cards.scryfall.io/small/front/c/5/c5a4c2ab-c5bc-4e07-8671-a688ebd5471c.jpg?1689349658
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/5/c5a4c2ab-c5bc-4e07-8671-a688ebd5471c.jpg?1689349658
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {0}
+Name: Accorder's Shield
+Power: 
+Toughness: 
+Artist: Alan Pollack
+Border Color: black
+Type: Artifact â€” Equipment
+Set Name: Magic 2014
+Rarity: uncommon
+CMC: 0.0
+Text: Equipped creature gets +0/+3 and has vigilance. (Attacking doesn't cause it to tap.)
+Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: ad88e5ee-0eee-47af-a7b4-9bac044e1c8c
+Large Image URL: https://cards.scryfall.io/large/front/a/d/ad88e5ee-0eee-47af-a7b4-9bac044e1c8c.jpg?1562439718
+Normal Image URL: https://cards.scryfall.io/normal/front/a/d/ad88e5ee-0eee-47af-a7b4-9bac044e1c8c.jpg?1562439718
+Small Image URL: https://cards.scryfall.io/small/front/a/d/ad88e5ee-0eee-47af-a7b4-9bac044e1c8c.jpg?1562439718
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/d/ad88e5ee-0eee-47af-a7b4-9bac044e1c8c.jpg?1562439718
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{U}
+Name: Accumulated Knowledge
+Power: 
+Toughness: 
+Artist: Randy Gallegos
+Border Color: black
+Type: Instant
+Set Name: Masters 25
+Rarity: common
+CMC: 2.0
+Text: Draw a card, then draw cards equal to the number of cards named Accumulated Knowledge in all graveyards.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 894556d8-6d5c-431b-a45d-26cd37c5f456
+Large Image URL: https://cards.scryfall.io/large/front/8/9/894556d8-6d5c-431b-a45d-26cd37c5f456.jpg?1562927409
+Normal Image URL: https://cards.scryfall.io/normal/front/8/9/894556d8-6d5c-431b-a45d-26cd37c5f456.jpg?1562927409
+Small Image URL: https://cards.scryfall.io/small/front/8/9/894556d8-6d5c-431b-a45d-26cd37c5f456.jpg?1562927409
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/9/894556d8-6d5c-431b-a45d-26cd37c5f456.jpg?1562927409
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {B}
+Name: Accursed Centaur
+Power: 2
+Toughness: 2
+Artist: Jerry Tiritilli
+Border Color: black
+Type: Creature â€” Zombie Centaur
+Set Name: Onslaught
+Rarity: common
+CMC: 1.0
+Text: When Accursed Centaur enters, sacrifice a creature.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 709bcbca-7238-4c31-8d9e-ec0d54d0b298
+Large Image URL: https://cards.scryfall.io/large/front/7/0/709bcbca-7238-4c31-8d9e-ec0d54d0b298.jpg?1576267280
+Normal Image URL: https://cards.scryfall.io/normal/front/7/0/709bcbca-7238-4c31-8d9e-ec0d54d0b298.jpg?1576267280
+Small Image URL: https://cards.scryfall.io/small/front/7/0/709bcbca-7238-4c31-8d9e-ec0d54d0b298.jpg?1576267280
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/0/709bcbca-7238-4c31-8d9e-ec0d54d0b298.jpg?1576267280
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{B}
+Name: Accursed Horde
+Power: 3
+Toughness: 3
+Artist: Victor Adame Minguez
+Border Color: black
+Type: Creature â€” Zombie
+Set Name: Game Night 2019
+Rarity: uncommon
+CMC: 4.0
+Text: {1}{B}: Target attacking Zombie gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it. If its toughness is 0 or less, it's still put into its owner's graveyard.)
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 5da14d86-0780-4821-a799-96f64b377df4
+Large Image URL: https://cards.scryfall.io/large/front/5/d/5da14d86-0780-4821-a799-96f64b377df4.jpg?1717011855
+Normal Image URL: https://cards.scryfall.io/normal/front/5/d/5da14d86-0780-4821-a799-96f64b377df4.jpg?1717011855
+Small Image URL: https://cards.scryfall.io/small/front/5/d/5da14d86-0780-4821-a799-96f64b377df4.jpg?1717011855
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/5/d/5da14d86-0780-4821-a799-96f64b377df4.jpg?1717011855
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{B}
+Name: Accursed Marauder
+Power: 2
+Toughness: 1
+Artist: Paolo Parente
+Border Color: black
+Type: Creature â€” Zombie Warrior
+Set Name: Modern Horizons 3
+Rarity: common
+CMC: 2.0
+Text: When Accursed Marauder enters, each player sacrifices a nontoken creature.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 2513fe72-4e20-49e6-9970-839f1c635792
+Large Image URL: https://cards.scryfall.io/large/front/2/5/2513fe72-4e20-49e6-9970-839f1c635792.jpg?1562784005
+Normal Image URL: https://cards.scryfall.io/normal/front/2/5/2513fe72-4e20-49e6-9970-839f1c635792.jpg?1562784005
+Small Image URL: https://cards.scryfall.io/small/front/2/5/2513fe72-4e20-49e6-9970-839f1c635792.jpg?1562784005
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/5/2513fe72-4e20-49e6-9970-839f1c635792.jpg?1562784005
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{B}
+Name: Accursed Spirit
+Power: 3
+Toughness: 2
+Artist: Kev Walker
+Border Color: black
+Type: Creature â€” Spirit
+Set Name: Magic 2015
+Rarity: common
+CMC: 4.0
+Text: Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+Detalles de la carta doble:
+Layout: transform
+Colors: [B]
+
+Front Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328
+Normal Image URL: https://cards.scryfall.io/normal/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328
+Small Image URL: https://cards.scryfall.io/small/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328
+Language: 
+Layout: 
+Legal: true
+Mana Cost: {3}{B}
+Name: Accursed Witch
+Power: 4
+Toughness: 2
+Artist: Wesley Burt
+Border Color: 
+Type: Creature â€” Human Shaman
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: Spells your opponents cast that target Accursed Witch cost {1} less to cast.
+When Accursed Witch dies, return it to the battlefield transformed under your control attached to target opponent.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+
+Back Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328
+Normal Image URL: https://cards.scryfall.io/normal/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328
+Small Image URL: https://cards.scryfall.io/small/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328
+Art Crop Image URL: https://cards.scryfall.io/art_crop/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328
+Language: 
+Layout: 
+Legal: true
+Mana Cost: 
+Name: Infectious Curse
+Power: 
+Toughness: 
+Artist: Wesley Burt
+Border Color: 
+Type: Enchantment â€” Aura Curse
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: Enchant player
+Spells you cast that target enchanted player cost {1} less to cast.
+At the beginning of enchanted player's upkeep, that player loses 1 life and you gain 1 life.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 75f001a0-8393-4977-84bb-cde39740606c
+Large Image URL: https://cards.scryfall.io/large/front/7/5/75f001a0-8393-4977-84bb-cde39740606c.jpg?1696691787
+Normal Image URL: https://cards.scryfall.io/normal/front/7/5/75f001a0-8393-4977-84bb-cde39740606c.jpg?1696691787
+Small Image URL: https://cards.scryfall.io/small/front/7/5/75f001a0-8393-4977-84bb-cde39740606c.jpg?1696691787
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/5/75f001a0-8393-4977-84bb-cde39740606c.jpg?1696691787
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{G}
+Name: Ace, Fearless Rebel
+Power: 2
+Toughness: 2
+Artist: Colin Boyer
+Border Color: black
+Type: Legendary Creature â€” Human Rebel
+Set Name: Doctor Who
+Rarity: rare
+CMC: 4.0
+Text: Nitro-9 â€” Whenever Ace, Fearless Rebel attacks, you may sacrifice an artifact. When you do, put a +1/+1 counter on Ace, Fearless Rebel, then it fights up to one target creature defending player controls.
+Doctor's companion (You can have two commanders if the other is the Doctor.)
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: dd52d0bd-3abd-401c-9f56-ee911613da3b
+Large Image URL: https://cards.scryfall.io/large/front/d/d/dd52d0bd-3abd-401c-9f56-ee911613da3b.jpg?1627704283
+Normal Image URL: https://cards.scryfall.io/normal/front/d/d/dd52d0bd-3abd-401c-9f56-ee911613da3b.jpg?1627704283
+Small Image URL: https://cards.scryfall.io/small/front/d/d/dd52d0bd-3abd-401c-9f56-ee911613da3b.jpg?1627704283
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/d/dd52d0bd-3abd-401c-9f56-ee911613da3b.jpg?1627704283
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{B}
+Name: Acererak the Archlich
+Power: 5
+Toughness: 5
+Artist: Andrey Kuzinskiy
+Border Color: black
+Type: Legendary Creature â€” Zombie Wizard
+Set Name: Adventures in the Forgotten Realms
+Rarity: mythic
+CMC: 3.0
+Text: When Acererak the Archlich enters, if you haven't completed Tomb of Annihilation, return Acererak the Archlich to its owner's hand and venture into the dungeon.
+Whenever Acererak the Archlich attacks, for each opponent, you create a 2/2 black Zombie creature token unless that player sacrifices a creature.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 5f1132b6-9db6-440c-9e0a-fae6c157e8a3
+Large Image URL: https://cards.scryfall.io/large/front/5/f/5f1132b6-9db6-440c-9e0a-fae6c157e8a3.jpg?1696636787
+Normal Image URL: https://cards.scryfall.io/normal/front/5/f/5f1132b6-9db6-440c-9e0a-fae6c157e8a3.jpg?1696636787
+Small Image URL: https://cards.scryfall.io/small/front/5/f/5f1132b6-9db6-440c-9e0a-fae6c157e8a3.jpg?1696636787
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/5/f/5f1132b6-9db6-440c-9e0a-fae6c157e8a3.jpg?1696636787
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}
+Name: Ace's Baseball Bat
+Power: 
+Toughness: 
+Artist: L J Koh
+Border Color: black
+Type: Legendary Artifact â€” Equipment
+Set Name: Doctor Who
+Rarity: rare
+CMC: 2.0
+Text: Equipped creature gets +3/+0.
+As long as equipped creature is attacking, it has first strike and must be blocked by a Dalek if able.
+Equip legendary creature {1}
+Equip {3}
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: f8ead24c-dd4a-40cd-839e-de08017a7c29
+Large Image URL: https://cards.scryfall.io/large/front/f/8/f8ead24c-dd4a-40cd-839e-de08017a7c29.jpg?1721425683
+Normal Image URL: https://cards.scryfall.io/normal/front/f/8/f8ead24c-dd4a-40cd-839e-de08017a7c29.jpg?1721425683
+Small Image URL: https://cards.scryfall.io/small/front/f/8/f8ead24c-dd4a-40cd-839e-de08017a7c29.jpg?1721425683
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/8/f8ead24c-dd4a-40cd-839e-de08017a7c29.jpg?1721425683
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}{B}
+Name: Achilles Davenport
+Power: 3
+Toughness: 3
+Artist: Josu Solano
+Border Color: black
+Type: Legendary Creature â€” Human Assassin
+Set Name: Assassin's Creed
+Rarity: rare
+CMC: 4.0
+Text: Freerunning {U}{B} (You may cast this spell for its freerunning cost if you dealt combat damage to a player this turn with an Assassin or commander.)
+Menace (This creature can't be blocked except by two or more creatures.)
+Other Assassins you control get +1/+1.
+Colors: B U 
+----------------------------------------------------------------------------------------------
+
+ID: 6dfdea79-2a7c-489d-8466-e6090c2a0919
+Large Image URL: https://cards.scryfall.io/large/front/6/d/6dfdea79-2a7c-489d-8466-e6090c2a0919.jpg?1562719777
+Normal Image URL: https://cards.scryfall.io/normal/front/6/d/6dfdea79-2a7c-489d-8466-e6090c2a0919.jpg?1562719777
+Small Image URL: https://cards.scryfall.io/small/front/6/d/6dfdea79-2a7c-489d-8466-e6090c2a0919.jpg?1562719777
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/d/6dfdea79-2a7c-489d-8466-e6090c2a0919.jpg?1562719777
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}
+Name: Acidic Dagger
+Power: 
+Toughness: 
+Artist: Stuart Beel
+Border Color: black
+Type: Artifact
+Set Name: Mirage
+Rarity: rare
+CMC: 4.0
+Text: {4}, {T}: Whenever target creature deals combat damage to a non-Wall creature this turn, destroy that non-Wall creature. When the targeted creature leaves the battlefield this turn, sacrifice Acidic Dagger. Activate only before blockers are declared.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 932d48fb-42b5-4aaa-a91c-d35cdb5e41a3
+Large Image URL: https://cards.scryfall.io/large/front/9/3/932d48fb-42b5-4aaa-a91c-d35cdb5e41a3.jpg?1689998325
+Normal Image URL: https://cards.scryfall.io/normal/front/9/3/932d48fb-42b5-4aaa-a91c-d35cdb5e41a3.jpg?1689998325
+Small Image URL: https://cards.scryfall.io/small/front/9/3/932d48fb-42b5-4aaa-a91c-d35cdb5e41a3.jpg?1689998325
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/3/932d48fb-42b5-4aaa-a91c-d35cdb5e41a3.jpg?1689998325
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{G}{G}
+Name: Acidic Slime
+Power: 2
+Toughness: 2
+Artist: Karl Kopinski
+Border Color: black
+Type: Creature â€” Ooze
+Set Name: Commander Masters
+Rarity: uncommon
+CMC: 5.0
+Text: Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)
+When Acidic Slime enters, destroy target artifact, enchantment, or land.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: d0b3ecf1-5c00-4aa0-92fd-54829495a3cf
+Large Image URL: https://cards.scryfall.io/large/front/d/0/d0b3ecf1-5c00-4aa0-92fd-54829495a3cf.jpg?1562431742
+Normal Image URL: https://cards.scryfall.io/normal/front/d/0/d0b3ecf1-5c00-4aa0-92fd-54829495a3cf.jpg?1562431742
+Small Image URL: https://cards.scryfall.io/small/front/d/0/d0b3ecf1-5c00-4aa0-92fd-54829495a3cf.jpg?1562431742
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/0/d0b3ecf1-5c00-4aa0-92fd-54829495a3cf.jpg?1562431742
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {B}{R}
+Name: Acidic Sliver
+Power: 2
+Toughness: 2
+Artist: Jeff Miracola
+Border Color: black
+Type: Creature â€” Sliver
+Set Name: Tempest Remastered
+Rarity: uncommon
+CMC: 2.0
+Text: All Slivers have "{2}, Sacrifice this permanent: This permanent deals 2 damage to any target."
+Colors: B R 
+----------------------------------------------------------------------------------------------
+
+ID: 790157c9-b1ed-4da5-9d50-e99e0dd807b7
+Large Image URL: https://cards.scryfall.io/large/front/7/9/790157c9-b1ed-4da5-9d50-e99e0dd807b7.jpg?1562920405
+Normal Image URL: https://cards.scryfall.io/normal/front/7/9/790157c9-b1ed-4da5-9d50-e99e0dd807b7.jpg?1562920405
+Small Image URL: https://cards.scryfall.io/small/front/7/9/790157c9-b1ed-4da5-9d50-e99e0dd807b7.jpg?1562920405
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/9/790157c9-b1ed-4da5-9d50-e99e0dd807b7.jpg?1562920405
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{R}
+Name: Acidic Soil
+Power: 
+Toughness: 
+Artist: Scott M. Fischer
+Border Color: black
+Type: Sorcery
+Set Name: Urza's Saga
+Rarity: uncommon
+CMC: 3.0
+Text: Acidic Soil deals damage to each player equal to the number of lands they control.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 13281377-6d16-4ed3-8aa6-c47d6eb783df
+Large Image URL: https://cards.scryfall.io/large/front/1/3/13281377-6d16-4ed3-8aa6-c47d6eb783df.jpg?1562899536
+Normal Image URL: https://cards.scryfall.io/normal/front/1/3/13281377-6d16-4ed3-8aa6-c47d6eb783df.jpg?1562899536
+Small Image URL: https://cards.scryfall.io/small/front/1/3/13281377-6d16-4ed3-8aa6-c47d6eb783df.jpg?1562899536
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/3/13281377-6d16-4ed3-8aa6-c47d6eb783df.jpg?1562899536
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{U}
+Name: Acid Rain
+Power: 
+Toughness: 
+Artist: NÃ©NÃ© Thomas
+Border Color: black
+Type: Sorcery
+Set Name: Masters Edition IV
+Rarity: rare
+CMC: 4.0
+Text: Destroy all Forests.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: aa8f58f1-4843-4926-b3c4-98898201c216
+Large Image URL: https://cards.scryfall.io/large/front/a/a/aa8f58f1-4843-4926-b3c4-98898201c216.jpg?1562791329
+Normal Image URL: https://cards.scryfall.io/normal/front/a/a/aa8f58f1-4843-4926-b3c4-98898201c216.jpg?1562791329
+Small Image URL: https://cards.scryfall.io/small/front/a/a/aa8f58f1-4843-4926-b3c4-98898201c216.jpg?1562791329
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/a/aa8f58f1-4843-4926-b3c4-98898201c216.jpg?1562791329
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {5}{B}
+Name: Acid-Spewer Dragon
+Power: 3
+Toughness: 3
+Artist: James Zapata
+Border Color: black
+Type: Creature â€” Dragon
+Set Name: Dragons of Tarkir
+Rarity: uncommon
+CMC: 6.0
+Text: Flying, deathtouch
+Megamorph {5}{B}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)
+When Acid-Spewer Dragon is turned face up, put a +1/+1 counter on each other Dragon creature you control.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 968a25a5-9ec1-47fa-bf1f-e65eb75fdb00
+Large Image URL: https://cards.scryfall.io/large/front/9/6/968a25a5-9ec1-47fa-bf1f-e65eb75fdb00.jpg?1562820609
+Normal Image URL: https://cards.scryfall.io/normal/front/9/6/968a25a5-9ec1-47fa-bf1f-e65eb75fdb00.jpg?1562820609
+Small Image URL: https://cards.scryfall.io/small/front/9/6/968a25a5-9ec1-47fa-bf1f-e65eb75fdb00.jpg?1562820609
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/6/968a25a5-9ec1-47fa-bf1f-e65eb75fdb00.jpg?1562820609
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{G}{G}
+Name: Acid Web Spider
+Power: 3
+Toughness: 5
+Artist: Austin Hsu
+Border Color: black
+Type: Creature â€” Spider
+Set Name: Scars of Mirrodin
+Rarity: uncommon
+CMC: 5.0
+Text: Reach
+When Acid Web Spider enters, you may destroy target Equipment.
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+Detalles de la carta doble:
+Layout: transform
+Colors: [B]
+
+Front Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/front/6/2/627c392c-4d18-4eb2-a4e8-c668f61f5487.jpg?1699044055
+Normal Image URL: https://cards.scryfall.io/normal/front/6/2/627c392c-4d18-4eb2-a4e8-c668f61f5487.jpg?1699044055
+Small Image URL: https://cards.scryfall.io/small/front/6/2/627c392c-4d18-4eb2-a4e8-c668f61f5487.jpg?1699044055
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/2/627c392c-4d18-4eb2-a4e8-c668f61f5487.jpg?1699044055
+Language: 
+Layout: 
+Legal: true
+Mana Cost: {3}{B}{B}
+Name: Aclazotz, Deepest Betrayal
+Power: 4
+Toughness: 4
+Artist: Steve Prescott
+Border Color: 
+Type: Legendary Creature â€” Bat God
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: Flying, lifelink
+Whenever Aclazotz attacks, each opponent discards a card. For each opponent who can't, you draw a card.
+Whenever an opponent discards a land card, create a 1/1 black Bat creature token with flying.
+When Aclazotz dies, return it to the battlefield tapped and transformed under its owner's control.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+
+Back Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/back/6/2/627c392c-4d18-4eb2-a4e8-c668f61f5487.jpg?1699044055
+Normal Image URL: https://cards.scryfall.io/normal/back/6/2/627c392c-4d18-4eb2-a4e8-c668f61f5487.jpg?1699044055
+Small Image URL: https://cards.scryfall.io/small/back/6/2/627c392c-4d18-4eb2-a4e8-c668f61f5487.jpg?1699044055
+Art Crop Image URL: https://cards.scryfall.io/art_crop/back/6/2/627c392c-4d18-4eb2-a4e8-c668f61f5487.jpg?1699044055
+Language: 
+Layout: 
+Legal: true
+Mana Cost: 
+Name: Temple of the Dead
+Power: 
+Toughness: 
+Artist: Steve Prescott
+Border Color: 
+Type: Land
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: (Transforms from Aclazotz, Deepest Betrayal.)
+{T}: Add {B}.
+{2}{B}, {T}: Transform Temple of the Dead. Activate only if a player has one or fewer cards in hand and only as a sorcery.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: b229697e-b6ff-450b-8020-45c454da9b3e
+Large Image URL: https://cards.scryfall.io/large/front/b/2/b229697e-b6ff-450b-8020-45c454da9b3e.jpg?1673308947
+Normal Image URL: https://cards.scryfall.io/normal/front/b/2/b229697e-b6ff-450b-8020-45c454da9b3e.jpg?1673308947
+Small Image URL: https://cards.scryfall.io/small/front/b/2/b229697e-b6ff-450b-8020-45c454da9b3e.jpg?1673308947
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/2/b229697e-b6ff-450b-8020-45c454da9b3e.jpg?1673308947
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{R}
+Name: Acolyte Hybrid
+Power: 2
+Toughness: 2
+Artist: Slawomir Maniak
+Border Color: black
+Type: Creature â€” Tyranid Human
+Set Name: Warhammer 40,000 Commander
+Rarity: uncommon
+CMC: 3.0
+Text: Heavy Rock Cutter â€” Whenever Acolyte Hybrid attacks, destroy up to one target artifact. If an artifact is destroyed this way, its controller draws a card.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 99009400-ffa4-40af-8305-78295ae605ac
+Large Image URL: https://cards.scryfall.io/large/front/9/9/99009400-ffa4-40af-8305-78295ae605ac.jpg?1699044065
+Normal Image URL: https://cards.scryfall.io/normal/front/9/9/99009400-ffa4-40af-8305-78295ae605ac.jpg?1699044065
+Small Image URL: https://cards.scryfall.io/small/front/9/9/99009400-ffa4-40af-8305-78295ae605ac.jpg?1699044065
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/9/99009400-ffa4-40af-8305-78295ae605ac.jpg?1699044065
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{B}
+Name: Acolyte of Aclazotz
+Power: 1
+Toughness: 4
+Artist: Irina Nordsol
+Border Color: black
+Type: Creature â€” Vampire Cleric
+Set Name: The Lost Caverns of Ixalan
+Rarity: common
+CMC: 3.0
+Text: {T}, Sacrifice another creature or artifact: Each opponent loses 1 life and you gain 1 life.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: a14afed6-ca42-442d-ba86-621179e6957c
+Large Image URL: https://cards.scryfall.io/large/front/a/1/a14afed6-ca42-442d-ba86-621179e6957c.jpg?1581480955
+Normal Image URL: https://cards.scryfall.io/normal/front/a/1/a14afed6-ca42-442d-ba86-621179e6957c.jpg?1581480955
+Small Image URL: https://cards.scryfall.io/small/front/a/1/a14afed6-ca42-442d-ba86-621179e6957c.jpg?1581480955
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/1/a14afed6-ca42-442d-ba86-621179e6957c.jpg?1581480955
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{B}{G}
+Name: Acolyte of Affliction
+Power: 2
+Toughness: 3
+Artist: Chase Stone
+Border Color: black
+Type: Creature â€” Human Cleric
+Set Name: Theros Beyond Death
+Rarity: uncommon
+CMC: 4.0
+Text: When Acolyte of Affliction enters, mill two cards, then you may return a permanent card from your graveyard to your hand.
+Colors: B G 
+----------------------------------------------------------------------------------------------
+
+ID: b0260e1f-ff6a-4ef3-bef7-8c77f8413500
+Large Image URL: https://cards.scryfall.io/large/front/b/0/b0260e1f-ff6a-4ef3-bef7-8c77f8413500.jpg?1674136933
+Normal Image URL: https://cards.scryfall.io/normal/front/b/0/b0260e1f-ff6a-4ef3-bef7-8c77f8413500.jpg?1674136933
+Small Image URL: https://cards.scryfall.io/small/front/b/0/b0260e1f-ff6a-4ef3-bef7-8c77f8413500.jpg?1674136933
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/0/b0260e1f-ff6a-4ef3-bef7-8c77f8413500.jpg?1674136933
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{G}
+Name: Acolyte of Bahamut
+Power: 
+Toughness: 
+Artist: Kai Carpenter
+Border Color: black
+Type: Legendary Enchantment â€” Background
+Set Name: Commander Legends: Battle for Baldur's Gate
+Rarity: uncommon
+CMC: 2.0
+Text: Commander creatures you own have "The first Dragon spell you cast each turn costs {2} less to cast."
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 186581c7-81a6-4c27-b8a9-ff7f7a4b1d40
+Large Image URL: https://cards.scryfall.io/large/front/1/8/186581c7-81a6-4c27-b8a9-ff7f7a4b1d40.jpg?1562008741
+Normal Image URL: https://cards.scryfall.io/normal/front/1/8/186581c7-81a6-4c27-b8a9-ff7f7a4b1d40.jpg?1562008741
+Small Image URL: https://cards.scryfall.io/small/front/1/8/186581c7-81a6-4c27-b8a9-ff7f7a4b1d40.jpg?1562008741
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/8/186581c7-81a6-4c27-b8a9-ff7f7a4b1d40.jpg?1562008741
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{R}
+Name: Acolyte of the Inferno
+Power: 3
+Toughness: 1
+Artist: Joseph Meehan
+Border Color: black
+Type: Creature â€” Human Monk
+Set Name: Magic Origins
+Rarity: uncommon
+CMC: 3.0
+Text: Renown 1 (When this creature deals combat damage to a player, if it isn't renowned, put a +1/+1 counter on it and it becomes renowned.)
+Whenever Acolyte of the Inferno becomes blocked by a creature, it deals 2 damage to that creature.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 4b0b14d4-41de-42ac-9894-77bbcebaabfc
+Large Image URL: https://cards.scryfall.io/large/front/4/b/4b0b14d4-41de-42ac-9894-77bbcebaabfc.jpg?1561978917
+Normal Image URL: https://cards.scryfall.io/normal/front/4/b/4b0b14d4-41de-42ac-9894-77bbcebaabfc.jpg?1561978917
+Small Image URL: https://cards.scryfall.io/small/front/4/b/4b0b14d4-41de-42ac-9894-77bbcebaabfc.jpg?1561978917
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/b/4b0b14d4-41de-42ac-9894-77bbcebaabfc.jpg?1561978917
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {B}
+Name: Acolyte of Xathrid
+Power: 0
+Toughness: 1
+Artist: Chris Rahn
+Border Color: black
+Type: Creature â€” Human Cleric
+Set Name: Magic 2010
+Rarity: common
+CMC: 1.0
+Text: {1}{B}, {T}: Target player loses 1 life.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: cd8980af-c3fa-4027-917a-4a3d441c0a75
+Large Image URL: https://cards.scryfall.io/large/front/c/d/cd8980af-c3fa-4027-917a-4a3d441c0a75.jpg?1593091337
+Normal Image URL: https://cards.scryfall.io/normal/front/c/d/cd8980af-c3fa-4027-917a-4a3d441c0a75.jpg?1593091337
+Small Image URL: https://cards.scryfall.io/small/front/c/d/cd8980af-c3fa-4027-917a-4a3d441c0a75.jpg?1593091337
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/d/cd8980af-c3fa-4027-917a-4a3d441c0a75.jpg?1593091337
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Acolyte's Reward
+Power: 
+Toughness: 
+Artist: Slawomir Maniak
+Border Color: black
+Type: Instant
+Set Name: Born of the Gods
+Rarity: uncommon
+CMC: 2.0
+Text: Prevent the next X damage that would be dealt to target creature this turn, where X is your devotion to white. If damage is prevented this way, Acolyte's Reward deals that much damage to any target. (Each {W} in the mana costs of permanents you control counts toward your devotion to white.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 834354a3-f984-4882-bc71-080112107e64
+Large Image URL: https://cards.scryfall.io/large/front/8/3/834354a3-f984-4882-bc71-080112107e64.jpg?1592714378
+Normal Image URL: https://cards.scryfall.io/normal/front/8/3/834354a3-f984-4882-bc71-080112107e64.jpg?1592714378
+Small Image URL: https://cards.scryfall.io/small/front/8/3/834354a3-f984-4882-bc71-080112107e64.jpg?1592714378
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/3/834354a3-f984-4882-bc71-080112107e64.jpg?1592714378
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}
+Name: Acorn Catapult
+Power: 
+Toughness: 
+Artist: Jesper Ejsing
+Border Color: black
+Type: Artifact
+Set Name: Commander 2011
+Rarity: rare
+CMC: 4.0
+Text: {1}, {T}: Acorn Catapult deals 1 damage to any target. That permanent's controller or that player creates a 1/1 green Squirrel creature token.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 32987720-cc0c-416b-b79b-217d3b37542d
+Large Image URL: https://cards.scryfall.io/large/front/3/2/32987720-cc0c-416b-b79b-217d3b37542d.jpg?1696000850
+Normal Image URL: https://cards.scryfall.io/normal/front/3/2/32987720-cc0c-416b-b79b-217d3b37542d.jpg?1696000850
+Small Image URL: https://cards.scryfall.io/small/front/3/2/32987720-cc0c-416b-b79b-217d3b37542d.jpg?1696000850
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/2/32987720-cc0c-416b-b79b-217d3b37542d.jpg?1696000850
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{G}
+Name: Acorn Harvest
+Power: 
+Toughness: 
+Artist: Edward P. Beard, Jr.
+Border Color: black
+Type: Sorcery
+Set Name: Torment
+Rarity: common
+CMC: 4.0
+Text: Create two 1/1 green Squirrel creature tokens.
+Flashbackâ€”{1}{G}, Pay 3 life. (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 993957c7-5d61-4c98-826d-b657aed667e1
+Large Image URL: https://cards.scryfall.io/large/front/9/9/993957c7-5d61-4c98-826d-b657aed667e1.jpg?1562878704
+Normal Image URL: https://cards.scryfall.io/normal/front/9/9/993957c7-5d61-4c98-826d-b657aed667e1.jpg?1562878704
+Small Image URL: https://cards.scryfall.io/small/front/9/9/993957c7-5d61-4c98-826d-b657aed667e1.jpg?1562878704
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/9/993957c7-5d61-4c98-826d-b657aed667e1.jpg?1562878704
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{U}{U}
+Name: Acquire
+Power: 
+Toughness: 
+Artist: Daren Bader
+Border Color: black
+Type: Sorcery
+Set Name: Fifth Dawn
+Rarity: rare
+CMC: 5.0
+Text: Search target opponent's library for an artifact card and put that card onto the battlefield under your control. Then that player shuffles.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 19586946-a6a6-4154-a544-15a052483f96
+Large Image URL: https://cards.scryfall.io/large/front/1/9/19586946-a6a6-4154-a544-15a052483f96.jpg?1708742099
+Normal Image URL: https://cards.scryfall.io/normal/front/1/9/19586946-a6a6-4154-a544-15a052483f96.jpg?1708742099
+Small Image URL: https://cards.scryfall.io/small/front/1/9/19586946-a6a6-4154-a544-15a052483f96.jpg?1708742099
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/9/19586946-a6a6-4154-a544-15a052483f96.jpg?1708742099
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{R}
+Name: Acquired Mutation
+Power: 
+Toughness: 
+Artist: Xavier Ribeiro
+Border Color: black
+Type: Enchantment â€” Aura
+Set Name: Fallout
+Rarity: uncommon
+CMC: 3.0
+Text: Enchant creature
+Enchanted creature gets +2/+2 and is goaded. (It attacks each combat if able and attacks a player other than you if able.)
+Whenever enchanted creature attacks, defending player gets two rad counters.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 8e971a72-31db-4b7e-b9b9-9f45e8c3f87e
+Large Image URL: https://cards.scryfall.io/large/front/8/e/8e971a72-31db-4b7e-b9b9-9f45e8c3f87e.jpg?1654566583
+Normal Image URL: https://cards.scryfall.io/normal/front/8/e/8e971a72-31db-4b7e-b9b9-9f45e8c3f87e.jpg?1654566583
+Small Image URL: https://cards.scryfall.io/small/front/8/e/8e971a72-31db-4b7e-b9b9-9f45e8c3f87e.jpg?1654566583
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/e/8e971a72-31db-4b7e-b9b9-9f45e8c3f87e.jpg?1654566583
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}
+Name: Acquisition Octopus
+Power: 2
+Toughness: 2
+Artist: Francisco Miyara
+Border Color: black
+Type: Artifact Creature â€” Equipment Octopus
+Set Name: Kamigawa: Neon Dynasty
+Rarity: uncommon
+CMC: 3.0
+Text: Whenever Acquisition Octopus or equipped creature deals combat damage to a player, draw a card.
+Reconfigure {2} ({2}: Attach to target creature you control; or unattach from a creature. Reconfigure only as a sorcery. While attached, this isn't a creature.)
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 281336c7-ca7c-4c91-bdfb-d253a965cb7c
+Large Image URL: https://cards.scryfall.io/large/front/2/8/281336c7-ca7c-4c91-bdfb-d253a965cb7c.jpg?1604195180
+Normal Image URL: https://cards.scryfall.io/normal/front/2/8/281336c7-ca7c-4c91-bdfb-d253a965cb7c.jpg?1604195180
+Small Image URL: https://cards.scryfall.io/small/front/2/8/281336c7-ca7c-4c91-bdfb-d253a965cb7c.jpg?1604195180
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/8/281336c7-ca7c-4c91-bdfb-d253a965cb7c.jpg?1604195180
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{B}
+Name: Acquisitions Expert
+Power: 1
+Toughness: 2
+Artist: Anna Steinbauer
+Border Color: black
+Type: Creature â€” Human Rogue
+Set Name: Zendikar Rising
+Rarity: uncommon
+CMC: 2.0
+Text: When Acquisitions Expert enters, target opponent reveals a number of cards from their hand equal to the number of creatures in your party. You choose one of those cards. That player discards that card. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.)
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 05d5a38f-5a60-46da-af1c-440e4bf7fe9e
+Large Image URL: https://cards.scryfall.io/large/front/0/5/05d5a38f-5a60-46da-af1c-440e4bf7fe9e.jpg?1562896226
+Normal Image URL: https://cards.scryfall.io/normal/front/0/5/05d5a38f-5a60-46da-af1c-440e4bf7fe9e.jpg?1562896226
+Small Image URL: https://cards.scryfall.io/small/front/0/5/05d5a38f-5a60-46da-af1c-440e4bf7fe9e.jpg?1562896226
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/5/05d5a38f-5a60-46da-af1c-440e4bf7fe9e.jpg?1562896226
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{G}
+Name: Acridian
+Power: 2
+Toughness: 4
+Artist: rk post
+Border Color: black
+Type: Creature â€” Insect
+Set Name: Urza's Saga
+Rarity: common
+CMC: 2.0
+Text: Echo {1}{G} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 6f1a7590-3eee-4803-b192-d4fb771e6a86
+Large Image URL: https://cards.scryfall.io/large/front/6/f/6f1a7590-3eee-4803-b192-d4fb771e6a86.jpg?1726285858
+Normal Image URL: https://cards.scryfall.io/normal/front/6/f/6f1a7590-3eee-4803-b192-d4fb771e6a86.jpg?1726285858
+Small Image URL: https://cards.scryfall.io/small/front/6/f/6f1a7590-3eee-4803-b192-d4fb771e6a86.jpg?1726285858
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/f/6f1a7590-3eee-4803-b192-d4fb771e6a86.jpg?1726285858
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Acrobatic Cheerleader
+Power: 2
+Toughness: 2
+Artist: Julia Metzger
+Border Color: black
+Type: Creature â€” Human Survivor
+Set Name: Duskmourn: House of Horror
+Rarity: common
+CMC: 2.0
+Text: Survival â€” At the beginning of your second main phase, if Acrobatic Cheerleader is tapped, put a flying counter on it. This ability triggers only once.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 47f82d84-03ad-42dd-80ce-f0ac5e353e46
+Large Image URL: https://cards.scryfall.io/large/front/4/7/47f82d84-03ad-42dd-80ce-f0ac5e353e46.jpg?1699043064
+Normal Image URL: https://cards.scryfall.io/normal/front/4/7/47f82d84-03ad-42dd-80ce-f0ac5e353e46.jpg?1699043064
+Small Image URL: https://cards.scryfall.io/small/front/4/7/47f82d84-03ad-42dd-80ce-f0ac5e353e46.jpg?1699043064
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/4/7/47f82d84-03ad-42dd-80ce-f0ac5e353e46.jpg?1699043064
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {W}
+Name: Acrobatic Leap
+Power: 
+Toughness: 
+Artist: Fesbra
+Border Color: black
+Type: Instant
+Set Name: The Lost Caverns of Ixalan
+Rarity: common
+CMC: 1.0
+Text: Target creature gets +1/+3 and gains flying until end of turn. Untap it.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 74f92174-f38f-4623-a5f7-f5be7f7dcc9d
+Large Image URL: https://cards.scryfall.io/large/front/7/4/74f92174-f38f-4623-a5f7-f5be7f7dcc9d.jpg?1576380687
+Normal Image URL: https://cards.scryfall.io/normal/front/7/4/74f92174-f38f-4623-a5f7-f5be7f7dcc9d.jpg?1576380687
+Small Image URL: https://cards.scryfall.io/small/front/7/4/74f92174-f38f-4623-a5f7-f5be7f7dcc9d.jpg?1576380687
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/4/74f92174-f38f-4623-a5f7-f5be7f7dcc9d.jpg?1576380687
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{W}
+Name: Acrobatic Maneuver
+Power: 
+Toughness: 
+Artist: Winona Nelson
+Border Color: black
+Type: Instant
+Set Name: Kaladesh
+Rarity: common
+CMC: 3.0
+Text: Exile target creature you control, then return that card to the battlefield under its owner's control.
+Draw a card.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 343d01cf-9806-4c2d-a993-ddc9ed248d7f
+Large Image URL: https://cards.scryfall.io/large/front/3/4/343d01cf-9806-4c2d-a993-ddc9ed248d7f.jpg?1673304862
+Normal Image URL: https://cards.scryfall.io/normal/front/3/4/343d01cf-9806-4c2d-a993-ddc9ed248d7f.jpg?1673304862
+Small Image URL: https://cards.scryfall.io/small/front/3/4/343d01cf-9806-4c2d-a993-ddc9ed248d7f.jpg?1673304862
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/4/343d01cf-9806-4c2d-a993-ddc9ed248d7f.jpg?1673304862
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{B}
+Name: Activated Sleeper
+Power: 0
+Toughness: 0
+Artist: Mathias Kollros
+Border Color: black
+Type: Creature â€” Phyrexian Shapeshifter
+Set Name: Dominaria United Commander
+Rarity: rare
+CMC: 3.0
+Text: Flash
+You may have Activated Sleeper enter as a copy of any creature card in a graveyard that was put there from the battlefield this turn, except it's a Phyrexian in addition to its other types.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 35d304de-5a24-487e-87f9-0ba9b6d70296
+Large Image URL: https://cards.scryfall.io/large/front/3/5/35d304de-5a24-487e-87f9-0ba9b6d70296.jpg?1562906364
+Normal Image URL: https://cards.scryfall.io/normal/front/3/5/35d304de-5a24-487e-87f9-0ba9b6d70296.jpg?1562906364
+Small Image URL: https://cards.scryfall.io/small/front/3/5/35d304de-5a24-487e-87f9-0ba9b6d70296.jpg?1562906364
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/5/35d304de-5a24-487e-87f9-0ba9b6d70296.jpg?1562906364
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {R}
+Name: Active Volcano
+Power: 
+Toughness: 
+Artist: Justin Hampton
+Border Color: black
+Type: Instant
+Set Name: Masters Edition III
+Rarity: uncommon
+CMC: 1.0
+Text: Choose one â€”
+â€¢ Destroy target blue permanent.
+â€¢ Return target Island to its owner's hand.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 8d34c3aa-7d74-4a8b-898c-cb62b1f05989
+Large Image URL: https://cards.scryfall.io/large/front/8/d/8d34c3aa-7d74-4a8b-898c-cb62b1f05989.jpg?1562706934
+Normal Image URL: https://cards.scryfall.io/normal/front/8/d/8d34c3aa-7d74-4a8b-898c-cb62b1f05989.jpg?1562706934
+Small Image URL: https://cards.scryfall.io/small/front/8/d/8d34c3aa-7d74-4a8b-898c-cb62b1f05989.jpg?1562706934
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/d/8d34c3aa-7d74-4a8b-898c-cb62b1f05989.jpg?1562706934
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{R/P}{R/P}
+Name: Act of Aggression
+Power: 
+Toughness: 
+Artist: Whit Brachna
+Border Color: black
+Type: Instant
+Set Name: Commander 2015
+Rarity: uncommon
+CMC: 5.0
+Text: ({R/P} can be paid with either {R} or 2 life.)
+Gain control of target creature an opponent controls until end of turn. Untap that creature. It gains haste until end of turn.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: e107bd35-eddd-40f7-aea8-3a1eec3363c0
+Large Image URL: https://cards.scryfall.io/large/front/e/1/e107bd35-eddd-40f7-aea8-3a1eec3363c0.jpg?1562942444
+Normal Image URL: https://cards.scryfall.io/normal/front/e/1/e107bd35-eddd-40f7-aea8-3a1eec3363c0.jpg?1562942444
+Small Image URL: https://cards.scryfall.io/small/front/e/1/e107bd35-eddd-40f7-aea8-3a1eec3363c0.jpg?1562942444
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/e/1/e107bd35-eddd-40f7-aea8-3a1eec3363c0.jpg?1562942444
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}{W}
+Name: Act of Authority
+Power: 
+Toughness: 
+Artist: VÃ©ronique Meignaud
+Border Color: black
+Type: Enchantment
+Set Name: Commander 2013
+Rarity: rare
+CMC: 3.0
+Text: When Act of Authority enters, you may exile target artifact or enchantment.
+At the beginning of your upkeep, you may exile target artifact or enchantment. If you do, its controller gains control of Act of Authority.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 969860ba-6923-4715-b065-81803bba3dd6
+Large Image URL: https://cards.scryfall.io/large/front/9/6/969860ba-6923-4715-b065-81803bba3dd6.jpg?1562438567
+Normal Image URL: https://cards.scryfall.io/normal/front/9/6/969860ba-6923-4715-b065-81803bba3dd6.jpg?1562438567
+Small Image URL: https://cards.scryfall.io/small/front/9/6/969860ba-6923-4715-b065-81803bba3dd6.jpg?1562438567
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/6/969860ba-6923-4715-b065-81803bba3dd6.jpg?1562438567
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Act of Heroism
+Power: 
+Toughness: 
+Artist: Magali Villeneuve
+Border Color: black
+Type: Instant
+Set Name: Masters 25
+Rarity: common
+CMC: 2.0
+Text: Untap target creature. It gets +2/+2 until end of turn and can block an additional creature this turn.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: a1a9d323-fb40-411b-a0e7-64024bc6ba58
+Large Image URL: https://cards.scryfall.io/large/front/a/1/a1a9d323-fb40-411b-a0e7-64024bc6ba58.jpg?1702429484
+Normal Image URL: https://cards.scryfall.io/normal/front/a/1/a1a9d323-fb40-411b-a0e7-64024bc6ba58.jpg?1702429484
+Small Image URL: https://cards.scryfall.io/small/front/a/1/a1a9d323-fb40-411b-a0e7-64024bc6ba58.jpg?1702429484
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/1/a1a9d323-fb40-411b-a0e7-64024bc6ba58.jpg?1702429484
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{R}
+Name: Act of Treason
+Power: 
+Toughness: 
+Artist: Scott Murphy
+Border Color: black
+Type: Sorcery
+Set Name: Ravnica Remastered
+Rarity: common
+CMC: 3.0
+Text: Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. (It can attack and {T} this turn.)
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: bfe513d1-2509-4051-ba85-49a19479fa5c
+Large Image URL: https://cards.scryfall.io/large/front/b/f/bfe513d1-2509-4051-ba85-49a19479fa5c.jpg?1562793694
+Normal Image URL: https://cards.scryfall.io/normal/front/b/f/bfe513d1-2509-4051-ba85-49a19479fa5c.jpg?1562793694
+Small Image URL: https://cards.scryfall.io/small/front/b/f/bfe513d1-2509-4051-ba85-49a19479fa5c.jpg?1562793694
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/f/bfe513d1-2509-4051-ba85-49a19479fa5c.jpg?1562793694
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{R}
+Name: Act on Impulse
+Power: 
+Toughness: 
+Artist: Brad Rigney
+Border Color: black
+Type: Sorcery
+Set Name: Magic 2015
+Rarity: uncommon
+CMC: 3.0
+Text: Exile the top three cards of your library. Until end of turn, you may play those cards. (If you cast a spell this way, you still pay its costs. You can play a land this way only if you have an available land play remaining.)
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: bd091f3e-5fcc-4d12-b0c3-3b6340ab01d8
+Large Image URL: https://cards.scryfall.io/large/front/b/d/bd091f3e-5fcc-4d12-b0c3-3b6340ab01d8.jpg?1643585797
+Normal Image URL: https://cards.scryfall.io/normal/front/b/d/bd091f3e-5fcc-4d12-b0c3-3b6340ab01d8.jpg?1643585797
+Small Image URL: https://cards.scryfall.io/small/front/b/d/bd091f3e-5fcc-4d12-b0c3-3b6340ab01d8.jpg?1643585797
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/d/bd091f3e-5fcc-4d12-b0c3-3b6340ab01d8.jpg?1643585797
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Adamant Will
+Power: 
+Toughness: 
+Artist: Irina Nordsol
+Border Color: black
+Type: Instant
+Set Name: Innistrad: Crimson Vow
+Rarity: common
+CMC: 2.0
+Text: Target creature gets +2/+2 and gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: d2fa85ea-f5d5-4be3-a874-ce246c3e4245
+Large Image URL: https://cards.scryfall.io/large/front/d/2/d2fa85ea-f5d5-4be3-a874-ce246c3e4245.jpg?1562496102
+Normal Image URL: https://cards.scryfall.io/normal/front/d/2/d2fa85ea-f5d5-4be3-a874-ce246c3e4245.jpg?1562496102
+Small Image URL: https://cards.scryfall.io/small/front/d/2/d2fa85ea-f5d5-4be3-a874-ce246c3e4245.jpg?1562496102
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/2/d2fa85ea-f5d5-4be3-a874-ce246c3e4245.jpg?1562496102
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{R}{R}
+Name: Adamaro, First to Desire
+Power: *
+Toughness: *
+Artist: Paolo Parente
+Border Color: black
+Type: Legendary Creature â€” Spirit
+Set Name: Saviors of Kamigawa
+Rarity: rare
+CMC: 3.0
+Text: Adamaro, First to Desire's power and toughness are each equal to the number of cards in the hand of the opponent with the most cards in hand.
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: 21c950d7-b4f6-4902-8c9a-98f2933f9fa5
+Large Image URL: https://cards.scryfall.io/large/front/2/1/21c950d7-b4f6-4902-8c9a-98f2933f9fa5.jpg?1562552020
+Normal Image URL: https://cards.scryfall.io/normal/front/2/1/21c950d7-b4f6-4902-8c9a-98f2933f9fa5.jpg?1562552020
+Small Image URL: https://cards.scryfall.io/small/front/2/1/21c950d7-b4f6-4902-8c9a-98f2933f9fa5.jpg?1562552020
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/2/1/21c950d7-b4f6-4902-8c9a-98f2933f9fa5.jpg?1562552020
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Adanto Vanguard
+Power: 1
+Toughness: 1
+Artist: Anna Steinbauer
+Border Color: black
+Type: Creature â€” Vampire Soldier
+Set Name: Ixalan
+Rarity: uncommon
+CMC: 2.0
+Text: As long as Adanto Vanguard is attacking, it gets +2/+0.
+Pay 4 life: Adanto Vanguard gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: ba16bfb3-dbd3-4b3a-b155-08b613268d57
+Large Image URL: https://cards.scryfall.io/large/front/b/a/ba16bfb3-dbd3-4b3a-b155-08b613268d57.jpg?1599708675
+Normal Image URL: https://cards.scryfall.io/normal/front/b/a/ba16bfb3-dbd3-4b3a-b155-08b613268d57.jpg?1599708675
+Small Image URL: https://cards.scryfall.io/small/front/b/a/ba16bfb3-dbd3-4b3a-b155-08b613268d57.jpg?1599708675
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/a/ba16bfb3-dbd3-4b3a-b155-08b613268d57.jpg?1599708675
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}
+Name: Adaptive Automaton
+Power: 2
+Toughness: 2
+Artist: Igor Kieryluk
+Border Color: black
+Type: Artifact Creature â€” Construct
+Set Name: Double Masters
+Rarity: rare
+CMC: 3.0
+Text: As Adaptive Automaton enters, choose a creature type.
+Adaptive Automaton is the chosen type in addition to its other types.
+Other creatures you control of the chosen type get +1/+1.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 83c91e24-b7e8-4040-80cb-d1b375002c10
+Large Image URL: https://cards.scryfall.io/large/front/8/3/83c91e24-b7e8-4040-80cb-d1b375002c10.jpg?1699043073
+Normal Image URL: https://cards.scryfall.io/normal/front/8/3/83c91e24-b7e8-4040-80cb-d1b375002c10.jpg?1699043073
+Small Image URL: https://cards.scryfall.io/small/front/8/3/83c91e24-b7e8-4040-80cb-d1b375002c10.jpg?1699043073
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/3/83c91e24-b7e8-4040-80cb-d1b375002c10.jpg?1699043073
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}
+Name: Adaptive Gemguard
+Power: 3
+Toughness: 3
+Artist: Anthony Devine
+Border Color: black
+Type: Artifact Creature â€” Gnome
+Set Name: The Lost Caverns of Ixalan
+Rarity: common
+CMC: 4.0
+Text: Tap two untapped artifacts and/or creatures you control: Put a +1/+1 counter on Adaptive Gemguard. Activate only as a sorcery.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: d8a2e243-e446-46c6-8a37-e26620951c41
+Large Image URL: https://cards.scryfall.io/large/front/d/8/d8a2e243-e446-46c6-8a37-e26620951c41.jpg?1591230173
+Normal Image URL: https://cards.scryfall.io/normal/front/d/8/d8a2e243-e446-46c6-8a37-e26620951c41.jpg?1591230173
+Small Image URL: https://cards.scryfall.io/small/front/d/8/d8a2e243-e446-46c6-8a37-e26620951c41.jpg?1591230173
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/8/d8a2e243-e446-46c6-8a37-e26620951c41.jpg?1591230173
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {5}
+Name: Adaptive Shimmerer
+Power: 0
+Toughness: 0
+Artist: Jason Felix
+Border Color: black
+Type: Creature â€” Insect
+Set Name: Ikoria: Lair of Behemoths
+Rarity: common
+CMC: 5.0
+Text: Flash
+Adaptive Shimmerer enters with three +1/+1 counters on it.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 0d3c0c43-2d6d-49b8-a112-07611a23ae69
+Large Image URL: https://cards.scryfall.io/large/front/0/d/0d3c0c43-2d6d-49b8-a112-07611a23ae69.jpg?1561815740
+Normal Image URL: https://cards.scryfall.io/normal/front/0/d/0d3c0c43-2d6d-49b8-a112-07611a23ae69.jpg?1561815740
+Small Image URL: https://cards.scryfall.io/small/front/0/d/0d3c0c43-2d6d-49b8-a112-07611a23ae69.jpg?1561815740
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/d/0d3c0c43-2d6d-49b8-a112-07611a23ae69.jpg?1561815740
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{G}
+Name: Adaptive Snapjaw
+Power: 6
+Toughness: 2
+Artist: Tomasz Jedruszek
+Border Color: black
+Type: Creature â€” Lizard Beast
+Set Name: Gatecrash
+Rarity: common
+CMC: 5.0
+Text: Evolve (Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 3db6d202-9c6f-4485-9224-173b23de7054
+Large Image URL: https://cards.scryfall.io/large/front/3/d/3db6d202-9c6f-4485-9224-173b23de7054.jpg?1675957123
+Normal Image URL: https://cards.scryfall.io/normal/front/3/d/3db6d202-9c6f-4485-9224-173b23de7054.jpg?1675957123
+Small Image URL: https://cards.scryfall.io/small/front/3/d/3db6d202-9c6f-4485-9224-173b23de7054.jpg?1675957123
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/d/3db6d202-9c6f-4485-9224-173b23de7054.jpg?1675957123
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{G}
+Name: Adaptive Sporesinger
+Power: 2
+Toughness: 2
+Artist: Dave Kendall
+Border Color: black
+Type: Creature â€” Phyrexian Druid
+Set Name: Phyrexia: All Will Be One
+Rarity: common
+CMC: 3.0
+Text: Vigilance
+When Adaptive Sporesinger enters, choose one â€”
+â€¢ Target creature gets +2/+2 and gains vigilance until end of turn.
+â€¢ Proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)
+Colors: G 
+----------------------------------------------------------------------------------------------
+
+ID: 3802c412-6c85-46aa-b21e-52edc0536f6c
+Large Image URL: https://cards.scryfall.io/large/front/3/8/3802c412-6c85-46aa-b21e-52edc0536f6c.jpg?1562868086
+Normal Image URL: https://cards.scryfall.io/normal/front/3/8/3802c412-6c85-46aa-b21e-52edc0536f6c.jpg?1562868086
+Small Image URL: https://cards.scryfall.io/small/front/3/8/3802c412-6c85-46aa-b21e-52edc0536f6c.jpg?1562868086
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/8/3802c412-6c85-46aa-b21e-52edc0536f6c.jpg?1562868086
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {5}
+Name: Adarkar Sentinel
+Power: 3
+Toughness: 3
+Artist: Melissa A. Benson
+Border Color: black
+Type: Artifact Creature â€” Soldier
+Set Name: Masters Edition II
+Rarity: common
+CMC: 5.0
+Text: {1}: Adarkar Sentinel gets +0/+1 until end of turn.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 0ba7526f-dba8-4483-b925-946164fc0ae9
+Large Image URL: https://cards.scryfall.io/large/front/0/b/0ba7526f-dba8-4483-b925-946164fc0ae9.jpg?1587911477
+Normal Image URL: https://cards.scryfall.io/normal/front/0/b/0ba7526f-dba8-4483-b925-946164fc0ae9.jpg?1587911477
+Small Image URL: https://cards.scryfall.io/small/front/0/b/0ba7526f-dba8-4483-b925-946164fc0ae9.jpg?1587911477
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/b/0ba7526f-dba8-4483-b925-946164fc0ae9.jpg?1587911477
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}{W}
+Name: Adarkar Unicorn
+Power: 2
+Toughness: 2
+Artist: Quinton Hoover
+Border Color: black
+Type: Creature â€” Unicorn
+Set Name: Ice Age
+Rarity: common
+CMC: 3.0
+Text: {T}: Add {U} or {C}{U}. Spend this mana only to pay cumulative upkeep costs.
+Colors: U W 
+----------------------------------------------------------------------------------------------
+
+ID: fc2a4abc-85da-46a6-a616-9aa607ce7372
+Large Image URL: https://cards.scryfall.io/large/front/f/c/fc2a4abc-85da-46a6-a616-9aa607ce7372.jpg?1592710383
+Normal Image URL: https://cards.scryfall.io/normal/front/f/c/fc2a4abc-85da-46a6-a616-9aa607ce7372.jpg?1592710383
+Small Image URL: https://cards.scryfall.io/small/front/f/c/fc2a4abc-85da-46a6-a616-9aa607ce7372.jpg?1592710383
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/c/fc2a4abc-85da-46a6-a616-9aa607ce7372.jpg?1592710383
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{W}{W}
+Name: Adarkar Valkyrie
+Power: 4
+Toughness: 5
+Artist: Jeremy Jarvis
+Border Color: black
+Type: Snow Creature â€” Angel
+Set Name: Commander 2018
+Rarity: rare
+CMC: 6.0
+Text: Flying, vigilance
+{T}: When target creature other than Adarkar Valkyrie dies this turn, return that card to the battlefield under your control.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 395ed6cd-8027-4b11-a1ce-5f0bbbd2a50b
+Large Image URL: https://cards.scryfall.io/large/front/3/9/395ed6cd-8027-4b11-a1ce-5f0bbbd2a50b.jpg?1726285347
+Normal Image URL: https://cards.scryfall.io/normal/front/3/9/395ed6cd-8027-4b11-a1ce-5f0bbbd2a50b.jpg?1726285347
+Small Image URL: https://cards.scryfall.io/small/front/3/9/395ed6cd-8027-4b11-a1ce-5f0bbbd2a50b.jpg?1726285347
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/9/395ed6cd-8027-4b11-a1ce-5f0bbbd2a50b.jpg?1726285347
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: 
+Name: Adarkar Wastes
+Power: 
+Toughness: 
+Artist: Piotr Dura
+Border Color: black
+Type: Land
+Set Name: Duskmourn: House of Horror Commander
+Rarity: rare
+CMC: 0.0
+Text: {T}: Add {C}.
+{T}: Add {W} or {U}. Adarkar Wastes deals 1 damage to you.
+Colors: U W 
+----------------------------------------------------------------------------------------------
+
+ID: c18bce4a-9afb-4b91-bc9a-d62634b0f8dd
+Large Image URL: https://cards.scryfall.io/large/front/c/1/c18bce4a-9afb-4b91-bc9a-d62634b0f8dd.jpg?1593274877
+Normal Image URL: https://cards.scryfall.io/normal/front/c/1/c18bce4a-9afb-4b91-bc9a-d62634b0f8dd.jpg?1593274877
+Small Image URL: https://cards.scryfall.io/small/front/c/1/c18bce4a-9afb-4b91-bc9a-d62634b0f8dd.jpg?1593274877
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/1/c18bce4a-9afb-4b91-bc9a-d62634b0f8dd.jpg?1593274877
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {4}{U}
+Name: Adarkar Windform
+Power: 3
+Toughness: 3
+Artist: Randy Gallegos
+Border Color: black
+Type: Snow Creature â€” Illusion
+Set Name: Coldsnap
+Rarity: uncommon
+CMC: 5.0
+Text: Flying
+{1}{S}: Target creature loses flying until end of turn. ({S} can be paid with one mana from a snow source.)
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: d116839f-6a3a-4a2e-a3ab-ea177c012746
+Large Image URL: https://cards.scryfall.io/large/front/d/1/d116839f-6a3a-4a2e-a3ab-ea177c012746.jpg?1562369151
+Normal Image URL: https://cards.scryfall.io/normal/front/d/1/d116839f-6a3a-4a2e-a3ab-ea177c012746.jpg?1562369151
+Small Image URL: https://cards.scryfall.io/small/front/d/1/d116839f-6a3a-4a2e-a3ab-ea177c012746.jpg?1562369151
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/1/d116839f-6a3a-4a2e-a3ab-ea177c012746.jpg?1562369151
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{R}
+Name: Adder-Staff Boggart
+Power: 2
+Toughness: 1
+Artist: Jeff Miracola
+Border Color: black
+Type: Creature â€” Goblin Warrior
+Set Name: Lorwyn
+Rarity: common
+CMC: 2.0
+Text: When Adder-Staff Boggart enters, clash with an opponent. If you win, put a +1/+1 counter on Adder-Staff Boggart. (Each clashing player reveals the top card of their library, then puts that card on the top or bottom. A player wins if their card had a higher mana value.)
+Colors: R 
+----------------------------------------------------------------------------------------------
+
+ID: f7fcce83-4378-405f-8007-dd0ed002be6b
+Large Image URL: https://cards.scryfall.io/large/front/f/7/f7fcce83-4378-405f-8007-dd0ed002be6b.jpg?1562944995
+Normal Image URL: https://cards.scryfall.io/normal/front/f/7/f7fcce83-4378-405f-8007-dd0ed002be6b.jpg?1562944995
+Small Image URL: https://cards.scryfall.io/small/front/f/7/f7fcce83-4378-405f-8007-dd0ed002be6b.jpg?1562944995
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/f/7/f7fcce83-4378-405f-8007-dd0ed002be6b.jpg?1562944995
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{B}
+Name: Addle
+Power: 
+Toughness: 
+Artist: Ron Spears
+Border Color: black
+Type: Sorcery
+Set Name: Vintage Masters
+Rarity: common
+CMC: 2.0
+Text: Choose a color. Target player reveals their hand and you choose a card of that color from it. That player discards that card.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: dd95d377-a61e-4b62-a883-ed491c48da15
+Large Image URL: https://cards.scryfall.io/large/front/d/d/dd95d377-a61e-4b62-a883-ed491c48da15.jpg?1682208250
+Normal Image URL: https://cards.scryfall.io/normal/front/d/d/dd95d377-a61e-4b62-a883-ed491c48da15.jpg?1682208250
+Small Image URL: https://cards.scryfall.io/small/front/d/d/dd95d377-a61e-4b62-a883-ed491c48da15.jpg?1682208250
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/d/d/dd95d377-a61e-4b62-a883-ed491c48da15.jpg?1682208250
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}{W}
+Name: Adeline, Resplendent Cathar
+Power: *
+Toughness: 4
+Artist: Bryan Sola
+Border Color: black
+Type: Legendary Creature â€” Human Knight
+Set Name: March of the Machine Commander
+Rarity: rare
+CMC: 3.0
+Text: Vigilance
+Adeline, Resplendent Cathar's power is equal to the number of creatures you control.
+Whenever you attack, for each opponent, create a 1/1 white Human creature token that's tapped and attacking that player or a planeswalker they control.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: b3c950e2-a43b-47f8-9ad6-1909ccc7acbf
+Large Image URL: https://cards.scryfall.io/large/front/b/3/b3c950e2-a43b-47f8-9ad6-1909ccc7acbf.jpg?1562741514
+Normal Image URL: https://cards.scryfall.io/normal/front/b/3/b3c950e2-a43b-47f8-9ad6-1909ccc7acbf.jpg?1562741514
+Small Image URL: https://cards.scryfall.io/small/front/b/3/b3c950e2-a43b-47f8-9ad6-1909ccc7acbf.jpg?1562741514
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/3/b3c950e2-a43b-47f8-9ad6-1909ccc7acbf.jpg?1562741514
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{U}{R}
+Name: Adeliz, the Cinder Wind
+Power: 2
+Toughness: 2
+Artist: Zezhou Chen
+Border Color: black
+Type: Legendary Creature â€” Human Wizard
+Set Name: Dominaria
+Rarity: uncommon
+CMC: 3.0
+Text: Flying, haste
+Whenever you cast an instant or sorcery spell, Wizards you control get +1/+1 until end of turn.
+Colors: R U 
+----------------------------------------------------------------------------------------------
+
+ID: 914efc24-5c3a-4d22-9d77-fce337a08d4d
+Large Image URL: https://cards.scryfall.io/large/front/9/1/914efc24-5c3a-4d22-9d77-fce337a08d4d.jpg?1721423900
+Normal Image URL: https://cards.scryfall.io/normal/front/9/1/914efc24-5c3a-4d22-9d77-fce337a08d4d.jpg?1721423900
+Small Image URL: https://cards.scryfall.io/small/front/9/1/914efc24-5c3a-4d22-9d77-fce337a08d4d.jpg?1721423900
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/9/1/914efc24-5c3a-4d22-9d77-fce337a08d4d.jpg?1721423900
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{U}{B}
+Name: AdÃ©walÃ©, Breaker of Chains
+Power: 4
+Toughness: 1
+Artist: Justyna Dura
+Border Color: black
+Type: Legendary Creature â€” Human Assassin Pirate
+Set Name: Assassin's Creed
+Rarity: uncommon
+CMC: 3.0
+Text: When AdÃ©walÃ© enters, reveal the top six cards of your library. Put an Assassin, Pirate, or Vehicle card from among them into your hand and the rest on the bottom of your library in a random order.
+Whenever a Vehicle you control deals combat damage to a player, you may return AdÃ©walÃ© from your graveyard to your hand.
+Colors: B U 
+----------------------------------------------------------------------------------------------
+
+ID: ce2bc7ad-458d-445e-a0a9-7897b596fdd0
+Large Image URL: https://cards.scryfall.io/large/front/c/e/ce2bc7ad-458d-445e-a0a9-7897b596fdd0.jpg?1596250018
+Normal Image URL: https://cards.scryfall.io/normal/front/c/e/ce2bc7ad-458d-445e-a0a9-7897b596fdd0.jpg?1596250018
+Small Image URL: https://cards.scryfall.io/small/front/c/e/ce2bc7ad-458d-445e-a0a9-7897b596fdd0.jpg?1596250018
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/c/e/ce2bc7ad-458d-445e-a0a9-7897b596fdd0.jpg?1596250018
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Adherent of Hope
+Power: 2
+Toughness: 1
+Artist: Dan Murayama Scott
+Border Color: black
+Type: Creature â€” Human Soldier
+Set Name: Core Set 2021
+Rarity: common
+CMC: 2.0
+Text: At the beginning of combat on your turn, if you control a Basri planeswalker, put a +1/+1 counter on Adherent of Hope.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 68f91092-b679-46c1-9f0c-3b286ee1d02f
+Large Image URL: https://cards.scryfall.io/large/front/6/8/68f91092-b679-46c1-9f0c-3b286ee1d02f.jpg?1696636514
+Normal Image URL: https://cards.scryfall.io/normal/front/6/8/68f91092-b679-46c1-9f0c-3b286ee1d02f.jpg?1696636514
+Small Image URL: https://cards.scryfall.io/small/front/6/8/68f91092-b679-46c1-9f0c-3b286ee1d02f.jpg?1696636514
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/8/68f91092-b679-46c1-9f0c-3b286ee1d02f.jpg?1696636514
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}
+Name: Adipose Offspring
+Power: 2
+Toughness: 2
+Artist: John Tedrick
+Border Color: black
+Type: Creature â€” Alien
+Set Name: Doctor Who
+Rarity: rare
+CMC: 4.0
+Text: Emerge {5}{W} (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.)
+When Adipose Offspring enters, create a 2/2 white Alien creature token. If Adipose Offspring's emerge cost was paid, instead create X of those tokens, where X is the sacrificed creature's toughness.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: 02cbd397-3ef3-465f-84fe-765dd1444af8
+Large Image URL: https://cards.scryfall.io/large/front/0/2/02cbd397-3ef3-465f-84fe-765dd1444af8.jpg?1698988417
+Normal Image URL: https://cards.scryfall.io/normal/front/0/2/02cbd397-3ef3-465f-84fe-765dd1444af8.jpg?1698988417
+Small Image URL: https://cards.scryfall.io/small/front/0/2/02cbd397-3ef3-465f-84fe-765dd1444af8.jpg?1698988417
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/2/02cbd397-3ef3-465f-84fe-765dd1444af8.jpg?1698988417
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{U}{B}{R}
+Name: Admiral Beckett Brass
+Power: 3
+Toughness: 3
+Artist: Jason Rainville
+Border Color: black
+Type: Legendary Creature â€” Human Pirate
+Set Name: The Lost Caverns of Ixalan Commander
+Rarity: mythic
+CMC: 4.0
+Text: Other Pirates you control get +1/+1.
+At the beginning of your end step, gain control of target nonland permanent controlled by a player who was dealt combat damage by three or more Pirates this turn.
+Colors: B R U 
+----------------------------------------------------------------------------------------------
+
+ID: bdc2d492-9d1e-4543-8b9c-c66ee67992ce
+Large Image URL: https://cards.scryfall.io/large/front/b/d/bdc2d492-9d1e-4543-8b9c-c66ee67992ce.jpg?1699972732
+Normal Image URL: https://cards.scryfall.io/normal/front/b/d/bdc2d492-9d1e-4543-8b9c-c66ee67992ce.jpg?1699972732
+Small Image URL: https://cards.scryfall.io/small/front/b/d/bdc2d492-9d1e-4543-8b9c-c66ee67992ce.jpg?1699972732
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/d/bdc2d492-9d1e-4543-8b9c-c66ee67992ce.jpg?1699972732
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{U}{B}{R}
+Name: Admiral Brass, Unsinkable
+Power: 3
+Toughness: 3
+Artist: Jason Rainville
+Border Color: black
+Type: Legendary Creature â€” Human Pirate
+Set Name: The Lost Caverns of Ixalan Commander
+Rarity: mythic
+CMC: 5.0
+Text: When Admiral Brass, Unsinkable enters, mill four cards.
+At the beginning of combat on your turn, you may return target Pirate creature card from your graveyard to the battlefield with a finality counter on it. It has base power and toughness 4/4. It gains haste until end of turn. (If a creature with a finality counter on it would die, exile it instead.)
+Colors: B R U 
+----------------------------------------------------------------------------------------------
+
+ID: 80dc0310-afd9-49b4-b58f-a0e91120c38c
+Large Image URL: https://cards.scryfall.io/large/front/8/0/80dc0310-afd9-49b4-b58f-a0e91120c38c.jpg?1555039852
+Normal Image URL: https://cards.scryfall.io/normal/front/8/0/80dc0310-afd9-49b4-b58f-a0e91120c38c.jpg?1555039852
+Small Image URL: https://cards.scryfall.io/small/front/8/0/80dc0310-afd9-49b4-b58f-a0e91120c38c.jpg?1555039852
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/0/80dc0310-afd9-49b4-b58f-a0e91120c38c.jpg?1555039852
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{U}{U}
+Name: Admiral's Order
+Power: 
+Toughness: 
+Artist: Slawomir Maniak
+Border Color: black
+Type: Instant
+Set Name: Rivals of Ixalan
+Rarity: rare
+CMC: 3.0
+Text: Raid â€” If you attacked this turn, you may pay {U} rather than pay this spell's mana cost.
+Counter target spell.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: a6e7713d-6054-46a7-a8bc-f09e7a81a571
+Large Image URL: https://cards.scryfall.io/large/front/a/6/a6e7713d-6054-46a7-a8bc-f09e7a81a571.jpg?1604195494
+Normal Image URL: https://cards.scryfall.io/normal/front/a/6/a6e7713d-6054-46a7-a8bc-f09e7a81a571.jpg?1604195494
+Small Image URL: https://cards.scryfall.io/small/front/a/6/a6e7713d-6054-46a7-a8bc-f09e7a81a571.jpg?1604195494
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/6/a6e7713d-6054-46a7-a8bc-f09e7a81a571.jpg?1604195494
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{W}{W}{W}
+Name: Admonition Angel
+Power: 6
+Toughness: 6
+Artist: Steve Argyle
+Border Color: black
+Type: Creature â€” Angel
+Set Name: Zendikar Rising Commander
+Rarity: mythic
+CMC: 6.0
+Text: Flying
+Landfall â€” Whenever a land you control enters, you may exile target nonland permanent other than Admonition Angel.
+When Admonition Angel leaves the battlefield, return all cards exiled with it to the battlefield under their owners' control.
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: a9f2c53e-ff58-4aa8-89a6-4f45628cc571
+Large Image URL: https://cards.scryfall.io/large/front/a/9/a9f2c53e-ff58-4aa8-89a6-4f45628cc571.jpg?1598306470
+Normal Image URL: https://cards.scryfall.io/normal/front/a/9/a9f2c53e-ff58-4aa8-89a6-4f45628cc571.jpg?1598306470
+Small Image URL: https://cards.scryfall.io/small/front/a/9/a9f2c53e-ff58-4aa8-89a6-4f45628cc571.jpg?1598306470
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/a/9/a9f2c53e-ff58-4aa8-89a6-4f45628cc571.jpg?1598306470
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{B}{B}
+Name: Ad Nauseam
+Power: 
+Toughness: 
+Artist: Jeremy Jarvis
+Border Color: black
+Type: Instant
+Set Name: Double Masters
+Rarity: rare
+CMC: 5.0
+Text: Reveal the top card of your library and put that card into your hand. You lose life equal to its mana value. You may repeat this process any number of times.
+Colors: B 
+----------------------------------------------------------------------------------------------
+
+ID: 865e267d-450c-4eeb-b61d-bd0ec5d8534a
+Large Image URL: https://cards.scryfall.io/large/front/8/6/865e267d-450c-4eeb-b61d-bd0ec5d8534a.jpg?1562805775
+Normal Image URL: https://cards.scryfall.io/normal/front/8/6/865e267d-450c-4eeb-b61d-bd0ec5d8534a.jpg?1562805775
+Small Image URL: https://cards.scryfall.io/small/front/8/6/865e267d-450c-4eeb-b61d-bd0ec5d8534a.jpg?1562805775
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/8/6/865e267d-450c-4eeb-b61d-bd0ec5d8534a.jpg?1562805775
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{W}
+Name: Adorned Pouncer
+Power: 1
+Toughness: 1
+Artist: Slawomir Maniak
+Border Color: black
+Type: Creature â€” Cat
+Set Name: Hour of Devastation
+Rarity: rare
+CMC: 2.0
+Text: Double strike
+Eternalize {3}{W}{W} ({3}{W}{W}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a 4/4 black Zombie Cat with no mana cost. Eternalize only as a sorcery.)
+Colors: W 
+----------------------------------------------------------------------------------------------
+
+ID: b3d878fc-cc21-407f-b3cc-95bf2d717a80
+Large Image URL: https://cards.scryfall.io/large/front/b/3/b3d878fc-cc21-407f-b3cc-95bf2d717a80.jpg?1721424160
+Normal Image URL: https://cards.scryfall.io/normal/front/b/3/b3d878fc-cc21-407f-b3cc-95bf2d717a80.jpg?1721424160
+Small Image URL: https://cards.scryfall.io/small/front/b/3/b3d878fc-cc21-407f-b3cc-95bf2d717a80.jpg?1721424160
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/3/b3d878fc-cc21-407f-b3cc-95bf2d717a80.jpg?1721424160
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}
+Name: Adrestia
+Power: 4
+Toughness: 3
+Artist: Mintautas Å ukys
+Border Color: black
+Type: Legendary Artifact â€” Vehicle
+Set Name: Assassin's Creed
+Rarity: uncommon
+CMC: 3.0
+Text: Islandwalk (This creature can't be blocked as long as defending player controls an Island.)
+Whenever Adrestia attacks, if an Assassin crewed it this turn, draw a card. Adrestia becomes an Assassin in addition to its other types until end of turn.
+Crew 1
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+ID: 01c2337d-1c3c-4c5e-8b06-dc8a8c56164e
+Large Image URL: https://cards.scryfall.io/large/front/0/1/01c2337d-1c3c-4c5e-8b06-dc8a8c56164e.jpg?1673305427
+Normal Image URL: https://cards.scryfall.io/normal/front/0/1/01c2337d-1c3c-4c5e-8b06-dc8a8c56164e.jpg?1673305427
+Small Image URL: https://cards.scryfall.io/small/front/0/1/01c2337d-1c3c-4c5e-8b06-dc8a8c56164e.jpg?1673305427
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/1/01c2337d-1c3c-4c5e-8b06-dc8a8c56164e.jpg?1673305427
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{R}{W}
+Name: Adriana, Captain of the Guard
+Power: 4
+Toughness: 4
+Artist: Chris Rallis
+Border Color: black
+Type: Legendary Creature â€” Human Knight
+Set Name: Dominaria United Commander
+Rarity: rare
+CMC: 5.0
+Text: Melee (Whenever this creature attacks, it gets +1/+1 until end of turn for each opponent you attacked this combat.)
+Other creatures you control have melee. (If a creature has multiple instances of melee, each triggers separately.)
+Colors: R W 
+----------------------------------------------------------------------------------------------
+
+ID: 1f290a17-699e-420d-8322-3e28300a0d2e
+Large Image URL: https://cards.scryfall.io/large/front/1/f/1f290a17-699e-420d-8322-3e28300a0d2e.jpg?1696694562
+Normal Image URL: https://cards.scryfall.io/normal/front/1/f/1f290a17-699e-420d-8322-3e28300a0d2e.jpg?1696694562
+Small Image URL: https://cards.scryfall.io/small/front/1/f/1f290a17-699e-420d-8322-3e28300a0d2e.jpg?1696694562
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/f/1f290a17-699e-420d-8322-3e28300a0d2e.jpg?1696694562
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {1}{U}
+Name: Adric, Mathematical Genius
+Power: 1
+Toughness: 1
+Artist: Billy Christian
+Border Color: black
+Type: Legendary Creature â€” Human Artificer
+Set Name: Doctor Who
+Rarity: rare
+CMC: 2.0
+Text: {2}{U}, {T}: Copy target activated or triggered ability you control. You may choose new targets for the copy.
+Ultimate Sacrifice â€” {1}{U}, Sacrifice Adric: Counter target activated or triggered ability.
+Doctor's companion (You can have two commanders if the other is the Doctor.)
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: b9c11061-bb34-4904-b9f1-ea106b517bbe
+Large Image URL: https://cards.scryfall.io/large/front/b/9/b9c11061-bb34-4904-b9f1-ea106b517bbe.jpg?1706240967
+Normal Image URL: https://cards.scryfall.io/normal/front/b/9/b9c11061-bb34-4904-b9f1-ea106b517bbe.jpg?1706240967
+Small Image URL: https://cards.scryfall.io/small/front/b/9/b9c11061-bb34-4904-b9f1-ea106b517bbe.jpg?1706240967
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/b/9/b9c11061-bb34-4904-b9f1-ea106b517bbe.jpg?1706240967
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {2}{G}{U}
+Name: Adrix and Nev, Twincasters
+Power: 2
+Toughness: 2
+Artist: Andrew Mar
+Border Color: black
+Type: Legendary Creature â€” Merfolk Wizard
+Set Name: Murders at Karlov Manor Commander
+Rarity: mythic
+CMC: 4.0
+Text: Ward {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)
+If one or more tokens would be created under your control, twice that many of those tokens are created instead.
+Colors: G U 
+----------------------------------------------------------------------------------------------
+
+ID: 67a76010-d932-4727-8b5e-b8e2d14e1362
+Large Image URL: https://cards.scryfall.io/large/front/6/7/67a76010-d932-4727-8b5e-b8e2d14e1362.jpg?1627708716
+Normal Image URL: https://cards.scryfall.io/normal/front/6/7/67a76010-d932-4727-8b5e-b8e2d14e1362.jpg?1627708716
+Small Image URL: https://cards.scryfall.io/small/front/6/7/67a76010-d932-4727-8b5e-b8e2d14e1362.jpg?1627708716
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/6/7/67a76010-d932-4727-8b5e-b8e2d14e1362.jpg?1627708716
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{R}{W}
+Name: Adult Gold Dragon
+Power: 4
+Toughness: 3
+Artist: Chris Rahn
+Border Color: black
+Type: Creature â€” Dragon
+Set Name: Adventures in the Forgotten Realms
+Rarity: rare
+CMC: 5.0
+Text: Flying, lifelink, haste
+Colors: R W 
+----------------------------------------------------------------------------------------------
+
+ID: 184da30e-0db4-450c-8856-5c23088c35be
+Large Image URL: https://cards.scryfall.io/large/front/1/8/184da30e-0db4-450c-8856-5c23088c35be.jpg?1559592345
+Normal Image URL: https://cards.scryfall.io/normal/front/1/8/184da30e-0db4-450c-8856-5c23088c35be.jpg?1559592345
+Small Image URL: https://cards.scryfall.io/small/front/1/8/184da30e-0db4-450c-8856-5c23088c35be.jpg?1559592345
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/1/8/184da30e-0db4-450c-8856-5c23088c35be.jpg?1559592345
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {B}{R}{G}
+Name: Adun Oakenshield
+Power: 1
+Toughness: 2
+Artist: Jeff A. Menges
+Border Color: black
+Type: Legendary Creature â€” Human Knight
+Set Name: Masters Edition
+Rarity: rare
+CMC: 3.0
+Text: {B}{R}{G}, {T}: Return target creature card from your graveyard to your hand.
+Colors: B G R 
+----------------------------------------------------------------------------------------------
+
+ID: 7384d50a-5801-47ed-ab9f-5c7e4f1f20dd
+Large Image URL: https://cards.scryfall.io/large/front/7/3/7384d50a-5801-47ed-ab9f-5c7e4f1f20dd.jpg?1562877745
+Normal Image URL: https://cards.scryfall.io/normal/front/7/3/7384d50a-5801-47ed-ab9f-5c7e4f1f20dd.jpg?1562877745
+Small Image URL: https://cards.scryfall.io/small/front/7/3/7384d50a-5801-47ed-ab9f-5c7e4f1f20dd.jpg?1562877745
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/7/3/7384d50a-5801-47ed-ab9f-5c7e4f1f20dd.jpg?1562877745
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{U}
+Name: Advanced Hoverguard
+Power: 2
+Toughness: 2
+Artist: Scott M. Fischer
+Border Color: black
+Type: Creature â€” Drone
+Set Name: Fifth Dawn
+Rarity: common
+CMC: 4.0
+Text: Flying
+{U}: Advanced Hoverguard gains shroud until end of turn. (It can't be the target of spells or abilities.)
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+ID: 044b2bfc-a5cc-4505-831d-5e1e3a6fdb3c
+Large Image URL: https://cards.scryfall.io/large/front/0/4/044b2bfc-a5cc-4505-831d-5e1e3a6fdb3c.jpg?1673147183
+Normal Image URL: https://cards.scryfall.io/normal/front/0/4/044b2bfc-a5cc-4505-831d-5e1e3a6fdb3c.jpg?1673147183
+Small Image URL: https://cards.scryfall.io/small/front/0/4/044b2bfc-a5cc-4505-831d-5e1e3a6fdb3c.jpg?1673147183
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/0/4/044b2bfc-a5cc-4505-831d-5e1e3a6fdb3c.jpg?1673147183
+Language: en
+Layout: normal
+Legal: true
+Mana Cost: {3}{U}{U}
+Name: Advanced Stitchwing
+Power: 3
+Toughness: 4
+Artist: Johann Bodin
+Border Color: black
+Type: Creature â€” Zombie Horror
+Set Name: Double Masters 2022
+Rarity: common
+CMC: 5.0
+Text: Flying
+{2}{U}, Discard two cards: Return Advanced Stitchwing from your graveyard to the battlefield tapped.
+Colors: U 
+----------------------------------------------------------------------------------------------
+
+CARTA DOBLE
+q=thing+in+the+ice
+https://api.scryfall.com/cards/search?q=thing+in+the+ice
+Total de cartas encontradas: 1
+¿Hay más páginas? false
+Numero de Cartas en la lista: 1
+-----------------------------------------------
+Detalles de la carta doble:
+Layout: transform
+Colors: [U]
+
+Front Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/front/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282
+Normal Image URL: https://cards.scryfall.io/normal/front/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282
+Small Image URL: https://cards.scryfall.io/small/front/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282
+Art Crop Image URL: https://cards.scryfall.io/art_crop/front/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282
+Language: 
+Layout: 
+Legal: true
+Mana Cost: {1}{U}
+Name: Thing in the Ice
+Power: 0
+Toughness: 4
+Artist: Svetlin Velinov
+Border Color: 
+Type: Creature â€” Horror
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: Defender
+Thing in the Ice enters with four ice counters on it.
+Whenever you cast an instant or sorcery spell, remove an ice counter from Thing in the Ice. Then if it has no ice counters on it, transform it.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
+
+Back Face:
+ID: 
+Large Image URL: https://cards.scryfall.io/large/back/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282
+Normal Image URL: https://cards.scryfall.io/normal/back/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282
+Small Image URL: https://cards.scryfall.io/small/back/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282
+Art Crop Image URL: https://cards.scryfall.io/art_crop/back/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282
+Language: 
+Layout: 
+Legal: true
+Mana Cost: 
+Name: Awoken Horror
+Power: 7
+Toughness: 8
+Artist: Svetlin Velinov
+Border Color: 
+Type: Creature â€” Kraken Horror
+Set Name: 
+Rarity: 
+CMC: 0.0
+Text: When this creature transforms into Awoken Horror, return all non-Horror creatures to their owners' hands.
+Colors: None/Colorless
+----------------------------------------------------------------------------------------------
+
