@@ -1,5 +1,8 @@
 package es.ucm.deckdraw.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TCard {
     private String ID;
     private String largeImageUrl;
@@ -20,7 +23,7 @@ public class TCard {
     private String rarity;
     private Double cmc;
     private String text;
-    private TColor colors;
+    private List<String> colors;
 
     // Constructor vacío
     public TCard() {
@@ -43,14 +46,14 @@ public class TCard {
         this.rarity = "";
         this.cmc = 0.0;
         this.text = "";
-        this.colors = new TColor(); // Inicialmente null, puede asignarse después
+        this.colors = new ArrayList<>(); // Inicialmente null, puede asignarse después
     }
 
     // Constructor con parámetros
     public TCard(String ID, String largeImageUrl, String normalImageUrl, String smallImageUrl, String artCropImageUrl,
                  String language, String layout, Boolean legal, String manaCost, String name, String power,
                  String toughness, String artist, String borderColor, String type, String setName, String rarity,
-                 Double cmc, String text ,TColor colors) {
+                 Double cmc, String text ,List<String> colors) {
         this.ID = ID;
         this.largeImageUrl = largeImageUrl;
         this.normalImageUrl = normalImageUrl;
@@ -91,11 +94,11 @@ public class TCard {
     }
 
     // Getter y Setter para los colores
-    public TColor getColors() {
+    public List<String> getColors() {
         return colors;
     }
 
-    public void setColors(TColor colors) {
+    public void setColors(List<String> colors) {
         this.colors = colors;
     }
 
@@ -275,14 +278,53 @@ public class TCard {
 
         // Si TColor tiene un método para obtener los colores, por ejemplo, getColors(), puedes imprimirlos así:
         System.out.print("Colors: ");
-        if (colors.isColorless()) {
+        if (colors.isEmpty()) {
             System.out.print("None/Colorless");
         } else {
-            for (String color : colors.getColors()) {
+            for (String color : colors) {
                 System.out.print(color + " ");
             }
         }
         System.out.println("\n----------------------------------------------------------------------------------------------\n");
+    }
+
+
+
+    public String getCardDetails() {
+        StringBuilder details = new StringBuilder();
+
+        details.append("ID: ").append(ID).append("\n");
+        details.append("Large Image URL: ").append(largeImageUrl).append("\n");
+        details.append("Normal Image URL: ").append(normalImageUrl).append("\n");
+        details.append("Small Image URL: ").append(smallImageUrl).append("\n");
+        details.append("Art Crop Image URL: ").append(artCropImageUrl).append("\n");
+        details.append("Language: ").append(language).append("\n");
+        details.append("Layout: ").append(layout).append("\n");
+        details.append("Legal: ").append(legal).append("\n");
+        details.append("Mana Cost: ").append(manaCost).append("\n");
+        details.append("Name: ").append(name).append("\n");
+        details.append("Power: ").append(power).append("\n");
+        details.append("Toughness: ").append(toughness).append("\n");
+        details.append("Artist: ").append(artist).append("\n");
+        details.append("Border Color: ").append(borderColor).append("\n");
+        details.append("Type: ").append(type).append("\n");
+        details.append("Set Name: ").append(setName).append("\n");
+        details.append("Rarity: ").append(rarity).append("\n");
+        details.append("CMC: ").append(cmc).append("\n");
+        details.append("Text: ").append(text).append("\n");
+
+        // Añadir detalles de los colores de la carta
+        details.append("Colors: ");
+        if (colors.isEmpty()) {
+            details.append("None/Colorless");
+        } else {
+            for (String color : colors) {
+                details.append(color).append(" ");
+            }
+        }
+        details.append("\n----------------------------------------------------\n");
+
+        return details.toString();
     }
 }
 

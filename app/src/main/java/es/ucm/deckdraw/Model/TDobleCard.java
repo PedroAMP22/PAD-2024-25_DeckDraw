@@ -47,7 +47,7 @@ public class TDobleCard extends TCard{
                 base.getText(),
                 base.getColors());
 
-        // Inicializa front y back en null o en el futuro con valores específicos
+        // Inicializa front y back en null
         this.front = null;
         this.back = null;
     }
@@ -74,7 +74,7 @@ public class TDobleCard extends TCard{
     public void printCardDetails() {
         System.out.println("Detalles de la carta doble:");
         System.out.println("Layout: " + getLayout());
-        System.out.println("Colors: " + getColors().getColors());
+        System.out.println("Colors: " + getColors());
 
         System.out.println("\nFront Face:");
         if (front != null) {
@@ -91,5 +91,29 @@ public class TDobleCard extends TCard{
         }
     }
 
+    @Override
+    public String getCardDetails() {
+        StringBuilder details = new StringBuilder();
+
+        details.append("Detalles de la carta doble:\n")
+                .append("Layout: ").append(getLayout()).append("\n")
+                .append("Colors: ").append(getColors()).append("\n\n");
+
+        details.append("Front Face:\n");
+        if (front != null) {
+            details.append(front.getCardDetails());
+        } else {
+            details.append("No front face available.\n");
+        }
+
+        details.append("\nBack Face:\n");
+        if (back != null) {
+            details.append(back.getCardDetails());
+        } else {
+            details.append("No back face available.\n");
+        }
+
+        return details.toString();
+    }
 }
 
