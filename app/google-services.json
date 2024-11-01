@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "884845140686",
+    "firebase_url": "https://deckdraw-90c8d-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "deckdraw-90c8d",
+    "storage_bucket": "deckdraw-90c8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884845140686:android:93a48e2c096873592c4e9f",
+        "android_client_info": {
+          "package_name": "es.ucm.deckdraw"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcbSA3bSDw4ppOjHbx-wAoLUW4PqDmrCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
