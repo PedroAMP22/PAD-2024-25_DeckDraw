@@ -1,9 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.DeckDraw" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/main</item>
-        <item name="colorPrimaryDark">@color/main</item>
+
+        <item name="colorPrimary">@color/PrimaryColor</item>
+        <item name="colorPrimaryVariant">@color/DarkPrimaryColor</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/SecondaryColor</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:windowBackground">@color/BackgroundColor</item>
+        <item name="android:textColor">@color/TextColorPrimary</item>
+    </style>
+
+    <style name="ToolBarLight" parent="Widget.AppCompat.Toolbar">
+        <item name="backgroundTint"> @color/PrimaryColor</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="titleTextAppearance">@style/TitleText</item>
+
+    </style>
+
+    <style name="TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="TextViewStyle">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/TextColorPrimary</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+
     </style>
 
     <style name="Theme.DeckDraw" parent="Base.Theme.DeckDraw" />

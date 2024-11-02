@@ -1,4 +1,4 @@
-package es.ucm.deckdraw.Fragment;
+package es.ucm.deckdraw.ui.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import es.ucm.deckdraw.MainActivity;
+import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 
 public class CreateDeckFragment extends Fragment {
@@ -38,10 +38,10 @@ public class CreateDeckFragment extends Fragment {
     public void onResume() {
         super.onResume();
         // Cambiar título y mostrar flecha de retroceso
-        if (getActivity() instanceof MainActivity) {
-            MainActivity mainActivity = (MainActivity) getActivity();
-            mainActivity.setToolbarTitle("Crear Mazo");
-            mainActivity.setHomeAsUpEnabled(true);
+        if (getActivity() instanceof MainScreenActivity) {
+            MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
+            mainScreenActivity.setToolbarTitle("Crear Mazo");
+            mainScreenActivity.setHomeAsUpEnabled(true);
         }
     }
 }

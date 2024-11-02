@@ -1,8 +1,7 @@
-package es.ucm.deckdraw.Service;
+package es.ucm.deckdraw.data.Service;
 
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
-import android.widget.Scroller;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +18,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.ucm.deckdraw.Adapter.CardTextAdapter;
-import es.ucm.deckdraw.Model.TCard;
+import es.ucm.deckdraw.ui.Adapter.CardTextAdapter;
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.R;
 
 public class MTGServiceActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<TCard>> {

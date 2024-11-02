@@ -1,4 +1,4 @@
-package es.ucm.deckdraw.Adapter;
+package es.ucm.deckdraw.ui.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
-import es.ucm.deckdraw.Model.TCard;
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.R;
 
 public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardViewHolder> {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permiso de Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,7 +15,13 @@
         android:theme="@style/Theme.DeckDraw"
         tools:targetApi="31">
         <activity
-            android:name=".Service.MTGServiceActivity"
+            android:name=".ui.Activities.LogInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".data.Service.MTGServiceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.Activities.MainScreenActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
@@ -27,7 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

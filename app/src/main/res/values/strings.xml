@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">DeckDraw</string>
 
-    <string name="menu_search">Buscar</string>
-    <string name="menu_filter">Filtrar</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_filter">Filter</string>
     <string name="menu_decks">Decks</string>
     <string name="menu_friends">Friends</string>
+
+    <string name="log_in">Log in to continue</string>
+    <string name="password">Password</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="log_in_short">Log In</string>
+    <string name="if_you_are_not_registered_register_now">If you are not registered, register now</string>
+    <string name="app_logo">App logo</string>
+    <string name="error_connection_not_found">Error: Connection not found</string>
+    <string name="error_right_now_you_are_not_connected_to_a_network_try_again_later">Error: Right now you are not connected to a Network, try again later</string>
 </resources>

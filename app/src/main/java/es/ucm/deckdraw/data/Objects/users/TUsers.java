@@ -1,4 +1,4 @@
-package es.ucm.deckdraw.users;
+package es.ucm.deckdraw.data.Objects.users;
 
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;

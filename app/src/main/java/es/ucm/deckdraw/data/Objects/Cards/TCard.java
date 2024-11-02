@@ -1,4 +1,4 @@
-package es.ucm.deckdraw.Model;
+package es.ucm.deckdraw.data.Objects.Cards;
 
 import java.util.ArrayList;
 import java.util.List;

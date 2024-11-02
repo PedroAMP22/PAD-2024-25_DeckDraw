@@ -1,7 +1,6 @@
-package es.ucm.deckdraw.decks;
+package es.ucm.deckdraw.data.Objects.decks;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class TDecks {

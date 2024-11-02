@@ -1,4 +1,4 @@
-package es.ucm.deckdraw.Model;
+package es.ucm.deckdraw.data.Objects.Cards;
 
 public class TDobleCard extends TCard{
     private TCard front;  // Cara frontal de la carta

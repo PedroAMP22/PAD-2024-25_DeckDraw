@@ -1,77 +1,73 @@
 package es.ucm.deckdraw;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import es.ucm.deckdraw.Fragment.CreateDeckFragment;
-import es.ucm.deckdraw.Fragment.DecksFragment;
-import es.ucm.deckdraw.Fragment.FriendsFragment;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import com.google.firebase.FirebaseApp;
 
+import es.ucm.deckdraw.ui.Activities.LogInActivity;
+import es.ucm.deckdraw.ui.Activities.error_NetConnection;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    private static final long SPLASH_SCREEN_DELAY = 3000;
+
+    private static final String TAG = "Main Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-            int itemId = item.getItemId();
-
-            if (itemId == R.id.nav_friends) {
-                selectedFragment = new FriendsFragment();
-            } else if (itemId == R.id.nav_deck) {
-                selectedFragment = new DecksFragment();
-            }
-
-            if (selectedFragment != null) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, selectedFragment)
-                        .commit();
-            }
-            return true;
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
         });
 
-        // Seleccionar el elemento "Decks" por defecto
-        bottomNavigationView.setSelectedItemId(R.id.nav_deck);
-      
-        //Keep this to start the Firebase database
-        FirebaseApp.initializeApp(this);
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Quitar la flecha de retroceso y restablecer el título
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            getSupportActionBar().setTitle("DeckDraw"); // Título predeterminado
+        ConnectivityManager conMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        Network network = conMgr.getActiveNetwork();
+        NetworkCapabilities networkCap =
+                conMgr.getNetworkCapabilities(network);
+        if (networkCap!= null) {//Connection available
+            Log.i(TAG, "Connected to network");
+            //Keep this to start the Firebase database
+            FirebaseApp.initializeApp(this);
+
+
+            new Handler().postDelayed(() -> {
+                Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+                startActivity(intent);
+                finish();
+            }, SPLASH_SCREEN_DELAY);
+        } else {//Connection not available
+            Log.i(TAG, "Couldn't connect to network");
+            new Handler().postDelayed(() -> {
+                Intent intent = new Intent(MainActivity.this, error_NetConnection.class);
+                startActivity(intent);
+                finish();
+            }, SPLASH_SCREEN_DELAY);
+
         }
+
+
+
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        getSupportFragmentManager().popBackStack(); // Navegar hacia atrás en la pila de fragmentos
-        return true;
-    }
 
-    public void setToolbarTitle(String title) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(title);
-        }
-    }
-
-    public void setHomeAsUpEnabled(boolean enabled) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(enabled);
-        }
-    }
 }
-

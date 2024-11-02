@@ -1,6 +1,6 @@
-package es.ucm.deckdraw.Service;
-import es.ucm.deckdraw.Model.TCard;
-import es.ucm.deckdraw.Model.TDobleCard;
+package es.ucm.deckdraw.data.Service;
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
+import es.ucm.deckdraw.data.Objects.Cards.TDobleCard;
 
 
 import org.json.JSONArray;

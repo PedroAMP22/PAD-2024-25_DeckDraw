@@ -1,4 +1,4 @@
-package es.ucm.deckdraw.Fragment;
+package es.ucm.deckdraw.ui.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import es.ucm.deckdraw.MainActivity;
+import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 
 public class FriendsFragment extends Fragment {
@@ -24,10 +24,10 @@ public class FriendsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (getActivity() instanceof MainActivity) {
-            MainActivity mainActivity = (MainActivity) getActivity();
-            mainActivity.setToolbarTitle("Lista de amigos");
-            mainActivity.setHomeAsUpEnabled(false);
+        if (getActivity() instanceof MainScreenActivity) {
+            MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
+            mainScreenActivity.setToolbarTitle("Lista de amigos");
+            mainScreenActivity.setHomeAsUpEnabled(false);
         }
     }
 }

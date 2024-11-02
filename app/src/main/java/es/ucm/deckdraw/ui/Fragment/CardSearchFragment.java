@@ -1,4 +1,4 @@
-package es.ucm.deckdraw.Fragment;
+package es.ucm.deckdraw.ui.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,11 +20,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.ucm.deckdraw.Adapter.CardTextAdapter;
-import es.ucm.deckdraw.MainActivity;
-import es.ucm.deckdraw.Model.TCard;
+import es.ucm.deckdraw.ui.Adapter.CardTextAdapter;
+import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.R;
-import es.ucm.deckdraw.Service.CardLoader;
+import es.ucm.deckdraw.data.Service.CardLoader;
 
 public class CardSearchFragment extends Fragment implements LoaderManager.LoaderCallbacks<List<TCard>> {
 
@@ -56,10 +56,10 @@ public class CardSearchFragment extends Fragment implements LoaderManager.Loader
     @Override
     public void onResume() {
         super.onResume();
-        if (getActivity() instanceof MainActivity) {
-            MainActivity mainActivity = (MainActivity) getActivity();
-            mainActivity.setToolbarTitle("");
-            mainActivity.setHomeAsUpEnabled(true);
+        if (getActivity() instanceof MainScreenActivity) {
+            MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
+            mainScreenActivity.setToolbarTitle("");
+            mainScreenActivity.setHomeAsUpEnabled(true);
         }
     }
 

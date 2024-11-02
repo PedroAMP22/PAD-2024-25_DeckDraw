@@ -1,11 +1,10 @@
-package es.ucm.deckdraw.Service;
+package es.ucm.deckdraw.data.Service;
 
 import android.content.Context;
 import androidx.loader.content.AsyncTaskLoader;
 
-import java.util.ArrayList;
 import java.util.List;
-import es.ucm.deckdraw.Model.TCard;
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
 
 public class CardLoader extends AsyncTaskLoader<List<TCard>> {
 
