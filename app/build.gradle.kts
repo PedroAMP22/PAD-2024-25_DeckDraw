@@ -50,13 +50,8 @@ dependencies {
     implementation(libs.firebase.auth)
 
     implementation(libs.support.annotations)
-
+    implementation(libs.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-    //https://developer.android.com/jetpack/androidx/releases/recyclerview?hl=es-419#groovy
-    implementation ("androidx.recyclerview:recyclerview:1.3.2")
-    // For control over item selection of both touch and mouse driven selection
-    implementation ("androidx.recyclerview:recyclerview-selection:1.1.0")
 }
