@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Seleccionar el elemento "Decks" por defecto
         bottomNavigationView.setSelectedItemId(R.id.nav_deck);
+      
+        //Keep this to start the Firebase database
+        FirebaseApp.initializeApp(this);
     }
 
     @Override
@@ -70,3 +73,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
