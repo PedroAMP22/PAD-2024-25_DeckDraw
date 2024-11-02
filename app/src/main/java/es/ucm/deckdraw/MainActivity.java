@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import es.ucm.deckdraw.Fragment.CreateDeckFragment;
 import es.ucm.deckdraw.Fragment.DecksFragment;
 import es.ucm.deckdraw.Fragment.FriendsFragment;
+import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends AppCompatActivity {
 

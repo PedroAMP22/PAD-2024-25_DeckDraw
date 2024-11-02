@@ -51,6 +51,7 @@ dependencies {
 
     implementation(libs.support.annotations)
     implementation(libs.recyclerview)
+    implementation(libs.firebase.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

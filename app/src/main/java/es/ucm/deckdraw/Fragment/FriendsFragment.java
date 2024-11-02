@@ -27,7 +27,7 @@ public class FriendsFragment extends Fragment {
         if (getActivity() instanceof MainActivity) {
             MainActivity mainActivity = (MainActivity) getActivity();
             mainActivity.setToolbarTitle("Lista de amigos");
-            mainActivity.setHomeAsUpEnabled(true);
+            mainActivity.setHomeAsUpEnabled(false);
         }
     }
 }
