@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,14 +21,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.ucm.deckdraw.data.Service.CardLoaderCallbacks;
 import es.ucm.deckdraw.ui.Adapter.CardTextAdapter;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Service.CardLoader;
+import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
-public class CardSearchFragment extends Fragment implements LoaderManager.LoaderCallbacks<List<TCard>> {
-
+public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.Callback {
+    private SharedViewModel sharedViewModel;
     private static final int LOADER_ID = 1; // Solo un loader para la búsqueda
     private RecyclerView recyclerView;
     private CardTextAdapter adapter;
@@ -39,6 +42,9 @@ public class CardSearchFragment extends Fragment implements LoaderManager.Loader
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_card_search, container, false);
 
+        // Inicialización del ViewModel
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
         recyclerView = view.findViewById(R.id.recyclerView);
 
         // Configuración del RecyclerView
@@ -49,9 +55,15 @@ public class CardSearchFragment extends Fragment implements LoaderManager.Loader
         // Permitir que el fragmento maneje los menús
         setHasOptionsMenu(true);
 
+        // Observa los cambios en la consulta de búsqueda
+        sharedViewModel.getCurrentSearchQuery().observe(getViewLifecycleOwner(), query -> {
+            if (query != null) {
+                search(query);
+            }
+        });
+
         return view;
     }
-
 
     @Override
     public void onResume() {
@@ -80,18 +92,19 @@ public class CardSearchFragment extends Fragment implements LoaderManager.Loader
         // Obtener la SearchView
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
 
+        // Configura la SearchView con el estado de búsqueda
+        sharedViewModel.getCurrentSearchQuery().observe(getViewLifecycleOwner(), query -> {
+            if (query != null) {
+                searchView.setQuery(query, false);
+            }
+        });
+
         // Configurar el listener para manejar las consultas de búsqueda
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                // Reiniciar el loader con la nueva consulta
-                Bundle args = new Bundle();
-                args.putString("name", query);
-                args.putString("format", "");
-                args.putString("type", "");
-                args.putStringArrayList("colors", new ArrayList<>());
-
-                LoaderManager.getInstance(CardSearchFragment.this).restartLoader(LOADER_ID, args, CardSearchFragment.this);
+                sharedViewModel.setCurrentSearchQuery(query); // Guarda la consulta en el ViewModel
+                search(query); // Llama al método de búsqueda centralizado
                 return true;
             }
 
@@ -103,34 +116,23 @@ public class CardSearchFragment extends Fragment implements LoaderManager.Loader
         });
     }
 
-    @Override
-    public Loader<List<TCard>> onCreateLoader(int id, Bundle args) {
-        String name = args.getString("name", "");
-        String format = args.getString("format", "");
-        ArrayList<String> colors = args.getStringArrayList("colors");
-        String type = args.getString("type", "");
-
-        // Crear el loader y forzar su carga
-        CardLoader loader = new CardLoader(getContext(), name, format, colors, type);
-        loader.forceLoad(); // Forzamos la ejecución del Loader
-        return loader;
-    }
-
-    @Override
-    public void onLoadFinished(Loader<List<TCard>> loader, List<TCard> data) {
-        if (data != null && !data.isEmpty()) {
-            cardList.clear();
-            cardList.addAll(data);
-            adapter.notifyDataSetChanged(); // Notificar al adaptador que los datos han cambiado
-        } else {
-            cardList.clear();
-            adapter.notifyDataSetChanged(); // Limpiar el adaptador si no hay resultados
-        }
-    }
-
-    @Override
-    public void onLoaderReset(Loader<List<TCard>> loader) {
+    public void onCardsLoaded(List<TCard> data) {
         cardList.clear();
+        if (data != null && !data.isEmpty()) {
+            cardList.addAll(data);
+        }
         adapter.notifyDataSetChanged();
+    }
+
+    private void search(String query) {
+        // Lógica para reiniciar el Loader
+        Bundle args = new Bundle();
+        args.putString(CardLoaderCallbacks.ARG_NAME, query);
+        args.putString(CardLoaderCallbacks.ARG_FORMAT, "");
+        args.putString(CardLoaderCallbacks.ARG_TYPE, "");
+        args.putStringArrayList(CardLoaderCallbacks.ARG_COLORS, new ArrayList<>());
+
+        CardLoaderCallbacks loaderCallbacks = new CardLoaderCallbacks(getContext(), this);
+        LoaderManager.getInstance(this).restartLoader(LOADER_ID, args, loaderCallbacks);
     }
 }

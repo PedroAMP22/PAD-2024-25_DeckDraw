@@ -9,9 +9,25 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/PrimaryColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/ToolBarLight" >
+        <!-- EditText para mostrar y editar el título -->
+        <EditText
+            android:id="@+id/toolbarEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/toolbar_deckname"
+            android:visibility="gone"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:padding="8dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
 
     <FrameLayout
         android:id="@+id/fragment_container"

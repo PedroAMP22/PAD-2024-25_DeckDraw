@@ -30,4 +30,12 @@ public class CardLoader extends AsyncTaskLoader<List<TCard>> {
         return api.searchCardsFilters(name, format, colors, type);
     }
 
+    @Override
+    public void onStartLoading(){
+        //Force load
+        forceLoad();
+    }
+
+
+
 }

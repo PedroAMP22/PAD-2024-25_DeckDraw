@@ -40,8 +40,10 @@ public class MainScreenActivity extends AppCompatActivity {
             return true;
         });
 
-        // Seleccionar el elemento "Decks" por defecto
-        bottomNavigationView.setSelectedItemId(R.id.nav_deck);
+        // Cargar el fragmento por defecto solo si el estado es nulo (es decir, no se está recreando la actividad)
+        if (savedInstanceState == null) {
+            bottomNavigationView.setSelectedItemId(R.id.nav_deck);
+        }
       
         //Keep this to start the Firebase database
         FirebaseApp.initializeApp(this);
