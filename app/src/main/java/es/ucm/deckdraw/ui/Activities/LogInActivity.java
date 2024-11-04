@@ -61,7 +61,7 @@ public class LogInActivity extends Activity {
         });
 
         registerPromptTV.setOnClickListener(v -> {
-            //go to register screen
+            //go to register screen TODO
         });
     }
 }

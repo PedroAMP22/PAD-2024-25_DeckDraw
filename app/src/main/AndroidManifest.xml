@@ -15,6 +15,9 @@
         android:theme="@style/Theme.DeckDraw"
         tools:targetApi="31">
         <activity
+            android:name=".ui.Activities.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.Activities.LogInActivity"
             android:exported="false" />
         <activity
