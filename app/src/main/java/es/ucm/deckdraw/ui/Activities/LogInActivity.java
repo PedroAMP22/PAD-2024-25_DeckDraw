@@ -61,7 +61,8 @@ public class LogInActivity extends Activity {
         });
 
         registerPromptTV.setOnClickListener(v -> {
-            //go to register screen TODO
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
         });
     }
 }

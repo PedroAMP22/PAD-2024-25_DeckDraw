@@ -16,4 +16,6 @@
     <string name="app_logo">App logo</string>
     <string name="error_connection_not_found">Error: Connection not found</string>
     <string name="error_right_now_you_are_not_connected_to_a_network_try_again_later">Error: Right now you are not connected to a Network, try again later</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
 </resources>
