@@ -15,7 +15,7 @@ import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
-public class CreateDeckFragment extends Fragment {
+public class DeckFragment extends Fragment {
     private SharedViewModel sharedViewModel;
     private EditText toolbarEditText;
 
@@ -23,7 +23,7 @@ public class CreateDeckFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_create_deck, container, false);
+        View view = inflater.inflate(R.layout.fragment_deck, container, false);
 
         // Inicialización del ViewModel
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
