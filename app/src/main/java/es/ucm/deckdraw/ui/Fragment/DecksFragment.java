@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.MultiAutoCompleteTextView;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +21,7 @@ import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
-public class DecksFragment extends Fragment {
+    public class DecksFragment extends Fragment {
 
     @Nullable
     @Override
@@ -45,6 +47,8 @@ public class DecksFragment extends Fragment {
 
         // Obtener las referencias a los elementos del layout
         EditText deckNameEditText = dialog.findViewById(R.id.editTextDeckName);
+        Spinner formatSpinner = dialog.findViewById(R.id.spinnerFormat);
+        MultiAutoCompleteTextView commanderAutoComplete = dialog.findViewById(R.id.multiAutoCompleteTextViewCommander);
         Button createDeckButton = dialog.findViewById(R.id.buttonCreateDeck);
 
         createDeckButton.setOnClickListener(v -> {

@@ -29,4 +29,6 @@
     <string name="crear_mazo">Crear mazo</string>
     <string name="introduce_el_nombre_del_mazo">Introduce el nombre del mazo</string>
     <string name="nombre_del_mazo">Nombre del mazo</string>
+    <string name="formato">Formato</string>
+    <string name="comandante">Comandante</string>
 </resources>
