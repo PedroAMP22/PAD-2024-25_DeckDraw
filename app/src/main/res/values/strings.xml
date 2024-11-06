@@ -18,4 +18,6 @@
     <string name="error_right_now_you_are_not_connected_to_a_network_try_again_later">Error: Right now you are not connected to a Network, try again later</string>
     <string name="username">Username</string>
     <string name="register">Register</string>
+    <string name="create_account">Create account</string>
+    <string name="create_acc">Create an account to start organizing your decks</string>
 </resources>
