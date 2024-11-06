@@ -52,9 +52,10 @@
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="268dp"
         android:backgroundTint="@color/PrimaryColor"
+        android:autofillHints="@string/username"
         android:hint="@string/username"
         android:textColor="@color/TextColorPrimary"
         android:textColorHint="@color/TextColorSecondary"
@@ -66,8 +67,9 @@
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="28dp"
+        android:autofillHints="@string/email"
         android:backgroundTint="@color/PrimaryColor"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
@@ -81,7 +83,7 @@
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/PrimaryColor"
         android:hint="@string/password"
