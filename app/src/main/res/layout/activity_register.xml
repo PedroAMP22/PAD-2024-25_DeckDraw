@@ -118,35 +118,35 @@
             android:id="@+id/criteriaLength"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/al_menos_8_caracteres"
+            android:text="@string/at_least_eight_characters"
             android:textColor="@color/TextColorSecondary" />
 
         <TextView
             android:id="@+id/criteriaUppercase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/al_menos_una_letra_may_scula"
+            android:text="@string/at_least_one_uppercase_letter"
             android:textColor="@color/TextColorSecondary" />
 
         <TextView
             android:id="@+id/criteriaLowercase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/al_menos_una_letra_min_scula"
+            android:text="@string/at_least_one_lowercase_letter"
             android:textColor="@color/TextColorSecondary" />
 
         <TextView
             android:id="@+id/criteriaDigit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/al_menos_un_n_mero"
+            android:text="@string/at_least_one_number"
             android:textColor="@color/TextColorSecondary" />
 
         <TextView
             android:id="@+id/criteriaSpecialChar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/al_menos_un_car_cter_especial"
+            android:text="@string/at_least_one_special_character"
             android:textColor="@color/TextColorSecondary" />
     </LinearLayout>
 
