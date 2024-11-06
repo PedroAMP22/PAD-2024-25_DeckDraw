@@ -1,14 +1,20 @@
 package es.ucm.deckdraw.ui.Fragment;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,12 +23,21 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import es.ucm.deckdraw.data.Service.MTGServiceAPI;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
     public class DecksFragment extends Fragment {
 
+
+        MultiAutoCompleteTextView commanderAutoComplete;
+        TextView commanderText ;
+        int counter;
+        Context context;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -40,15 +55,80 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
     }
 
     private void showCreateDeckDialog() {
-        // Crear el diálogo
+        // Crear el diálog
         final Dialog dialog = new Dialog(requireContext());
         dialog.setContentView(R.layout.dialog_create_deck);
         dialog.setCancelable(true);
+        context = this.getContext();
 
         // Obtener las referencias a los elementos del layout
         EditText deckNameEditText = dialog.findViewById(R.id.editTextDeckName);
         Spinner formatSpinner = dialog.findViewById(R.id.spinnerFormat);
-        MultiAutoCompleteTextView commanderAutoComplete = dialog.findViewById(R.id.multiAutoCompleteTextViewCommander);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, MTGServiceAPI.getAvailableFormats());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        formatSpinner.setAdapter(adapter);
+        formatSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedItem = adapterView.getItemAtPosition(i).toString();
+                if (selectedItem.equals("Commander")) {
+                    commanderAutoComplete.setVisibility(View.VISIBLE);
+                    commanderText.setVisibility(View.VISIBLE);
+                }
+                else{
+                    commanderAutoComplete.setVisibility(View.INVISIBLE);
+                    commanderText.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                commanderAutoComplete.setVisibility(View.INVISIBLE);
+                commanderText.setVisibility(View.INVISIBLE);
+            }
+        });
+        commanderAutoComplete = dialog.findViewById(R.id.multiAutoCompleteTextViewCommander);
+        commanderText = dialog.findViewById(R.id.textViewCommander);
+        commanderAutoComplete.setVisibility(View.INVISIBLE);
+        commanderText.setVisibility(View.INVISIBLE);
+        counter = 0;
+        ArrayAdapter<String> commanderAdapter = new ArrayAdapter<>(context, android.R.layout.simple_dropdown_item_1line, new ArrayList<>());
+
+        commanderAutoComplete.addTextChangedListener(new TextWatcher() {
+            private Runnable searchCommanderRunnable = null;
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (searchCommanderRunnable != null) {
+                    commanderAutoComplete.removeCallbacks(searchCommanderRunnable);
+                }
+
+                searchCommanderRunnable = () -> {
+                    MTGServiceAPI api = new MTGServiceAPI();
+                    List<String> commanders = api.searchCommander(charSequence.toString());
+                    // Actualiza la lista de datos del adaptador sin recrearlo
+                    commanderAdapter.clear();
+                    commanderAdapter.addAll(commanders);
+                    commanderAdapter.notifyDataSetChanged();
+                };
+
+                // Ejecuta el Runnable después de 500 ms
+                commanderAutoComplete.postDelayed(searchCommanderRunnable, 500);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
         Button createDeckButton = dialog.findViewById(R.id.buttonCreateDeck);
 
         createDeckButton.setOnClickListener(v -> {

@@ -47,15 +47,15 @@ public class MTGServiceAPI {
     public MTGServiceAPI() {
     }
 
-    public List<String> getAvailableCardTypes() {
+    public static List<String> getAvailableCardTypes() {
         return AVAILABLE_CARD_TYPES;
     }
 
-    public List<String> getAvailableColors() {
+    public static List<String> getAvailableColors() {
         return AVAILABLE_COLORS;
     }
 
-    public List<String> getAvailableFormats() {
+    public static List<String> getAvailableFormats() {
         return AVAILABLE_FORMATS;
     }
 
@@ -159,6 +159,34 @@ public class MTGServiceAPI {
             cardMTG.printCardDetails();
         }
 
+    }
+
+    // busqueda de comanders
+    public List<String> searchCommander(String query) {
+        List<String> commanderList = new ArrayList<>();
+
+        try {
+            String responseBody = makeRequest("/cards/search?q=is:commander+" + query);
+
+            JSONObject jsonResponse = new JSONObject(responseBody);
+            int totalCards = jsonResponse.getInt("total_cards");
+
+            boolean hasMore = jsonResponse.getBoolean("has_more");
+
+            JSONArray cards = jsonResponse.getJSONArray("data");
+
+            for (int i = 0; i < cards.length(); i++) {
+                JSONObject card = cards.getJSONObject(i);
+                String commander = card.getString("name");
+                commanderList.add(commander);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("No hay ninguna carta que coincida con los parametros de busqueda");
+
+        }
+        return commanderList;
     }
 
     // busqueda de cartas general con query.
