@@ -16,4 +16,14 @@
     <string name="app_logo">App logo</string>
     <string name="error_connection_not_found">Error: Connection not found</string>
     <string name="error_right_now_you_are_not_connected_to_a_network_try_again_later">Error: Right now you are not connected to a Network, try again later</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="create_account">Create account</string>
+    <string name="create_acc">Create an account to start organizing your decks</string>
+    <string name="toggle_password_visibility">Toggle Password Visibility</string>
+    <string name="at_least_eight_characters">• At least 8 characters</string>
+    <string name="at_least_one_uppercase_letter">• At least 1 uppercase letter</string>
+    <string name="at_least_one_lowercase_letter">• At least 1 lowercase letter</string>
+    <string name="at_least_one_number">• At least 1 number</string>
+    <string name="at_least_one_special_character">• At least 1 special character</string>
 </resources>
