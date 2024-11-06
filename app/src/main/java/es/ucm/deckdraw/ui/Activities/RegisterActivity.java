@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         TUsers newUser = new TUsers();
         newUser.setEmail(email);
         newUser.setUsername(username);
-        newUser.setPassword(password); //Hasheamos la contraseña
+        newUser.setPassword(password); //TODO duda
 
 
         usersAdmin.createAccount(newUser, new Callback<TUsers>() {
