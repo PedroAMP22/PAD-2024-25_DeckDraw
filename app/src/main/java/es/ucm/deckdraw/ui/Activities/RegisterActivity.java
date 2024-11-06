@@ -1,16 +1,20 @@
 package es.ucm.deckdraw.ui.Activities;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import java.util.regex.Pattern;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
@@ -19,27 +23,74 @@ import es.ucm.deckdraw.util.Callback;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText emailEditText, passwordEditText, usernameEditText;
+    private ImageView togglePasswordVisibility;
     private UsersAdmin usersAdmin;
+    private boolean isPasswordVisible = false;
+
+    private static final Pattern PASSWORD_UPPERCASE = Pattern.compile(".*[A-Z].*");
+    private static final Pattern PASSWORD_LOWERCASE = Pattern.compile(".*[a-z].*");
+    private static final Pattern PASSWORD_DIGIT = Pattern.compile(".*[0-9].*");
+    private static final Pattern PASSWORD_SPECIAL_CHAR = Pattern.compile(".*[@#$%^&+=._].*");
+    private static final int PASSWORD_MIN_LENGTH = 8;
+
+    private TextView criteriaLength, criteriaUppercase, criteriaLowercase, criteriaDigit, criteriaSpecialChar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         usernameEditText = findViewById(R.id.usernameEditText);
         Button registerButton = findViewById(R.id.registerButton);
+        togglePasswordVisibility = findViewById(R.id.togglePasswordVisibility);
+
+        criteriaLength = findViewById(R.id.criteriaLength);
+        criteriaUppercase = findViewById(R.id.criteriaUppercase);
+        criteriaLowercase = findViewById(R.id.criteriaLowercase);
+        criteriaDigit = findViewById(R.id.criteriaDigit);
+        criteriaSpecialChar = findViewById(R.id.criteriaSpecialChar);
 
         usersAdmin = new UsersAdmin();
 
+        togglePasswordVisibility.setOnClickListener(v -> togglePasswordVisibility());
+        passwordEditText.addTextChangedListener(passwordWatcher);
+
         registerButton.setOnClickListener(v -> registerUser());
+    }
+
+    private void togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            togglePasswordVisibility.setImageResource(R.drawable.ic_visibility); //Reveal password icon
+        } else {
+            passwordEditText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            togglePasswordVisibility.setImageResource(R.drawable.ic_visibility_off); //Hide password icon
+        }
+        passwordEditText.setSelection(passwordEditText.length());
+        isPasswordVisible = !isPasswordVisible;
+    }
+
+    private final TextWatcher passwordWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            updatePasswordCriteria(s.toString());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) { }
+    };
+
+    private void updatePasswordCriteria(String password) {
+        criteriaLength.setTextColor(password.length() >= PASSWORD_MIN_LENGTH ? getColor(R.color.SuccessColor) : getColor(R.color.TextColorSecondary));
+        criteriaUppercase.setTextColor(PASSWORD_UPPERCASE.matcher(password).matches() ? getColor(R.color.SuccessColor) : getColor(R.color.TextColorSecondary));
+        criteriaLowercase.setTextColor(PASSWORD_LOWERCASE.matcher(password).matches() ? getColor(R.color.SuccessColor) : getColor(R.color.TextColorSecondary));
+        criteriaDigit.setTextColor(PASSWORD_DIGIT.matcher(password).matches() ? getColor(R.color.SuccessColor) : getColor(R.color.TextColorSecondary));
+        criteriaSpecialChar.setTextColor(PASSWORD_SPECIAL_CHAR.matcher(password).matches() ? getColor(R.color.SuccessColor) : getColor(R.color.TextColorSecondary));
     }
 
     private void registerUser() {
@@ -47,18 +98,16 @@ public class RegisterActivity extends AppCompatActivity {
         String password = passwordEditText.getText().toString().trim();
         String username = usernameEditText.getText().toString().trim();
 
-
         if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
             Toast.makeText(this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
 
-
         TUsers newUser = new TUsers();
-        newUser.setEmail(email);
-        newUser.setUsername(username);
-        newUser.setPassword(password); //TODO duda
 
+        newUser.setEmail(email);
+        newUser.setPassword(password);
+        newUser.setUsername(username);
 
         usersAdmin.createAccount(newUser, new Callback<TUsers>() {
             @Override

@@ -20,4 +20,10 @@
     <string name="register">Register</string>
     <string name="create_account">Create account</string>
     <string name="create_acc">Create an account to start organizing your decks</string>
+    <string name="toggle_password_visibility">Toggle Password Visibility</string>
+    <string name="al_menos_8_caracteres">• Al menos 8 caracteres</string>
+    <string name="al_menos_una_letra_may_scula">• Al menos una letra mayúscula</string>
+    <string name="al_menos_una_letra_min_scula">• Al menos una letra minúscula</string>
+    <string name="al_menos_un_n_mero">• Al menos un número</string>
+    <string name="al_menos_un_car_cter_especial">• Al menos un carácter especial</string>
 </resources>
