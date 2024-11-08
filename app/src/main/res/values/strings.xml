@@ -16,4 +16,23 @@
     <string name="app_logo">App logo</string>
     <string name="error_connection_not_found">Error: Connection not found</string>
     <string name="error_right_now_you_are_not_connected_to_a_network_try_again_later">Error: Right now you are not connected to a Network, try again later</string>
+
+    <!--Strings de los filtros de búsqueda -->
+    <string name="hint_busqueda">Búsqueda</string>
+    <string name="helper_busqueda">Introduce el nombre de la carta</string>
+    <string name="text_floating_button_busqueda">Buscar</string>
+    <string name="filter_mana_type">Tipo de Maná</string>
+    <string name="red_mana_text">Red</string>
+    <string name="blue_mana_text">Blue</string>
+    <string name="green_mana_text">Green</string>
+    <string name="white_mana_text">White</string>
+    <string name="black_mana_text">Black</string>
+    <string name="colorless_mana_text">Colorless</string>
+
+
+
+
+
+
+
 </resources>

@@ -19,6 +19,7 @@
     <color name="ManaColorGreen">#15C73E</color>
     <color name="ManaColorColorless">#CDC3C1</color>
     <color name="EmptyBackground">#00000000</color>
+    <color name="ic_launcher_background">#151515</color>
 
 
 </resources>
