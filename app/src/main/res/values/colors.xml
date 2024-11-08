@@ -11,4 +11,14 @@
     <color name="SuccessColor">#4CAF50</color>
     <color name="WarningColor">#FF9800</color>
     <color name="ErrorColor">#F44336</color>
+
+    <color name="ManaColorWhite">#FCCC66</color>
+    <color name="ManaColorBlue">#34A4F0</color>
+    <color name="ManaColorBlack">#5F187E</color>
+    <color name="ManaColorRed">#FC6600</color>
+    <color name="ManaColorGreen">#15C73E</color>
+    <color name="ManaColorColorless">#CDC3C1</color>
+    <color name="EmptyBackground">#00000000</color>
+
+
 </resources>

@@ -4,9 +4,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+
 public class SharedViewModel extends ViewModel {
     private final MutableLiveData<String> currentDeckName = new MutableLiveData<>();
     private final MutableLiveData<String> currentSearchQuery = new MutableLiveData<>();
+    private final MutableLiveData<ArrayList<String>> currentManaColors = new MutableLiveData<>();
+
 
     // Método para manejar el nombre del mazo
     public void setCurrentDeckName(String name) {
@@ -25,6 +29,10 @@ public class SharedViewModel extends ViewModel {
     public LiveData<String> getCurrentSearchQuery() {
         return currentSearchQuery;
     }
+
+    public void setManaColors(ArrayList<String> colorList) {currentManaColors.setValue(colorList);}
+
+    public LiveData<ArrayList<String>> getCurrentManaColors(){return currentManaColors;}
 
     // Agrega más LiveData y métodos según lo necesites
 }

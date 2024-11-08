@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
@@ -69,6 +71,12 @@ public class CreateDeckFragment extends Fragment {
             mainScreenActivity.setToolbarTitle(""); // Dejar vacío el título porque usamos el EditText
             mainScreenActivity.setHomeAsUpEnabled(true);
         }
+
+        // Ocultar la BottomNavigationView
+        if (getActivity() != null) {
+            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
+            bottomNavigationView.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -77,6 +85,12 @@ public class CreateDeckFragment extends Fragment {
         // Ocultar el EditText cuando el fragmento no esté activo
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.GONE);
+        }
+
+        // Mostrar la BottomNavigationView al salir del fragmento
+        if (getActivity() != null) {
+            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
+            bottomNavigationView.setVisibility(View.VISIBLE);
         }
     }
 }

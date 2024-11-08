@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
@@ -17,6 +18,8 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +55,7 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
 
+
         // Permitir que el fragmento maneje los menús
         setHasOptionsMenu(true);
 
@@ -73,6 +77,12 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
             mainScreenActivity.setToolbarTitle("");
             mainScreenActivity.setHomeAsUpEnabled(true);
         }
+
+        // Ocultar la BottomNavigationView
+        if (getActivity() != null) {
+            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
+            bottomNavigationView.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -82,7 +92,14 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
             ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             // Puedes decidir si quieres ocultar la barra de herramientas o no
         }
+
+        // Mostrar la BottomNavigationView al salir del fragmento
+        if (getActivity() != null) {
+            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
+            bottomNavigationView.setVisibility(View.VISIBLE);
+        }
     }
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -92,6 +109,7 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
         // Obtener la SearchView
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
 
+        /*
         // Configura la SearchView con el estado de búsqueda
         sharedViewModel.getCurrentSearchQuery().observe(getViewLifecycleOwner(), query -> {
             if (query != null) {
@@ -110,11 +128,14 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                // Puedes implementar lógica para buscar en tiempo real si es necesario
+                // Para la busqueda en tiempo real
                 return false;
             }
         });
+        */
     }
+
+
 
     public void onCardsLoaded(List<TCard> data) {
         cardList.clear();
@@ -134,5 +155,18 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
 
         CardLoaderCallbacks loaderCallbacks = new CardLoaderCallbacks(getContext(), this);
         LoaderManager.getInstance(this).restartLoader(LOADER_ID, args, loaderCallbacks);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_search) { // Verifica si es el ítem de filtro.
+            /*FilterBottomSheetFragment filterFragment = new FilterBottomSheetFragment();
+            filterFragment.show(getParentFragmentManager(), "FilterBottomSheetFragment");*/
+
+            SearchFiltersDialogFragment filtersDialog = new SearchFiltersDialogFragment();
+            filtersDialog.show(getParentFragmentManager(), "SearchFiltersDialogFragment");
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
