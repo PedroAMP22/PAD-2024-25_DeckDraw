@@ -15,7 +15,7 @@ import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
-public class DeckFragment extends Fragment {
+public class EditDeckFragment extends Fragment {
     private SharedViewModel sharedViewModel;
     private EditText toolbarEditText;
 

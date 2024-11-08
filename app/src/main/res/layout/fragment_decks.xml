@@ -13,6 +13,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:contentDescription="@string/crear_mazo"
+        android:src="@drawable/ic_add"
 
         app:backgroundTint="@color/PrimaryColor"
         app:rippleColor="@color/PrimaryColor"

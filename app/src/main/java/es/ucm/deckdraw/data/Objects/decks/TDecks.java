@@ -3,6 +3,8 @@ package es.ucm.deckdraw.data.Objects.decks;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
+
 public class TDecks {
 
     private String idDeck;
@@ -11,7 +13,8 @@ public class TDecks {
     private int numCards;
     private String urlDeckCover;
     private String deckOwner;
-    private List<String> Cards;
+    private List<TCard> Cards;
+    private TCard commander;
 
 
     public TDecks(String deckOwner, String urlDeckCover, int numCards, String deckFormat, String deckName, String idDeck) {
@@ -22,6 +25,7 @@ public class TDecks {
         this.deckName = deckName;
         this.idDeck = idDeck;
         this.Cards = new ArrayList<>();
+        commander = null;
     }
 
     public String getIdDeck() {
@@ -72,13 +76,14 @@ public class TDecks {
         this.deckOwner = deckOwner;
     }
 
-    public void addCard(String uid){
-        Cards.add(uid);
+    public void addCard(TCard card){
+        Cards.add(card);
     }
-    public void removeCard(String uid){
-        Cards.remove(uid);
+    public void removeCard(TCard card){
+        Cards.remove(card);
     }
 
+    public void setCommander(TCard commander){this.commander = commander;}
 
 
 }

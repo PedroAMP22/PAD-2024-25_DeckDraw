@@ -31,10 +31,8 @@ public class MTGServiceAPI {
 
     // Formatos de juego disponibles (no están en la API)
     private static final List<String> AVAILABLE_FORMATS = List.of(
-            "Standard", "Future", "Historic", "Timeless", "Gladiator", "Pioneer",
-            "Explorer", "Modern", "Legacy", "Pauper", "Vintage", "Penny", "Commander",
-            "Oathbreaker", "Standard Brawl", "Brawl", "Alchemy", "Pauper Commander",
-            "Duel", "Old School", "Premodern", "PreDH"
+            "Standard", "Pioneer",
+             "Modern", "Legacy", "Pauper", "Commander"
     );
 
     // Tipos de cartas disponibles (sin API)

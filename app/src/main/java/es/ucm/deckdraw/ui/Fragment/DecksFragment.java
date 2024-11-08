@@ -20,12 +20,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.loader.app.LoaderManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import es.ucm.deckdraw.data.Service.CommanderLoaderCallbacks;
 import es.ucm.deckdraw.data.Service.MTGServiceAPI;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
@@ -38,6 +40,7 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         TextView commanderText ;
         int counter;
         Context context;
+        LoaderManager manager;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -95,6 +98,7 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         commanderAutoComplete.setVisibility(View.INVISIBLE);
         commanderText.setVisibility(View.INVISIBLE);
         counter = 0;
+        manager = LoaderManager.getInstance(this);
         ArrayAdapter<String> commanderAdapter = new ArrayAdapter<>(context, android.R.layout.simple_dropdown_item_1line, new ArrayList<>());
 
         commanderAutoComplete.addTextChangedListener(new TextWatcher() {
@@ -111,10 +115,14 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
                 searchCommanderRunnable = () -> {
                     MTGServiceAPI api = new MTGServiceAPI();
-                    List<String> commanders = api.searchCommander(charSequence.toString());
+                    Bundle args = new Bundle();
+                    args.putString("Commander", charSequence.toString());
+                    CommanderLoaderCallbacks callback = new CommanderLoaderCallbacks(context);
+                    // Inicia o reinicia el Loader
+                    manager.restartLoader(0, args, callback);
                     // Actualiza la lista de datos del adaptador sin recrearlo
                     commanderAdapter.clear();
-                    commanderAdapter.addAll(commanders);
+                    commanderAdapter.addAll(callback.getCommanders());
                     commanderAdapter.notifyDataSetChanged();
                 };
 
