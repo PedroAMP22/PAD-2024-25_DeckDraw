@@ -36,19 +36,35 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
     public class DecksFragment extends Fragment {
 
 
-        MultiAutoCompleteTextView commanderAutoComplete;
-        TextView commanderText ;
-        int counter;
-        Context context;
-        LoaderManager manager;
-        CommanderLoaderCallbacks callback;
-        ArrayAdapter<String> commanderAdapter;
+        private MultiAutoCompleteTextView commanderAutoComplete;
+        private TextView commanderText ;
+        private int counter;
+        private Context context;
+        private LoaderManager manager;
+        private CommanderLoaderCallbacks callback;
+        private ArrayAdapter<String> commanderAdapter;
+        private String deckName;
+        private String commanderName;
+        private int formatPosition;
+        private Dialog dialog;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_decks, container, false);
-
+        if (savedInstanceState != null) {
+            // Recupera los datos guardados
+            deckName = savedInstanceState.getString("deck_name");
+            commanderName = savedInstanceState.getString("commander_name");
+            formatPosition = savedInstanceState.getInt("format_position");
+            // Vuelve a mostrar el diálogo y restaura los datos
+            showCreateDeckDialog();
+        }
+        else{
+            deckName = "";
+            commanderName ="";
+            formatPosition = 0;
+        }
         // Botón para navegar a CreateDeckFragment
         FloatingActionButton createDeckButton = view.findViewById(R.id.button_create_deck);
         createDeckButton.setOnClickListener(v -> {
@@ -61,14 +77,17 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
     private void showCreateDeckDialog() {
         // Crear el diálog
-        final Dialog dialog = new Dialog(requireContext());
+        context = this.getContext();
+        dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog_create_deck);
         dialog.setCancelable(true);
-        context = this.getContext();
+
 
         // Obtener las referencias a los elementos del layout
         EditText deckNameEditText = dialog.findViewById(R.id.editTextDeckName);
         Spinner formatSpinner = dialog.findViewById(R.id.spinnerFormat);
+        deckNameEditText.setText(deckName);
+        formatSpinner.setSelection(formatPosition);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, MTGServiceAPI.getAvailableFormats());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -106,6 +125,7 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         commanderAutoComplete.setThreshold(1);
         commanderAutoComplete.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
         callback = new CommanderLoaderCallbacks(context,this);
+        commanderAutoComplete.setText(commanderName);
         commanderAutoComplete.addTextChangedListener(new TextWatcher() {
             private Runnable searchCommanderRunnable = null;
 
@@ -166,4 +186,33 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         commanderAdapter.notifyDataSetChanged();
         commanderAutoComplete.setAdapter(commanderAdapter);
     }
+
+        @Override
+        public void onSaveInstanceState(Bundle outState) {
+            super.onSaveInstanceState(outState);
+
+            // Guarda el estado del diálogo y los datos de los campos de texto
+            if (dialog != null && dialog.isShowing()) {
+                outState.putBoolean("dialog_visible", true);
+
+                // Guarda el texto de los campos
+                EditText editTextDeckName = dialog.findViewById(R.id.editTextDeckName);
+                MultiAutoCompleteTextView autoCompleteTextViewCommander = dialog.findViewById(R.id.multiAutoCompleteTextViewCommander);
+                Spinner spinnerFormat = dialog.findViewById(R.id.spinnerFormat);
+                if (editTextDeckName != null) {
+                    deckName = editTextDeckName.getText().toString();
+                    outState.putString("deck_name", deckName);
+                }
+                if (autoCompleteTextViewCommander != null) {
+                    commanderName = autoCompleteTextViewCommander.getText().toString();
+                    outState.putString("commander_name", commanderName);
+                }
+                if (spinnerFormat != null) {
+                    formatPosition = spinnerFormat.getSelectedItemPosition();
+                    outState.putInt("format_position", formatPosition);
+                }
+            }
+        }
+
+
 }
