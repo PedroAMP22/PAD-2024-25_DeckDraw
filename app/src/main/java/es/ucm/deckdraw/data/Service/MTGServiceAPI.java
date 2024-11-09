@@ -160,8 +160,8 @@ public class MTGServiceAPI {
     }
 
     // busqueda de comanders
-    public List<String> searchCommander(String query) {
-        List<String> commanderList = new ArrayList<>();
+    public List<TCard> searchCommander(String query) {
+        List<TCard> commanderList = new ArrayList<>();
 
         try {
             String responseBody = makeRequest("/cards/search?q=is:commander+" + query);
@@ -175,8 +175,26 @@ public class MTGServiceAPI {
 
             for (int i = 0; i < cards.length(); i++) {
                 JSONObject card = cards.getJSONObject(i);
-                String commander = card.getString("name");
-                commanderList.add(commander);
+                if (card.has("card_faces")) {
+                    TCard base = parseCardObjectCarta(card);
+                    // creamos la carta doble (por default tendra los campos obligatorios y luego
+                    // ambas caras individuales)
+                    TDobleCard dobleCard = new TDobleCard(base);
+
+                    JSONArray faces = card.getJSONArray("card_faces");
+
+                    TCard front = parseCardObjectCarta(faces.getJSONObject(0));
+                    TCard back = parseCardObjectCarta(faces.getJSONObject(1));
+
+                    dobleCard.setFront(front);
+                    dobleCard.setBack(back);
+
+                    commanderList.add(dobleCard);
+                } else {
+                    TCard cardMTG = parseCardObjectCarta(card);
+                    commanderList.add(cardMTG);
+
+                }
             }
 
         } catch (Exception e) {

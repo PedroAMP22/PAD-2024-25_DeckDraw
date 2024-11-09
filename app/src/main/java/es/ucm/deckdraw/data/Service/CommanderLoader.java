@@ -10,7 +10,9 @@ import androidx.loader.content.AsyncTaskLoader;
 import java.util.Collections;
 import java.util.List;
 
-public class CommanderLoader extends AsyncTaskLoader<List<String>> {
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
+
+public class CommanderLoader extends AsyncTaskLoader<List<TCard>> {
 
     String commander;
     MTGServiceAPI api;
@@ -23,7 +25,7 @@ public class CommanderLoader extends AsyncTaskLoader<List<String>> {
 
     @Nullable
     @Override
-    public List<String> loadInBackground() {
+    public List<TCard> loadInBackground() {
         return api.searchCommander(commander);
     }
 

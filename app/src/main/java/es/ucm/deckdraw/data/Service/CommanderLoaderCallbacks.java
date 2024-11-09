@@ -15,7 +15,7 @@ import java.util.List;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.ui.Fragment.DecksFragment;
 
-public class CommanderLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<String>>{
+public class CommanderLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<TCard>>{
     private Context context;
     DecksFragment fragment;
 
@@ -26,19 +26,19 @@ public class CommanderLoaderCallbacks implements LoaderManager.LoaderCallbacks<L
     }
     @NonNull
     @Override
-    public Loader<List<String>> onCreateLoader(int id, @Nullable Bundle args) {
+    public Loader<List<TCard>> onCreateLoader(int id, @Nullable Bundle args) {
         assert args != null;
         return new CommanderLoader(context, args.getString("Commander"));
     }
 
     @Override
-    public void onLoadFinished(@NonNull Loader<List<String>> loader, List<String> data){
+    public void onLoadFinished(@NonNull Loader<List<TCard>> loader, List<TCard> data){
         Log.d("CommanderLoaderCallbacks", "onLoadFinished: " + data);
         fragment.setCommander(data);
     }
 
     @Override
-    public void onLoaderReset(@NonNull Loader<List<String>> loader) {
+    public void onLoaderReset(@NonNull Loader<List<TCard>> loader) {
 
     }
 

@@ -96,7 +96,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinnerFormat" />
 
-    <MultiAutoCompleteTextView
+    <AutoCompleteTextView
         android:id="@+id/multiAutoCompleteTextViewCommander"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

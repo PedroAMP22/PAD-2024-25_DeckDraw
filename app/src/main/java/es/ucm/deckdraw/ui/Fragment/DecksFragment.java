@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
@@ -27,8 +28,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
+import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.data.Service.CommanderLoaderCallbacks;
 import es.ucm.deckdraw.data.Service.MTGServiceAPI;
+import es.ucm.deckdraw.data.dataBase.DecksAdmin;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
@@ -36,7 +40,7 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
     public class DecksFragment extends Fragment {
 
 
-        private MultiAutoCompleteTextView commanderAutoComplete;
+        private AutoCompleteTextView commanderAutoComplete;
         private TextView commanderText ;
         private int counter;
         private Context context;
@@ -47,6 +51,7 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         private String commanderName;
         private int formatPosition;
         private Dialog dialog;
+        private List<TCard> commanders;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -123,7 +128,6 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         commanderAdapter = new ArrayAdapter<>(context, android.R.layout.simple_dropdown_item_1line, new ArrayList<>());
         commanderAutoComplete.setAdapter(commanderAdapter);
         commanderAutoComplete.setThreshold(1);
-        commanderAutoComplete.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
         callback = new CommanderLoaderCallbacks(context,this);
         commanderAutoComplete.setText(commanderName);
         commanderAutoComplete.addTextChangedListener(new TextWatcher() {
@@ -150,7 +154,10 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                String text = editable.toString();
+                if (text.endsWith(",")) {
+                    editable.delete(text.length() - 1, text.length());
+                }
             }
         });
 
@@ -159,8 +166,30 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
         createDeckButton.setOnClickListener(v -> {
             String deckName = deckNameEditText.getText().toString();
-            if (!deckName.isEmpty()) {
+            if (!deckName.isEmpty() && formatSpinner.getSelectedItem() != null) {
 
+                SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+                viewModel.setCurrentDeckName(deckName);
+                viewModel.setCurrentFormat(formatSpinner.getSelectedItem().toString());
+
+                TDecks deck = new TDecks("ownerID", "",0, formatSpinner.getSelectedItem().toString(),deckName,"id" );
+                if(formatSpinner.getSelectedItem().toString().equals("Commander")){
+                    if(commanderAutoComplete.getText().toString().isEmpty()){
+                        deckNameEditText.setError("Por favor ingrese un commandante para el mazo.");
+                        return;
+                    }
+                    String selectedCommander = commanderAutoComplete.getText().toString();
+                    for (TCard card : commanders) {
+                        if (card.getName().equals(selectedCommander)) {
+                            deck.setCommander(card);
+                            deck.setUrlDeckCover(card.getArtCropImageUrl());
+                            break;
+                        }
+                    }
+
+                }
+                DecksAdmin db = new DecksAdmin();
+                db.createDeck("ownerID", deck);
                 dialog.dismiss();
             } else {
                 deckNameEditText.setError("Por favor ingrese un nombre para el mazo.");
@@ -179,10 +208,14 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         }
     }
 
-    public void setCommander(List<String> commander){
-
+    public void setCommander(List<TCard> commander){
+        this.commanders = commander;
+        List<String> commanderNames = new ArrayList<>();
+        for (TCard card : commander) {
+            commanderNames.add(card.getName());
+        }
         commanderAdapter.clear();
-        commanderAdapter.addAll(commander);
+        commanderAdapter.addAll(commanderNames);
         commanderAdapter.notifyDataSetChanged();
         commanderAutoComplete.setAdapter(commanderAdapter);
     }
