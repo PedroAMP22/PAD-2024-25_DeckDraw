@@ -9,18 +9,20 @@ import androidx.annotation.Nullable;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
+import es.ucm.deckdraw.ui.Fragment.DecksFragment;
 
 public class CommanderLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<String>>{
     private Context context;
-    private List<String> commanders;
+    DecksFragment fragment;
 
 
-
-    public CommanderLoaderCallbacks(Context context){
+    public CommanderLoaderCallbacks(Context context, DecksFragment fragment){
         this.context = context;
+        this.fragment = fragment;
     }
     @NonNull
     @Override
@@ -30,16 +32,14 @@ public class CommanderLoaderCallbacks implements LoaderManager.LoaderCallbacks<L
     }
 
     @Override
-    public void onLoadFinished(@NonNull Loader<List<String>> loader, List<String> data) {
-        Log.d("comanders",data.toString());
-        this.commanders = data;
+    public void onLoadFinished(@NonNull Loader<List<String>> loader, List<String> data){
+        Log.d("CommanderLoaderCallbacks", "onLoadFinished: " + data);
+        fragment.setCommander(data);
     }
 
     @Override
     public void onLoaderReset(@NonNull Loader<List<String>> loader) {
 
     }
-    public List<String> getCommanders(){
-        return commanders;
-    }
+
 }

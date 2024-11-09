@@ -24,9 +24,7 @@ public class CommanderLoader extends AsyncTaskLoader<List<String>> {
     @Nullable
     @Override
     public List<String> loadInBackground() {
-        List<String> commanders = api.searchCommander(commander);
-        System.out.println(commanders.toString());
-        return commanders;
+        return api.searchCommander(commander);
     }
 
     @Override

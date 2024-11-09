@@ -23,7 +23,7 @@ public class EditDeckFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_deck, container, false);
+        View view = inflater.inflate(R.layout.fragment_edit_deck, container, false);
 
         // Inicialización del ViewModel
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);

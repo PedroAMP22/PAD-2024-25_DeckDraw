@@ -41,6 +41,8 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         int counter;
         Context context;
         LoaderManager manager;
+        CommanderLoaderCallbacks callback;
+        ArrayAdapter<String> commanderAdapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -99,8 +101,11 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         commanderText.setVisibility(View.INVISIBLE);
         counter = 0;
         manager = LoaderManager.getInstance(this);
-        ArrayAdapter<String> commanderAdapter = new ArrayAdapter<>(context, android.R.layout.simple_dropdown_item_1line, new ArrayList<>());
-
+        commanderAdapter = new ArrayAdapter<>(context, android.R.layout.simple_dropdown_item_1line, new ArrayList<>());
+        commanderAutoComplete.setAdapter(commanderAdapter);
+        commanderAutoComplete.setThreshold(1);
+        commanderAutoComplete.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        callback = new CommanderLoaderCallbacks(context,this);
         commanderAutoComplete.addTextChangedListener(new TextWatcher() {
             private Runnable searchCommanderRunnable = null;
 
@@ -114,16 +119,9 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
                 }
 
                 searchCommanderRunnable = () -> {
-                    MTGServiceAPI api = new MTGServiceAPI();
                     Bundle args = new Bundle();
                     args.putString("Commander", charSequence.toString());
-                    CommanderLoaderCallbacks callback = new CommanderLoaderCallbacks(context);
-                    // Inicia o reinicia el Loader
                     manager.restartLoader(0, args, callback);
-                    // Actualiza la lista de datos del adaptador sin recrearlo
-                    commanderAdapter.clear();
-                    commanderAdapter.addAll(callback.getCommanders());
-                    commanderAdapter.notifyDataSetChanged();
                 };
 
                 // Ejecuta el Runnable después de 500 ms
@@ -159,5 +157,13 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
             mainScreenActivity.setToolbarTitle("Tus mazos");
             mainScreenActivity.setHomeAsUpEnabled(false);
         }
+    }
+
+    public void setCommander(List<String> commander){
+
+        commanderAdapter.clear();
+        commanderAdapter.addAll(commander);
+        commanderAdapter.notifyDataSetChanged();
+        commanderAutoComplete.setAdapter(commanderAdapter);
     }
 }
