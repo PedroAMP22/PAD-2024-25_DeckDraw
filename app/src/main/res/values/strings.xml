@@ -31,4 +31,7 @@
     <string name="nombre_del_mazo">Nombre del mazo</string>
     <string name="formato">Formato</string>
     <string name="comandante">Comandante</string>
+    <string name="portada_del_mazo">portada del mazo</string>
+    <string name="eliminar">eliminar</string>
+    <string name="editar">editar</string>
 </resources>
