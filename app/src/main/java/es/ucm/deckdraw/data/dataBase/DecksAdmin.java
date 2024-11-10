@@ -38,10 +38,6 @@ public class DecksAdmin {
         DatabaseReference newDeckRef = decksRef.push();
         newDeck.setIdDeck(newDeckRef.getKey());
 
-        newDeckRef.child("cards").setValue(new HashMap<>());
-
-
-
         newDeckRef.setValue(newDeck)
                 .addOnSuccessListener(aVoid -> Log.d("Firebase Database", "createDeck: success " + newDeckRef.getKey()))
                 .addOnFailureListener(e -> Log.e("Firebase Database", "createDeck, failure", e));

@@ -23,6 +23,29 @@ public class UsersAdmin{
         this.db = FirebaseDatabase.getInstance();
     }
 
+    public void getCurrentUser(Callback<TUsers> callback) {
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
+        if (firebaseUser != null) {
+            String uid = firebaseUser.getUid();
+            DatabaseReference userRef = db.getReference("users").child(uid).child("username");
+
+            userRef.get().addOnCompleteListener(task -> {
+                if (task.isSuccessful() && task.getResult().exists()) {
+                    String username = task.getResult().getValue(String.class);
+                    TUsers currentUser = new TUsers(uid, username, "", firebaseUser.getEmail());
+                    callback.onSuccess(currentUser);
+                } else {
+                    Log.w(TAG, "Error getting username or username does not exist", task.getException());
+                    callback.onFailure(task.getException());
+                }
+            });
+        } else {
+            Log.w(TAG, "No current user logged in");
+            callback.onFailure(new Exception("No current user logged in"));
+        }
+    }
+
     public void createAccount(TUsers newUser, Callback<TUsers> callback) {
         String email = newUser.getEmail();
         String password = newUser.getPassword();
