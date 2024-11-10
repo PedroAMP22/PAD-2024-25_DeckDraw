@@ -1,155 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:id="@+id/search_filter_bottom_sheet_dialog"
-    android:orientation="vertical"
-    android:padding="16dp">
+    >
 
-    <LinearLayout
+    <!-- FrameLayout que actuará como el BottomSheet -->
+    <FrameLayout
+        android:id="@+id/bottom_sheet_search_filters"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <!-- Campo de texto para la búsqueda -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/busqueda"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_busqueda"
-            app:startIconDrawable="@drawable/ic_search"
-            app:helperTextEnabled="true"
-            app:helperText="@string/helper_busqueda"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Título de la sección de filtros -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/filter_mana_type"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp" />
-
-        <!-- Grupo de botones de filtro independientes con iconos y estilos seleccionables -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="8dp"
-            android:layout_marginBottom="16dp">
-
-            <!-- Botón 1 -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_red_mana"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/red_mana_text"
-                android:textColor="@color/white"
-                app:icon="@drawable/ic_red_mana"
-                app:iconTint="@color/white"
-                android:backgroundTint="@color/button_background_color_selector"
-                />
-
-            <!-- Botón 2 -->
-
-            <!-- Botón 3 -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_blue_mana"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/button_background_color_selector"
-                android:text="@string/blue_mana_text"
-                android:textColor="@color/white"
-                app:icon="@drawable/ic_blue_mana"
-                app:iconTint="@color/white" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_green_mana"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/green_mana_text"
-                android:textColor="@color/white"
-                app:icon="@drawable/ic_green_mana"
-                app:iconTint="@color/white"
-                android:backgroundTint="@color/button_background_color_selector"
-                />
-        </LinearLayout>
-
-        <!-- Segunda fila de botones -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="8dp">
-
-            <!-- Botón 4 -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_white_mana"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/white_mana_text"
-                android:textColor="@color/white"
-                app:icon="@drawable/ic_white_mana"
-                app:iconTint="@color/white"
-                android:backgroundTint="@color/button_background_color_selector"
-                />
-
-            <!-- Botón 5 -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_black_mana"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/black_mana_text"
-                android:textColor="@color/white"
-                app:icon="@drawable/ic_black_mana"
-                app:iconTint="@color/white"
-                android:backgroundTint="@color/button_background_color_selector"
-                />
-
-            <!-- Botón 6 -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_colorless_mana"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/colorless_mana_text"
-                android:textColor="@color/white"
-                app:icon="@drawable/ic_colorless_mana"
-                app:iconTint="@color/white"
-                android:backgroundTint="@color/button_background_color_selector"
-                />
-        </LinearLayout>
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        style="@style/Widget.Material3.BottomSheet.Modal"
+        app:behavior_hideable="false"
+        app:behavior_draggable="false"
+        app:behavior_peekHeight="2000dp"
+        >
 
 
+        <!-- Este será el contenido del BottomSheet, que se cargará dinámicamente -->
+        <include layout="@layout/bottom_sheet_filters_content" />
+
+    </FrameLayout>
 
     <!-- Botón para iniciar la búsqueda en la parte inferior fija -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/boton_buscar"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/button_search"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buscar"
+        android:text="@string/text_floating_button_busqueda"
         android:textColor="@color/white"
         android:padding="12dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/PrimaryColor"
-        />
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/PrimaryColor"/>
 
-</LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

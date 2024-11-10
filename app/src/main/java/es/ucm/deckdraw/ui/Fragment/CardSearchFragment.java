@@ -32,7 +32,7 @@ import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Service.CardLoader;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
-public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.Callback {
+public class CardSearchFragment extends Fragment{
     private SharedViewModel sharedViewModel;
     private static final int LOADER_ID = 1; // Solo un loader para la búsqueda
     private RecyclerView recyclerView;
@@ -48,9 +48,8 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
         // Inicialización del ViewModel
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
-        recyclerView = view.findViewById(R.id.recyclerView);
-
         // Configuración del RecyclerView
+        recyclerView = view.findViewById(R.id.recyclerView);
         adapter = new CardTextAdapter(cardList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
@@ -59,12 +58,8 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
         // Permitir que el fragmento maneje los menús
         setHasOptionsMenu(true);
 
-        // Observa los cambios en la consulta de búsqueda
-        sharedViewModel.getCurrentSearchQuery().observe(getViewLifecycleOwner(), query -> {
-            if (query != null) {
-                search(query);
-            }
-        });
+        // Observa los cambios en los resultados de la búsqueda
+        sharedViewModel.getCurrentSearchResults().observe(getViewLifecycleOwner(), this::onCardsLoaded);
 
         return view;
     }
@@ -100,42 +95,22 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
         }
     }
 
-
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
         // Inflar el menú de búsqueda
         inflater.inflate(R.menu.search_menu, menu);
-
-        // Obtener la SearchView
-        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
-
-        /*
-        // Configura la SearchView con el estado de búsqueda
-        sharedViewModel.getCurrentSearchQuery().observe(getViewLifecycleOwner(), query -> {
-            if (query != null) {
-                searchView.setQuery(query, false);
-            }
-        });
-
-        // Configurar el listener para manejar las consultas de búsqueda
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                sharedViewModel.setCurrentSearchQuery(query); // Guarda la consulta en el ViewModel
-                search(query); // Llama al método de búsqueda centralizado
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                // Para la busqueda en tiempo real
-                return false;
-            }
-        });
-        */
     }
 
-
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_search) { // Verifica si es el ítem de filtro.
+            // Mostrar el dialog de filtros al hacer clic en el icono de búsqueda
+            SearchFiltersDialogFragment filtersDialog = new SearchFiltersDialogFragment();
+            filtersDialog.show(getParentFragmentManager(), "SearchFiltersDialogFragment");
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public void onCardsLoaded(List<TCard> data) {
         cardList.clear();
@@ -145,28 +120,4 @@ public class CardSearchFragment extends Fragment implements CardLoaderCallbacks.
         adapter.notifyDataSetChanged();
     }
 
-    private void search(String query) {
-        // Lógica para reiniciar el Loader
-        Bundle args = new Bundle();
-        args.putString(CardLoaderCallbacks.ARG_NAME, query);
-        args.putString(CardLoaderCallbacks.ARG_FORMAT, "");
-        args.putString(CardLoaderCallbacks.ARG_TYPE, "");
-        args.putStringArrayList(CardLoaderCallbacks.ARG_COLORS, new ArrayList<>());
-
-        CardLoaderCallbacks loaderCallbacks = new CardLoaderCallbacks(getContext(), this);
-        LoaderManager.getInstance(this).restartLoader(LOADER_ID, args, loaderCallbacks);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.action_search) { // Verifica si es el ítem de filtro.
-            /*FilterBottomSheetFragment filterFragment = new FilterBottomSheetFragment();
-            filterFragment.show(getParentFragmentManager(), "FilterBottomSheetFragment");*/
-
-            SearchFiltersDialogFragment filtersDialog = new SearchFiltersDialogFragment();
-            filtersDialog.show(getParentFragmentManager(), "SearchFiltersDialogFragment");
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

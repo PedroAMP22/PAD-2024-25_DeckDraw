@@ -101,15 +101,19 @@ public class MTGServiceActivity extends AppCompatActivity implements LoaderManag
         Bundle commanderParams = new Bundle();
         commanderParams.putString("name", "");
         commanderParams.putString("format", "Commander");
-        commanderParams.putString("type", "");
+        commanderParams.putStringArrayList("types", new ArrayList<>());
         commanderParams.putStringArrayList("colors", new ArrayList<>());
+        commanderParams.putStringArrayList("rarity", new ArrayList<>());
+
 
         // Configurar la búsqueda de "Thing in the Ice"
         Bundle thingInTheIceParams = new Bundle();
         thingInTheIceParams.putString("name", "thing in the ice");
         thingInTheIceParams.putString("format", "");
-        thingInTheIceParams.putString("type", "");
+        thingInTheIceParams.putStringArrayList("types", new ArrayList<>());
         thingInTheIceParams.putStringArrayList("colors", new ArrayList<>());
+        thingInTheIceParams.putStringArrayList("rarity", new ArrayList<>());
+
 
         // Iniciar Loaders para cada búsqueda
         LoaderManager.getInstance(this).initLoader(LOADER_ID_AVACYN, avacynParams, this);
@@ -122,10 +126,11 @@ public class MTGServiceActivity extends AppCompatActivity implements LoaderManag
         String name = args.getString("name", "");
         String format = args.getString("format", "");
         ArrayList<String> colors = args.getStringArrayList("colors");
-        String type = args.getString("type", "");
+        ArrayList<String> types = args.getStringArrayList("types");
+        ArrayList<String> rarity = args.getStringArrayList("rarity");
 
         // Crear el loader y forzar su carga
-        CardLoader loader = new CardLoader(this, name, format, colors, type);
+        CardLoader loader = new CardLoader(this, name, format, colors, types,rarity);
         loader.forceLoad(); // Forzamos la ejecución del Loader
         return loader;
     }

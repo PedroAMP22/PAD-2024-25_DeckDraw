@@ -1,4 +1,6 @@
 package es.ucm.deckdraw.data.Service;
+import android.util.Log;
+
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.Cards.TDobleCard;
 
@@ -29,6 +31,11 @@ public class MTGServiceAPI {
             "w", "u", "b", "r", "g", "c"
     );
 
+    // Colores disponibles para el filtrado
+    private static final List<String> AVAILABLE_RARITY = List.of(
+            "common", "uncommon", "rare", "special", "mythic", "bonus"
+    );
+
     // Formatos de juego disponibles (no están en la API)
     private static final List<String> AVAILABLE_FORMATS = List.of(
             "Standard", "Future", "Historic", "Timeless", "Gladiator", "Pioneer",
@@ -54,6 +61,11 @@ public class MTGServiceAPI {
     public List<String> getAvailableColors() {
         return AVAILABLE_COLORS;
     }
+
+    public List<String> getAvailableRarity() {
+        return AVAILABLE_RARITY;
+    }
+
 
     public List<String> getAvailableFormats() {
         return AVAILABLE_FORMATS;
@@ -172,10 +184,10 @@ public class MTGServiceAPI {
 
             JSONObject jsonResponse = new JSONObject(responseBody);
             int totalCards = jsonResponse.getInt("total_cards");
-            System.out.println("Total de cartas encontradas: " + totalCards);
+            Log.d("api","Total de cartas encontradas: " + totalCards);
 
             boolean hasMore = jsonResponse.getBoolean("has_more");
-            System.out.println("¿Hay más páginas? " + hasMore);
+            Log.d("api","¿Hay más páginas? " + hasMore);
 
             JSONArray cards = jsonResponse.getJSONArray("data");
 
@@ -209,23 +221,17 @@ public class MTGServiceAPI {
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("No hay ninguna carta que coincida con los parametros de busqueda");
-
+            Log.d("api","No hay ninguna carta que coincida con los parametros de busqueda");
         }
 
         return cardList;
     }
 
-    public List<TCard> searchCardsFilters(String name, String format, List<String> colors, String type) {
-
-        String allCollors = ""; // el formato de los colores es junto : wg por ejemplo
-        for (String color : colors) {
-            allCollors += color;
-        }
+    public List<TCard> searchCardsFilters(String name, String format, List<String> colors, List<String> types, List<String> rarity) {
 
         String finalQuery = "q="; // comienzo de la query
 
-        // codificamos la consulta opor si el nombre tiene espacios
+        // codificamos la consulta por si el nombre tiene espacios
         try {
             finalQuery = finalQuery + URLEncoder.encode(name, "UTF-8");
         } catch (UnsupportedEncodingException e) {
@@ -234,19 +240,37 @@ public class MTGServiceAPI {
 
         // el formato de las cartas es obligatorio
         if (!format.equalsIgnoreCase("")) {
-            finalQuery += "+f%3A" + format;
+            finalQuery += " f:" + format;
         }
 
         // si tiene colores los usamos de filtro
         if (!colors.isEmpty()) {
-            finalQuery += "+c%3A" + allCollors;
+            String allCollors = ""; // el formato de los colores es junto : wg por ejemplo
+            for (String color : colors) {
+                allCollors += color;
+            }
+            finalQuery += " c:" + allCollors;
         }
 
-        if (!type.equalsIgnoreCase("")) {
-            finalQuery += "+t%3A" + type;
+        if (!types.isEmpty()) {
+            String cardTypes = "";
+            for(String type : types){
+                cardTypes += " t:"+ type;
+            }
+
+            finalQuery += cardTypes;
         }
 
-        System.out.println(finalQuery);
+        if (!types.isEmpty()) {
+            String cardRarity = "";
+            for(String r : rarity){
+                cardRarity += " r:"+ r;
+            }
+
+            finalQuery += cardRarity;
+        }
+
+        Log.d("api",finalQuery);
 
         return searchCardsByQuery(finalQuery);
     }
@@ -282,7 +306,7 @@ public class MTGServiceAPI {
 
             System.out.println("BUSQUEDA DE CARTAS EN CUALQUIER FORMATO, COLOR Y TIPO QUE SE LLAMEN AVACYN");
             // Realizar la búsqueda y obtener la lista de cartas
-            List<TCard> lista = service.searchCardsFilters("avacyn", "", new ArrayList<>(), "");
+            List<TCard> lista = service.searchCardsFilters("avacyn", "", new ArrayList<>(),new ArrayList<>() ,new ArrayList<>());
 
             // Imprimir los detalles de cada carta en el archivo
             for (TCard card : lista) {
@@ -291,7 +315,7 @@ public class MTGServiceAPI {
 
             System.out.println("BUSQUEDA DE CARTAS DE COMMANDER SIN COLOR O TIPO (DEVUELVE 175 CARTAS DE 27987)");
 
-            lista = service.searchCardsFilters("", "Commander", new ArrayList<>(), "");
+            lista = service.searchCardsFilters("", "Commander", new ArrayList<>(), new ArrayList<>(),new ArrayList<>());
 
             // Imprimir los detalles de cada carta en el archivo
             for (TCard card : lista) {
@@ -300,7 +324,7 @@ public class MTGServiceAPI {
 
             System.out.println("CARTA DOBLE");
 
-            lista = service.searchCardsFilters("thing in the ice", "", new ArrayList<>(), "");
+            lista = service.searchCardsFilters("thing in the ice", "", new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
             // Imprimir los detalles de cada carta en el archivo
             for (TCard card : lista) {

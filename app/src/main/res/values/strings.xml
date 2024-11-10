@@ -28,6 +28,37 @@
     <string name="white_mana_text">White</string>
     <string name="black_mana_text">Black</string>
     <string name="colorless_mana_text">Colorless</string>
+    <string name="filter_rarity_type">Tipo de rareza</string>
+    <string name="rarity_common_text">Common</string>
+    <string name="rarity_uncommon_text">Uncommon</string>
+    <string name="rarity_rare_text">Rare</string>
+    <string name="rarity_special_text">Special</string>
+    <string name="rarity_mythic_text">Mythic</string>
+    <string name="rarity_bonus_text">Bonus</string>
+    <string name="filter_card_type">Tipo de Carta</string>
+    <string name="card_type_artifact_text">Artifact</string>
+    <string name="card_type_battle_text">Battle</string>
+    <string name="card_type_conspiracy_text">Conspiracy</string>
+    <string name="card_type_creature_text">Creature</string>
+    <string name="card_type_dungeon_text">Dungeon</string>
+    <string name="card_type_emblem_text">Emblem</string>
+    <string name="card_type_enchantment_text">Enchantment</string>
+    <string name="card_type_hero_text">Hero</string>
+    <string name="card_type_instant_text">Instant</string>
+    <string name="card_type_kindred_text">Kindred</string>
+    <string name="card_type_land_text">Land</string>
+    <string name="card_type_phenomenon_text">Phenomenon</string>
+    <string name="card_type_plane_text">Plane</string>
+    <string name="card_type_planeswalker_text">Planeswalker</string>
+    <string name="card_type_scheme_text">Scheme</string>
+    <string name="card_type_sorcery_text">Sorcery</string>
+    <string name="card_type_vanguard_text">Vanguard</string>
+
+
+
+
+
+
 
 
 

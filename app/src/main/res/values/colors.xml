@@ -20,6 +20,7 @@
     <color name="ManaColorColorless">#CDC3C1</color>
     <color name="EmptyBackground">#00000000</color>
     <color name="ic_launcher_background">#151515</color>
+    <color name="button_no_selected">#c4c4c4</color>
 
 
 </resources>
