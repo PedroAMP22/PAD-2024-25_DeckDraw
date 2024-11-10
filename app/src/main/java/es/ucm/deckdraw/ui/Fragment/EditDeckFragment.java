@@ -35,9 +35,9 @@ public class EditDeckFragment extends Fragment {
 
             if (toolbarEditText != null) {
                 toolbarEditText.setVisibility(View.VISIBLE);
-                sharedViewModel.getCurrentDeckName().observe(getViewLifecycleOwner(), name -> {
+                sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), name -> {
                     if (name != null) {
-                        toolbarEditText.setText(name);
+                        toolbarEditText.setText(name.getDeckName());
                     }
                 });
             }

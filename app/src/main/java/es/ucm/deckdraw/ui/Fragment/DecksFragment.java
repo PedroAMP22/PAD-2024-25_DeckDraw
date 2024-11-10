@@ -25,6 +25,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.loader.app.LoaderManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -41,6 +43,7 @@ import es.ucm.deckdraw.data.dataBase.UsersAdmin;
 import es.ucm.deckdraw.ui.Activities.LogInActivity;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
+import es.ucm.deckdraw.ui.Adapter.DeckAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
 
@@ -49,7 +52,6 @@ public class DecksFragment extends Fragment {
 
         private AutoCompleteTextView commanderAutoComplete;
         private TextView commanderText ;
-        private int counter;
         private Context context;
         private LoaderManager manager;
         private CommanderLoaderCallbacks callback;
@@ -58,8 +60,12 @@ public class DecksFragment extends Fragment {
         private String commanderName;
         private int formatPosition;
         private Dialog dialog;
+
         private List<TCard> commanders;
         private TUsers currentUser;
+
+        private DeckAdapter deckAdapter;
+        private List<TDecks> deckList =  new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -78,12 +84,24 @@ public class DecksFragment extends Fragment {
             commanderName ="";
             formatPosition = 0;
         }
-        // Botón para navegar a CreateDeckFragment
+
         FloatingActionButton createDeckButton = view.findViewById(R.id.button_create_deck);
         createDeckButton.setOnClickListener(v -> {
-            // Llamar al método que abre el diálogo
+
             showCreateDeckDialog();
         });
+
+        deckAdapter = new DeckAdapter(deckList,this);
+        RecyclerView recyclerView = view.findViewById(R.id.deckRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        TDecks deck1 = new TDecks("yo","https://cards.scryfall.io/art_crop/front/d/9/d99a9a7d-d9ca-4c11-80ab-e39d5943a315.jpg?1632831210",0,"Commander","Deck1","id");
+        TDecks deck2 = new TDecks("yo","https://cards.scryfall.io/art_crop/front/2/0/2036745a-09ea-476f-ace6-1d06b8502f83.jpg?1562635743",0,"Commander","Deck2","id2");
+        List<TDecks> decks = new ArrayList<>();
+        decks.add(deck1);
+        decks.add(deck2);
+        deckAdapter.setDecks(decks);
+        recyclerView.setAdapter(deckAdapter);
 
         return view;
     }
@@ -131,7 +149,6 @@ public class DecksFragment extends Fragment {
         commanderText = dialog.findViewById(R.id.textViewCommander);
         commanderAutoComplete.setVisibility(View.INVISIBLE);
         commanderText.setVisibility(View.INVISIBLE);
-        counter = 0;
         manager = LoaderManager.getInstance(this);
         commanderAdapter = new ArrayAdapter<>(context, android.R.layout.simple_dropdown_item_1line, new ArrayList<>());
         commanderAutoComplete.setAdapter(commanderAdapter);
@@ -175,10 +192,6 @@ public class DecksFragment extends Fragment {
         createDeckButton.setOnClickListener(v -> {
             String deckName = deckNameEditText.getText().toString();
             if (!deckName.isEmpty() && formatSpinner.getSelectedItem() != null) {
-
-                SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-                viewModel.setCurrentDeckName(deckName);
-                viewModel.setCurrentFormat(formatSpinner.getSelectedItem().toString());
 
                 TDecks deck = new TDecks("ownerID", "",0, formatSpinner.getSelectedItem().toString(),deckName,"id" );
                 if(formatSpinner.getSelectedItem().toString().equals("Commander")){
@@ -267,5 +280,14 @@ public class DecksFragment extends Fragment {
             }
         }
 
-
+    public void onEditDeck(TDecks deck) {
+        SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        viewModel.setCurrentDeck(deck);
+        // Navegar al fragmento de edición de mazo
+        EditDeckFragment editDeckFragment = new EditDeckFragment();
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, editDeckFragment)
+                .addToBackStack(null)
+                .commit();
+    }
 }
