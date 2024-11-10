@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 public class SharedViewModel extends ViewModel {
     private final MutableLiveData<String> currentDeckName = new MutableLiveData<>();
     private final MutableLiveData<String> currentSearchQuery = new MutableLiveData<>();
+    private final MutableLiveData<String> currentFormat = new MutableLiveData<>();
 
     // Método para manejar el nombre del mazo
     public void setCurrentDeckName(String name) {
@@ -25,6 +26,8 @@ public class SharedViewModel extends ViewModel {
     public LiveData<String> getCurrentSearchQuery() {
         return currentSearchQuery;
     }
+
+    public void setCurrentFormat(String format) {currentSearchQuery.setValue(format);}
 
     // Agrega más LiveData y métodos según lo necesites
 }
