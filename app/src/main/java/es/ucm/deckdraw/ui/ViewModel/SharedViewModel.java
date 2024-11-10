@@ -3,21 +3,20 @@ package es.ucm.deckdraw.ui.ViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
+import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import java.util.ArrayList;
 import java.util.List;
-
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 
 public class SharedViewModel extends ViewModel {
     private final MutableLiveData<String> currentDeckName = new MutableLiveData<>();
     private final MutableLiveData<String> currentSearchQuery = new MutableLiveData<>();
+    private final MutableLiveData<TDecks> currentDeck = new MutableLiveData<>();
     private final MutableLiveData<String> currentSearchFormat = new MutableLiveData<>();
     private final MutableLiveData<ArrayList<String>> currentManaColors = new MutableLiveData<>();
     private final MutableLiveData<ArrayList<String>> currentCardRarity = new MutableLiveData<>();
     private final MutableLiveData<ArrayList<String>> currentCardTypes = new MutableLiveData<>();
     private  final MutableLiveData<List<TCard>> currentCardSearchResults = new MutableLiveData<>();
-
 
     // Método para manejar el nombre del mazo
     public void setCurrentDeckName(String name) {currentDeckName.setValue(name);}
@@ -33,6 +32,14 @@ public class SharedViewModel extends ViewModel {
 
     public LiveData<String> getCurrentSearchQuery() {
         return currentSearchQuery;
+    }
+
+    public void setCurrentDeck(TDecks deck) {
+        currentDeck.setValue(deck);
+    }
+
+    public LiveData<TDecks> getCurrentDeck() {
+        return currentDeck;
     }
 
     // Método para manejar EL FORMATO DE LA BUSQUEDA

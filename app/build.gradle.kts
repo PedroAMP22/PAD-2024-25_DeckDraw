@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.google.services)
     implementation(libs.firebase.auth)
 
+    implementation(libs.picasso)
     implementation(libs.support.annotations)
     implementation(libs.recyclerview)
     implementation(libs.firebase.common)

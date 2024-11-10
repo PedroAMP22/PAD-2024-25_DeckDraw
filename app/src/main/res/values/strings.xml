@@ -16,7 +16,25 @@
     <string name="app_logo">App logo</string>
     <string name="error_connection_not_found">Error: Connection not found</string>
     <string name="error_right_now_you_are_not_connected_to_a_network_try_again_later">Error: Right now you are not connected to a Network, try again later</string>
-
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="create_account">Create account</string>
+    <string name="create_acc">Create an account to start organizing your decks</string>
+    <string name="toggle_password_visibility">Toggle Password Visibility</string>
+    <string name="at_least_eight_characters">• At least 8 characters</string>
+    <string name="at_least_one_uppercase_letter">• At least 1 uppercase letter</string>
+    <string name="at_least_one_lowercase_letter">• At least 1 lowercase letter</string>
+    <string name="at_least_one_number">• At least 1 number</string>
+    <string name="at_least_one_special_character">• At least 1 special character</string>
+    <string name="crear_mazo">Crear mazo</string>
+    <string name="introduce_el_nombre_del_mazo">Introduce el nombre del mazo</string>
+    <string name="nombre_del_mazo">Nombre del mazo</string>
+    <string name="formato">Formato</string>
+    <string name="comandante">Comandante</string>
+    <string name="portada_del_mazo">portada del mazo</string>
+    <string name="eliminar">eliminar</string>
+    <string name="editar">editar</string>
+    
     <!--Strings de los filtros de búsqueda -->
     <string name="hint_busqueda">Búsqueda</string>
     <string name="helper_busqueda">Introduce el nombre de la carta</string>
@@ -53,17 +71,6 @@
     <string name="card_type_scheme_text">Scheme</string>
     <string name="card_type_sorcery_text">Sorcery</string>
     <string name="card_type_vanguard_text">Vanguard</string>
-
-
-
-
-
-
-
-
-
-
-
 
 
 </resources>

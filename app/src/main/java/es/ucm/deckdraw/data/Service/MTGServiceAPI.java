@@ -38,10 +38,8 @@ public class MTGServiceAPI {
 
     // Formatos de juego disponibles (no están en la API)
     private static final List<String> AVAILABLE_FORMATS = List.of(
-            "Standard", "Future", "Historic", "Timeless", "Gladiator", "Pioneer",
-            "Explorer", "Modern", "Legacy", "Pauper", "Vintage", "Penny", "Commander",
-            "Oathbreaker", "Standard Brawl", "Brawl", "Alchemy", "Pauper Commander",
-            "Duel", "Old School", "Premodern", "PreDH"
+            "Standard", "Pioneer",
+             "Modern", "Legacy", "Pauper", "Commander"
     );
 
     // Tipos de cartas disponibles (sin API)
@@ -54,20 +52,19 @@ public class MTGServiceAPI {
     public MTGServiceAPI() {
     }
 
-    public List<String> getAvailableCardTypes() {
+    public static List<String> getAvailableCardTypes() {
         return AVAILABLE_CARD_TYPES;
     }
 
-    public List<String> getAvailableColors() {
+    public static List<String> getAvailableColors() {
         return AVAILABLE_COLORS;
     }
 
-    public List<String> getAvailableRarity() {
+    public static List<String> getAvailableRarity() {
         return AVAILABLE_RARITY;
     }
 
-
-    public List<String> getAvailableFormats() {
+    public static List<String> getAvailableFormats() {
         return AVAILABLE_FORMATS;
     }
 
@@ -171,6 +168,52 @@ public class MTGServiceAPI {
             cardMTG.printCardDetails();
         }
 
+    }
+
+    // busqueda de comanders
+    public List<TCard> searchCommander(String query) {
+        List<TCard> commanderList = new ArrayList<>();
+
+        try {
+            String responseBody = makeRequest("/cards/search?q=is:commander+" + query);
+
+            JSONObject jsonResponse = new JSONObject(responseBody);
+            int totalCards = jsonResponse.getInt("total_cards");
+
+            boolean hasMore = jsonResponse.getBoolean("has_more");
+
+            JSONArray cards = jsonResponse.getJSONArray("data");
+
+            for (int i = 0; i < cards.length(); i++) {
+                JSONObject card = cards.getJSONObject(i);
+                if (card.has("card_faces")) {
+                    TCard base = parseCardObjectCarta(card);
+                    // creamos la carta doble (por default tendra los campos obligatorios y luego
+                    // ambas caras individuales)
+                    TDobleCard dobleCard = new TDobleCard(base);
+
+                    JSONArray faces = card.getJSONArray("card_faces");
+
+                    TCard front = parseCardObjectCarta(faces.getJSONObject(0));
+                    TCard back = parseCardObjectCarta(faces.getJSONObject(1));
+
+                    dobleCard.setFront(front);
+                    dobleCard.setBack(back);
+
+                    commanderList.add(dobleCard);
+                } else {
+                    TCard cardMTG = parseCardObjectCarta(card);
+                    commanderList.add(cardMTG);
+
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("No hay ninguna carta que coincida con los parametros de busqueda");
+
+        }
+        return commanderList;
     }
 
     // busqueda de cartas general con query.

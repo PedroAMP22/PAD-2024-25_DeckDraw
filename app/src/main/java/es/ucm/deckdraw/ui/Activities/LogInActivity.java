@@ -35,6 +35,25 @@ public class LogInActivity extends Activity {
         Button logInButton = findViewById(R.id.logInButton);
         TextView registerPromptTV = findViewById(R.id.registerPromptTV);
 
+
+        userService.getCurrentUser(new Callback<TUsers>() {
+            public void onSuccess(TUsers user) {
+                if(user != null){
+                    Intent i = new Intent(LogInActivity.this, MainScreenActivity.class);
+                    startActivity(i);
+                    Log.d(TAG, "User logged: " + user.getIdusers());
+                    Toast.makeText(LogInActivity.this, "User already logged", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Log.d(TAG,"User not logged");
+            }
+        });
+
+
+
         logInButton.setOnClickListener(v -> {
 
 
@@ -61,7 +80,8 @@ public class LogInActivity extends Activity {
         });
 
         registerPromptTV.setOnClickListener(v -> {
-            //go to register screen
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
         });
     }
 }
