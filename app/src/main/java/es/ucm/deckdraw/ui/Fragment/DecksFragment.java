@@ -2,9 +2,11 @@ package es.ucm.deckdraw.ui.Fragment;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,7 @@ import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,14 +33,18 @@ import java.util.List;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
+import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.data.Service.CommanderLoaderCallbacks;
 import es.ucm.deckdraw.data.Service.MTGServiceAPI;
 import es.ucm.deckdraw.data.dataBase.DecksAdmin;
+import es.ucm.deckdraw.data.dataBase.UsersAdmin;
+import es.ucm.deckdraw.ui.Activities.LogInActivity;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
+import es.ucm.deckdraw.util.Callback;
 
-    public class DecksFragment extends Fragment {
+public class DecksFragment extends Fragment {
 
 
         private AutoCompleteTextView commanderAutoComplete;
@@ -52,6 +59,7 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
         private int formatPosition;
         private Dialog dialog;
         private List<TCard> commanders;
+        private TUsers currentUser;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -188,8 +196,20 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
                     }
 
                 }
+
+                UsersAdmin userService = new UsersAdmin();
+                userService.getCurrentUser(new Callback<TUsers>() {
+                    public void onSuccess(TUsers user) {
+                        if(user != null){
+                        currentUser = user;
+                        }
+                    }
+                    @Override
+                    public void onFailure(Exception e) {
+                    }
+                });
                 DecksAdmin db = new DecksAdmin();
-                db.createDeck("ownerID", deck);
+                db.createDeck(currentUser.getIdusers(), deck);
                 dialog.dismiss();
             } else {
                 deckNameEditText.setError("Por favor ingrese un nombre para el mazo.");
