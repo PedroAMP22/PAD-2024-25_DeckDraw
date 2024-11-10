@@ -1,15 +1,15 @@
 package es.ucm.deckdraw.ui.Fragment;
 
-import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.loader.app.LoaderManager;
 
@@ -53,22 +53,46 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
         // Inicialización del ViewModel
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
-        // Configurar el campo de texto para búsqueda
+
+        // Configurar el campo de texto para búsqueda y restaurar el valor de la query
         searchEditText = view.findViewById(R.id.busqueda);
 
-        // Observa el texto de búsqueda en el ViewModel para restaurar el último valor
         sharedViewModel.getCurrentSearchQuery().observe(getViewLifecycleOwner(), q -> {
             if (q != null) {
-                searchEditText.setText(q); // Restaura el texto de búsqueda en el campo
+                searchEditText.setText(q); // Restaura la búsqueda
             }
         });
 
-
         // Inicialización del Map para filtros
         filterMap = new HashMap<>();
-        filterMap.put(FILTER_COLORS_KEY, new ArrayList<>());
-        filterMap.put(FILTER_RARITIES_KEY, new ArrayList<>());
-        filterMap.put(FILTER_TYPES_KEY, new ArrayList<>());
+
+        // Restaurar los filtros de colores
+        sharedViewModel.getCurrentManaColors().observe(getViewLifecycleOwner(), colors -> {
+            if (colors != null) {
+                filterMap.put(FILTER_COLORS_KEY, colors);
+                updateFilterButtons(view, colors, FILTER_COLORS_KEY);
+            }
+
+        });
+
+        // Restaurar los filtros de rarezas
+        sharedViewModel.getCurrentCardRarity().observe(getViewLifecycleOwner(), rarities -> {
+            if (rarities != null) {
+                filterMap.put(FILTER_RARITIES_KEY, rarities);
+                updateFilterButtons(view, rarities, FILTER_RARITIES_KEY);
+            }
+
+        });
+
+        // Restaurar los filtros de tipos
+        sharedViewModel.getCurrentCardTypes().observe(getViewLifecycleOwner(), types -> {
+            if (types != null) {
+                filterMap.put(FILTER_TYPES_KEY, types);
+                updateFilterButtons(view, types, FILTER_TYPES_KEY);
+            }
+
+        });
+
 
         // Configuración de botones y listeners
         setupButtons(view);
@@ -149,28 +173,171 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
         }
     }
 
+    private void updateFilterButtons(View view, List<String> selectedValues, String filterType) {
+        List<Integer> buttonIds = getButtonIdsForFilterType(filterType);
+        for (Integer id : buttonIds) {
+            MaterialButton button = view.findViewById(id);
+            String value = getFilterValueForButton(button, filterType);
+            button.setSelected(selectedValues.contains(value)); // Marca el botón si el valor está en la lista
+        }
+    }
+
+    private List<Integer> getButtonIdsForFilterType(String filterType) {
+        List<Integer> buttonIds = new ArrayList<>();
+        switch (filterType) {
+            case FILTER_COLORS_KEY:
+                buttonIds.add(R.id.button_red_mana);
+                buttonIds.add(R.id.button_blue_mana);
+                buttonIds.add(R.id.button_green_mana);
+                buttonIds.add(R.id.button_white_mana);
+                buttonIds.add(R.id.button_black_mana);
+                buttonIds.add(R.id.button_colorless_mana);
+                break;
+            case FILTER_RARITIES_KEY:
+                buttonIds.add(R.id.button_common_rarity);
+                buttonIds.add(R.id.button_uncommon_rarity);
+                buttonIds.add(R.id.button_rare_rarity);
+                buttonIds.add(R.id.button_special_rarity);
+                buttonIds.add(R.id.button_mythic_rarity);
+                buttonIds.add(R.id.button_bonus_rarity);
+                break;
+            case FILTER_TYPES_KEY:
+                buttonIds.add(R.id.button_artifact_type);
+                buttonIds.add(R.id.button_battle_type);
+                buttonIds.add(R.id.button_conspiracy_type);
+                buttonIds.add(R.id.button_creature_type);
+                buttonIds.add(R.id.button_dungeon_type);
+                buttonIds.add(R.id.button_emblem_type);
+                buttonIds.add(R.id.button_enchantment_type);
+                buttonIds.add(R.id.button_hero_type);
+                buttonIds.add(R.id.button_instant_type);
+                buttonIds.add(R.id.button_kindred_type);
+                buttonIds.add(R.id.button_land_type);
+                buttonIds.add(R.id.button_phenomenon_type);
+                buttonIds.add(R.id.button_plane_type);
+                buttonIds.add(R.id.button_planeswalker_type);
+                buttonIds.add(R.id.button_scheme_type);
+                buttonIds.add(R.id.button_sorcery_type);
+                buttonIds.add(R.id.button_vanguard_type);
+                break;
+        }
+        return buttonIds;
+    }
+
+    private String getFilterValueForButton(MaterialButton button, String filterType) {
+        String value = "";
+        switch (filterType) {
+            case FILTER_COLORS_KEY:
+                if (button.getId() == R.id.button_red_mana) {
+                    value = "r";
+                } else if (button.getId() == R.id.button_blue_mana) {
+                    value = "u";
+                } else if (button.getId() == R.id.button_green_mana) {
+                    value = "g";
+                } else if (button.getId() == R.id.button_white_mana) {
+                    value = "w";
+                } else if (button.getId() == R.id.button_black_mana) {
+                    value = "b";
+                } else if (button.getId() == R.id.button_colorless_mana) {
+                    value = "c";
+                }
+                break;
+            case FILTER_RARITIES_KEY:
+                if (button.getId() == R.id.button_common_rarity) {
+                    value = "common";
+                } else if (button.getId() == R.id.button_uncommon_rarity) {
+                    value = "uncommon";
+                } else if (button.getId() == R.id.button_rare_rarity) {
+                    value = "rare";
+                } else if (button.getId() == R.id.button_special_rarity) {
+                    value = "special";
+                } else if (button.getId() == R.id.button_mythic_rarity) {
+                    value = "mythic";
+                } else if (button.getId() == R.id.button_bonus_rarity) {
+                    value = "bonus";
+                }
+                break;
+            case FILTER_TYPES_KEY:
+                if (button.getId() == R.id.button_artifact_type) {
+                    value = "artifact";
+                } else if (button.getId() == R.id.button_battle_type) {
+                    value = "battle";
+                } else if (button.getId() == R.id.button_conspiracy_type) {
+                    value = "conspiracy";
+                } else if (button.getId() == R.id.button_creature_type) {
+                    value = "creature";
+                } else if (button.getId() == R.id.button_dungeon_type) {
+                    value = "dungeon";
+                } else if (button.getId() == R.id.button_emblem_type) {
+                    value = "emblem";
+                } else if (button.getId() == R.id.button_enchantment_type) {
+                    value = "enchantment";
+                } else if (button.getId() == R.id.button_hero_type) {
+                    value = "hero";
+                } else if (button.getId() == R.id.button_instant_type) {
+                    value = "instant";
+                } else if (button.getId() == R.id.button_kindred_type) {
+                    value = "kindred";
+                } else if (button.getId() == R.id.button_land_type) {
+                    value = "land";
+                } else if (button.getId() == R.id.button_phenomenon_type) {
+                    value = "phenomenon";
+                } else if (button.getId() == R.id.button_plane_type) {
+                    value = "plane";
+                } else if (button.getId() == R.id.button_planeswalker_type) {
+                    value = "planeswalker";
+                } else if (button.getId() == R.id.button_scheme_type) {
+                    value = "scheme";
+                } else if (button.getId() == R.id.button_sorcery_type) {
+                    value = "sorcery";
+                } else if (button.getId() == R.id.button_vanguard_type) {
+                    value = "vanguard";
+                }
+                break;
+        }
+        return value;
+    }
+
     @Override
     public void onStart() {
         super.onStart();
-        // Ajustar comportamiento de arrastre si es necesario
-        if (getDialog() != null && getDialog().getWindow() != null) {
-            View bottomSheet = getDialog().findViewById(R.id.bottom_sheet_search_filters);
-            if (bottomSheet != null) {
-                // Obtener el BottomSheetBehavior del layout
-                bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
-                // Configurar el estado inicial del BottomSheet como colapsado
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-            }
-        }
-    }
 
+        View bottomSheet = getDialog().findViewById(com.google.android.material.R.id.design_bottom_sheet);
+        View dragHandle = getDialog().findViewById(R.id.drag_handle);
 
-    // Método para expandir el BottomSheet cuando se active la búsqueda
-    public void expandBottomSheet() {
-        if (bottomSheetBehavior != null) {
+        if (bottomSheet != null && dragHandle != null) {
+            BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+
+
+            // Desactiva el arrastre general al inicio
+            bottomSheetBehavior.setDraggable(false);
+
+            // Configura el OnTouchListener en dragHandle
+            dragHandle.setOnTouchListener((v, event) -> {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Activa el arrastre al comenzar el toque
+                        bottomSheetBehavior.setDraggable(true);
+                        Log.d("sheet", "ARRASTRANDO EL DRAG ");
+
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        // Desactiva el arrastre cuando se suelta el dedo
+                        bottomSheetBehavior.setDraggable(false);
+                        Log.d("sheet", "CANCELANDO EL DRAG ");
+
+                        break;
+                }
+                v.performClick(); // Accesibilidad
+                return true;
+            });
         }
     }
+
+
+
+
 
     private void executeSearch() {
         // Configuracion de los filtros seleccionados y ejecucion de la búsqueda con el Loader

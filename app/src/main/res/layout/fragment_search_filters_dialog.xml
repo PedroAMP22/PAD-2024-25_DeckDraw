@@ -7,23 +7,33 @@
     android:id="@+id/search_filter_bottom_sheet_dialog"
     >
 
-    <!-- FrameLayout que actuará como el BottomSheet -->
-    <FrameLayout
-        android:id="@+id/bottom_sheet_search_filters"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+
+
+    <!-- ConstraintLayout para posicionar el contenido debajo del drag_handle -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        style="@style/Widget.Material3.BottomSheet.Modal"
-        app:behavior_hideable="false"
-        app:behavior_draggable="false"
-        app:behavior_peekHeight="2000dp"
-        >
+        android:layout_height="wrap_content">
+
+        <!-- Drag handle -->
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:id="@+id/drag_handle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
 
         <!-- Este será el contenido del BottomSheet, que se cargará dinámicamente -->
-        <include layout="@layout/bottom_sheet_filters_content" />
+        <include
+            android:id="@+id/content_include"
+            layout="@layout/bottom_sheet_filters_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/drag_handle"
+            />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Botón para iniciar la búsqueda en la parte inferior fija -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -36,7 +46,5 @@
         android:layout_gravity="bottom|center_horizontal"
         android:layout_margin="16dp"
         android:backgroundTint="@color/PrimaryColor"/>
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
