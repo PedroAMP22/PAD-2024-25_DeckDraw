@@ -31,6 +31,7 @@ import es.ucm.deckdraw.util.Callback;
 
 public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
 
+    private  static final Integer LOADER_ID_CARDS = 1;
     private static final String FILTER_COLORS_KEY = "colors";
     private static final String FILTER_TYPES_KEY = "types";
     private static final String FILTER_RARITIES_KEY = "rarities";
@@ -374,7 +375,7 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
         });
 
         // Inicia o reinicia el Loader
-        LoaderManager.getInstance(this).restartLoader(1, args, loaderCallbacks);
+        LoaderManager.getInstance(this).restartLoader(LOADER_ID_CARDS, args, loaderCallbacks);
     }
 
 

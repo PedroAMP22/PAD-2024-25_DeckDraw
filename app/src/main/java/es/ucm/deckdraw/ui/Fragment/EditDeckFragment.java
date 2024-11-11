@@ -45,7 +45,7 @@ public class EditDeckFragment extends Fragment {
             }
         }
 
-        Button addCardButton = view.findViewById(R.id.addCardButton);
+        Button addCardButton = view.findViewById(R.id.addCardFab);
         addCardButton.setOnClickListener(v -> {
             if (toolbarEditText != null) {
                 sharedViewModel.setCurrentDeckName(toolbarEditText.getText().toString());

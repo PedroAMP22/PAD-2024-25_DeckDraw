@@ -34,7 +34,9 @@
     <string name="portada_del_mazo">portada del mazo</string>
     <string name="eliminar">eliminar</string>
     <string name="editar">editar</string>
-    
+    <string name="addcard_text">Add card</string>
+
+
     <!--Strings de los filtros de búsqueda -->
     <string name="hint_busqueda">Búsqueda</string>
     <string name="helper_busqueda">Introduce el nombre de la carta</string>
