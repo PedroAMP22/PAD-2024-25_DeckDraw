@@ -1,6 +1,9 @@
 package es.ucm.deckdraw.ui.Activities;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.view.MenuItem;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -11,7 +14,7 @@ import es.ucm.deckdraw.ui.Fragment.DecksFragment;
 import es.ucm.deckdraw.ui.Fragment.FriendsFragment;
 import com.google.firebase.FirebaseApp;
 
-public class MainScreenActivity extends AppCompatActivity {
+public class MainScreenActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

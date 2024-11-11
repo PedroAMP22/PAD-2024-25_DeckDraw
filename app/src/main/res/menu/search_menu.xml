@@ -5,14 +5,18 @@
         android:id="@+id/action_search"
         android:icon="@drawable/ic_search"
         android:title="@string/menu_search"
-        app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always"
         app:iconTint="@color/white" />
-    <item
+
+    <!-- icono del filtro
+     <item
         android:id="@+id/action_filter"
         android:icon="@drawable/ic_filter"
         android:title="@string/menu_filter"
         app:showAsAction="always"
         app:iconTint="@color/white" />
+        -->
+
+
 
 </menu>

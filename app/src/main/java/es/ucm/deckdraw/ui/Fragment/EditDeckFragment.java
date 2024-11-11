@@ -20,6 +20,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
@@ -61,7 +64,7 @@ public class EditDeckFragment extends Fragment {
             });
         }
 
-        Button addCardButton = view.findViewById(R.id.addCardButton);
+        FloatingActionButton addCardButton = view.findViewById(R.id.addCardFab);
         addCardButton.setOnClickListener(v -> {
             if (toolbarEditText != null) {
                 sharedViewModel.setCurrentDeckName(toolbarEditText.getText().toString());
@@ -119,6 +122,12 @@ public class EditDeckFragment extends Fragment {
             mainScreenActivity.setToolbarTitle(""); // Dejar vacío el título porque usamos el EditText
             mainScreenActivity.setHomeAsUpEnabled(true);
         }
+
+        // Ocultar la BottomNavigationView
+        if (getActivity() != null) {
+            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
+            bottomNavigationView.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -127,6 +136,12 @@ public class EditDeckFragment extends Fragment {
         // Ocultar el EditText cuando el fragmento no esté activo
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.GONE);
+        }
+
+        // Mostrar la BottomNavigationView al salir del fragmento
+        if (getActivity() != null) {
+            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
+            bottomNavigationView.setVisibility(View.VISIBLE);
         }
     }
 }

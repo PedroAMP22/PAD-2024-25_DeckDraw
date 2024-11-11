@@ -12,6 +12,7 @@ import java.util.List;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.ui.Fragment.CardSearchFragment;
+import es.ucm.deckdraw.util.Callback;
 
 public class CardLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<TCard>> {
 
@@ -19,16 +20,13 @@ public class CardLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<T
     public static final String ARG_FORMAT = "format";
     public static final String ARG_COLORS = "colors";
     public static final String ARG_TYPE = "type";
+    public static final String ARG_RARITY = "rarity";
+
 
     private final Context context;
-    private final Callback callback;
+    private final Callback<List<TCard>> callback;
 
-
-    public interface Callback {
-        void onCardsLoaded(List<TCard> data);
-    }
-
-    public CardLoaderCallbacks(Context context, Callback callback) {
+    public CardLoaderCallbacks(Context context, Callback<List<TCard>> callback) {
         this.context = context;
         this.callback = callback;
     }
@@ -39,16 +37,19 @@ public class CardLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<T
         String name = args != null ? args.getString(ARG_NAME, "") : "";
         String format = args != null ? args.getString(ARG_FORMAT, "") : "";
         List<String> colors = args != null ? args.getStringArrayList(ARG_COLORS) : null;
-        String type = args != null ? args.getString(ARG_TYPE, "") : "";
+        List<String> types = args != null ? args.getStringArrayList(ARG_TYPE) : null;
+        List<String> rarity = args != null ? args.getStringArrayList(ARG_RARITY) : null;
 
-        return new CardLoader(context, name, format, colors, type);
+
+        return new CardLoader(context, name, format, colors, types,rarity);
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<List<TCard>> loader, List<TCard> data) {
-        // Llamar al método onCardsLoaded en la clase que implementa Callback
-        if (callback != null) {
-            callback.onCardsLoaded(data);
+        if (data != null && !data.isEmpty()) {
+            callback.onSuccess(data); // Devuelve los resultados a través de onSuccess
+        } else {
+            callback.onFailure(new Exception("No se encontraron resultados"));
         }
     }
 
