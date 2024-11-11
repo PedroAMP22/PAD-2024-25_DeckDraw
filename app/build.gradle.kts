@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.firebase.common)
     implementation(libs.cronet.embedded)
+    implementation(libs.navigation.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -71,7 +71,7 @@ public class DecksFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_decks, container, false);
-        if (savedInstanceState != null) {
+        if (savedInstanceState != null && savedInstanceState.getBoolean("dialog_visible")) {
             // Recupera los datos guardados
             deckName = savedInstanceState.getString("deck_name");
             commanderName = savedInstanceState.getString("commander_name");
@@ -108,7 +108,7 @@ public class DecksFragment extends Fragment {
 
     private void showCreateDeckDialog() {
         // Crear el diálog
-        context = this.getContext();
+        context = requireContext();
         dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog_create_deck);
         dialog.setCancelable(true);
