@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
@@ -45,7 +46,7 @@ public class EditDeckFragment extends Fragment {
             }
         }
 
-        Button addCardButton = view.findViewById(R.id.addCardFab);
+        FloatingActionButton addCardButton = view.findViewById(R.id.addCardFab);
         addCardButton.setOnClickListener(v -> {
             if (toolbarEditText != null) {
                 sharedViewModel.setCurrentDeckName(toolbarEditText.getText().toString());

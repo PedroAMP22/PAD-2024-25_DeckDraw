@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ucm.deckdraw.data.Objects.Cards.ImageUrlObject;
+import es.ucm.deckdraw.data.Objects.Cards.TDobleCard;
 import es.ucm.deckdraw.data.Service.CardLoaderCallbacks;
 import es.ucm.deckdraw.data.Service.ImageLoaderCallbacks;
 import es.ucm.deckdraw.ui.Adapter.CardTextAdapter;
@@ -68,22 +69,7 @@ public class CardSearchFragment extends Fragment{
 
         // Inicialización del adaptador de imágenes
         imageAdapter = new ImageAdapter(getContext());
-        imageAdapter.setImageData((ArrayList<Bitmap>) imageData);
         recyclerView.setAdapter(imageAdapter);
-
-        // Inicialización del Callback para cargar las imágenes
-        imageLoaderCallbacks = new ImageLoaderCallbacks(getContext(), new Callback<List<ImageUrlObject>>() {
-            @Override
-            public void onSuccess(List<ImageUrlObject> images) {
-                updateImages(images); // Llama a actualizar las imágenes en el RecyclerView
-            }
-
-            @Override
-            public void onFailure(Exception e) {
-                e.printStackTrace(); // Manejo de errores
-            }
-        });
-
 
         // Permitir que el fragmento maneje los menús
         setHasOptionsMenu(true);
@@ -143,49 +129,24 @@ public class CardSearchFragment extends Fragment{
     }
 
     public void onCardsLoaded(List<TCard> data) {
-        cardList.clear();
         if (data != null && !data.isEmpty()) {
-            cardList.addAll(data);
-            loadImages(data);
+            List<String> urls = new ArrayList<>();
+            String url = "";
+            for (TCard card : data) {
+                if (card instanceof TDobleCard){
+                    //si es una carta doble mostramos la front card
+                    TDobleCard doubleCard = (TDobleCard) card;
+                    url = doubleCard.getFront().getNormalImageUrl();
+                }
+                else{
+                    url = card.getNormalImageUrl();
+                }
+                if (url != null && !url.isEmpty()) {
+                    urls.add(url);
+                }
+            }
+            imageAdapter.setImageUrls(urls); // Actualiza las URLs en el adaptador
         }
-        adapter.notifyDataSetChanged();
     }
-
-    //IMPLEMENTACION DE IMAGENES
-
-    // Método para cargar imágenes usando las URLs de cada carta
-    public void loadImages(List<TCard> cards) {
-        ArrayList<String> urlList = new ArrayList<>();
-        for (TCard card : cards) {
-            if (card.getSmallImageUrl() != null && !card.getSmallImageUrl().isEmpty())
-                urlList.add(card.getSmallImageUrl());
-            else if (card.getNormalImageUrl() != null && !card.getNormalImageUrl().isEmpty())
-                urlList.add(card.getNormalImageUrl());
-            else if (card.getLargeImageUrl() != null && !card.getLargeImageUrl().isEmpty())
-                urlList.add(card.getLargeImageUrl());
-            else if (card.getArtCropImageUrl() != null && !card.getArtCropImageUrl().isEmpty())
-                urlList.add(card.getArtCropImageUrl());
-        }
-
-        // Pasamos la lista de URLs al loader para cargar las imágenes
-        Bundle urlBundle = new Bundle();
-        urlBundle.putStringArrayList(ImageLoaderCallbacks.URLS_KEY, urlList);
-        LoaderManager.getInstance(this).restartLoader(LOADER_ID_IMAGES, urlBundle, imageLoaderCallbacks);
-    }
-
-    // Actualiza las imágenes en el adaptador una vez cargadas
-    public void updateImages(List<ImageUrlObject> images) {
-        imageData.clear(); // Limpia la lista de datos de imagen actuales
-
-        // Agrega cada imagen descargada a la lista y al adaptador
-        for (ImageUrlObject image : images) {
-            imageData.add(image.getBitmap());
-        }
-
-        // Notifica al adaptador que los datos de imagen han cambiado
-        imageAdapter.setImageData((ArrayList<Bitmap>) imageData);
-        imageAdapter.notifyDataSetChanged();
-    }
-
 
 }

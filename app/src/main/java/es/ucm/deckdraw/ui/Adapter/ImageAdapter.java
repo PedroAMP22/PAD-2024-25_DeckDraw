@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,7 @@ import es.ucm.deckdraw.R;
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
 
     private Context context;
-    private List<Bitmap> imageData = new ArrayList<>();
+    private List<String> imageUrls  = new ArrayList<>();
 
     public ImageAdapter(Context context) {
         this.context = context;
@@ -33,16 +35,26 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
-        holder.imageView.setImageBitmap(imageData.get(position));
+        String imageUrl = imageUrls.get(position);
+
+        // Usa Picasso para cargar la imagen desde la URL
+        Picasso.get()
+                .load(imageUrl)
+                .placeholder(R.drawable.mtg_placeholder_card) // imagen de carga
+                .error(R.drawable.logo) // Imagen de error si falla la carga
+                .fit() // se ajusta la imagen automaticamente
+                .centerCrop()
+                .into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return imageData.size();
+        return imageUrls.size();
     }
 
-    public void setImageData(ArrayList<Bitmap> imageData){
-        this.imageData = imageData;
+    public void setImageUrls(List<String> imageUrls){
+        this.imageUrls = imageUrls;
+        notifyDataSetChanged(); // Actualiza el adaptador
     }
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {

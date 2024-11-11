@@ -304,7 +304,7 @@ public class MTGServiceAPI {
             finalQuery += cardTypes;
         }
 
-        if (!types.isEmpty()) {
+        if (!rarity.isEmpty()) {
             String cardRarity = "";
             for(String r : rarity){
                 cardRarity += " r:"+ r;
