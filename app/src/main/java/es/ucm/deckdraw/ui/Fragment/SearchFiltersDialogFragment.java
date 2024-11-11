@@ -65,6 +65,9 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
 
         // Inicialización del Map para filtros
         filterMap = new HashMap<>();
+        filterMap.put(FILTER_COLORS_KEY, new ArrayList<>());
+        filterMap.put(FILTER_RARITIES_KEY, new ArrayList<>());
+        filterMap.put(FILTER_TYPES_KEY,new ArrayList<>());
 
         // Restaurar los filtros de colores
         sharedViewModel.getCurrentManaColors().observe(getViewLifecycleOwner(), colors -> {

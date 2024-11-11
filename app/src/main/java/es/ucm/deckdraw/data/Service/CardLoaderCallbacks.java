@@ -26,7 +26,7 @@ public class CardLoaderCallbacks implements LoaderManager.LoaderCallbacks<List<T
     private final Context context;
     private final Callback<List<TCard>> callback;
 
-    public CardLoaderCallbacks(Context context, Callback callback) {
+    public CardLoaderCallbacks(Context context, Callback<List<TCard>> callback) {
         this.context = context;
         this.callback = callback;
     }
