@@ -16,6 +16,16 @@ public class TDecks {
     private List<TCard> Cards;
     private TCard commander;
 
+    public TDecks() {
+        this.deckOwner = "";
+        this.urlDeckCover = "";
+        this.numCards = 0;
+        this.deckFormat = "";
+        this.deckName = "";
+        this.idDeck = "";
+        this.Cards = new ArrayList<>();
+        commander = null;
+    }
 
     public TDecks(String deckOwner, String urlDeckCover, int numCards, String deckFormat, String deckName, String idDeck) {
         this.deckOwner = deckOwner;
@@ -88,6 +98,10 @@ public class TDecks {
     }
 
     public void setCommander(TCard commander){this.commander = commander;}
+
+    public TCard getCommander(){
+        return this.commander;
+    }
 
 
 }
