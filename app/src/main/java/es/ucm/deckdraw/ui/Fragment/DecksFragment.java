@@ -103,6 +103,18 @@ public class DecksFragment extends Fragment {
         deckAdapter.setDecks(decks);
         recyclerView.setAdapter(deckAdapter);
 
+        UsersAdmin userService = new UsersAdmin();
+        userService.getCurrentUser(new Callback<TUsers>() {
+            public void onSuccess(TUsers user) {
+                if(user != null){
+                    currentUser = user;
+                }
+            }
+            @Override
+            public void onFailure(Exception e) {
+            }
+        });
+
         return view;
     }
 
@@ -210,17 +222,7 @@ public class DecksFragment extends Fragment {
 
                 }
 
-                UsersAdmin userService = new UsersAdmin();
-                userService.getCurrentUser(new Callback<TUsers>() {
-                    public void onSuccess(TUsers user) {
-                        if(user != null){
-                        currentUser = user;
-                        }
-                    }
-                    @Override
-                    public void onFailure(Exception e) {
-                    }
-                });
+
                 DecksAdmin db = new DecksAdmin();
                 db.createDeck(currentUser.getIdusers(), deck);
                 dialog.dismiss();

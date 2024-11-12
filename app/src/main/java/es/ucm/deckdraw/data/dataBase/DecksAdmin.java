@@ -48,8 +48,6 @@ public class DecksAdmin {
     }
 
 
-    //devolver decks por usuario
-
     public void updateDeck(TDecks deck, Callback<Boolean> callback) {
         String uid = deck.getDeckOwner();
         String deckId = deck.getIdDeck();
