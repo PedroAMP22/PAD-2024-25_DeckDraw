@@ -83,6 +83,10 @@ public class TDecks {
         Cards.remove(card);
     }
 
+    public List<TCard> getCards() {
+        return Cards;
+    }
+
     public void setCommander(TCard commander){this.commander = commander;}
 
 
