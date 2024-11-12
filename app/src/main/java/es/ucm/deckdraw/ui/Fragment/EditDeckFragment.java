@@ -163,6 +163,12 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
 
         //Mostramos las cartas
         adapter.updateCardList(cardList);
+        sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+            if (deck != null) {
+                for(TCard card: cardList)
+                 adapter.updateQuantityText(deck.getNumberOfCardInDeck(card));
+            }
+        });
 
     }
 

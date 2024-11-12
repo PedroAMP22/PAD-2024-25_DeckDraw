@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -19,12 +20,13 @@ import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Fragment.CardSearchFragment;
 import es.ucm.deckdraw.ui.Fragment.EditDeckFragment;
 import es.ucm.deckdraw.ui.Fragment.FragmentViewerInterface;
+import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
 public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardViewHolder> {
 
     private List<TCard> cardList;
     private FragmentViewerInterface sch_frag;
-
+    private SharedViewModel sharedViewModel;
     private ImageButton plusButton;
     private ImageButton minusButton;
     private TextView quantityText;
@@ -39,6 +41,7 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
     public CardTextAdapter(List<TCard> cardList, EditDeckFragment frg) {
         this.cardList = new ArrayList<>(cardList);
         this.sch_frag = frg;
+        this.sharedViewModel = new ViewModelProvider(frg.requireActivity()).get(SharedViewModel.class);
         showButtons = true;
     }
 
@@ -114,6 +117,11 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
         this.cardList.clear();
         this.cardList.addAll(cardList);
         notifyDataSetChanged();
+    }
+
+    public void updateQuantityText(Integer num){
+        //TODO conseguir referencia a quantitytext de alguna manera y deberia ir
+        //quantityText.setText(num.toString());
     }
 
 

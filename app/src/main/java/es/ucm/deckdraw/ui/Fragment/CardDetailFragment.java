@@ -7,12 +7,13 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
@@ -53,8 +54,10 @@ public class CardDetailFragment extends Fragment {
             addCardButton.setOnClickListener(v -> {
                 sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
                     if (deck != null) {
-                        if(!deck.isCardOnDeck(card))
+                        if(deck.getNumberOfCardInDeck(card) == 0)
                             deck.addCard(card);
+                        else if(deck.getNumberOfCardInDeck(card) < 4)
+                            deck.addCardToCardSearcher(card);
 
                     }
                 });

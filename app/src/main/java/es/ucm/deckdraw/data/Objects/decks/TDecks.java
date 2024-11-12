@@ -88,6 +88,9 @@ public class TDecks {
     public void addCard(TCard card){
         Cards.add(card);
         //Si la carta ya está +1, sino la añadimos
+        addCardToCardSearcher(card);
+    }
+    public void addCardToCardSearcher(TCard card){
         cardSearcher.put(card, cardSearcher.getOrDefault(card, 1) + 1);
     }
     public void removeCard(TCard card){
@@ -103,8 +106,10 @@ public class TDecks {
         }
     }
 
-    public boolean isCardOnDeck(TCard card){
-        return cardSearcher.containsKey(card);
+    public Integer getNumberOfCardInDeck(TCard card){
+        if(cardSearcher.containsKey(card))
+            return cardSearcher.get(card);
+        return 0;
     }
 
     public List<TCard> getCards(){return Cards;}
