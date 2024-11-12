@@ -49,15 +49,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 .centerCrop()
                 .into(holder.imageView);
 
-        holder.imageView.setOnClickListener(v -> {
-            FragmentManager fragmentManager = ((AppCompatActivity) v.getContext()).getSupportFragmentManager();
-            CardDetailFragment cardDetailFragment = CardDetailFragment.newInstance(imageUrl);
 
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, cardDetailFragment) // R.id.fragment_container es el contenedor en el layout principal
-                    .addToBackStack(null)
-                    .commit();
-        });
     }
 
     @Override

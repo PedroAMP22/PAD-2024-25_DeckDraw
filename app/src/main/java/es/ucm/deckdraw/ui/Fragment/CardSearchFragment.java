@@ -69,7 +69,6 @@ public class CardSearchFragment extends Fragment{
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
 
-        recyclerView.setAdapter(adapter);
         // Inicialización del adaptador de imágenes
 
 
@@ -133,10 +132,11 @@ public class CardSearchFragment extends Fragment{
 
     public void onCardsLoaded(List<TCard> data) {
         adapter.set_CardList(data);
+        recyclerView.setAdapter(adapter);
     }
 
-    public void openDetails() {
-        CardDetailFragment frag = new CardDetailFragment();
+    public void openDetails(TCard card) {
+        CardDetailFragment frag = new CardDetailFragment(card);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
 
     }

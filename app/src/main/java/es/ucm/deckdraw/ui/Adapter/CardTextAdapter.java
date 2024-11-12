@@ -28,16 +28,16 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card_text, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_image, parent, false);
         return new CardViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
         TCard card = cardList.get(position);
-        Picasso.get().load(card.getLargeImageUrl()).placeholder(R.drawable.mtg_placeholder_card).error(R.drawable.not_connected).into(holder.img);
-        holder.itemView.setOnClickListener(v ->{
-            sch_frag.openDetails();
+        Picasso.get().load(card.getLargeImageUrl()).fit().placeholder(R.drawable.mtg_placeholder_card).error(R.drawable.not_connected).into(holder.img);
+        holder.itemView.setOnClickListener(v -> {
+            sch_frag.openDetails(card);
         });
     }
 
