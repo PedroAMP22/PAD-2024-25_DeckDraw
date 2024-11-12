@@ -26,6 +26,9 @@ public class TCard  implements Serializable {
     private String text;
     private List<String> colors;
 
+    //Para los mazos
+    private int quantity;
+
     // Constructor vacío
     public TCard() {
         this.ID = ""; // Genera un UUID único
@@ -48,6 +51,7 @@ public class TCard  implements Serializable {
         this.cmc = 0.0;
         this.text = "";
         this.colors = new ArrayList<>(); // Inicialmente null, puede asignarse después
+        this.quantity = 1;
     }
 
     // Constructor con parámetros
@@ -75,6 +79,7 @@ public class TCard  implements Serializable {
         this.cmc = cmc;
         this.text = text;
         this.colors = colors;
+        this.quantity = 1;
     }
 
     // Getter y Setter para ID
@@ -255,6 +260,12 @@ public class TCard  implements Serializable {
     public void setCmc(Double cmc) {
         this.cmc = cmc;
     }
+
+    //Getter de quantity
+    public Integer getQuantity(){return quantity;}
+    //Añadir una carta
+    public void addCardQuantity(){quantity++;}
+    public void removeCardQuantity(){quantity--;}
 
     public void printCardDetails() {
         System.out.println("ID: " + ID);

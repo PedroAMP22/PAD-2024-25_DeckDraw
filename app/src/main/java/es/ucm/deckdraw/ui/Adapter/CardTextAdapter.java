@@ -3,7 +3,9 @@ package es.ucm.deckdraw.ui.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,20 +25,39 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
     private List<TCard> cardList;
     private FragmentViewerInterface sch_frag;
 
+    private ImageButton plusButton;
+    private ImageButton minusButton;
+    private TextView quantityText;
+    private boolean showButtons;
+
     public CardTextAdapter(List<TCard> cardList, CardSearchFragment frg) {
         this.cardList = cardList;
         this.sch_frag = frg;
+        showButtons = false;
     }
 
     public CardTextAdapter(List<TCard> cardList, EditDeckFragment frg) {
         this.cardList = new ArrayList<>(cardList);
         this.sch_frag = frg;
+        showButtons = true;
     }
 
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_image, parent, false);
+
+        plusButton = view.findViewById(R.id.plusButton);
+        minusButton = view.findViewById(R.id.minusButton);
+        quantityText= view.findViewById(R.id.quantityText);
+        // Ocultamos los botones en la busqueda
+        if(!showButtons){
+            plusButton.setVisibility(View.GONE);
+            minusButton.setVisibility(View.GONE);
+            quantityText.setVisibility(View.GONE);
+        }
+
+
         return new CardViewHolder(view);
     }
 
@@ -47,6 +68,32 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
         holder.itemView.setOnClickListener(v -> {
             sch_frag.openDetails(card);
         });
+
+        quantityText.setText(card.getQuantity().toString());
+
+        plusButton.setOnClickListener( v -> {
+            if(card.getQuantity() < 4) {
+                card.addCardQuantity();
+                quantityText.setText(card.getQuantity().toString());
+                sch_frag.cardWasUpdated(true);
+            }
+        });
+
+        minusButton.setOnClickListener( v -> {
+            card.removeCardQuantity();
+            if(card.getQuantity() >= 1) {
+                quantityText.setText(card.getQuantity().toString());
+                sch_frag.cardWasUpdated(false);
+            }else{
+                cardList.remove(card);
+                sch_frag.removeCardFromDeck(card);
+                updateCardList(cardList);
+            }
+
+        });
+
+
+
     }
 
     @Override

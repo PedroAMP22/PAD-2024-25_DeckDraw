@@ -57,11 +57,11 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.VISIBLE);
 
-            sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), name -> {
-                if (name != null) {
-                    toolbarEditText.setText(name.getDeckName());
-                    deckName = name.getDeckName();
-                    cardList = new ArrayList<>( name.getCards());
+            sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+                if (deck != null) {
+                    toolbarEditText.setText(deck.getDeckName());
+                    deckName = deck.getDeckName();
+                    cardList = new ArrayList<>(deck.getCards());
                     refreshCardList(view);
                 }
             });
@@ -169,6 +169,27 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
 
     @Override
     public void openDetails(TCard card) {
+        CardDetailFragment frag = new CardDetailFragment(card,false);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
+    }
 
+    public void cardWasUpdated(boolean added){
+        sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+            if (deck != null) {
+                if(added)
+                    deck.addNumCard();
+                else {
+                    deck.removeNumCard();
+                }
+            }
+        });
+    }
+
+    public void removeCardFromDeck(TCard card){
+        sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+            if (deck != null) {
+                deck.removeCard(card);
+            }
+        });
     }
 }

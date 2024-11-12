@@ -1,7 +1,9 @@
 package es.ucm.deckdraw.data.Objects.decks;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 
@@ -16,6 +18,8 @@ public class TDecks {
     private List<TCard> Cards;
     private TCard commander;
 
+    private Map<TCard, Integer> cardSearcher;
+
 
     public TDecks(String deckOwner, String urlDeckCover, int numCards, String deckFormat, String deckName, String idDeck) {
         this.deckOwner = deckOwner;
@@ -25,6 +29,7 @@ public class TDecks {
         this.deckName = deckName;
         this.idDeck = idDeck;
         this.Cards = new ArrayList<>();
+        this.cardSearcher = new HashMap<>();
         commander = null;
     }
 
@@ -56,6 +61,10 @@ public class TDecks {
         return numCards;
     }
 
+    //Para cuando se añade mas de una misma carta
+    public void addNumCard() { numCards++;}
+    public void removeNumCard() { numCards--;}
+
     public void setNumCards(int numCards) {
         this.numCards = numCards;
     }
@@ -78,9 +87,24 @@ public class TDecks {
 
     public void addCard(TCard card){
         Cards.add(card);
+        //Si la carta ya está +1, sino la añadimos
+        cardSearcher.put(card, cardSearcher.getOrDefault(card, 1) + 1);
     }
     public void removeCard(TCard card){
         Cards.remove(card);
+
+        if (cardSearcher.containsKey(card)) {
+            int currentCount = cardSearcher.get(card);
+            if (currentCount > 1) {
+                cardSearcher.put(card, currentCount - 1);
+            } else {
+                cardSearcher.remove(card);
+            }
+        }
+    }
+
+    public boolean isCardOnDeck(TCard card){
+        return cardSearcher.containsKey(card);
     }
 
     public List<TCard> getCards(){return Cards;}

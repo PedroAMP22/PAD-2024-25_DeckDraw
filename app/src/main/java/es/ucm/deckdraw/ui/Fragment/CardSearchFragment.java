@@ -8,6 +8,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -58,8 +60,6 @@ public class CardSearchFragment extends Fragment implements  FragmentViewerInter
         recyclerView = view.findViewById(R.id.recyclerViewDeck);
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
-
-        // Inicialización del adaptador de imágenes
 
 
 
@@ -127,8 +127,18 @@ public class CardSearchFragment extends Fragment implements  FragmentViewerInter
 
     @Override
     public void openDetails(TCard card) {
-        CardDetailFragment frag = new CardDetailFragment(card);
+        CardDetailFragment frag = new CardDetailFragment(card,true);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
+
+    }
+
+    @Override
+    public void cardWasUpdated(boolean added) {
+        //Null xq aqui no se usa
+    }
+
+    @Override
+    public void removeCardFromDeck(TCard card) {
 
     }
 }

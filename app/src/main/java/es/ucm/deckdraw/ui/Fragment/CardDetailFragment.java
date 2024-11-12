@@ -24,8 +24,10 @@ public class CardDetailFragment extends Fragment {
     private SharedViewModel sharedViewModel;
     private static final String ARG_IMAGE_URL = "image_url";
     private TCard card;
-    public CardDetailFragment(TCard card){
+    private boolean addingCard;
+    public CardDetailFragment(TCard card, boolean addingCard){
         this.card = card;
+        this.addingCard = addingCard;
     }
 
     @Override
@@ -46,22 +48,25 @@ public class CardDetailFragment extends Fragment {
 
         //Shared view model
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-
-
         FloatingActionButton addCardButton = view.findViewById(R.id.addCardFab);
-        addCardButton.setOnClickListener(v -> {
-            sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), name -> {
-                if (name != null) {
-                    name.addCard(card);
-                }
+        if(addingCard) {
+            addCardButton.setOnClickListener(v -> {
+                sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+                    if (deck != null) {
+                        if(!deck.isCardOnDeck(card))
+                            deck.addCard(card);
+
+                    }
+                });
+                //Navegar de vuelta al fragment de editDeck
+                EditDeckFragment editDeckFragment = new EditDeckFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, editDeckFragment)
+                        .addToBackStack(null) // Añadir a la pila de retroceso
+                        .commit();
             });
-            //Navegar de vuelta al fragment de editDeck
-            EditDeckFragment editDeckFragment  = new EditDeckFragment();
-            getActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, editDeckFragment)
-                    .addToBackStack(null) // Añadir a la pila de retroceso
-                    .commit();
-        });
+        }else
+            addCardButton.setVisibility(View.GONE);
 
         return view;
     }
