@@ -73,6 +73,10 @@
     <string name="card_type_scheme_text">Scheme</string>
     <string name="card_type_sorcery_text">Sorcery</string>
     <string name="card_type_vanguard_text">Vanguard</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
 
 
 </resources>

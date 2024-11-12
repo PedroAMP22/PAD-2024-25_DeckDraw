@@ -45,6 +45,7 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
     private BottomSheetBehavior<View> bottomSheetBehavior;
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -85,7 +86,6 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
                 filterMap.put(FILTER_RARITIES_KEY, rarities);
                 updateFilterButtons(view, rarities, FILTER_RARITIES_KEY);
             }
-
         });
 
         // Restaurar los filtros de tipos

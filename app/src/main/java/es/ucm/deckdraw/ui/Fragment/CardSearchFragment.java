@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -61,15 +62,17 @@ public class CardSearchFragment extends Fragment{
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         //adapter para conseguir la informacion de las cartas
-        adapter = new CardTextAdapter(cardList);
+        adapter = new CardTextAdapter(cardList, this);
 
         // Configuración del RecyclerView
         recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3)); // Vista en rejilla
 
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+
+        recyclerView.setAdapter(adapter);
         // Inicialización del adaptador de imágenes
-        imageAdapter = new ImageAdapter(getContext());
-        recyclerView.setAdapter(imageAdapter);
+
+
 
         // Permitir que el fragmento maneje los menús
         setHasOptionsMenu(true);
@@ -129,24 +132,12 @@ public class CardSearchFragment extends Fragment{
     }
 
     public void onCardsLoaded(List<TCard> data) {
-        if (data != null && !data.isEmpty()) {
-            List<String> urls = new ArrayList<>();
-            String url = "";
-            for (TCard card : data) {
-                if (card instanceof TDobleCard){
-                    //si es una carta doble mostramos la front card
-                    TDobleCard doubleCard = (TDobleCard) card;
-                    url = doubleCard.getFront().getNormalImageUrl();
-                }
-                else{
-                    url = card.getNormalImageUrl();
-                }
-                if (url != null && !url.isEmpty()) {
-                    urls.add(url);
-                }
-            }
-            imageAdapter.setImageUrls(urls); // Actualiza las URLs en el adaptador
-        }
+        adapter.set_CardList(data);
     }
 
+    public void openDetails() {
+        CardDetailFragment frag = new CardDetailFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
+
+    }
 }

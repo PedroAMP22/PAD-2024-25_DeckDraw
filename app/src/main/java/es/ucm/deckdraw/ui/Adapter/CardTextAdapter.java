@@ -3,19 +3,26 @@ package es.ucm.deckdraw.ui.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.R;
+import es.ucm.deckdraw.ui.Fragment.CardSearchFragment;
 
 public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardViewHolder> {
 
-    private final List<TCard> cardList;
+    private List<TCard> cardList;
+    private CardSearchFragment sch_frag;
 
-    public CardTextAdapter(List<TCard> cardList) {
+    public CardTextAdapter(List<TCard> cardList, CardSearchFragment frg) {
         this.cardList = cardList;
+        this.sch_frag = frg;
     }
 
     @NonNull
@@ -28,8 +35,10 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
         TCard card = cardList.get(position);
-        holder.cardTitle.setText(card.getName()); // Asegúrate de que `getName()` existe en `TCard`
-        holder.cardDetails.setText(card.getCardDetails()); // Asegúrate de que `getCardDetails()` existe en `TCard`
+        Picasso.get().load(card.getLargeImageUrl()).placeholder(R.drawable.mtg_placeholder_card).error(R.drawable.not_connected).into(holder.img);
+        holder.itemView.setOnClickListener(v ->{
+            sch_frag.openDetails();
+        });
     }
 
     @Override
@@ -38,13 +47,17 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
     }
 
     public static class CardViewHolder extends RecyclerView.ViewHolder {
-        TextView cardTitle;
-        TextView cardDetails;
+        ImageView img;
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
-            cardTitle = itemView.findViewById(R.id.cardTitle);
-            cardDetails = itemView.findViewById(R.id.cardDetails);
+            img = itemView.findViewById(R.id.imageView);
         }
+    }
+
+    public void set_CardList(List<TCard> cardList) {
+        this.cardList.clear();
+        this.cardList.addAll(cardList);
+        notifyDataSetChanged();
     }
 }
