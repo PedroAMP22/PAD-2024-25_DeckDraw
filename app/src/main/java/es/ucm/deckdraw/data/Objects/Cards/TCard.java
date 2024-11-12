@@ -1,9 +1,10 @@
 package es.ucm.deckdraw.data.Objects.Cards;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TCard {
+public class TCard  implements Serializable {
     private String ID;
     private String largeImageUrl;
     private String normalImageUrl;

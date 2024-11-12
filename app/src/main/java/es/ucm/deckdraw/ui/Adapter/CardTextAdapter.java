@@ -4,24 +4,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Fragment.CardSearchFragment;
+import es.ucm.deckdraw.ui.Fragment.EditDeckFragment;
+import es.ucm.deckdraw.ui.Fragment.FragmentViewerInterface;
 
 public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardViewHolder> {
 
     private List<TCard> cardList;
-    private CardSearchFragment sch_frag;
+    private FragmentViewerInterface sch_frag;
 
     public CardTextAdapter(List<TCard> cardList, CardSearchFragment frg) {
         this.cardList = cardList;
+        this.sch_frag = frg;
+    }
+
+    public CardTextAdapter(List<TCard> cardList, EditDeckFragment frg) {
+        this.cardList = new ArrayList<>(cardList);
         this.sch_frag = frg;
     }
 
@@ -55,9 +63,12 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
         }
     }
 
-    public void set_CardList(List<TCard> cardList) {
+    public void updateCardList(List<TCard> cardList) {
         this.cardList.clear();
         this.cardList.addAll(cardList);
         notifyDataSetChanged();
     }
+
+
+
 }
