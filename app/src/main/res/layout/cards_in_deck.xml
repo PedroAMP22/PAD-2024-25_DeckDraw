@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/deckCardImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:background="@color/PrimaryColor"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:text="1" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addCardDeck"
+        android:layout_marginTop="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/deckCardImg"
+        android:contentDescription="@string/addcard_text"
+        app:backgroundTint="@color/PrimaryColor"
+        android:src="@drawable/ic_add"
+        app:tint="@color/BackgroundColor"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/removeCardDeck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:contentDescription="@string/addcard_text"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/PrimaryColor"
+        app:tint="@color/BackgroundColor" />
+</RelativeLayout>

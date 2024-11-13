@@ -21,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
+import es.ucm.deckdraw.ui.Adapter.CardDeckAdapter;
 import es.ucm.deckdraw.ui.Adapter.CardTextAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
@@ -38,7 +39,7 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
     private Context context;
     private String deckName;
     private RecyclerView recyclerView;
-    private CardTextAdapter adapter;
+    private CardDeckAdapter adapter;
     private List<TCard> cardList = new ArrayList<>(); // Lista para almacenar las cartas
 
     @Nullable
@@ -54,6 +55,12 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
         MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
         toolbarEditText = mainScreenActivity.findViewById(R.id.toolbarEditText);
 
+        adapter = new CardDeckAdapter(cardList, this);
+        // Configuración del RecyclerView
+        recyclerView = view.findViewById(R.id.recyclerViewDeck);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        recyclerView.setAdapter(adapter);
+
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.VISIBLE);
 
@@ -66,9 +73,6 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
                 }
             });
         }
-
-
-
 
         FloatingActionButton addCardButton = view.findViewById(R.id.addCardFab);
         addCardButton.setOnClickListener(v -> {
@@ -152,24 +156,7 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
     }
 
     public void refreshCardList(View view) {
-        //adapter para conseguir la informacion de las cartas
-        adapter = new CardTextAdapter(cardList, this);
-
-        // Configuración del RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerViewDeck);
-
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        recyclerView.setAdapter(adapter);
-
-        //Mostramos las cartas
         adapter.updateCardList(cardList);
-        sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
-            if (deck != null) {
-                for(TCard card: cardList)
-                 adapter.updateQuantityText(deck.getNumberOfCardInDeck(card));
-            }
-        });
-
     }
 
 
