@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,9 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.Map;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
+import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.ui.Fragment.EditDeckFragment;
 import es.ucm.deckdraw.ui.Fragment.FragmentViewerInterface;
 
@@ -21,8 +24,9 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
 
 
     private List<TCard> cardList;
-    private FragmentViewerInterface sch_frag;
+    private EditDeckFragment sch_frag;
     private List<Integer> cardQuantity;
+
 
     public CardDeckAdapter(List<TCard> cardList, EditDeckFragment frg) {
         this.cardList = cardList;
@@ -32,7 +36,8 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
     @NonNull
     @Override
     public CardDeckAdapter.CardDeckViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cards_in_deck, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_image, parent, false);
+
         return new CardDeckAdapter.CardDeckViewHolder(view);
     }
 
@@ -43,6 +48,9 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
         holder.itemView.setOnClickListener(v -> {
             sch_frag.openDetails(card);
         });
+
+            //holder.quantityView.setText(deckCards.get(card));
+
     }
 
     public static class CardDeckViewHolder extends RecyclerView.ViewHolder {
@@ -50,7 +58,7 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
 
         public CardDeckViewHolder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.deckCardImg);
+            img = itemView.findViewById(R.id.imageView);
         }
     }
 

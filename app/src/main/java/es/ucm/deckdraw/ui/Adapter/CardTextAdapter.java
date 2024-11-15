@@ -25,7 +25,7 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardViewHolder> {
 
     private List<TCard> cardList;
-    private FragmentViewerInterface sch_frag;
+    private CardSearchFragment sch_frag;
 
     public CardTextAdapter(List<TCard> cardList, CardSearchFragment frg) {
         this.cardList = cardList;

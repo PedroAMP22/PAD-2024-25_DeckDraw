@@ -127,7 +127,7 @@ public class CardSearchFragment extends Fragment implements  FragmentViewerInter
 
     @Override
     public void openDetails(TCard card) {
-        CardDetailFragment frag = new CardDetailFragment(card,true);
+        CardDetailFragment frag = new CardDetailFragment(card);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
 
     }

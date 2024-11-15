@@ -62,8 +62,8 @@ public class TDecks {
     }
 
     //Para cuando se añade mas de una misma carta
-    public void addNumCard() { numCards++;}
-    public void removeNumCard() { numCards--;}
+    public void addNumCard(int q) { numCards+=q;}
+    public void removeNumCard(int q) { numCards-=q;}
 
     public void setNumCards(int numCards) {
         this.numCards = numCards;
@@ -85,24 +85,28 @@ public class TDecks {
         this.deckOwner = deckOwner;
     }
 
-    public void addCard(TCard card){
-        Cards.add(card);
-        //Si la carta ya está +1, sino la añadimos
-        addCardToCardSearcher(card);
+
+    public void addCard(TCard card, int quantity){
+        if(cardSearcher.containsKey(card)){
+            cardSearcher.put(card, cardSearcher.getOrDefault(card, 0) + quantity);
+            addNumCard(quantity);
+        }else{
+            Cards.add(card);
+            cardSearcher.put(card, cardSearcher.getOrDefault(card, 0) + 1);
+        }
+
     }
-    public void addCardToCardSearcher(TCard card){
-        cardSearcher.put(card, cardSearcher.getOrDefault(card, 1) + 1);
-    }
-    public void removeCard(TCard card){
-        Cards.remove(card);
+    public void removeCard(TCard card, int quantity){
 
         if (cardSearcher.containsKey(card)) {
             int currentCount = cardSearcher.get(card);
-            if (currentCount > 1) {
-                cardSearcher.put(card, currentCount - 1);
+            if (currentCount > quantity) {
+                cardSearcher.put(card, currentCount - quantity);
             } else {
+                Cards.remove(card);
                 cardSearcher.remove(card);
             }
+            removeNumCard(quantity);
         }
     }
 
@@ -119,4 +123,7 @@ public class TDecks {
     public void setCommander(TCard commander){this.commander = commander;}
 
 
+    public Map<TCard, Integer> getCardSearcher() {
+        return  cardSearcher;
+    }
 }

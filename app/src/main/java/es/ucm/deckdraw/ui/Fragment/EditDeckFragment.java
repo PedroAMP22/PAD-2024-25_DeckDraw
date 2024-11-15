@@ -22,7 +22,6 @@ import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Adapter.CardDeckAdapter;
-import es.ucm.deckdraw.ui.Adapter.CardTextAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -30,10 +29,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 
-public class EditDeckFragment extends Fragment implements  FragmentViewerInterface{
+public class EditDeckFragment extends Fragment{
     private SharedViewModel sharedViewModel;
     private EditText toolbarEditText;
     private Context context;
@@ -50,7 +50,7 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
         context = this.getContext();
         // Inicialización del ViewModel
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        // Obtener el EditText de la Toolbar
+
 
         MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
         toolbarEditText = mainScreenActivity.findViewById(R.id.toolbarEditText);
@@ -160,29 +160,10 @@ public class EditDeckFragment extends Fragment implements  FragmentViewerInterfa
     }
 
 
-    @Override
+
     public void openDetails(TCard card) {
-        CardDetailFragment frag = new CardDetailFragment(card,false);
+        CardDetailFragment frag = new CardDetailFragment(card);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
     }
 
-    public void cardWasUpdated(boolean added){
-        sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
-            if (deck != null) {
-                if(added)
-                    deck.addNumCard();
-                else {
-                    deck.removeNumCard();
-                }
-            }
-        });
-    }
-
-    public void removeCardFromDeck(TCard card){
-        sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
-            if (deck != null) {
-                deck.removeCard(card);
-            }
-        });
-    }
 }
