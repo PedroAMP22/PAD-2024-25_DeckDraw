@@ -102,6 +102,4 @@ public class TDecks {
     public TCard getCommander(){
         return this.commander;
     }
-
-
 }

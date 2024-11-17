@@ -73,6 +73,10 @@
     <string name="card_type_scheme_text">Scheme</string>
     <string name="card_type_sorcery_text">Sorcery</string>
     <string name="card_type_vanguard_text">Vanguard</string>
+    <string name="user_icon">user Icon</string>
+    <string name="user_profile">User Profile</string>
+    <string name="update">Update</string>
+    <string name="sign_out">Sign Out</string>
 
 
 </resources>

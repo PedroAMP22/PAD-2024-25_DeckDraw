@@ -1,7 +1,9 @@
 package es.ucm.deckdraw.data.Objects.Cards;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TCard {
     private String ID;
@@ -25,29 +27,7 @@ public class TCard {
     private String text;
     private List<String> colors;
 
-    // Constructor vacío
-    public TCard() {
-        this.ID = ""; // Genera un UUID único
-        this.largeImageUrl = "";
-        this.normalImageUrl = "";
-        this.smallImageUrl = "";
-        this.artCropImageUrl = "";
-        this.language = "";
-        this.layout = "";
-        this.legal = false;
-        this.manaCost = "";
-        this.name = "";
-        this.power = "";
-        this.toughness = "";
-        this.artist = "";
-        this.borderColor = "";
-        this.type = "";
-        this.setName = "";
-        this.rarity = "";
-        this.cmc = 0.0;
-        this.text = "";
-        this.colors = new ArrayList<>(); // Inicialmente null, puede asignarse después
-    }
+    public TCard() {}
 
     // Constructor con parámetros
     public TCard(String ID, String largeImageUrl, String normalImageUrl, String smallImageUrl, String artCropImageUrl,
@@ -326,5 +306,6 @@ public class TCard {
 
         return details.toString();
     }
+
 }
 

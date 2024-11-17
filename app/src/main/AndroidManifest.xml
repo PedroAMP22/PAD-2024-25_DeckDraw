@@ -15,6 +15,9 @@
         android:theme="@style/Theme.DeckDraw"
         tools:targetApi="31">
         <activity
+            android:name=".ui.Activities.UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".ui.Activities.RegisterActivity"
             android:exported="false" />
         <activity
@@ -22,7 +25,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.Activities.error_NetConnection"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".data.Service.MTGServiceActivity"
             android:exported="true" />
