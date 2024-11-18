@@ -135,8 +135,7 @@ public class TDecks {
         return this.commander;
     }
 
-
     public Map<TCard, Integer> getCardSearcher() {
         return  cardSearcher;
-    }
+
 }

@@ -7,6 +7,7 @@ import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import java.util.ArrayList;
 import java.util.List;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
+import es.ucm.deckdraw.data.Objects.users.TUsers;
 
 public class SharedViewModel extends ViewModel {
     private final MutableLiveData<String> currentDeckName = new MutableLiveData<>();
@@ -17,6 +18,17 @@ public class SharedViewModel extends ViewModel {
     private final MutableLiveData<ArrayList<String>> currentCardRarity = new MutableLiveData<>();
     private final MutableLiveData<ArrayList<String>> currentCardTypes = new MutableLiveData<>();
     private final MutableLiveData<List<TCard>> currentCardSearchResults = new MutableLiveData<>();
+
+    //For user
+    private final MutableLiveData<TUsers> currentUser = new MutableLiveData<>();
+
+    public void setCurrentUser(TUsers user) {
+        currentUser.setValue(user);
+    }
+
+    public LiveData<TUsers> getCurrentUser() {
+        return currentUser;
+    }
 
     // Método para manejar el nombre del mazo
     public void setCurrentDeckName(String name) {currentDeckName.setValue(name);}

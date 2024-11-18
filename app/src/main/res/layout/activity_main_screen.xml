@@ -4,30 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        style="@style/ToolBarLight"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/PrimaryColor"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/ToolBarLight" >
-        <!-- EditText para mostrar y editar el título -->
+        app:layout_constraintTop_toTopOf="parent">
         <EditText
             android:id="@+id/toolbarEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/toolbar_deckname"
-            android:visibility="gone"
             android:background="@android:color/transparent"
+            android:hint="@string/toolbar_deckname"
+            android:padding="8dp"
             android:textColor="@android:color/white"
             android:textSize="18sp"
-            android:padding="8dp"/>
-    </androidx.appcompat.widget.Toolbar>
+            android:visibility="gone" />
 
+        <ImageView
+            android:id="@+id/userIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/user_icon"
+            android:src="@drawable/ic_usericon"
+            android:layout_gravity="end">
+        </ImageView>
+    </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/fragment_container"

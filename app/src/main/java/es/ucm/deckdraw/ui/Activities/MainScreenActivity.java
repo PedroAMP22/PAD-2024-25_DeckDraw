@@ -1,8 +1,8 @@
 package es.ucm.deckdraw.ui.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.view.MenuItem;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -43,11 +43,19 @@ public class MainScreenActivity extends AppCompatActivity  {
             return true;
         });
 
-        // Cargar el fragmento por defecto solo si el estado es nulo (es decir, no se está recreando la actividad)
         if (savedInstanceState == null) {
             bottomNavigationView.setSelectedItemId(R.id.nav_deck);
         }
-      
+
+        ImageView userIcon = findViewById(R.id.userIcon);
+
+        userIcon.setOnClickListener(v -> {
+            Intent i = new Intent(this, UserProfile.class);
+
+            startActivity(i);
+        });
+
+
         //Keep this to start the Firebase database
         FirebaseApp.initializeApp(this);
     }
@@ -55,7 +63,6 @@ public class MainScreenActivity extends AppCompatActivity  {
     @Override
     protected void onResume() {
         super.onResume();
-        // Quitar la flecha de retroceso y restablecer el título
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setTitle("DeckDraw"); // Título predeterminado
@@ -64,7 +71,7 @@ public class MainScreenActivity extends AppCompatActivity  {
 
     @Override
     public boolean onSupportNavigateUp() {
-        getSupportFragmentManager().popBackStack(); // Navegar hacia atrás en la pila de fragmentos
+        getSupportFragmentManager().popBackStack();
         return true;
     }
 

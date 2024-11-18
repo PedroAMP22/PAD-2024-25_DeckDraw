@@ -6,25 +6,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
 
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
 import java.util.List;
 
-import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.util.Callback;
 
 public class DecksAdmin {
@@ -41,6 +35,7 @@ public class DecksAdmin {
 
         DatabaseReference newDeckRef = decksRef.push();
         newDeck.setIdDeck(newDeckRef.getKey());
+
 
         newDeckRef.setValue(newDeck)
                 .addOnSuccessListener(aVoid -> Log.d("Firebase Database", "createDeck: success " + newDeckRef.getKey()))

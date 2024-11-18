@@ -114,4 +114,8 @@ public class UsersAdmin{
                 .addOnSuccessListener(unused -> callback.onSuccess(true))
                 .addOnFailureListener(callback::onFailure);
     }
+
+    public void signOut(){
+        mAuth.signOut();
+    }
 }
