@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color para el botón cuando está seleccionado -->
+    <item android:color="@color/ManaColorWhite" android:state_selected="true" />
+    <!-- Color para el botón cuando está presionado     -->
+    <item android:color="@color/ManaColorWhite" android:state_pressed="true" />
+
+    <!-- Color para el botón en estado normal (no seleccionado) -->
+    <item android:color="@color/button_no_selected" />
+</selector>

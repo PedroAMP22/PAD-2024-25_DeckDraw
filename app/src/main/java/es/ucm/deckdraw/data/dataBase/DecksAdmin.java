@@ -5,8 +5,10 @@ import android.util.Log;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
 
 import android.util.Log;
@@ -20,8 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+import java.util.List;
 
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
+import es.ucm.deckdraw.util.Callback;
 
 public class DecksAdmin {
 
@@ -44,30 +48,61 @@ public class DecksAdmin {
     }
 
 
-    public TDecks searchDeck(String uidD, String uidU){
-        final TDecks[] deck = {null};
+    public void updateDeck(TDecks deck, Callback<Boolean> callback) {
+        String uid = deck.getDeckOwner();
+        String deckId = deck.getIdDeck();
+        String newName = deck.getDeckName();
+        DatabaseReference deckRef = db.getReference("users").child(uid).child("decks").child(deckId).child("name");
+        deckRef.setValue(newName)
+                .addOnSuccessListener(aVoid -> callback.onSuccess(true))
+                .addOnFailureListener(callback::onFailure);
+    }
 
-        DatabaseReference ref = db.getReference();
-        ref.child(uidU).child("decks").child(uidD).addListenerForSingleValueEvent(new ValueEventListener() {
+
+    public void addCardToDeck(TDecks deck, TCard card, Callback<Void> callback) {
+        List<TCard> updatedCards = deck.getCards();
+        updatedCards.add(card);
+
+        db.getReference().child(deck.getDeckOwner()).child(deck.getIdDeck()).child("Cards")
+                .setValue(updatedCards)
+                .addOnSuccessListener(unused -> callback.onSuccess(null))
+                .addOnFailureListener(callback::onFailure);
+    }
+
+    public void removeCardFromDeck(TDecks deck, TCard card, Callback<Boolean> callback) {
+        List<TCard> updatedCards = deck.getCards();
+        updatedCards.remove(card);
+
+        db.getReference().child(deck.getDeckOwner()).child(deck.getIdDeck()).child("Cards")
+                .setValue(updatedCards)
+                .addOnSuccessListener(unused -> callback.onSuccess(null))
+                .addOnFailureListener(callback::onFailure);
+    }
+
+    public void deleteDeck(TDecks deck, Callback<Void> callback) {
+        db.getReference().child(deck.getDeckOwner()).child(deck.getIdDeck())
+                .removeValue()
+                .addOnSuccessListener(unused -> callback.onSuccess(null))
+                .addOnFailureListener(callback::onFailure);
+    }
+
+    public void getUserDecks(String userId, Callback<List<TDecks>> callback) {
+        db.getReference().child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    deck[0] = dataSnapshot.getValue(TDecks.class);
-                    Log.d("Username", "El nombre de usuario es: " + deck[0].getIdDeck());
-                } else {
-                    Log.d("Username", "El usuario no existe en la base de datos.");
+                List<TDecks> userDecks = new ArrayList<>();
+                for (DataSnapshot deckSnapshot : dataSnapshot.getChildren()) {
+                    TDecks deck = deckSnapshot.getValue(TDecks.class);
+                    if (deck != null) userDecks.add(deck);
                 }
+                callback.onSuccess(userDecks);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e("DatabaseError", "Error al leer el nombre de usuario: " + databaseError.getMessage());
+                callback.onFailure(databaseError.toException());
             }
-
-
         });
-
-        return deck[0];
     }
 
 }

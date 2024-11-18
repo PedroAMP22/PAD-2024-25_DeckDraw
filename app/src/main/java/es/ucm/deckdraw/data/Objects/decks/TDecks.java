@@ -17,8 +17,18 @@ public class TDecks {
     private String deckOwner;
     private List<TCard> Cards;
     private TCard commander;
-
     private Map<TCard, Integer> cardSearcher;
+
+    public TDecks() {
+        this.deckOwner = "";
+        this.urlDeckCover = "";
+        this.numCards = 0;
+        this.deckFormat = "";
+        this.deckName = "";
+        this.idDeck = "";
+        this.Cards = new ArrayList<>();
+        commander = null;
+    }
 
 
     public TDecks(String deckOwner, String urlDeckCover, int numCards, String deckFormat, String deckName, String idDeck) {
@@ -116,11 +126,14 @@ public class TDecks {
         return 0;
     }
 
+
     public List<TCard> getCards(){return Cards;}
 
-
-
     public void setCommander(TCard commander){this.commander = commander;}
+
+    public TCard getCommander(){
+        return this.commander;
+    }
 
 
     public Map<TCard, Integer> getCardSearcher() {

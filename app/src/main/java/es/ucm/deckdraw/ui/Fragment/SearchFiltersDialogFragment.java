@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.StringDef;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.loader.app.LoaderManager;
 
@@ -25,6 +26,7 @@ import java.util.Map;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
+import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.data.Service.CardLoaderCallbacks;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
@@ -43,6 +45,7 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
     private SharedViewModel sharedViewModel;
     private TextInputEditText searchEditText;
     private BottomSheetBehavior<View> bottomSheetBehavior;
+    private TDecks deck;
 
 
 
@@ -65,7 +68,11 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
             }
         });
 
-        //Inicialización del Map para filtros
+        deck = new TDecks();
+        deck = sharedViewModel.getCurrentDeck().getValue();
+
+        // Inicialización del Map para filtros
+
         filterMap = new HashMap<>();
         filterMap.put(FILTER_COLORS_KEY, new ArrayList<>());
         filterMap.put(FILTER_RARITIES_KEY, new ArrayList<>());
@@ -110,12 +117,24 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
 
     private void setupButtons(View view) {
         // Colores
-        setupFilterButton(view.findViewById(R.id.button_red_mana), "r", FILTER_COLORS_KEY);
-        setupFilterButton(view.findViewById(R.id.button_blue_mana), "u", FILTER_COLORS_KEY);
-        setupFilterButton(view.findViewById(R.id.button_green_mana), "g", FILTER_COLORS_KEY);
-        setupFilterButton(view.findViewById(R.id.button_white_mana), "w", FILTER_COLORS_KEY);
-        setupFilterButton(view.findViewById(R.id.button_black_mana), "b", FILTER_COLORS_KEY);
-        setupFilterButton(view.findViewById(R.id.button_colorless_mana), "c", FILTER_COLORS_KEY);
+
+        if(deck.getDeckFormat().equalsIgnoreCase("commander")){
+            //si el formato es commander, los botones de colores no se pueden seleccionar
+            //Las cartas que aparecen en la busqueda tienen que ser del mismo color que el comandante
+            TCard commander = deck.getCommander();
+            if (commander != null){
+                ArrayList<String> colors = (ArrayList<String>) commander.getColors();
+                sharedViewModel.setManaColors(colors);
+            }
+        }
+        else{
+            setupFilterButton(view.findViewById(R.id.button_red_mana), "r", FILTER_COLORS_KEY);
+            setupFilterButton(view.findViewById(R.id.button_blue_mana), "u", FILTER_COLORS_KEY);
+            setupFilterButton(view.findViewById(R.id.button_green_mana), "g", FILTER_COLORS_KEY);
+            setupFilterButton(view.findViewById(R.id.button_white_mana), "w", FILTER_COLORS_KEY);
+            setupFilterButton(view.findViewById(R.id.button_black_mana), "b", FILTER_COLORS_KEY);
+            setupFilterButton(view.findViewById(R.id.button_colorless_mana), "c", FILTER_COLORS_KEY);
+        }
 
         // Rarezas
         setupFilterButton(view.findViewById(R.id.button_common_rarity), "common", FILTER_RARITIES_KEY);
@@ -352,9 +371,11 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
         ArrayList<String> types = filterMap.get(FILTER_TYPES_KEY);  // Filtra los tipos
         ArrayList<String> rarity = filterMap.get(FILTER_RARITIES_KEY);  // Filtra la rareza
 
+        String format = deck.getDeckFormat();
+
         Bundle args = new Bundle();
         args.putString(CardLoaderCallbacks.ARG_NAME, query);
-        args.putString(CardLoaderCallbacks.ARG_FORMAT,"");
+        args.putString(CardLoaderCallbacks.ARG_FORMAT, format);
         args.putStringArrayList(CardLoaderCallbacks.ARG_COLORS, colors);
         args.putStringArrayList(CardLoaderCallbacks.ARG_TYPE, types);
         args.putStringArrayList(CardLoaderCallbacks.ARG_RARITY, rarity);
@@ -369,7 +390,7 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
 
             @Override
             public void onFailure(Exception e) {
-                // Manejo del error, muestra un mensaje si es necesario
+                // Manejo del error
                 Toast.makeText(getContext(), "Error al cargar las cartas", Toast.LENGTH_SHORT).show();
             }
         });

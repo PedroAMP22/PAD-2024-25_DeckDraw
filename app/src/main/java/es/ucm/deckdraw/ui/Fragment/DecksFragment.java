@@ -97,11 +97,25 @@ public class DecksFragment extends Fragment {
 
         TDecks deck1 = new TDecks("yo","https://cards.scryfall.io/art_crop/front/d/9/d99a9a7d-d9ca-4c11-80ab-e39d5943a315.jpg?1632831210",0,"Commander","Deck1","id");
         TDecks deck2 = new TDecks("yo","https://cards.scryfall.io/art_crop/front/2/0/2036745a-09ea-476f-ace6-1d06b8502f83.jpg?1562635743",0,"Commander","Deck2","id2");
+        TDecks deck3 = new TDecks("yo","https://cards.scryfall.io/art_crop/front/3/1/317f1133-7cf8-4b7a-919e-88c45f8c2c3a.jpg?1689995555",0,"Standard","Deck3","id3");
         List<TDecks> decks = new ArrayList<>();
         decks.add(deck1);
         decks.add(deck2);
+        decks.add(deck3);
         deckAdapter.setDecks(decks);
         recyclerView.setAdapter(deckAdapter);
+
+        UsersAdmin userService = new UsersAdmin();
+        userService.getCurrentUser(new Callback<TUsers>() {
+            public void onSuccess(TUsers user) {
+                if(user != null){
+                    currentUser = user;
+                }
+            }
+            @Override
+            public void onFailure(Exception e) {
+            }
+        });
 
         return view;
     }
@@ -210,17 +224,7 @@ public class DecksFragment extends Fragment {
 
                 }
 
-                UsersAdmin userService = new UsersAdmin();
-                userService.getCurrentUser(new Callback<TUsers>() {
-                    public void onSuccess(TUsers user) {
-                        if(user != null){
-                        currentUser = user;
-                        }
-                    }
-                    @Override
-                    public void onFailure(Exception e) {
-                    }
-                });
+
                 DecksAdmin db = new DecksAdmin();
                 db.createDeck(currentUser.getIdusers(), deck);
                 dialog.dismiss();

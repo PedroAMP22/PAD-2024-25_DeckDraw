@@ -108,4 +108,10 @@ public class UsersAdmin{
                     callback.onFailure(e);
                 });
     }
+
+    public void updateUser(TUsers user, Callback<Boolean> callback) {
+        db.getReference().child(user.getIdusers()).setValue(user)
+                .addOnSuccessListener(unused -> callback.onSuccess(true))
+                .addOnFailureListener(callback::onFailure);
+    }
 }
