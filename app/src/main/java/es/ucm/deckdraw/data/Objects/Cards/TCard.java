@@ -27,6 +27,7 @@ public class TCard  implements Serializable {
     private Double cmc;
     private String text;
     private List<String> colors;
+    private Integer quantity;
 
 
     public TCard() {}
