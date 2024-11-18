@@ -8,17 +8,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,20 +24,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.ucm.deckdraw.data.Objects.Cards.ImageUrlObject;
-import es.ucm.deckdraw.data.Objects.Cards.TDobleCard;
-import es.ucm.deckdraw.data.Service.CardLoaderCallbacks;
 import es.ucm.deckdraw.data.Service.ImageLoaderCallbacks;
 import es.ucm.deckdraw.ui.Adapter.CardTextAdapter;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.R;
-import es.ucm.deckdraw.data.Service.CardLoader;
 import es.ucm.deckdraw.ui.Adapter.ImageAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
-import es.ucm.deckdraw.util.Callback;
 
-public class CardSearchFragment extends Fragment{
+public class CardSearchFragment extends Fragment implements  FragmentViewerInterface{
     private SharedViewModel sharedViewModel;
     private static final int LOADER_ID_IMAGES = 2; // Solo un loader para la búsqueda
     private RecyclerView recyclerView;
@@ -61,15 +54,14 @@ public class CardSearchFragment extends Fragment{
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         //adapter para conseguir la informacion de las cartas
-        adapter = new CardTextAdapter(cardList);
+        adapter = new CardTextAdapter(cardList, this);
 
         // Configuración del RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3)); // Vista en rejilla
+        recyclerView = view.findViewById(R.id.recyclerViewDeck);
 
-        // Inicialización del adaptador de imágenes
-        imageAdapter = new ImageAdapter(getContext());
-        recyclerView.setAdapter(imageAdapter);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+
+
 
         // Permitir que el fragmento maneje los menús
         setHasOptionsMenu(true);
@@ -129,24 +121,24 @@ public class CardSearchFragment extends Fragment{
     }
 
     public void onCardsLoaded(List<TCard> data) {
-        if (data != null && !data.isEmpty()) {
-            List<String> urls = new ArrayList<>();
-            String url = "";
-            for (TCard card : data) {
-                if (card instanceof TDobleCard){
-                    //si es una carta doble mostramos la front card
-                    TDobleCard doubleCard = (TDobleCard) card;
-                    url = doubleCard.getFront().getNormalImageUrl();
-                }
-                else{
-                    url = card.getNormalImageUrl();
-                }
-                if (url != null && !url.isEmpty()) {
-                    urls.add(url);
-                }
-            }
-            imageAdapter.setImageUrls(urls); // Actualiza las URLs en el adaptador
-        }
+        adapter.updateCardList(data);
+        recyclerView.setAdapter(adapter);
     }
 
+    @Override
+    public void openDetails(TCard card) {
+        CardDetailFragment frag = new CardDetailFragment(card);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
+
+    }
+
+    @Override
+    public void cardWasUpdated(boolean added) {
+        //Null xq aqui no se usa
+    }
+
+    @Override
+    public void removeCardFromDeck(TCard card) {
+
+    }
 }

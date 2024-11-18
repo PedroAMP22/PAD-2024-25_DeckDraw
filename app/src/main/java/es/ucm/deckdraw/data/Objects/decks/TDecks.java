@@ -1,7 +1,9 @@
 package es.ucm.deckdraw.data.Objects.decks;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 
@@ -15,6 +17,7 @@ public class TDecks {
     private String deckOwner;
     private List<TCard> Cards;
     private TCard commander;
+    private Map<TCard, Integer> cardSearcher;
 
     public TDecks() {
         this.deckOwner = "";
@@ -27,6 +30,7 @@ public class TDecks {
         commander = null;
     }
 
+
     public TDecks(String deckOwner, String urlDeckCover, int numCards, String deckFormat, String deckName, String idDeck) {
         this.deckOwner = deckOwner;
         this.urlDeckCover = urlDeckCover;
@@ -35,6 +39,7 @@ public class TDecks {
         this.deckName = deckName;
         this.idDeck = idDeck;
         this.Cards = new ArrayList<>();
+        this.cardSearcher = new HashMap<>();
         commander = null;
     }
 
@@ -66,6 +71,10 @@ public class TDecks {
         return numCards;
     }
 
+    //Para cuando se añade mas de una misma carta
+    public void addNumCard(int q) { numCards+=q;}
+    public void removeNumCard(int q) { numCards-=q;}
+
     public void setNumCards(int numCards) {
         this.numCards = numCards;
     }
@@ -86,16 +95,39 @@ public class TDecks {
         this.deckOwner = deckOwner;
     }
 
-    public void addCard(TCard card){
-        Cards.add(card);
+
+    public void addCard(TCard card, int quantity){
+        if(cardSearcher.containsKey(card)){
+            cardSearcher.put(card, cardSearcher.getOrDefault(card, 0) + quantity);
+            addNumCard(quantity);
+        }else{
+            Cards.add(card);
+            cardSearcher.put(card, cardSearcher.getOrDefault(card, 0) + 1);
+        }
+
     }
-    public void removeCard(TCard card){
-        Cards.remove(card);
+    public void removeCard(TCard card, int quantity){
+
+        if (cardSearcher.containsKey(card)) {
+            int currentCount = cardSearcher.get(card);
+            if (currentCount > quantity) {
+                cardSearcher.put(card, currentCount - quantity);
+            } else {
+                Cards.remove(card);
+                cardSearcher.remove(card);
+            }
+            removeNumCard(quantity);
+        }
     }
 
-    public List<TCard> getCards() {
-        return Cards;
+    public Integer getNumberOfCardInDeck(TCard card){
+        if(cardSearcher.containsKey(card))
+            return cardSearcher.get(card);
+        return 0;
     }
+
+
+    public List<TCard> getCards(){return Cards;}
 
     public void setCommander(TCard commander){this.commander = commander;}
 
@@ -104,4 +136,7 @@ public class TDecks {
     }
 
 
+    public Map<TCard, Integer> getCardSearcher() {
+        return  cardSearcher;
+    }
 }

@@ -1,9 +1,10 @@
 package es.ucm.deckdraw.data.Objects.Cards;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TCard {
+public class TCard  implements Serializable {
     private String ID;
     private String largeImageUrl;
     private String normalImageUrl;
@@ -24,6 +25,9 @@ public class TCard {
     private Double cmc;
     private String text;
     private List<String> colors;
+
+    //Para los mazos
+    private int quantity;
 
     // Constructor vacío
     public TCard() {
@@ -47,6 +51,7 @@ public class TCard {
         this.cmc = 0.0;
         this.text = "";
         this.colors = new ArrayList<>(); // Inicialmente null, puede asignarse después
+        this.quantity = 1;
     }
 
     // Constructor con parámetros
@@ -74,6 +79,7 @@ public class TCard {
         this.cmc = cmc;
         this.text = text;
         this.colors = colors;
+        this.quantity = 1;
     }
 
     // Getter y Setter para ID
@@ -254,6 +260,12 @@ public class TCard {
     public void setCmc(Double cmc) {
         this.cmc = cmc;
     }
+
+    //Getter de quantity
+    public Integer getQuantity(){return quantity;}
+    //Añadir una carta
+    public void addCardQuantity(){quantity++;}
+    public void removeCardQuantity(){quantity--;}
 
     public void printCardDetails() {
         System.out.println("ID: " + ID);

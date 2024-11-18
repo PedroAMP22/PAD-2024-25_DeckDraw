@@ -48,6 +48,7 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
     private TDecks deck;
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -70,8 +71,8 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
         deck = new TDecks();
         deck = sharedViewModel.getCurrentDeck().getValue();
 
-
         // Inicialización del Map para filtros
+
         filterMap = new HashMap<>();
         filterMap.put(FILTER_COLORS_KEY, new ArrayList<>());
         filterMap.put(FILTER_RARITIES_KEY, new ArrayList<>());
@@ -92,7 +93,6 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
                 filterMap.put(FILTER_RARITIES_KEY, rarities);
                 updateFilterButtons(view, rarities, FILTER_RARITIES_KEY);
             }
-
         });
 
         // Restaurar los filtros de tipos

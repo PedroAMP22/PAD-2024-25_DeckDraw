@@ -1,21 +1,15 @@
 package es.ucm.deckdraw.ui.Fragment;
 
 import android.app.AlertDialog;
-import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -24,21 +18,29 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
+import es.ucm.deckdraw.ui.Adapter.CardDeckAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 
-public class EditDeckFragment extends Fragment {
+public class EditDeckFragment extends Fragment{
     private SharedViewModel sharedViewModel;
     private EditText toolbarEditText;
     private Context context;
     private String deckName;
+    private RecyclerView recyclerView;
+    private CardDeckAdapter adapter;
+    private List<TCard> cardList = new ArrayList<>(); // Lista para almacenar las cartas
 
     @Nullable
     @Override
@@ -48,18 +50,26 @@ public class EditDeckFragment extends Fragment {
         context = this.getContext();
         // Inicialización del ViewModel
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        // Obtener el EditText de la Toolbar
+
 
         MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
         toolbarEditText = mainScreenActivity.findViewById(R.id.toolbarEditText);
 
+        adapter = new CardDeckAdapter(cardList, this);
+        // Configuración del RecyclerView
+        recyclerView = view.findViewById(R.id.recyclerViewDeck);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        recyclerView.setAdapter(adapter);
+
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.VISIBLE);
 
-            sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), name -> {
-                if (name != null) {
-                    toolbarEditText.setText(name.getDeckName());
-                    deckName = name.getDeckName();
+            sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+                if (deck != null) {
+                    toolbarEditText.setText(deck.getDeckName());
+                    deckName = deck.getDeckName();
+                    cardList = new ArrayList<>(deck.getCards());
+                    refreshCardList(view);
                 }
             });
         }
@@ -144,4 +154,16 @@ public class EditDeckFragment extends Fragment {
             bottomNavigationView.setVisibility(View.VISIBLE);
         }
     }
+
+    public void refreshCardList(View view) {
+        adapter.updateCardList(cardList);
+    }
+
+
+
+    public void openDetails(TCard card) {
+        CardDetailFragment frag = new CardDetailFragment(card);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
+    }
+
 }
