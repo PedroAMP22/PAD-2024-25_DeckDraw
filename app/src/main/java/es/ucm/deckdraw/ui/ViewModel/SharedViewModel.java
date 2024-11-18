@@ -17,7 +17,7 @@ public class SharedViewModel extends ViewModel {
     private final MutableLiveData<ArrayList<String>> currentManaColors = new MutableLiveData<>();
     private final MutableLiveData<ArrayList<String>> currentCardRarity = new MutableLiveData<>();
     private final MutableLiveData<ArrayList<String>> currentCardTypes = new MutableLiveData<>();
-    private  final MutableLiveData<List<TCard>> currentCardSearchResults = new MutableLiveData<>();
+    private final MutableLiveData<List<TCard>> currentCardSearchResults = new MutableLiveData<>();
 
     //For user
     private final MutableLiveData<TUsers> currentUser = new MutableLiveData<>();

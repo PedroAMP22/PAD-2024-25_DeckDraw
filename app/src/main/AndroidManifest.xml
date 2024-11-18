@@ -27,9 +27,6 @@
             android:name=".ui.Activities.error_NetConnection"
             android:exported="false" />
         <activity
-            android:name=".data.Service.MTGServiceActivity"
-            android:exported="true" />
-        <activity
             android:name=".ui.Activities.MainScreenActivity"
             android:exported="true" />
         <activity

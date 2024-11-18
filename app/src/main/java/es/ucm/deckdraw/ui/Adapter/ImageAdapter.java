@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ucm.deckdraw.R;
+import es.ucm.deckdraw.ui.Fragment.CardDetailFragment;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
 
@@ -45,6 +48,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 .fit() // se ajusta la imagen automaticamente
                 .centerCrop()
                 .into(holder.imageView);
+
+
     }
 
     @Override
