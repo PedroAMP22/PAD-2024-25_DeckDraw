@@ -136,7 +136,6 @@ public class TDecks {
     }
 
     public Map<TCard, Integer> getCardSearcher() {
-        return  cardSearcher;
-
+        return cardSearcher;
     }
 }
