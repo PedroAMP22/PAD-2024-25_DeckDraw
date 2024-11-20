@@ -83,34 +83,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
 
-    <EditText
-        android:id="@+id/EditPassword"
-        android:layout_width="210dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="154dp"
-        android:autofillHints="password"
-        android:backgroundTint="@color/PrimaryColor"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColor="@color/TextColorPrimary"
-        android:textColorHint="@color/TextColorSecondary"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditEmail" />
-
-    <ImageView
-        android:id="@+id/togglePasswordVisibilityUP"
-        android:layout_width="44dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/toggle_password_visibility"
-        android:src="@drawable/ic_visibility"
-        app:layout_constraintBottom_toBottomOf="@id/EditPassword"
-        app:layout_constraintEnd_toEndOf="@id/EditPassword"
-        app:layout_constraintTop_toTopOf="@id/EditPassword" />
 
     <Button
         android:id="@+id/UpdateButton"
@@ -124,22 +96,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/EditPassword"/>
+        app:layout_constraintTop_toBottomOf="@id/EditEmail"/>
 
     <Button
         android:id="@+id/SignOut"
         android:layout_width="313dp"
         android:layout_height="65dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="192dp"
         android:layout_marginEnd="270dp"
         android:text="@string/sign_out"
         android:textColor="@color/ManaColorRed"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/EditPassword" />
+        app:layout_constraintTop_toBottomOf="@id/EditEmail" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.util.Callback;
 
@@ -110,7 +113,14 @@ public class UsersAdmin{
     }
 
     public void updateUser(TUsers user, Callback<Boolean> callback) {
-        db.getReference().child(user.getIdusers()).setValue(user)
+        Map<String, Object> updates = new HashMap<>();
+        if (user.getUsername() != null) {
+            updates.put("username", user.getUsername());
+        }
+
+        db.getReference("users")
+                .child(user.getIdusers())
+                .updateChildren(updates)
                 .addOnSuccessListener(unused -> callback.onSuccess(true))
                 .addOnFailureListener(callback::onFailure);
     }

@@ -18,23 +18,22 @@ import androidx.lifecycle.ViewModelProvider;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
+import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
 import es.ucm.deckdraw.data.dataBase.UsersAdmin;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
 
 public class UserProfile extends AppCompatActivity {
 
-    SharedViewModel sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
-
     TUsers cUser;
 
-    EditText passwordET;
     EditText usernameET;
     EditText emailET;
 
     UsersAdmin bd;
 
-    boolean isPasswordVisible = false;
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,39 +45,27 @@ public class UserProfile extends AppCompatActivity {
             return insets;
         });
 
-        sharedViewModel.getCurrentUser().observe(this, user -> {
-            if (user != null) {
-                cUser = user;
-            }
-        });
+        CurrentUserManager sessionManager = new CurrentUserManager(this);
+
+        cUser = sessionManager.getCurrentUser();
+
+        toolbar = findViewById(R.id.toolbarUP);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         bd = new UsersAdmin();
 
-        Toolbar tl = findViewById(R.id.toolbarUP);
-        tl.setBackInvokedCallbackEnabled(true);
 
         Button updateB = findViewById(R.id.UpdateButton);
         Button signOut = findViewById(R.id.SignOut);
 
-        passwordET = findViewById(R.id.EditPassword);
+
         usernameET = findViewById(R.id.EditUsername);
         emailET = findViewById(R.id.EditEmail);
 
-        ImageView toggle = findViewById(R.id.togglePasswordVisibilityUP);
-        toggle.setOnClickListener((v) -> {
-            if (isPasswordVisible) {
-                passwordET.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                toggle.setImageResource(R.drawable.ic_visibility); //Reveal password icon
-            } else {
-                passwordET.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                toggle.setImageResource(R.drawable.ic_visibility_off); //Hide password icon
-            }
-            passwordET.setSelection(passwordET.length());
-            isPasswordVisible = !isPasswordVisible;
-        });
+        emailET.setEnabled(false);
 
 
-        passwordET.setText(cUser.getPassword());
         emailET.setText(cUser.getEmail());
         usernameET.setText(cUser.getUsername());
 
@@ -89,8 +76,7 @@ public class UserProfile extends AppCompatActivity {
 
         signOut.setOnClickListener((v) ->{
             bd.signOut();
-            sharedViewModel.setCurrentUser(null);
-
+            sessionManager.clearSession();
             Intent i = new Intent(UserProfile.this, LogInActivity.class);
             startActivity(i);
         });
@@ -98,11 +84,10 @@ public class UserProfile extends AppCompatActivity {
     }
 
     private void updateProfile(){
-        String password = passwordET.getText().toString();
         String email = emailET.getText().toString();
         String username = usernameET.getText().toString();
 
-        bd.updateUser(new TUsers(cUser.getIdusers(), username, password, email), new Callback<Boolean>() {
+        bd.updateUser(new TUsers(cUser.getIdusers(), username, null, email), new Callback<Boolean>() {
             @Override
             public void onSuccess(Boolean data) {
                 Toast.makeText(UserProfile.this, "User updated", Toast.LENGTH_SHORT).show();

@@ -9,12 +9,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 
 import es.ucm.deckdraw.R;
+import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
 import es.ucm.deckdraw.data.dataBase.UsersAdmin;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
-import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
 
     public class LogInActivity extends AppCompatActivity {
@@ -24,7 +23,6 @@ import es.ucm.deckdraw.util.Callback;
     private UsersAdmin userService;
     private EditText emailET;
     private EditText passwordET;
-
 
 
     @Override
@@ -39,14 +37,15 @@ import es.ucm.deckdraw.util.Callback;
         Button logInButton = findViewById(R.id.logInButton);
         TextView registerPromptTV = findViewById(R.id.registerPromptTV);
 
-        SharedViewModel sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
+
 
 
 
         userService.getCurrentUser(new Callback<TUsers>() {
             public void onSuccess(TUsers user) {
                 if(user != null){
-                    sharedViewModel.setCurrentUser(user);
+                    CurrentUserManager sessionManager = new CurrentUserManager(LogInActivity.this);
+                    sessionManager.saveUserSession(user);
 
                     Intent i = new Intent(LogInActivity.this, MainScreenActivity.class);
                     startActivity(i);
@@ -74,7 +73,9 @@ import es.ucm.deckdraw.util.Callback;
                 userService.signIn(loginUser, new Callback<TUsers>() {
                     @Override
                     public void onSuccess(TUsers user) {
-                        sharedViewModel.setCurrentUser(user);
+                        CurrentUserManager sessionManager = new CurrentUserManager(LogInActivity.this);
+                        sessionManager.saveUserSession(user);
+
                         Intent i = new Intent(LogInActivity.this, MainScreenActivity.class);
                         startActivity(i);
                         Log.d(TAG, "User logged: " + user.getIdusers());
