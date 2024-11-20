@@ -2,6 +2,7 @@ package es.ucm.deckdraw.ui.Fragment;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
@@ -62,13 +64,34 @@ public class CardDetailFragment extends Fragment {
                     if (deck != null) {
                         int quantity = Integer.parseInt(quantityText.getText().toString());
                         if(deck.getDeckFormat().equals("Commander")){
-                            if(quantity < 1){
-                                quantityText.setText("1");
+                            if (deck.getNumCards()+quantity-deck.getNumberOfCardInDeck(card) < 100){
+                                if(quantity < 1 || card.getType().contains("Basic Land")){
+                                    quantity++;
+                                    quantityText.setText(quantity);
+                                }
+                                else{
+                                    Toast.makeText(this.requireContext(),"No puedes tener más de una carta de cada en commander", Toast.LENGTH_LONG).show();
+                                }
                             }
-                        }else{
-                            if(quantity < 4){;
-                                quantityText.setText((Integer.toString(quantity)));
+                            else{
+                                Toast.makeText(this.requireContext(),"No puedes tener más de 100 cartas en commander", Toast.LENGTH_LONG).show();
                             }
+
+                        }
+                        else{
+                            if (deck.getNumCards()+quantity-deck.getNumberOfCardInDeck(card) < 60){
+                                if(quantity < 4|| card.getType().contains("Basic Land")){;
+                                    quantity++;
+                                    quantityText.setText((Integer.toString(quantity)));
+                                }
+                                else{
+                                    Toast.makeText(this.requireContext(),"No puedes tener más de 4 cartas de cada en " + deck.getDeckFormat(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                            else{
+                                Toast.makeText(this.requireContext(),"No puedes tener más de 60 cartas en" + deck.getDeckFormat(), Toast.LENGTH_LONG).show();
+                            }
+
                         }
 
                     }
@@ -82,10 +105,10 @@ public class CardDetailFragment extends Fragment {
                     if (deck != null) {
                         int quantity = Integer.parseInt(quantityText.getText().toString());
                         if(quantity > 0){
-                            int quantityInDeck = (deck.getNumberOfCardInDeck(card)-1);
-                            if(quantityInDeck < 0)
-                                quantityInDeck = 0;
-                            quantityText.setText((Integer.toString(quantityInDeck)));
+                            quantity--;
+                            if(quantity < 0)
+                                quantity = 0;
+                            quantityText.setText((Integer.toString(quantity)));
                         }
                     }
                 });
@@ -109,11 +132,7 @@ public class CardDetailFragment extends Fragment {
                     }
 
                     //Navegar de vuelta al fragment de editDeck
-                    EditDeckFragment editDeckFragment = new EditDeckFragment();
-                    getActivity().getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment_container, editDeckFragment)
-                            .addToBackStack(null) // Añadir a la pila de retroceso
-                            .commit();
+                    getActivity().getSupportFragmentManager().popBackStack();
                 });
 
             });

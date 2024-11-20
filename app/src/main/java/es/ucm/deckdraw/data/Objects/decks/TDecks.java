@@ -102,7 +102,8 @@ public class TDecks {
             addNumCard(quantity);
         }else{
             Cards.add(card);
-            cardSearcher.put(card, cardSearcher.getOrDefault(card, 0) + 1);
+            cardSearcher.put(card, cardSearcher.getOrDefault(card, 0) + quantity);
+            addNumCard(quantity);
         }
 
     }

@@ -19,6 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
+import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Adapter.CardDeckAdapter;
@@ -29,8 +30,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 public class EditDeckFragment extends Fragment{
@@ -40,8 +41,9 @@ public class EditDeckFragment extends Fragment{
     private String deckName;
     private RecyclerView recyclerView;
     private CardDeckAdapter adapter;
+    private boolean leavingEditDeck;
     private List<TCard> cardList = new ArrayList<>(); // Lista para almacenar las cartas
-
+    private boolean hasChanged;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -51,9 +53,10 @@ public class EditDeckFragment extends Fragment{
         // Inicialización del ViewModel
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
-
         MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
         toolbarEditText = mainScreenActivity.findViewById(R.id.toolbarEditText);
+
+        leavingEditDeck = false;
 
         adapter = new CardDeckAdapter(cardList, this);
         // Configuración del RecyclerView
@@ -80,6 +83,8 @@ public class EditDeckFragment extends Fragment{
                 sharedViewModel.setCurrentDeckName(toolbarEditText.getText().toString());
             }
 
+            leavingEditDeck = true;
+
             // Navegar al fragmento de búsqueda de cartas
             CardSearchFragment cardSearchFragment = new CardSearchFragment();
             getActivity().getSupportFragmentManager().beginTransaction()
@@ -93,9 +98,7 @@ public class EditDeckFragment extends Fragment{
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (!Objects.equals(deckName, toolbarEditText.getText().toString())) {
-            showSaveChangesDialog();
-        }
+       // showSaveChangesDialog();
     }
 
     private void showSaveChangesDialog() {
@@ -121,6 +124,7 @@ public class EditDeckFragment extends Fragment{
             }
         });
         dialog.show();
+
     }
 
     @Override
@@ -150,8 +154,11 @@ public class EditDeckFragment extends Fragment{
 
         // Mostrar la BottomNavigationView al salir del fragmento
         if (getActivity() != null) {
+            if(!leavingEditDeck)
+                showSaveChangesDialog();
             BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
             bottomNavigationView.setVisibility(View.VISIBLE);
+
         }
     }
 
