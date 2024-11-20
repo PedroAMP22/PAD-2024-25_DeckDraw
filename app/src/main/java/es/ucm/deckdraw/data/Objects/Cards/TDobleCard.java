@@ -23,6 +23,19 @@ public class TDobleCard extends TCard{
         setColors(front.getColors()); // Por ejemplo, colores comunes en ambas caras
     }
 
+    @Override
+    public String getLargeImageUrl(){
+        return front.getLargeImageUrl();
+    }
+    @Override
+    public String getNormalImageUrl(){
+        return front.getNormalImageUrl();
+    }
+    @Override
+    public String getSmallImageUrl(){
+        return front.getSmallImageUrl();
+    }
+
     // Constructor que recibe un objeto TCarta base
     public TDobleCard(TCard base) {
         // Llama al constructor de la clase padre (TCarta) y pasa los atributos
