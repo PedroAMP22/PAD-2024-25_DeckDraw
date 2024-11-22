@@ -72,7 +72,7 @@ public class CardDetailFragment extends Fragment {
                             if (deck.getNumCards()+quantity-deck.getNumberOfCardInDeck(card) < 100){
                                 if(quantity < 1 || card.getType().contains("Basic Land")){
                                     quantity++;
-                                    quantityText.setText(quantity);
+                                    quantityText.setText(Integer.toString(quantity));
                                 }
                                 else{
                                     Toast.makeText(this.requireContext(),"No puedes tener más de una carta de cada en commander", Toast.LENGTH_LONG).show();
