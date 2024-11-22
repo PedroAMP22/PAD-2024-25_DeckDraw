@@ -47,42 +47,22 @@ public class DecksAdmin {
         String uid = deck.getDeckOwner();
         String deckId = deck.getIdDeck();
         String newName = deck.getDeckName();
-        DatabaseReference deckRef = db.getReference("users").child(uid).child("decks").child(deckId).child("name");
+        DatabaseReference deckRef = db.getReference("users").child(uid).child("decks").child(deckId);
         deckRef.setValue(newName)
                 .addOnSuccessListener(aVoid -> callback.onSuccess(true))
                 .addOnFailureListener(callback::onFailure);
     }
 
 
-    public void addCardToDeck(TDecks deck, TCard card, Callback<Void> callback) {
-        List<TCard> updatedCards = deck.getCards();
-        updatedCards.add(card);
-
-        db.getReference().child(deck.getDeckOwner()).child(deck.getIdDeck()).child("Cards")
-                .setValue(updatedCards)
-                .addOnSuccessListener(unused -> callback.onSuccess(null))
-                .addOnFailureListener(callback::onFailure);
-    }
-
-    public void removeCardFromDeck(TDecks deck, TCard card, Callback<Boolean> callback) {
-        List<TCard> updatedCards = deck.getCards();
-        updatedCards.remove(card);
-
-        db.getReference().child(deck.getDeckOwner()).child(deck.getIdDeck()).child("Cards")
-                .setValue(updatedCards)
-                .addOnSuccessListener(unused -> callback.onSuccess(null))
-                .addOnFailureListener(callback::onFailure);
-    }
-
-    public void deleteDeck(TDecks deck, Callback<Void> callback) {
-        db.getReference().child(deck.getDeckOwner()).child(deck.getIdDeck())
+    public void deleteDeck(TDecks deck, Callback<Boolean> callback) {
+        db.getReference().child("users").child(deck.getDeckOwner()).child("decks").child(deck.getIdDeck())
                 .removeValue()
-                .addOnSuccessListener(unused -> callback.onSuccess(null))
-                .addOnFailureListener(callback::onFailure);
+                .addOnSuccessListener(unused -> callback.onSuccess(true))
+                .addOnFailureListener(unused -> callback.onSuccess(false));
     }
 
     public void getUserDecks(String userId, Callback<List<TDecks>> callback) {
-        db.getReference().child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+        db.getReference().child("users").child(userId).child("decks").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<TDecks> userDecks = new ArrayList<>();

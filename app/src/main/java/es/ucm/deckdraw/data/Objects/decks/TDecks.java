@@ -28,6 +28,7 @@ public class TDecks {
         this.idDeck = "";
         this.Cards = new ArrayList<>();
         commander = null;
+        cardSearcher = new HashMap<>();
     }
 
 

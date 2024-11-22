@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,10 +21,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
+import es.ucm.deckdraw.data.dataBase.DecksAdmin;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Adapter.CardDeckAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
+import es.ucm.deckdraw.util.Callback;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,6 +47,7 @@ public class EditDeckFragment extends Fragment{
     private boolean leavingEditDeck;
     private List<TCard> cardList = new ArrayList<>(); // Lista para almacenar las cartas
     private boolean hasChanged;
+    private LifecycleOwner lifecycleowner;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -63,11 +67,11 @@ public class EditDeckFragment extends Fragment{
         recyclerView = view.findViewById(R.id.recyclerViewDeck);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         recyclerView.setAdapter(adapter);
-
+        lifecycleowner = getViewLifecycleOwner();
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.VISIBLE);
 
-            sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+            sharedViewModel.getCurrentDeck().observe(lifecycleowner, deck -> {
                 if (deck != null) {
                     toolbarEditText.setText(deck.getDeckName());
                     deckName = deck.getDeckName();
@@ -108,8 +112,21 @@ public class EditDeckFragment extends Fragment{
         builder.setPositiveButton("Guardar", (dialog, which) -> {
             if (toolbarEditText != null) {
                 dialog.dismiss();
-                //CUANDO ESTE LA DB
-                Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
+                sharedViewModel.getCurrentDeck().observe(lifecycleowner, deck -> {
+                    DecksAdmin db = new DecksAdmin();
+                    db.updateDeck(deck, new Callback<Boolean>() {
+                        @Override
+                        public void onSuccess(Boolean data) {
+                            Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        @Override
+                        public void onFailure(Exception e) {
+
+                        }
+                    });
+                });
             }
         });
         builder.setNegativeButton("Descartar", (dialog, which) -> {
