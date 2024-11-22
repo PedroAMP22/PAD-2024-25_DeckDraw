@@ -130,6 +130,9 @@ public class TDecks {
 
 
     public List<TCard> getCards(){return Cards;}
+    public void setCards(List<TCard> cards){
+        Cards = cards;
+    }
 
     public void setCommander(TCard commander){this.commander = commander;}
 
