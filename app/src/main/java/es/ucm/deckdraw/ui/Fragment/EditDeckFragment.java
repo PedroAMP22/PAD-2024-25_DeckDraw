@@ -51,6 +51,7 @@ public class EditDeckFragment extends Fragment{
     private List<TCard> cardList = new ArrayList<>(); // Lista para almacenar las cartas
     private boolean hasChanged;
     private LifecycleOwner lifecycleowner;
+    private TDecks deck;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -94,6 +95,10 @@ public class EditDeckFragment extends Fragment{
                     cardList = new ArrayList<>(deck.getCards());
                     toolbarEditText.setText(deck.getDeckName());
                     deckName = deck.getDeckName();
+
+                    cardList = new ArrayList<>(deck.getCards());
+                    this.deck = deck;
+
                     refreshCardList(view);
                 }
             });
@@ -130,21 +135,21 @@ public class EditDeckFragment extends Fragment{
         builder.setPositiveButton("Guardar", (dialog, which) -> {
             if (toolbarEditText != null) {
                 dialog.dismiss();
-                sharedViewModel.getCurrentDeck().observe(lifecycleowner, deck -> {
-                    DecksAdmin db = new DecksAdmin();
-                    db.updateDeck(deck, new Callback<Boolean>() {
-                        @Override
-                        public void onSuccess(Boolean data) {
-                            Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
 
-                        }
+                DecksAdmin db = new DecksAdmin();
+                db.updateDeck(deck, new Callback<Boolean>() {
+                    @Override
+                    public void onSuccess(Boolean data) {
+                        Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
 
-                        @Override
-                        public void onFailure(Exception e) {
+                    }
 
-                        }
-                    });
+                    @Override
+                    public void onFailure(Exception e) {
+
+                    }
                 });
+
             }
         });
         builder.setNegativeButton("Descartar", (dialog, which) -> {
