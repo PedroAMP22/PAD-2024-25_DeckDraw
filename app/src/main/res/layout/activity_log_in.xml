@@ -43,40 +43,61 @@
         android:layout_marginTop="16dp"
         android:text="@string/log_in"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/logInEmailET"
+        app:layout_constraintBottom_toTopOf="@+id/login_box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcomeTV" />
 
-    <EditText
-        android:id="@+id/logInEmailET"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="44dp"
-        android:autofillHints="username"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/login_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
         android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:padding="12dp"
-        android:textSize="18sp"
+        app:helperTextEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logInTV" />
+        app:layout_constraintTop_toBottomOf="@+id/logInTV"
+        app:startIconDrawable="@drawable/ic_search">
 
-    <EditText
-        android:id="@+id/logInPassET"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:autofillHints="password"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/logInEmailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/password_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
         android:hint="@string/password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textSize="18sp"
+        app:helperTextEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logInEmailET" />
+        app:layout_constraintTop_toBottomOf="@id/login_box"
+        app:startIconDrawable="@drawable/ic_search">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/logInPassET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/logInButton"
@@ -90,7 +111,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logInPassET" />
+        app:layout_constraintTop_toBottomOf="@id/password_box" />
 
     <TextView
         android:id="@+id/registerPromptTV"
