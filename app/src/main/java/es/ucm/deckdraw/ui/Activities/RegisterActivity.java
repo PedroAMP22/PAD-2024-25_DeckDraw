@@ -2,13 +2,10 @@ package es.ucm.deckdraw.ui.Activities;
 
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,9 +20,8 @@ import es.ucm.deckdraw.util.Callback;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText emailEditText, passwordEditText, usernameEditText;
-    private ImageView togglePasswordVisibility;
+    //private ImageView togglePasswordVisibility;
     private UsersAdmin usersAdmin;
-    private boolean isPasswordVisible = false;
 
     private static final Pattern PASSWORD_UPPERCASE = Pattern.compile(".*[A-Z].*");
     private static final Pattern PASSWORD_LOWERCASE = Pattern.compile(".*[a-z].*");
@@ -44,7 +40,6 @@ public class RegisterActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         usernameEditText = findViewById(R.id.usernameEditText);
         Button registerButton = findViewById(R.id.registerButton);
-        togglePasswordVisibility = findViewById(R.id.togglePasswordVisibility);
 
         criteriaLength = findViewById(R.id.criteriaLength);
         criteriaUppercase = findViewById(R.id.criteriaUppercase);
@@ -54,16 +49,18 @@ public class RegisterActivity extends AppCompatActivity {
 
         usersAdmin = new UsersAdmin();
 
-        togglePasswordVisibility.setOnClickListener(v -> togglePasswordVisibility());
+        //togglePasswordVisibility.setOnClickListener(v -> togglePasswordVisibility());
         passwordEditText.addTextChangedListener(passwordWatcher);
 
         registerButton.setOnClickListener(v -> registerUser());
     }
 
+    /*
+    //Codigo de Alavaro RIP T-T
     private void togglePasswordVisibility() {
         if (isPasswordVisible) {
             passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-            togglePasswordVisibility.setImageResource(R.drawable.ic_visibility); //Reveal password icon
+            togglePasswordVisibility.setImageResource(R.drawable.ic_show); //Reveal password icon
         } else {
             passwordEditText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
             togglePasswordVisibility.setImageResource(R.drawable.ic_visibility_off); //Hide password icon
@@ -71,6 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
         passwordEditText.setSelection(passwordEditText.length());
         isPasswordVisible = !isPasswordVisible;
     }
+    */
+
 
     private final TextWatcher passwordWatcher = new TextWatcher() {
         @Override

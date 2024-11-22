@@ -3,9 +3,11 @@
     <item
         android:id="@+id/nav_friends"
         android:icon="@drawable/ic_friends"
-        android:title="@string/menu_friends" />
+        android:title="@string/menu_friends"
+        android:iconTint="@color/white"/>
     <item
         android:id="@+id/nav_deck"
         android:icon="@drawable/ic_deck"
-        android:title="@string/menu_decks" />
+        android:title="@string/menu_decks"
+        android:iconTint="@color/white"/>
 </menu>
