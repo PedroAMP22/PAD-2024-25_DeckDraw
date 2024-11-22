@@ -5,6 +5,9 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 import org.mindrot.jbcrypt.BCrypt;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @IgnoreExtraProperties
 
 public class TUsers {
@@ -15,6 +18,7 @@ public class TUsers {
     private String password; //Not plain text
     @Exclude
     private String email;
+    private List<String> friends;
 
     //Create a user when reading it from DB, the password is already encrypted
     public TUsers(String idusers, String username, String hashesPassword, String email){
@@ -22,6 +26,8 @@ public class TUsers {
         this.username = username;
         this.password =hashesPassword;
         this.email = email;
+        this.friends = new ArrayList<String>();
+
     }
 
 
@@ -29,6 +35,13 @@ public class TUsers {
 
     }
 
+    public List<String> getFriends(){
+        return friends;
+    }
+
+    public void setFriends(List<String> f){
+        friends = f;
+    }
 
     public String getIdusers() {
         return idusers;
