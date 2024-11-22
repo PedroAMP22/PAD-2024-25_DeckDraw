@@ -56,8 +56,13 @@ public class CardDetailFragment extends Fragment {
             sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
                 if (deck != null) {
                     quantityText.setText((deck.getNumberOfCardInDeck(card)).toString());
+                    if(card == (deck.getCommander())){
+                        addCardButton.setVisibility(View.GONE);
+                        removeCardButton.setVisibility(View.GONE);
+                    }
                 }
             });
+
 
             addCardButton.setOnClickListener(v -> {
                 sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {

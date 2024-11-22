@@ -62,6 +62,8 @@ public class EditDeckFragment extends Fragment{
 
         leavingEditDeck = false;
 
+
+
         adapter = new CardDeckAdapter(cardList, this);
         // Configuración del RecyclerView
         recyclerView = view.findViewById(R.id.recyclerViewDeck);
@@ -73,6 +75,9 @@ public class EditDeckFragment extends Fragment{
 
             sharedViewModel.getCurrentDeck().observe(lifecycleowner, deck -> {
                 if (deck != null) {
+                    if(cardList.get(0) != deck.getCommander()){
+                        cardList.add(deck.getCommander());
+                    }
                     toolbarEditText.setText(deck.getDeckName());
                     deckName = deck.getDeckName();
                     cardList = new ArrayList<>(deck.getCards());
