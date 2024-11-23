@@ -17,7 +17,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import es.ucm.deckdraw.util.Callback;
 
@@ -47,8 +49,20 @@ public class DecksAdmin {
         String uid = deck.getDeckOwner();
         String deckId = deck.getIdDeck();
         String newName = deck.getDeckName();
+
+        Map<String, Object> updates = new HashMap<>();
+        if (deck.getDeckName() != null) {
+            updates.put("deckName", deck.getDeckName());
+        }
+
+        if(deck.getCards() != null){
+            updates.put("cards", deck.getCards());
+        }
+
+        updates.put("numCards", deck.getCards().size());
+
         DatabaseReference deckRef = db.getReference("users").child(uid).child("decks").child(deckId);
-        deckRef.setValue(newName)
+        deckRef.updateChildren(updates)
                 .addOnSuccessListener(aVoid -> callback.onSuccess(true))
                 .addOnFailureListener(callback::onFailure);
     }
@@ -68,6 +82,23 @@ public class DecksAdmin {
                 List<TDecks> userDecks = new ArrayList<>();
                 for (DataSnapshot deckSnapshot : dataSnapshot.getChildren()) {
                     TDecks deck = deckSnapshot.getValue(TDecks.class);
+                    db.getReference().child("users").child(deck.getDeckOwner()).child("decks").child(deck.getIdDeck()).child("cards").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            List<TCard> cards = new ArrayList<>();
+                            for (DataSnapshot cardSnapshot : snapshot.getChildren()) {
+                                TCard card = cardSnapshot.getValue(TCard.class);
+                                cards.add(card);
+                            }
+                            deck.setCards(cards);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            callback.onFailure(error.toException());
+
+                        }
+                    });
                     if (deck != null) userDecks.add(deck);
                 }
                 callback.onSuccess(userDecks);
