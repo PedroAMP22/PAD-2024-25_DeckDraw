@@ -47,14 +47,6 @@ public class MainScreenActivity extends AppCompatActivity  {
             bottomNavigationView.setSelectedItemId(R.id.nav_deck);
         }
 
-        ImageView userIcon = findViewById(R.id.userIcon);
-
-        userIcon.setOnClickListener(v -> {
-            Intent i = new Intent(this, UserProfile.class);
-
-            startActivity(i);
-        });
-
 
         //Keep this to start the Firebase database
         FirebaseApp.initializeApp(this);

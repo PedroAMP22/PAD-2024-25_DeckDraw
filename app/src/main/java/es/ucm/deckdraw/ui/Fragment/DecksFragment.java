@@ -8,6 +8,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -44,6 +47,7 @@ import es.ucm.deckdraw.data.dataBase.UsersAdmin;
 import es.ucm.deckdraw.ui.Activities.LogInActivity;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
+import es.ucm.deckdraw.ui.Activities.UserProfile;
 import es.ucm.deckdraw.ui.Adapter.DeckAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
@@ -117,7 +121,26 @@ public class DecksFragment extends Fragment {
             }
         });
 
+        setHasOptionsMenu(true);
+
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
+        // Inflar el menú de búsqueda
+        inflater.inflate(R.menu.top_nav_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_profile) { // Verifica si es el ítem de filtro.
+            Intent i = new Intent(getActivity(), UserProfile.class);
+
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void showCreateDeckDialog() {

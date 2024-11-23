@@ -51,6 +51,7 @@ public class UserProfile extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbarUP);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getString(R.string.user_profile));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         bd = new UsersAdmin();

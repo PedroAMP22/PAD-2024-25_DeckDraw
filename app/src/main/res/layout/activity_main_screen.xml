@@ -28,14 +28,6 @@
             android:textSize="18sp"
             android:visibility="gone" />
 
-        <ImageView
-            android:id="@+id/userIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="@string/user_icon"
-            android:src="@drawable/ic_usericon"
-            android:layout_gravity="end">
-        </ImageView>
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout

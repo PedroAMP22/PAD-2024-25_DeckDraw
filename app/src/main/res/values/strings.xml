@@ -38,24 +38,24 @@
 
 
     <!--Strings de los filtros de búsqueda -->
-    <string name="hint_busqueda">Búsqueda</string>
-    <string name="helper_busqueda">Introduce el nombre de la carta</string>
-    <string name="text_floating_button_busqueda">Buscar</string>
-    <string name="filter_mana_type">Tipo de Maná</string>
+    <string name="hint_busqueda">Search</string>
+    <string name="helper_busqueda">Type the Card name</string>
+    <string name="text_floating_button_busqueda">Search</string>
+    <string name="filter_mana_type">Mana Color</string>
     <string name="red_mana_text">Red</string>
     <string name="blue_mana_text">Blue</string>
     <string name="green_mana_text">Green</string>
     <string name="white_mana_text">White</string>
     <string name="black_mana_text">Black</string>
     <string name="colorless_mana_text">Colorless</string>
-    <string name="filter_rarity_type">Tipo de rareza</string>
+    <string name="filter_rarity_type">Rarity</string>
     <string name="rarity_common_text">Common</string>
     <string name="rarity_uncommon_text">Uncommon</string>
     <string name="rarity_rare_text">Rare</string>
     <string name="rarity_special_text">Special</string>
     <string name="rarity_mythic_text">Mythic</string>
     <string name="rarity_bonus_text">Bonus</string>
-    <string name="filter_card_type">Tipo de Carta</string>
+    <string name="filter_card_type">Card Type</string>
     <string name="card_type_artifact_text">Artifact</string>
     <string name="card_type_battle_text">Battle</string>
     <string name="card_type_conspiracy_text">Conspiracy</string>
