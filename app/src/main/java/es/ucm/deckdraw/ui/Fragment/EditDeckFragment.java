@@ -35,8 +35,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 
@@ -52,6 +54,7 @@ public class EditDeckFragment extends Fragment{
     private boolean hasChanged;
     private LifecycleOwner lifecycleowner;
     private TDecks deck;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -67,6 +70,8 @@ public class EditDeckFragment extends Fragment{
         leavingEditDeck = false;
 
         ImageView commanderImage = view.findViewById(R.id.commander);
+
+
 
         adapter = new CardDeckAdapter(cardList, this);
         // Configuración del RecyclerView
@@ -98,6 +103,8 @@ public class EditDeckFragment extends Fragment{
 
                     cardList = new ArrayList<>(deck.getCards());
                     this.deck = deck;
+
+                    deck.populateCardSearcher();
 
                     refreshCardList(view);
                 }
@@ -203,12 +210,22 @@ public class EditDeckFragment extends Fragment{
     }
 
     public void refreshCardList(View view) {
-        adapter.updateCardList(cardList);
+        List<TCard> filteredList = new ArrayList<>();
+        Set<String> duplicatedCards = new HashSet<String>();
+        //Filtramos las cartas para que no se muestren dos veces
+        for(TCard card: cardList){
+            if(!duplicatedCards.contains(card.getID())){
+                filteredList.add(card);
+                duplicatedCards.add(card.getID());
+            }
+        }
+        adapter.updateCardList(filteredList);
     }
 
 
 
     public void openDetails(TCard card) {
+        leavingEditDeck = true;
         CardDetailFragment frag = new CardDetailFragment(card);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
     }

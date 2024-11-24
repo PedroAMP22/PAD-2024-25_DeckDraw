@@ -87,6 +87,7 @@ public class DecksFragment extends Fragment {
             formatPosition = 0;
         }
 
+
         FloatingActionButton createDeckButton = view.findViewById(R.id.button_create_deck);
         createDeckButton.setOnClickListener(v -> {
 
