@@ -8,6 +8,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -16,6 +19,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -137,13 +141,43 @@ public class ShowFriendFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_show_friend, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        searchView.setQueryHint("Buscar mazos...");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                updateFilteredDecks(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                updateFilteredDecks(newText);
+                return true;
+            }
+        });
+    }
+
 
     @Override
     public void onResume() {
         super.onResume();
         if (getActivity() instanceof MainScreenActivity) {
             MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
-            mainScreenActivity.setToolbarTitle("Tus mazos");
+            mainScreenActivity.setToolbarTitle("Decks of your friend");
             mainScreenActivity.setHomeAsUpEnabled(false);
         }
     }
@@ -153,11 +187,9 @@ public class ShowFriendFragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        // Guarda el estado del diálogo y los datos de los campos de texto
         if (dialog != null && dialog.isShowing()) {
             outState.putBoolean("dialog_visible", true);
 
-            // Guarda el texto de los campos
             EditText editTextDeckName = dialog.findViewById(R.id.editTextDeckName);
             MultiAutoCompleteTextView autoCompleteTextViewCommander = dialog.findViewById(R.id.multiAutoCompleteTextViewCommander);
             Spinner spinnerFormat = dialog.findViewById(R.id.spinnerFormat);
@@ -179,7 +211,6 @@ public class ShowFriendFragment extends Fragment {
     public void onEditDeck(TDecks deck) {
         SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         viewModel.setCurrentDeck(deck);
-        // Navegar al fragmento de edición de mazo
         EditDeckFragment editDeckFragment = new EditDeckFragment();
         getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, editDeckFragment)
@@ -197,4 +228,15 @@ public class ShowFriendFragment extends Fragment {
         ShowDeckFragment sf = new ShowDeckFragment();
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, sf).addToBackStack(null).commit();
     }
+
+    private void updateFilteredDecks(String query) {
+        List<TDecks> filteredDecks = new ArrayList<>();
+        for (TDecks deck : friendDeckList) {
+            if (deck.getDeckName().toLowerCase().contains(query.toLowerCase())) {
+                filteredDecks.add(deck);
+            }
+        }
+        deckAdapter.setDecks(filteredDecks);
+    }
+
 }
