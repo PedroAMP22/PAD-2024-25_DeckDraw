@@ -25,7 +25,8 @@ import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.data.dataBase.DecksAdmin;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
-import es.ucm.deckdraw.ui.Adapter.CardDeckAdapter;
+import es.ucm.deckdraw.ui.Adapter.ShowDeckAdapter;
+import es.ucm.deckdraw.ui.Adapter.ShowDeckAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
 
@@ -42,13 +43,13 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 
-public class EditDeckFragment extends Fragment{
+public class ShowDeckFragment extends Fragment{
     private SharedViewModel sharedViewModel;
     private EditText toolbarEditText;
     private Context context;
     private String deckName;
     private RecyclerView recyclerView;
-    private CardDeckAdapter adapter;
+    private ShowDeckAdapter adapter;
     private boolean leavingEditDeck;
     private List<TCard> cardList = new ArrayList<>(); // Lista para almacenar las cartas
     private boolean hasChanged;
@@ -59,7 +60,7 @@ public class EditDeckFragment extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_edit_deck, container, false);
+        View view = inflater.inflate(R.layout.fragment_show_deck, container, false);
         context = this.getContext();
         // Inicialización del ViewModel
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
@@ -73,7 +74,7 @@ public class EditDeckFragment extends Fragment{
 
 
 
-        adapter = new CardDeckAdapter(cardList, this);
+        adapter = new ShowDeckAdapter(cardList, this);
         // Configuración del RecyclerView
         recyclerView = view.findViewById(R.id.recyclerViewDeck);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
@@ -111,68 +112,16 @@ public class EditDeckFragment extends Fragment{
             });
         }
 
-        FloatingActionButton addCardButton = view.findViewById(R.id.addCardFab);
-        addCardButton.setOnClickListener(v -> {
-            if (toolbarEditText != null) {
-                sharedViewModel.setCurrentDeckName(toolbarEditText.getText().toString());
-            }
 
-            leavingEditDeck = true;
-
-            // Navegar al fragmento de búsqueda de cartas
-            CardSearchFragment cardSearchFragment = new CardSearchFragment();
-            getActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, cardSearchFragment)
-                    .addToBackStack(null) // Añadir a la pila de retroceso
-                    .commit();
-        });
         return view;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-       // showSaveChangesDialog();
+        // showSaveChangesDialog();
     }
 
-    private void showSaveChangesDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-        builder.setTitle("Guardar cambios");
-        builder.setMessage("¿Deseas guardar los cambios antes de salir?");
-        builder.setPositiveButton("Guardar", (dialog, which) -> {
-            if (toolbarEditText != null) {
-                dialog.dismiss();
-
-                DecksAdmin db = new DecksAdmin();
-                db.updateDeck(deck, new Callback<Boolean>() {
-                    @Override
-                    public void onSuccess(Boolean data) {
-                        Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
-
-                    }
-
-                    @Override
-                    public void onFailure(Exception e) {
-
-                    }
-                });
-
-            }
-        });
-        builder.setNegativeButton("Descartar", (dialog, which) -> {
-            Toast.makeText(context, "Cambios descartados", Toast.LENGTH_SHORT).show();
-        });
-        AlertDialog dialog = builder.create();
-        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-            @Override
-            public void onDismiss(DialogInterface dialogInterface) {
-                Toast.makeText(context, "Cambios descartados", Toast.LENGTH_SHORT).show();
-            }
-        });
-        dialog.show();
-
-    }
 
     @Override
     public void onResume() {
@@ -180,7 +129,6 @@ public class EditDeckFragment extends Fragment{
         // Configurar el título de la toolbar y la flecha de retroceso
         if (getActivity() instanceof MainScreenActivity) {
             MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
-            mainScreenActivity.setToolbarTitle(""); // Dejar vacío el título porque usamos el EditText
             mainScreenActivity.setHomeAsUpEnabled(true);
         }
 
@@ -201,8 +149,6 @@ public class EditDeckFragment extends Fragment{
 
         // Mostrar la BottomNavigationView al salir del fragmento
         if (getActivity() != null) {
-            if(!leavingEditDeck)
-                showSaveChangesDialog();
             BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
             bottomNavigationView.setVisibility(View.VISIBLE);
 
@@ -226,7 +172,7 @@ public class EditDeckFragment extends Fragment{
 
     public void openDetails(TCard card) {
         leavingEditDeck = true;
-        CardDetailFragment frag = new CardDetailFragment(card,true);
+        CardDetailFragment frag = new CardDetailFragment(card,false);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
     }
 
