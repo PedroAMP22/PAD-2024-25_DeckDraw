@@ -56,12 +56,7 @@ import es.ucm.deckdraw.util.Callback;
 public class ShowFriendFragment extends Fragment {
 
 
-    private AutoCompleteTextView commanderAutoComplete;
-    private TextView commanderText ;
-    private Context context;
-    private LoaderManager manager;
-    private CommanderLoaderCallbacks callback;
-    private ArrayAdapter<String> commanderAdapter;
+    private SharedViewModel sharedViewModel;
     private String deckName;
     private String commanderName;
     private int formatPosition;
@@ -95,7 +90,7 @@ public class ShowFriendFragment extends Fragment {
             commanderName ="";
             formatPosition = 0;
         }
-
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         CurrentUserManager sessionManager = new CurrentUserManager(requireContext());
         friend = sessionManager.getCurrentUser();
@@ -208,15 +203,6 @@ public class ShowFriendFragment extends Fragment {
         }
     }
 
-    public void onEditDeck(TDecks deck) {
-        SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        viewModel.setCurrentDeck(deck);
-        EditDeckFragment editDeckFragment = new EditDeckFragment();
-        getActivity().getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, editDeckFragment)
-                .addToBackStack(null)
-                .commit();
-    }
 
     public void copyDeck(TDecks deck){
         deckList.add(deck);
@@ -224,8 +210,9 @@ public class ShowFriendFragment extends Fragment {
         db.createDeck(currentUser.getIdusers(), deck);
     }
 
-    public void showDeck(){
+    public void showDeck(TDecks deck){
         ShowDeckFragment sf = new ShowDeckFragment();
+        sharedViewModel.setCurrentDeck(deck);
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, sf).addToBackStack(null).commit();
     }
 

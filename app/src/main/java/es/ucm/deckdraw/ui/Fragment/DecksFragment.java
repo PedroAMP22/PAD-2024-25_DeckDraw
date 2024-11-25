@@ -65,6 +65,8 @@ public class DecksFragment extends Fragment {
         private List<TCard> commanders;
         private TUsers currentUser;
 
+        private SharedViewModel viewModel;
+
         private DeckAdapter deckAdapter;
         private List<TDecks> deckList =  new ArrayList<>();
 
@@ -87,6 +89,7 @@ public class DecksFragment extends Fragment {
             formatPosition = 0;
         }
 
+        viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         FloatingActionButton createDeckButton = view.findViewById(R.id.button_create_deck);
         createDeckButton.setOnClickListener(v -> {
@@ -286,7 +289,6 @@ public class DecksFragment extends Fragment {
         }
 
     public void onEditDeck(TDecks deck) {
-        SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         viewModel.setCurrentDeck(deck);
         // Navegar al fragmento de edición de mazo
         EditDeckFragment editDeckFragment = new EditDeckFragment();

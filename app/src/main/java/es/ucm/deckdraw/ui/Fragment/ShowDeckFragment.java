@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,11 +81,22 @@ public class ShowDeckFragment extends Fragment{
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         recyclerView.setAdapter(adapter);
         lifecycleowner = getViewLifecycleOwner();
+
+        if (sharedViewModel.getCurrentDeck() == null) {
+            Log.e("Debug", "getCurrentDeck() returned null.");
+        }
+
+        TDecks deck = sharedViewModel.getCurrentDeck().getValue();
+        if (deck == null) {
+            Log.e("Debug", "No value in LiveData before observing.");
+        }
+
+
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.VISIBLE);
 
-            sharedViewModel.getCurrentDeck().observe(lifecycleowner, deck -> {
                 if (deck != null) {
+                    toolbarEditText.setText(deck.getDeckName());
                     if(deck.getDeckFormat().equals("Commander")){
                         Picasso.get()
                                 .load(deck.getCommander().getLargeImageUrl()) // Suponiendo que getDeckImageUrl() devuelve la URL de la imagen
@@ -109,7 +121,7 @@ public class ShowDeckFragment extends Fragment{
 
                     refreshCardList(view);
                 }
-            });
+
         }
 
 

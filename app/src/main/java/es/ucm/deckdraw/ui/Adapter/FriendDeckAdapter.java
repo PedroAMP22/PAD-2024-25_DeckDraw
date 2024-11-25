@@ -60,7 +60,7 @@ public class FriendDeckAdapter extends RecyclerView.Adapter<FriendDeckAdapter.Fr
         });
 
         holder.showButton.setOnClickListener(v -> {
-            fragment.showDeck();
+            fragment.showDeck(deck);
         });
     }
 
