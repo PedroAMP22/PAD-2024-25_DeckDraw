@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
@@ -26,7 +28,7 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
     private List<TCard> cardList;
     private EditDeckFragment sch_frag;
     private List<Integer> cardQuantity;
-
+    Set<String> duplicated = new HashSet<String>();
 
     public CardDeckAdapter(List<TCard> cardList, EditDeckFragment frg) {
         this.cardList = cardList;
@@ -44,10 +46,14 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
     @Override
     public void onBindViewHolder(@NonNull CardDeckAdapter.CardDeckViewHolder holder, int position) {
         TCard card = cardList.get(position);
-        Picasso.get().load(card.getLargeImageUrl()).fit().placeholder(R.drawable.mtg_placeholder_card).error(R.drawable.not_connected).into(holder.img);
-        holder.itemView.setOnClickListener(v -> {
-            sch_frag.openDetails(card);
-        });
+
+        if(!duplicated.contains(card.getName())) {
+            Picasso.get().load(card.getLargeImageUrl()).fit().placeholder(R.drawable.mtg_placeholder_card).error(R.drawable.not_connected).into(holder.img);
+            holder.itemView.setOnClickListener(v -> {
+                sch_frag.openDetails(card);
+            });
+            duplicated.add(card.getName());
+        }
 
             //holder.quantityView.setText(deckCards.get(card));
 

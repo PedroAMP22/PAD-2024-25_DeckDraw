@@ -69,7 +69,7 @@ public class CardDetailFragment extends Fragment {
                     if (deck != null) {
                         int quantity = Integer.parseInt(quantityText.getText().toString());
                         if(deck.getDeckFormat().equals("Commander")){
-                            if (deck.getNumCards()+quantity-deck.getNumberOfCardInDeck(card) < 100){
+                            if (deck.getNumCards()+quantity-deck.getNumberOfCardInDeck(card) < 99){
                                 if(quantity < 1 || card.getType().contains("Basic Land")){
                                     quantity++;
                                     quantityText.setText(Integer.toString(quantity));
