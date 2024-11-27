@@ -26,14 +26,14 @@
     <string name="at_least_one_lowercase_letter">• At least 1 lowercase letter</string>
     <string name="at_least_one_number">• At least 1 number</string>
     <string name="at_least_one_special_character">• At least 1 special character</string>
-    <string name="crear_mazo">Crear mazo</string>
+    <string name="crear_mazo">Create deck</string>
     <string name="introduce_el_nombre_del_mazo">Introduce el nombre del mazo</string>
-    <string name="nombre_del_mazo">Nombre del mazo</string>
-    <string name="formato">Formato</string>
+    <string name="nombre_del_mazo">Deck name</string>
+    <string name="formato">Format</string>
     <string name="comandante">Comandante</string>
-    <string name="portada_del_mazo">portada del mazo</string>
-    <string name="eliminar">eliminar</string>
-    <string name="editar">editar</string>
+    <string name="portada_del_mazo">Deck cover</string>
+    <string name="eliminar">delete</string>
+    <string name="editar">edit</string>
     <string name="addcard_text">Add card</string>
 
 
