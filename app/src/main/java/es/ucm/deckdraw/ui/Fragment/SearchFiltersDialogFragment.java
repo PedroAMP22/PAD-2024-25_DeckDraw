@@ -391,7 +391,7 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
             @Override
             public void onFailure(Exception e) {
                 // Manejo del error
-                Toast.makeText(getContext(), "Error al cargar las cartas", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "No hay ninguna carta con nombre " + query + " en : " + format, Toast.LENGTH_SHORT).show();
             }
         });
 

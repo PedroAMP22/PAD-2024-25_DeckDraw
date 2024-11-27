@@ -93,7 +93,6 @@ public class CardSearchFragment extends Fragment implements  FragmentViewerInter
         super.onPause();
         if (getActivity() instanceof AppCompatActivity) {
             ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            // Puedes decidir si quieres ocultar la barra de herramientas o no
         }
 
         // Mostrar la BottomNavigationView al salir del fragmento
@@ -127,9 +126,10 @@ public class CardSearchFragment extends Fragment implements  FragmentViewerInter
 
     @Override
     public void openDetails(TCard card) {
-        CardDetailFragment frag = new CardDetailFragment(card);
+        // Guardamos la carta seleccionada en el ViewModel
+        sharedViewModel.setSelectedCard(card);
+        CardDetailFragment frag = new CardDetailFragment();
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
-
     }
 
     @Override

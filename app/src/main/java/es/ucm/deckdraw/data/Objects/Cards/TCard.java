@@ -78,6 +78,28 @@ public class TCard  implements Serializable {
         this.text = text;
     }
 
+    public String getAllColors(){
+        String allCollors = "";
+
+        for(String c: this.colors){
+            allCollors += "{" + c + "} ";
+        }
+
+        return allCollors;
+    }
+
+    public String getSingleColor(){
+        String color = "";
+
+        if (colors.isEmpty()) {
+            color = "C";
+        } else {
+            color = colors.get(0);
+        }
+
+        return color;
+    }
+
     // Getter y Setter para los colores
     public List<String> getColors() {
         return colors;

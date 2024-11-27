@@ -18,9 +18,11 @@ public class SharedViewModel extends ViewModel {
     private final MutableLiveData<ArrayList<String>> currentCardRarity = new MutableLiveData<>();
     private final MutableLiveData<ArrayList<String>> currentCardTypes = new MutableLiveData<>();
     private final MutableLiveData<List<TCard>> currentCardSearchResults = new MutableLiveData<>();
-
     //For user
     private final MutableLiveData<TUsers> currentUser = new MutableLiveData<>();
+    // For selected Card
+    private final MutableLiveData<TCard> selectedCard = new MutableLiveData<>();
+
 
     public void setCurrentUser(TUsers user) {
         currentUser.setValue(user);
@@ -28,6 +30,14 @@ public class SharedViewModel extends ViewModel {
 
     public LiveData<TUsers> getCurrentUser() {
         return currentUser;
+    }
+
+    public void setSelectedCard(TCard card) {
+        selectedCard.setValue(card);
+    }
+
+    public LiveData<TCard> getSelectedCard() {
+        return selectedCard;
     }
 
     // Método para manejar el nombre del mazo

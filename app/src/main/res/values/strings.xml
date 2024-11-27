@@ -35,6 +35,11 @@
     <string name="eliminar">delete</string>
     <string name="editar">edit</string>
     <string name="addcard_text">Add card</string>
+    <string name="removecard_text">Remove card</string>
+    <string name="zero_number">0</string>
+
+
+
 
 
     <!--Strings de los filtros de búsqueda -->
@@ -81,8 +86,26 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name= "ok">OK</string>
     <string name="name">Name</string>
     <string name="description">Description</string>
+    <string name="mana_cost">Mana cost</string>
+    <string name="artist">Artist</string>
+    <string name="set_name">Set name</string>
+    <string name="rarity">Rarity</string>
+    <string name="type">Type</string>
+    <string name="power">Power</string>
+    <string name="toughness">Toughness</string>
+    <string name="color">Color</string>
+
+
+
+
+
+
+
+
+
 
 
 

@@ -28,7 +28,7 @@ public class MTGServiceAPI {
 
     // Colores disponibles para el filtrado
     private static final List<String> AVAILABLE_COLORS = List.of(
-            "w", "u", "b", "r", "g", "c"
+            "W", "U", "B", "R", "G", "C"
     );
 
     // Colores disponibles para el filtrado
