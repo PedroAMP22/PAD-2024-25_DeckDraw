@@ -1,10 +1,13 @@
 package es.ucm.deckdraw;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -38,6 +41,20 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Notifications channel
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    "friend_request_channel",
+                    "Solicitudes de amistad",
+                    NotificationManager.IMPORTANCE_HIGH
+            );
+            channel.setDescription("Notificaciones para solicitudes de amistad");
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            if (manager != null) {
+                manager.createNotificationChannel(channel);
+            }
+        }
 
         ConnectivityManager conMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
