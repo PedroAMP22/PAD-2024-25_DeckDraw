@@ -53,18 +53,27 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
                 sch_frag.openDetails(card);
             });
             duplicated.add(card.getName());
+
+            if(holder.number.getText().equals("0")){
+                holder.number.setVisibility(View.GONE);
+            }
+            //holder.quantityView.setText(deckCards.get(card));
+
         }
 
-            //holder.quantityView.setText(deckCards.get(card));
+
 
     }
 
     public static class CardDeckViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
+        TextView number;
 
         public CardDeckViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.imageView);
+            number = itemView.findViewById(R.id.cardsNumber);
+
         }
     }
 

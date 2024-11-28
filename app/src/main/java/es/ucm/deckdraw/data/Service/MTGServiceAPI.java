@@ -138,7 +138,7 @@ public class MTGServiceAPI {
         cardMTG.setToughness(card.has("toughness") ? card.getString("toughness") : "");
         cardMTG.setText(card.has("oracle_text") ? card.getString("oracle_text") : "");
         cardMTG.setArtist(card.has("artist") ? card.getString("artist") : "");
-
+        cardMTG.setQuantity(0);
         cardMTG.setLegal(true);
 
         return cardMTG;

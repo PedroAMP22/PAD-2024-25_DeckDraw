@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Fragment.DecksFragment;
+import es.ucm.deckdraw.ui.Fragment.EditDeckFragment;
 import es.ucm.deckdraw.ui.Fragment.FriendsFragment;
 import com.google.firebase.FirebaseApp;
 
@@ -63,6 +64,13 @@ public class MainScreenActivity extends AppCompatActivity  {
 
     @Override
     public boolean onSupportNavigateUp() {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+
+        //para que la flecha para atras no destruya el fragment de editar mazo
+        if (currentFragment instanceof EditDeckFragment) {
+            ((EditDeckFragment) currentFragment).handleBackPressFromToolbar();
+            return true;
+        }
         getSupportFragmentManager().popBackStack();
         return true;
     }

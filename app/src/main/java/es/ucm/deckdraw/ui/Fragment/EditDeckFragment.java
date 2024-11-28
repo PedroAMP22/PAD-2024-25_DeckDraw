@@ -3,6 +3,7 @@ package es.ucm.deckdraw.ui.Fragment;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -30,6 +32,7 @@ import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
 
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -71,12 +74,19 @@ public class EditDeckFragment extends Fragment{
 
         ImageView commanderImage = view.findViewById(R.id.commander);
 
-
-
         adapter = new CardDeckAdapter(cardList, this);
         // Configuración del RecyclerView
         recyclerView = view.findViewById(R.id.recyclerViewDeck);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+
+        int orientation = getResources().getConfiguration().orientation;
+
+        if(orientation == Configuration.ORIENTATION_PORTRAIT){ //movil en vertical
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        }
+        else if(orientation == Configuration.ORIENTATION_LANDSCAPE){ //movil en horizontal
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 4));
+        }
+
         recyclerView.setAdapter(adapter);
         lifecycleowner = getViewLifecycleOwner();
         if (toolbarEditText != null) {
@@ -130,10 +140,26 @@ public class EditDeckFragment extends Fragment{
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                showSaveChangesDialog();
+            }
+        };
+
+        //onBackPressed Callback
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
        // showSaveChangesDialog();
     }
+
 
     private void showSaveChangesDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
@@ -141,7 +167,6 @@ public class EditDeckFragment extends Fragment{
         builder.setMessage("¿Deseas guardar los cambios antes de salir?");
         builder.setPositiveButton("Guardar", (dialog, which) -> {
             if (toolbarEditText != null) {
-                dialog.dismiss();
 
                 DecksAdmin db = new DecksAdmin();
                 db.updateDeck(deck, new Callback<Boolean>() {
@@ -150,10 +175,9 @@ public class EditDeckFragment extends Fragment{
                         Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
 
                     }
-
                     @Override
                     public void onFailure(Exception e) {
-
+                        Toast.makeText(context, "Error al guardar cambios", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -161,9 +185,19 @@ public class EditDeckFragment extends Fragment{
         });
         builder.setNegativeButton("Descartar", (dialog, which) -> {
             Toast.makeText(context, "Cambios descartados", Toast.LENGTH_SHORT).show();
+            requireActivity().getSupportFragmentManager().popBackStack();
         });
+        builder.setNeutralButton("Cancelar", (dialog, which) -> {
+            // Cancelar la acción y permanecer en el fragmento
+            dialog.dismiss();
+        });
+        builder.create().show();
+
+
+        /*
         AlertDialog dialog = builder.create();
-        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener()
+        {
 
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
@@ -171,7 +205,7 @@ public class EditDeckFragment extends Fragment{
             }
         });
         dialog.show();
-
+        */
     }
 
     @Override
@@ -201,12 +235,14 @@ public class EditDeckFragment extends Fragment{
 
         // Mostrar la BottomNavigationView al salir del fragmento
         if (getActivity() != null) {
-            if(!leavingEditDeck)
-                showSaveChangesDialog();
             BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
             bottomNavigationView.setVisibility(View.VISIBLE);
-
         }
+    }
+
+    public void handleBackPressFromToolbar() {
+        // show dialog with setHomeAsUpEnabled
+        showSaveChangesDialog();
     }
 
     public void refreshCardList(View view) {

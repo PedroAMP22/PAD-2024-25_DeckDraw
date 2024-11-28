@@ -47,6 +47,10 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
         holder.itemView.setOnClickListener(v -> {
             sch_frag.openDetails(card);
         });
+
+        if(holder.number.getText().equals("0")){
+            holder.number.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -56,10 +60,12 @@ public class CardTextAdapter extends RecyclerView.Adapter<CardTextAdapter.CardVi
 
     public static class CardViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
+        TextView number;
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.imageView);
+            number = itemView.findViewById(R.id.cardsNumber);
         }
     }
 

@@ -37,7 +37,7 @@ public class TCard  implements Serializable {
     public TCard(String ID, String largeImageUrl, String normalImageUrl, String smallImageUrl, String artCropImageUrl,
                  String language, String layout, Boolean legal, String manaCost, String name, String power,
                  String toughness, String artist, String borderColor, String type, String setName, String rarity,
-                 Double cmc, String text ,List<String> colors) {
+                 Double cmc, String text ,List<String> colors, int quantity) {
         this.ID = ID;
         this.largeImageUrl = largeImageUrl;
         this.normalImageUrl = normalImageUrl;
@@ -58,7 +58,7 @@ public class TCard  implements Serializable {
         this.cmc = cmc;
         this.text = text;
         this.colors = colors;
-        this.quantity = 1;
+        this.quantity = quantity;
     }
 
     // Getter y Setter para ID
@@ -262,8 +262,10 @@ public class TCard  implements Serializable {
         this.cmc = cmc;
     }
 
-    //Getter de quantity
+    //Getter y setter de quantity
     public Integer getQuantity(){return quantity;}
+
+    public void setQuantity(int quantity){this.quantity = quantity;}
     //Añadir una carta
     public void addCardQuantity(){quantity++;}
     public void removeCardQuantity(){quantity--;}
