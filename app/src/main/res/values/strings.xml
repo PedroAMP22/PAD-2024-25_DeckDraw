@@ -36,7 +36,7 @@
     <string name="editar">Edit</string>
     <string name="addcard_text">Add card</string>
     <string name="removecard_text">Remove card</string>
-    <string name="zero_number">0</string>
+    <string name="zero_number" translatable="false">0</string>
 
 
 
@@ -44,23 +44,19 @@
 
     <!--Strings de los filtros de búsqueda -->
     <string name="hint_busqueda">Search</string>
-    <string name="helper_busqueda">Type the Card name</string>
-    <string name="text_floating_button_busqueda">Search</string>
-    <string name="filter_mana_type">Mana Color</string>
+ç    <string name="text_floating_button_busqueda">Search</string>
     <string name="red_mana_text">Red</string>
     <string name="blue_mana_text">Blue</string>
     <string name="green_mana_text">Green</string>
     <string name="white_mana_text">White</string>
     <string name="black_mana_text">Black</string>
     <string name="colorless_mana_text">Colorless</string>
-    <string name="filter_rarity_type">Rarity</string>
     <string name="rarity_common_text">Common</string>
     <string name="rarity_uncommon_text">Uncommon</string>
     <string name="rarity_rare_text">Rare</string>
     <string name="rarity_special_text">Special</string>
     <string name="rarity_mythic_text">Mythic</string>
     <string name="rarity_bonus_text">Bonus</string>
-    <string name="filter_card_type">Card Type</string>
     <string name="card_type_artifact_text">Artifact</string>
     <string name="card_type_battle_text">Battle</string>
     <string name="card_type_conspiracy_text">Conspiracy</string>
@@ -87,7 +83,7 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name= "ok">OK</string>
+    <string name= "ok" translatable="false">OK</string>
     <string name="name">Name</string>
     <string name="description">Description</string>
     <string name="mana_cost">Mana cost</string>
@@ -129,6 +125,7 @@
     <string name="friend_list">Friend List</string>
     <string name="query_hint">Search decks...</string>
     <string name="friends_decks">"Decks of "</string>
+    <string name="card_description">Selected card image</string>
 
 
 </resources>

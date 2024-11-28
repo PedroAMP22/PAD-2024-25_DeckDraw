@@ -22,6 +22,8 @@ public class SharedViewModel extends ViewModel {
     private final MutableLiveData<TUsers> currentUser = new MutableLiveData<>();
     // For selected Card
     private final MutableLiveData<TCard> selectedCard = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> editableCard = new MutableLiveData<>();
+
 
 
     public void setCurrentUser(TUsers user) {
@@ -36,9 +38,12 @@ public class SharedViewModel extends ViewModel {
         selectedCard.setValue(card);
     }
 
-    public LiveData<TCard> getSelectedCard() {
-        return selectedCard;
-    }
+    public LiveData<TCard> getSelectedCard() {return selectedCard;}
+
+    public  void setEditableCard (Boolean editable){editableCard.setValue(editable);}
+
+    public LiveData<Boolean> getEditableCard() {return editableCard;}
+
 
     // Método para manejar el nombre del mazo
     public void setCurrentDeckName(String name) {currentDeckName.setValue(name);}

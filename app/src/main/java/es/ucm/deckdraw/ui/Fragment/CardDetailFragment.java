@@ -55,6 +55,8 @@ public class CardDetailFragment extends Fragment {
         card = new TCard();
         card = sharedViewModel.getSelectedCard().getValue();
 
+        edit = Boolean.TRUE.equals(sharedViewModel.getEditableCard().getValue());
+
         ImageView imageView = view.findViewById(R.id.cardImageView);
         TextView nameTextView = view.findViewById(R.id.name_card);
         TextView descriptionTextView = view.findViewById(R.id.description_card);

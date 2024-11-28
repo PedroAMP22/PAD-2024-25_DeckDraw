@@ -264,6 +264,7 @@ public class EditDeckFragment extends Fragment{
         leavingEditDeck = true;
 
         sharedViewModel.setSelectedCard(card);
+        sharedViewModel.setEditableCard(true);
 
         CardDetailFragment frag = new CardDetailFragment();
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();

@@ -128,6 +128,8 @@ public class CardSearchFragment extends Fragment implements  FragmentViewerInter
     public void openDetails(TCard card) {
         // Guardamos la carta seleccionada en el ViewModel
         sharedViewModel.setSelectedCard(card);
+        sharedViewModel.setEditableCard(true);
+
         CardDetailFragment frag = new CardDetailFragment();
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
     }

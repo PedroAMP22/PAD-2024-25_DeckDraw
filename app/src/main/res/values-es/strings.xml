@@ -99,6 +99,16 @@
     <string name="friend_list">Lista de Amigos</string>
     <string name="query_hint">Buscar mazos...</string>
     <string name="friends_decks">"Mazos de "</string>
+    <string name="removecard_text">Quitar carta</string>
+    <string name="mana_cost">Coste de maná</string>
+    <string name="artist">Artista</string>
+    <string name="set_name">Nombre de la expansión</string>
+    <string name="rarity">Rareza</string>
+    <string name="type">Tipo</string>
+    <string name="power">Poder</string>
+    <string name="toughness">Resistencia</string>
+    <string name="color">Color</string>
+    <string name="card_description">Imagen de la carta seleccionada</string>
 
 
 </resources>
