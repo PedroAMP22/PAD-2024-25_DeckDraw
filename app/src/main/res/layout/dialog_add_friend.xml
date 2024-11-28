@@ -7,9 +7,7 @@
     android:background="#FAF9F6"
     android:padding="16dp">
 
-    <!-- Título del diálogo -->
 
-    <!-- Nombre del mazo -->
     <TextView
         android:id="@+id/addFriendTitle"
         android:layout_width="152dp"

@@ -95,7 +95,7 @@ public class NotificationsAdmin {
                 });
     }
 
-   public void rejectFriendRequest(String currentUser, String friend, Callback<Boolean> callback) {
+    public void rejectFriendRequest(String currentUser, String friend, Callback<Boolean> callback) {
         dbRef.child("users").child(currentUser).child("receivedRequests").child(friend).removeValue()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -113,7 +113,6 @@ public class NotificationsAdmin {
                 });
     }
 
-    // Modificado para aceptar un Callback
     public void deleteFriend(String currentUser, String friend, Callback<Boolean> callback) {
         dbRef.child("users").child(currentUser).child("friends").child(friend).removeValue()
                 .addOnCompleteListener(task -> {

@@ -136,6 +136,25 @@ public class UsersAdmin{
                 .addOnFailureListener(callback::onFailure);
     }
 
+
+    public void getUserByUid(String uid, Callback<TUsers> callback){
+
+        DatabaseReference userRef = db.getReference("users").child(uid);
+
+        userRef.get().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                TUsers user = task.getResult().getValue(TUsers.class);
+                callback.onSuccess(user);
+            }
+            else{
+                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                callback.onFailure(task.getException());
+            }
+
+        });
+
+    }
+
     public void signOut(){
         mAuth.signOut();
     }

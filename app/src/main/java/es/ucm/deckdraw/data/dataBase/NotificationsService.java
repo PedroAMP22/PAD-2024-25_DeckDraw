@@ -21,20 +21,20 @@ import es.ucm.deckdraw.util.Callback;
 @SuppressLint("MissingFirebaseInstanceTokenRefresh")
 public class NotificationsService  extends FirebaseMessagingService {
 
-        @Override
-        public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-            String title = remoteMessage.getNotification().getTitle();
-            String message = remoteMessage.getNotification().getBody();
+    @Override
+    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
+        String title = remoteMessage.getNotification().getTitle();
+        String message = remoteMessage.getNotification().getBody();
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "friend_request_channel")
-                    .setContentTitle(title)
-                    .setContentText(message)
-                    .setSmallIcon(R.drawable.logo)
-                    .setAutoCancel(true);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "friend_request_channel")
+                .setContentTitle(title)
+                .setContentText(message)
+                .setSmallIcon(R.drawable.logo)
+                .setAutoCancel(true);
 
-            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            manager.notify(0, builder.build());
-        }
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
+    }
 
     @Override
     public void onNewToken(@NonNull String token) {

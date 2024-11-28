@@ -18,8 +18,8 @@ public class TUsers {
     private String notifitacionToken;
     private List<String> friends = new ArrayList<>();
 
-    private List<String> friendsRequest = new ArrayList<>();
-    private List<String> friendsSend = new ArrayList<>();
+    private List<String> receivedRequests = new ArrayList<>();
+    private List<String> sentRequests = new ArrayList<>();
 
     @Exclude
     private String password; //Not plain text
@@ -99,18 +99,18 @@ public class TUsers {
     }
 
     public List<String> getFriendsRequest() {
-        return friendsRequest;
+        return receivedRequests;
     }
 
     public void setFriendsRequest(List<String> friendsRequest) {
-        this.friendsRequest = friendsRequest;
+        this.receivedRequests = friendsRequest;
     }
 
     public List<String> getFriendsSend() {
-        return friendsSend;
+        return sentRequests;
     }
 
     public void setFriendsSend(List<String> friendsSend) {
-        this.friendsSend = friendsSend;
+        this.sentRequests = friendsSend;
     }
 }
