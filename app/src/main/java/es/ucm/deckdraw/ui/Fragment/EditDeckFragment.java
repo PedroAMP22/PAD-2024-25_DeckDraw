@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -57,6 +58,11 @@ public class EditDeckFragment extends Fragment{
     private boolean hasChanged;
     private LifecycleOwner lifecycleowner;
     private TDecks deck;
+    private TextView deckFormat;
+    private TextView cardsNumber;
+    private TextView deckLimit;
+
+
 
     @Nullable
     @Override
@@ -84,7 +90,7 @@ public class EditDeckFragment extends Fragment{
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         }
         else if(orientation == Configuration.ORIENTATION_LANDSCAPE){ //movil en horizontal
-            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 4));
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 5));
         }
 
         recyclerView.setAdapter(adapter);
@@ -136,6 +142,22 @@ public class EditDeckFragment extends Fragment{
                     .addToBackStack(null) // Añadir a la pila de retroceso
                     .commit();
         });
+
+        deck = sharedViewModel.getCurrentDeck().getValue();
+
+        deckFormat = mainScreenActivity.findViewById(R.id.bottom_format);
+        cardsNumber = mainScreenActivity.findViewById(R.id.bottom_number_card);
+        deckLimit = mainScreenActivity.findViewById(R.id.bottom_deck_limit);
+
+        deckFormat.setText(deck.getDeckFormat());
+        cardsNumber.setText(String.valueOf(deck.getNumCards()));
+
+        if(deck.getDeckFormat().equalsIgnoreCase("commander")){
+            deckLimit.setText("100");
+        }else{
+            deckLimit.setText("60");
+        }
+
         return view;
     }
 
@@ -216,18 +238,23 @@ public class EditDeckFragment extends Fragment{
             MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
             mainScreenActivity.setToolbarTitle(""); // Dejar vacío el título porque usamos el EditText
             mainScreenActivity.setHomeAsUpEnabled(true);
+            // Cambiar la BottomNavigationView
+            mainScreenActivity.setBottomDeck(true);
+
         }
 
-        // Ocultar la BottomNavigationView
-        if (getActivity() != null) {
-            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
-            bottomNavigationView.setVisibility(View.GONE);
-        }
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        if (getActivity() instanceof MainScreenActivity) {
+            MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
+            // Cambiar la BottomNavigationView
+            mainScreenActivity.setBottomDeck(false);
+
+        }
+
         // Ocultar el EditText cuando el fragmento no esté activo
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.GONE);

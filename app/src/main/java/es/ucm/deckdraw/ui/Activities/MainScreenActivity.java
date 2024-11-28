@@ -2,7 +2,9 @@ package es.ucm.deckdraw.ui.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -86,5 +88,20 @@ public class MainScreenActivity extends AppCompatActivity  {
             getSupportActionBar().setDisplayHomeAsUpEnabled(enabled);
         }
     }
+
+    public void setBottomDeck(boolean show) {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        LinearLayout bottomDeckLayout = bottomNavigationView.findViewById(R.id.bottom_deck);
+
+        if (bottomDeckLayout != null) {
+            bottomDeckLayout.setVisibility(show ? View.VISIBLE : View.GONE);
+        }
+        if (!show) {
+            bottomNavigationView.inflateMenu(R.menu.bottom_nav_menu);
+        } else {
+            bottomNavigationView.getMenu().clear();
+        }
+    }
+
 }
 

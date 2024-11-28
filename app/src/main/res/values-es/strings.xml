@@ -109,8 +109,6 @@
     <string name="toughness">Resistencia</string>
     <string name="color">Color</string>
     <string name="card_description">Imagen de la carta seleccionada</string>
-    <string name="cancel">Cancelar</string>
-    <string name="error_saving">Error al guardar los cambios</string>
 
 
 </resources>
