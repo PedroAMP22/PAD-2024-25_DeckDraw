@@ -177,17 +177,17 @@ public class EditDeckFragment extends Fragment{
                     }
                     @Override
                     public void onFailure(Exception e) {
-                        Toast.makeText(context, "Error al guardar cambios", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, getString(R.string.error_saving), Toast.LENGTH_SHORT).show();
                     }
                 });
 
             }
         });
-        builder.setNegativeButton("Descartar", (dialog, which) -> {
-            Toast.makeText(context, "Cambios descartados", Toast.LENGTH_SHORT).show();
+        builder.setNegativeButton(getString(R.string.discard), (dialog, which) -> {
+            Toast.makeText(context, getString(R.string.changes_discarded), Toast.LENGTH_SHORT).show();
             requireActivity().getSupportFragmentManager().popBackStack();
         });
-        builder.setNeutralButton("Cancelar", (dialog, which) -> {
+        builder.setNeutralButton(getString(R.string.cancel), (dialog, which) -> {
             // Cancelar la acción y permanecer en el fragmento
             dialog.dismiss();
         });

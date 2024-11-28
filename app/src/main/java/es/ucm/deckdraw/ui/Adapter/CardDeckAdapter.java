@@ -54,6 +54,8 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
             });
             duplicated.add(card.getName());
 
+            holder.number.setText(String.valueOf(card.getQuantity()));
+
             if(holder.number.getText().equals("0")){
                 holder.number.setVisibility(View.GONE);
             }

@@ -126,6 +126,8 @@
     <string name="query_hint">Search decks...</string>
     <string name="friends_decks">"Decks of "</string>
     <string name="card_description">Selected card image</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_saving">Error saving changes</string>
 
 
 </resources>

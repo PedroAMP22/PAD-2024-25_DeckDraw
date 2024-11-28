@@ -101,6 +101,7 @@ public class TDecks {
             return;
         for(TCard card: Cards){
             cardSearcher.put(card.getID(), cardSearcher.getOrDefault(card.getID(), 0) + 1);
+            card.setQuantity(cardSearcher.get(card.getID()));
         }
     }
 
@@ -109,6 +110,7 @@ public class TDecks {
         Cards.add(card);
         cardSearcher.put(card.getID(), cardSearcher.getOrDefault(card.getID(), 0) + quantity);
         addNumCard(quantity);
+        card.setQuantity(cardSearcher.get(card.getID()));
 
     }
     public void removeCard(TCard card, int quantity){
@@ -121,6 +123,7 @@ public class TDecks {
                 cardSearcher.remove(card.getID());
             }
             Cards.remove(card);
+            card.setQuantity(cardSearcher.get(card.getID()));
             removeNumCard(quantity);
         }
     }
