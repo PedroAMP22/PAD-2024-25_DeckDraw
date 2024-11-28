@@ -149,7 +149,7 @@ public class ShowFriendFragment extends Fragment {
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
 
-        searchView.setQueryHint("Buscar mazos...");
+        searchView.setQueryHint(getString(R.string.query_hint));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -172,7 +172,7 @@ public class ShowFriendFragment extends Fragment {
         super.onResume();
         if (getActivity() instanceof MainScreenActivity) {
             MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
-            mainScreenActivity.setToolbarTitle("Decks of your friend");
+            mainScreenActivity.setToolbarTitle(getString(R.string.friends_decks) +friend.getUsername());
             mainScreenActivity.setHomeAsUpEnabled(false);
         }
     }

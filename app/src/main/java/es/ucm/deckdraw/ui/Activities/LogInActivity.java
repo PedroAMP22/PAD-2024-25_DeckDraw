@@ -50,7 +50,7 @@ import es.ucm.deckdraw.util.Callback;
                     Intent i = new Intent(LogInActivity.this, MainScreenActivity.class);
                     startActivity(i);
                     Log.d(TAG, "User logged: " + user.getIdusers());
-                    Toast.makeText(LogInActivity.this, "User already logged", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LogInActivity.this, getText(R.string.already_logged), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -83,7 +83,7 @@ import es.ucm.deckdraw.util.Callback;
 
                     @Override
                     public void onFailure(Exception e) {
-                        Toast.makeText(LogInActivity.this, "Error: couldn't log in", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogInActivity.this, getString(R.string.error_couldnt_login), Toast.LENGTH_SHORT).show();
                         Log.e(TAG, "Error logging in", e);
                     }
                 });

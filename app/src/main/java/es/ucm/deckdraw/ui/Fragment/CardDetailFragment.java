@@ -76,10 +76,10 @@ public class CardDetailFragment extends Fragment {
                                         quantity++;
                                         quantityText.setText(Integer.toString(quantity));
                                     } else {
-                                        Toast.makeText(this.requireContext(), "No puedes tener más de una carta de cada en commander", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(this.requireContext(), getString(R.string.duplicate_commander_toast), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Toast.makeText(this.requireContext(), "No puedes tener más de 100 cartas en commander", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(this.requireContext(), getString(R.string.more_than_100), Toast.LENGTH_LONG).show();
                                 }
 
                             } else {
@@ -89,10 +89,10 @@ public class CardDetailFragment extends Fragment {
                                         quantity++;
                                         quantityText.setText((Integer.toString(quantity)));
                                     } else {
-                                        Toast.makeText(this.requireContext(), "No puedes tener más de 4 cartas de cada en " + deck.getDeckFormat(), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(this.requireContext(), getString(R.string.more_than_4)+ deck.getDeckFormat(), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Toast.makeText(this.requireContext(), "No puedes tener más de 60 cartas en" + deck.getDeckFormat(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(this.requireContext(), getString(R.string.limit_60) + deck.getDeckFormat(), Toast.LENGTH_LONG).show();
                                 }
 
                             }

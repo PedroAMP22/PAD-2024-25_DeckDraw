@@ -29,7 +29,7 @@ public class FriendsFragment extends Fragment {
         super.onResume();
         if (getActivity() instanceof MainScreenActivity) {
             MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
-            mainScreenActivity.setToolbarTitle("Lista de amigos");
+            mainScreenActivity.setToolbarTitle(getString(R.string.friend_list));
             mainScreenActivity.setHomeAsUpEnabled(false);
         }
     }

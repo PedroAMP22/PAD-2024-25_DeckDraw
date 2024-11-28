@@ -137,9 +137,9 @@ public class EditDeckFragment extends Fragment{
 
     private void showSaveChangesDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-        builder.setTitle("Guardar cambios");
-        builder.setMessage("¿Deseas guardar los cambios antes de salir?");
-        builder.setPositiveButton("Guardar", (dialog, which) -> {
+        builder.setTitle(getString(R.string.save_changes));
+        builder.setMessage(getString(R.string.ask_save_changes));
+        builder.setPositiveButton(getString(R.string.save), (dialog, which) -> {
             if (toolbarEditText != null) {
                 dialog.dismiss();
 
@@ -147,7 +147,7 @@ public class EditDeckFragment extends Fragment{
                 db.updateDeck(deck, new Callback<Boolean>() {
                     @Override
                     public void onSuccess(Boolean data) {
-                        Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, getString(R.string.changes_saved), Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -159,15 +159,15 @@ public class EditDeckFragment extends Fragment{
 
             }
         });
-        builder.setNegativeButton("Descartar", (dialog, which) -> {
-            Toast.makeText(context, "Cambios descartados", Toast.LENGTH_SHORT).show();
+        builder.setNegativeButton(getString(R.string.discard), (dialog, which) -> {
+            Toast.makeText(context, getString(R.string.changes_discarded), Toast.LENGTH_SHORT).show();
         });
         AlertDialog dialog = builder.create();
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
 
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
-                Toast.makeText(context, "Cambios descartados", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, getString(R.string.changes_discarded), Toast.LENGTH_SHORT).show();
             }
         });
         dialog.show();
