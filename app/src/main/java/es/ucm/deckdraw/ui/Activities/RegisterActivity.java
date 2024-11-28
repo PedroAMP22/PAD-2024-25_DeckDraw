@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
         String username = usernameEditText.getText().toString().trim();
 
         if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
-            Toast.makeText(this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.fill_fields), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -111,14 +111,14 @@ public class RegisterActivity extends AppCompatActivity {
         usersAdmin.createAccount(newUser, new Callback<TUsers>() {
             @Override
             public void onSuccess(TUsers result) {
-                Toast.makeText(RegisterActivity.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, getString(R.string.success_register), Toast.LENGTH_SHORT).show();
                 finish();
             }
 
             @Override
             public void onFailure(Exception e) {
                 Log.e("RegisterActivity", "Error en el registro", e);
-                Toast.makeText(RegisterActivity.this, "Error al registrar el usuario", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, getString(R.string.error_register), Toast.LENGTH_SHORT).show();
             }
         });
     }

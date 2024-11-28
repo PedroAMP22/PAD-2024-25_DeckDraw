@@ -71,6 +71,8 @@ public class DecksFragment extends Fragment {
         private List<TCard> commanders;
         private TUsers currentUser;
 
+        private SharedViewModel viewModel;
+
         private DeckAdapter deckAdapter;
         private List<TDecks> deckList =  new ArrayList<>();
 
@@ -93,6 +95,7 @@ public class DecksFragment extends Fragment {
             formatPosition = 0;
         }
 
+        viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         FloatingActionButton createDeckButton = view.findViewById(R.id.button_create_deck);
         createDeckButton.setOnClickListener(v -> {
@@ -244,7 +247,7 @@ public class DecksFragment extends Fragment {
                 TDecks deck = new TDecks(currentUser.getIdusers(), "",0, formatSpinner.getSelectedItem().toString(),deckName,"id" );
                 if(formatSpinner.getSelectedItem().toString().equals("Commander")){
                     if(commanderAutoComplete.getText().toString().isEmpty()){
-                        deckNameEditText.setError("Por favor ingrese un commandante para el mazo.");
+                        deckNameEditText.setError(getString(R.string.enter_commander));
                         return;
                     }
                     String selectedCommander = commanderAutoComplete.getText().toString();
@@ -263,7 +266,7 @@ public class DecksFragment extends Fragment {
                 db.createDeck(currentUser.getIdusers(), deck);
                 dialog.dismiss();
             } else {
-                deckNameEditText.setError("Por favor ingrese un nombre para el mazo.");
+                deckNameEditText.setError(getString(R.string.enter_name));
             }
         });
 
@@ -274,7 +277,7 @@ public class DecksFragment extends Fragment {
         super.onResume();
         if (getActivity() instanceof MainScreenActivity) {
             MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
-            mainScreenActivity.setToolbarTitle("Tus mazos");
+            mainScreenActivity.setToolbarTitle(getString(R.string.your_decks));
             mainScreenActivity.setHomeAsUpEnabled(false);
         }
     }
@@ -319,7 +322,6 @@ public class DecksFragment extends Fragment {
         }
 
     public void onEditDeck(TDecks deck) {
-        SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         viewModel.setCurrentDeck(deck);
         // Navegar al fragmento de edición de mazo
         EditDeckFragment editDeckFragment = new EditDeckFragment();

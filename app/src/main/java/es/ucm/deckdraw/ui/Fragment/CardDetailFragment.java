@@ -35,15 +35,15 @@ public class CardDetailFragment extends Fragment {
     private SharedViewModel sharedViewModel;
     private static final String ARG_IMAGE_URL = "image_url";
     private TCard card;
-
+    private boolean edit;
     private static final Map<String, Integer> COLOR_MAP = Map.of(
-            "W", R.color.ManaColorWhite,
-            "U", R.color.ManaColorBlue,
-            "B", R.color.ManaColorBlack,
-            "R", R.color.ManaColorRed,
-            "G", R.color.ManaColorGreen,
-            "C", R.color.ManaColorColorless
-    );
+        "W", R.color.ManaColorWhite,
+        "U", R.color.ManaColorBlue,
+        "B", R.color.ManaColorBlack,
+        "R", R.color.ManaColorRed,
+        "G", R.color.ManaColorGreen,
+        "C", R.color.ManaColorColorless
+);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -111,66 +111,66 @@ public class CardDetailFragment extends Fragment {
                 }
             });
 
+            if(edit) {
+                addCardButton.setOnClickListener(v -> {
+                    sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+                        if (deck != null) {
+                            int quantity = Integer.parseInt(quantityText.getText().toString());
+                            if (deck.getDeckFormat().equals("Commander")) {
+                                if (deck.getNumCards() + quantity - deck.getNumberOfCardInDeck(card) < 99) {
+                                    if (quantity < 1 || card.getType().contains("Basic Land")) {
+                                        quantity++;
+                                        quantityText.setText(Integer.toString(quantity));
+                                    } else {
+                                        Toast.makeText(this.requireContext(), getString(R.string.duplicate_commander_toast), Toast.LENGTH_LONG).show();
+                                    }
+                                } else {
+                                    Toast.makeText(this.requireContext(), getString(R.string.more_than_100), Toast.LENGTH_LONG).show();
+                                }
 
-            addCardButton.setOnClickListener(v -> {
-                sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
-                    if (deck != null) {
-                        int quantity = Integer.parseInt(quantityText.getText().toString());
-                        if(deck.getDeckFormat().equals("Commander")){
-                            if (deck.getNumCards()+quantity-deck.getNumberOfCardInDeck(card) < 99){
-                                if(quantity < 1 || card.getType().contains("Basic Land")){
-                                    quantity++;
-                                    quantityText.setText(Integer.toString(quantity));
+                            } else {
+                                if (deck.getNumCards() + quantity - deck.getNumberOfCardInDeck(card) < 60) {
+                                    if (quantity < 4 || card.getType().contains("Basic Land")) {
+                                        ;
+                                        quantity++;
+                                        quantityText.setText((Integer.toString(quantity)));
+                                    } else {
+                                        Toast.makeText(this.requireContext(), getString(R.string.more_than_4)+ deck.getDeckFormat(), Toast.LENGTH_LONG).show();
+                                    }
+                                } else {
+                                    Toast.makeText(this.requireContext(), getString(R.string.limit_60) + deck.getDeckFormat(), Toast.LENGTH_LONG).show();
                                 }
-                                else{
-                                    Toast.makeText(this.requireContext(),"No puedes tener más de una carta de cada en commander", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                            else{
-                                Toast.makeText(this.requireContext(),"No puedes tener más de 100 cartas en commander", Toast.LENGTH_LONG).show();
-                            }
 
-                        }
-                        else{
-                            if (deck.getNumCards()+quantity-deck.getNumberOfCardInDeck(card) < 60){
-                                if(quantity < 4|| card.getType().contains("Basic Land")){;
-                                    quantity++;
-                                    quantityText.setText((Integer.toString(quantity)));
-                                }
-                                else{
-                                    Toast.makeText(this.requireContext(),"No puedes tener más de 4 cartas de cada en " + deck.getDeckFormat(), Toast.LENGTH_LONG).show();
-                                }
-                            }
-                            else{
-                                Toast.makeText(this.requireContext(),"No puedes tener más de 60 cartas en" + deck.getDeckFormat(), Toast.LENGTH_LONG).show();
                             }
 
                         }
+                    });
 
-                    }
                 });
+            }else
+                addCardButton.setVisibility(View.GONE);
 
-            });
-
-
-            removeCardButton.setOnClickListener(v -> {
-                sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
-                    if (deck != null) {
-                        int quantity = Integer.parseInt(quantityText.getText().toString());
-                        if(quantity > 0){
-                            quantity--;
-                            if(quantity < 0)
-                                quantity = 0;
-                            quantityText.setText((Integer.toString(quantity)));
+            if(edit) {
+                removeCardButton.setOnClickListener(v -> {
+                    sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+                        if (deck != null) {
+                            int quantity = Integer.parseInt(quantityText.getText().toString());
+                            if (quantity > 0) {
+                                quantity--;
+                                if (quantity < 0)
+                                    quantity = 0;
+                                quantityText.setText((Integer.toString(quantity)));
+                            }
                         }
-                    }
-                });
+                    });
 
-            });
+                });
+            }else
+                removeCardButton.setVisibility(View.GONE);
 
             okayCardButton.setOnClickListener(v -> {
                 sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
-                    if (deck != null) {
+                    if (deck != null && edit) {
                         int quantity = Integer.parseInt(quantityText.getText().toString());
                         int quantityOnDeck = deck.getNumberOfCardInDeck(card);
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DeckDraw</string>
+    <string name="app_name" translatable="false">DeckDraw</string>
 
     <string name="menu_search">Search</string>
     <string name="menu_filter">Filter</string>
@@ -27,13 +27,13 @@
     <string name="at_least_one_number">• At least 1 number</string>
     <string name="at_least_one_special_character">• At least 1 special character</string>
     <string name="crear_mazo">Create deck</string>
-    <string name="introduce_el_nombre_del_mazo">Introduce el nombre del mazo</string>
+    <string name="introduce_el_nombre_del_mazo">Write decks name</string>
     <string name="nombre_del_mazo">Deck name</string>
     <string name="formato">Format</string>
-    <string name="comandante">Comandante</string>
-    <string name="portada_del_mazo">Deck cover</string>
-    <string name="eliminar">delete</string>
-    <string name="editar">edit</string>
+    <string name="comandante">Commander</string>
+    <string name="portada_del_mazo">Deck front page</string>
+    <string name="eliminar">Delete</string>
+    <string name="editar">Edit</string>
     <string name="addcard_text">Add card</string>
     <string name="removecard_text">Remove card</string>
     <string name="zero_number">0</string>
@@ -79,10 +79,11 @@
     <string name="card_type_sorcery_text">Sorcery</string>
     <string name="card_type_vanguard_text">Vanguard</string>
 
-    <string name="user_icon">user Icon</string>
+    <string name="user_icon">User Icon</string>
     <string name="user_profile">User Profile</string>
     <string name="update">Update</string>
     <string name="sign_out">Sign Out</string>
+
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -99,14 +100,35 @@
     <string name="color">Color</string>
 
 
-
-
-
-
-
-
-
-
+    <string name="mostrar">Show</string>
+    <string name="copiar">Copy</string>
+    <string name="helper_busqueda">Card name</string>
+    <string name="filter_mana_type">Mana type</string>
+    <string name="filter_rarity_type">Rarity</string>
+    <string name="filter_card_type">Card type</string>
+    <string name="your_decks">Your decks</string>
+    <string name="save_changes">Save changes</string>
+    <string name="ask_save_changes">Save changes before exiting?</string>
+    <string name="save">Save</string>
+    <string name="discard">Discard</string>
+    <string name="changes_saved">Changes saved</string>
+    <string name="changes_discarded">Changes discarded</string>
+    <string name="duplicate_commander_toast">Can\'t have duplicate cards in commander</string>
+    <string name="more_than_100">Can\'t have more than 100 cards in commander</string>
+    <string name="more_than_4">"Can't have more than 4 duplicate cards in "</string>
+    <string name="limit_60">Can\'t have more than 60 cards in</string>
+    <string name="already_logged">User already logged</string>
+    <string name="error_couldnt_login">Error: Couldn\'t log in</string>
+    <string name="fill_fields">Please, fill all fields</string>
+    <string name="success_register">User registered successfully</string>
+    <string name="error_register">Error registering user</string>
+    <string name="user_updated">User updated</string>
+    <string name="something_wrong">Something went wrong</string>
+    <string name="enter_commander">Please enter a commander</string>
+    <string name="enter_name">"Please enter a deck "</string>
+    <string name="friend_list">Friend List</string>
+    <string name="query_hint">Search decks...</string>
+    <string name="friends_decks">"Decks of "</string>
 
 
 </resources>
