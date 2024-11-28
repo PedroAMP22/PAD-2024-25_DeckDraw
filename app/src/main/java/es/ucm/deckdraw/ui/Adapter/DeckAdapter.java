@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +18,9 @@ import java.util.List;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
+import es.ucm.deckdraw.data.dataBase.DecksAdmin;
 import es.ucm.deckdraw.ui.Fragment.DecksFragment;
+import es.ucm.deckdraw.util.Callback;
 
 public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.DeckViewHolder> {
 
@@ -42,7 +45,7 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.DeckViewHolder
         TDecks deck = deckList.get(position);
         holder.deckName.setText(deck.getDeckName());
         holder.deckFormat.setText(deck.getDeckFormat());
-        if (deck.getUrlDeckCover() != null) {
+        if (!deck.getUrlDeckCover().isBlank() && deck.getUrlDeckCover() != null) {
             Picasso.get()
                     .load(deck.getUrlDeckCover()) // Suponiendo que getDeckImageUrl() devuelve la URL de la imagen
                     .placeholder(R.drawable.logo) // Imagen placeholder mientras carga
@@ -55,7 +58,17 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.DeckViewHolder
         holder.deleteButton.setOnClickListener(v -> {
            this.deckList.remove(deck);
            notifyDataSetChanged();
-           //Eliminar de la base de datos
+           DecksAdmin db = new DecksAdmin();
+           db.deleteDeck(deck, new Callback<Boolean>() {
+               @Override
+               public void onSuccess(Boolean data) {
+               }
+
+               @Override
+               public void onFailure(Exception e) {
+
+               }
+           });
         });
         holder.editButton.setOnClickListener(v -> {
            fragment.onEditDeck(deck);

@@ -7,6 +7,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +54,15 @@ public class UsersAdmin{
     public void createAccount(TUsers newUser, Callback<TUsers> callback) {
         String email = newUser.getEmail();
         String password = newUser.getPassword();
+        final String[] token = new String[1];
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        token[0] = task.getResult();
+                                            }
+                });
+
+        newUser.setNotifitacionToken(token[0]);
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {

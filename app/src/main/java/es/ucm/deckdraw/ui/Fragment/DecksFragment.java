@@ -38,6 +38,7 @@ import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.data.Service.CommanderLoaderCallbacks;
 import es.ucm.deckdraw.data.Service.MTGServiceAPI;
+import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
 import es.ucm.deckdraw.data.dataBase.DecksAdmin;
 import es.ucm.deckdraw.data.dataBase.UsersAdmin;
 import es.ucm.deckdraw.ui.Activities.LogInActivity;
@@ -67,7 +68,6 @@ public class DecksFragment extends Fragment {
         private DeckAdapter deckAdapter;
         private List<TDecks> deckList =  new ArrayList<>();
 
-        private SharedViewModel sharedViewModel;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -92,12 +92,9 @@ public class DecksFragment extends Fragment {
 
             showCreateDeckDialog();
         });
-        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        sharedViewModel.getCurrentUser().observe(getViewLifecycleOwner(), user -> {
-            if (user != null) {
-                currentUser = user;
-            }
-        });
+        CurrentUserManager sessionManager = new CurrentUserManager(requireContext());
+        currentUser = sessionManager.getCurrentUser();
+
 
         deckAdapter = new DeckAdapter(deckList,this);
         RecyclerView recyclerView = view.findViewById(R.id.deckRecyclerView);
@@ -107,7 +104,11 @@ public class DecksFragment extends Fragment {
         db.getUserDecks(currentUser.getIdusers(), new Callback<List<TDecks>>(){
             @Override
             public void onSuccess(List<TDecks> data) {
+
                 deckList = data;
+
+                deckAdapter.setDecks(deckList);
+                recyclerView.setAdapter(deckAdapter);
             }
 
             @Override
@@ -115,10 +116,6 @@ public class DecksFragment extends Fragment {
 
             }
         });
-
-        deckAdapter.setDecks(deckList);
-        recyclerView.setAdapter(deckAdapter);
-
 
         return view;
     }
@@ -210,7 +207,7 @@ public class DecksFragment extends Fragment {
             String deckName = deckNameEditText.getText().toString();
             if (!deckName.isEmpty() && formatSpinner.getSelectedItem() != null) {
 
-                TDecks deck = new TDecks("ownerID", "",0, formatSpinner.getSelectedItem().toString(),deckName,"id" );
+                TDecks deck = new TDecks(currentUser.getIdusers(), "",0, formatSpinner.getSelectedItem().toString(),deckName,"id" );
                 if(formatSpinner.getSelectedItem().toString().equals("Commander")){
                     if(commanderAutoComplete.getText().toString().isEmpty()){
                         deckNameEditText.setError("Por favor ingrese un commandante para el mazo.");

@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,13 +22,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
+import es.ucm.deckdraw.data.dataBase.DecksAdmin;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Adapter.CardDeckAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
+import es.ucm.deckdraw.util.Callback;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +50,8 @@ public class EditDeckFragment extends Fragment{
     private boolean leavingEditDeck;
     private List<TCard> cardList = new ArrayList<>(); // Lista para almacenar las cartas
     private boolean hasChanged;
+    private LifecycleOwner lifecycleowner;
+    private TDecks deck;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -58,20 +66,39 @@ public class EditDeckFragment extends Fragment{
 
         leavingEditDeck = false;
 
+        ImageView commanderImage = view.findViewById(R.id.commander);
+
         adapter = new CardDeckAdapter(cardList, this);
         // Configuración del RecyclerView
         recyclerView = view.findViewById(R.id.recyclerViewDeck);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         recyclerView.setAdapter(adapter);
-
+        lifecycleowner = getViewLifecycleOwner();
         if (toolbarEditText != null) {
             toolbarEditText.setVisibility(View.VISIBLE);
 
-            sharedViewModel.getCurrentDeck().observe(getViewLifecycleOwner(), deck -> {
+            sharedViewModel.getCurrentDeck().observe(lifecycleowner, deck -> {
                 if (deck != null) {
+                    if(deck.getDeckFormat().equals("Commander")){
+                        Picasso.get()
+                                .load(deck.getCommander().getLargeImageUrl()) // Suponiendo que getDeckImageUrl() devuelve la URL de la imagen
+                                .placeholder(R.drawable.logo) // Imagen placeholder mientras carga
+                                .error(R.drawable.not_connected) // Imagen de error si falla la carga
+                                .into(commanderImage);
+                    }else{
+                        commanderImage.setVisibility(View.GONE);
+                        ViewGroup.LayoutParams params = recyclerView.getLayoutParams();
+                        params.height = ViewGroup.LayoutParams.MATCH_PARENT;
+                        recyclerView.setLayoutParams(params);
+
+                    }
+                    cardList = new ArrayList<>(deck.getCards());
                     toolbarEditText.setText(deck.getDeckName());
                     deckName = deck.getDeckName();
+
                     cardList = new ArrayList<>(deck.getCards());
+                    this.deck = deck;
+
                     refreshCardList(view);
                 }
             });
@@ -108,8 +135,21 @@ public class EditDeckFragment extends Fragment{
         builder.setPositiveButton("Guardar", (dialog, which) -> {
             if (toolbarEditText != null) {
                 dialog.dismiss();
-                //CUANDO ESTE LA DB
-                Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
+
+                DecksAdmin db = new DecksAdmin();
+                db.updateDeck(deck, new Callback<Boolean>() {
+                    @Override
+                    public void onSuccess(Boolean data) {
+                        Toast.makeText(context, "Cambios guardados", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onFailure(Exception e) {
+
+                    }
+                });
+
             }
         });
         builder.setNegativeButton("Descartar", (dialog, which) -> {
