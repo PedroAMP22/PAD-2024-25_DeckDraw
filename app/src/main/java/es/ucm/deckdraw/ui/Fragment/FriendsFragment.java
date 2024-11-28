@@ -25,7 +25,11 @@ import es.ucm.deckdraw.R;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.checkerframework.checker.units.qual.C;
+import org.w3c.dom.Text;
 
 import es.ucm.deckdraw.data.dataBase.NotificationsAdmin;
 import es.ucm.deckdraw.util.Callback;
@@ -82,11 +86,12 @@ public class FriendsFragment extends Fragment {
         dialog.setContentView(R.layout.dialog_add_friend);
         dialog.setCancelable(true);
 
-        EditText editTextUidFriend = dialog.findViewById(R.id.friendID);
+        TextView friendIDTV = dialog.findViewById(R.id.friendID);
 
-        String uidFriend = editTextUidFriend.getText().toString();
+        friendIDTV.setText(userUid);
 
         ImageButton copyMyUidIV = dialog.findViewById(R.id.copyIDButton);
+
 
         copyMyUidIV.setOnClickListener((v) -> {
             //Copy to clipboard
@@ -99,20 +104,44 @@ public class FriendsFragment extends Fragment {
         Button addFriendButton = dialog.findViewById(R.id.addFriendButton);
 
         addFriendButton.setOnClickListener((v) ->{
-            usersAdmi.getUserByUid(uidFriend, new Callback<TUsers>() {
-                @Override
-                public void onSuccess(TUsers data) {
-                    notiAdmin.sendNotification(data.getNotifitacionToken(), userUid );
-                }
 
-                @Override
-                public void onFailure(Exception e) {
-                    Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
-                    Log.e("ADD_NEW_FRIEND", e.toString());
-                }
-            });
+            EditText editTextUidFriend = dialog.findViewById(R.id.editAddFriendID);
+
+            String uidFriend = editTextUidFriend.getText().toString();
+
+            if(!uidFriend.isEmpty()){
+
+                notiAdmin.newFriendReq(userUid, uidFriend, new Callback<Boolean>() {
+                    @Override
+                    public void onSuccess(Boolean data) {
+                        usersAdmi.getUserByUid(uidFriend, new Callback<TUsers>() {
+                            @Override
+                            public void onSuccess(TUsers data) {
+                                notiAdmin.sendNotification(data.getNotifitacionToken(), userUid );
+                            }
+
+                            @Override
+                            public void onFailure(Exception e) {
+                                Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                Log.e("ADD_NEW_FRIEND", e.toString());
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onFailure(Exception e) {
+                        Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                        Log.e("ADD_NEW_FRIEND", e.toString());
+                    }
+                });
+            }
+            else{
+                Toast.makeText(context, "ID required", Toast.LENGTH_SHORT).show();
+            }
 
         });
+
+        dialog.show();
 
 
     }

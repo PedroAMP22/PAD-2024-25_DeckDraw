@@ -59,35 +59,35 @@ public class UsersAdmin{
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         token[0] = task.getResult();
-                                            }
-                });
+                        mAuth.createUserWithEmailAndPassword(email, password)
+                                .addOnCompleteListener(task1 -> {
+                                    if (task1.isSuccessful()) {
+                                        Log.d(TAG, "createUserWithEmail:success");
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        if (user != null) {
+                                            newUser.setNotifitacionToken(token[0]);
+                                            saveUsernameOnBD(user.getUid(), newUser, new Callback<Boolean>() {
+                                                @Override
+                                                public void onSuccess(Boolean result) {
+                                                    newUser.setIdusers(user.getUid());
+                                                    callback.onSuccess(newUser);
+                                                }
 
-        newUser.setNotifitacionToken(token[0]);
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "createUserWithEmail:success");
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        if (user != null) {
-                            saveUsernameOnBD(user.getUid(), newUser.getUsername(), new Callback<Boolean>() {
-                                @Override
-                                public void onSuccess(Boolean result) {
-                                    newUser.setIdusers(user.getUid());
-                                    callback.onSuccess(newUser);
-                                }
-
-                                @Override
-                                public void onFailure(Exception e) {
-                                    callback.onFailure(e);
-                                }
-                            });
-                        }
-                    } else {
-                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                        callback.onFailure(task.getException());
+                                                @Override
+                                                public void onFailure(Exception e) {
+                                                    callback.onFailure(e);
+                                                }
+                                            });
+                                        }
+                                    } else {
+                                        Log.w(TAG, "createUserWithEmail:failure", task1.getException());
+                                        callback.onFailure(task1.getException());
+                                    }
+                                });
                     }
                 });
+
+
     }
 
     public void signIn(TUsers user, Callback<TUsers> callback) {
@@ -110,9 +110,9 @@ public class UsersAdmin{
                 });
     }
 
-    private void saveUsernameOnBD(String uid, String username, Callback<Boolean> callback) {
+    private void saveUsernameOnBD(String uid, TUsers user, Callback<Boolean> callback) {
         DatabaseReference userRef = db.getReference("users").child(uid);
-        userRef.child("username").setValue(username)
+        userRef.setValue(user)
                 .addOnSuccessListener(aVoid -> {
                     Log.d(TAG, "Username Saved");
                     callback.onSuccess(true);

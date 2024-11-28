@@ -21,10 +21,8 @@ public class TUsers {
     private List<String> receivedRequests = new ArrayList<>();
     private List<String> sentRequests = new ArrayList<>();
 
-    @Exclude
-    private String password; //Not plain text
-    @Exclude
-    private String email;
+    @Exclude private String password; //Not plain text
+    @Exclude private String email;
 
 
 
