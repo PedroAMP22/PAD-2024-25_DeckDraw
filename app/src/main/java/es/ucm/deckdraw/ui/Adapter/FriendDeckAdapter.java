@@ -16,31 +16,32 @@ import java.util.List;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
-import es.ucm.deckdraw.data.dataBase.DecksAdmin;
+import es.ucm.deckdraw.data.Objects.users.TUsers;
+import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
 import es.ucm.deckdraw.ui.Fragment.DecksFragment;
-import es.ucm.deckdraw.util.Callback;
+import es.ucm.deckdraw.ui.Fragment.ShowFriendFragment;
 
-public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.DeckViewHolder> {
+public class FriendDeckAdapter extends RecyclerView.Adapter<FriendDeckAdapter.FriendDeckViewHolder> {
 
 
-    private final List<TDecks> deckList;
-    private DecksFragment fragment;
+    private final List<TDecks> friendDeckList;
+    private ShowFriendFragment fragment;
 
-    public DeckAdapter(List<TDecks> deckList, DecksFragment fragment) {
-        this.deckList = deckList;
+    public FriendDeckAdapter(List<TDecks> friendDeckList, ShowFriendFragment fragment) {
+        this.friendDeckList = friendDeckList;
         this.fragment = fragment;
     }
 
     @NonNull
     @Override
-    public DeckAdapter.DeckViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_deck, parent, false);
-        return new DeckViewHolder(view);
+    public FriendDeckAdapter.FriendDeckViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.deck_friend, parent, false);
+        return new FriendDeckViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DeckAdapter.DeckViewHolder holder, int position) {
-        TDecks deck = deckList.get(position);
+    public void onBindViewHolder(@NonNull FriendDeckAdapter.FriendDeckViewHolder holder, int position) {
+        TDecks deck = friendDeckList.get(position);
         holder.deckName.setText(deck.getDeckName());
         holder.deckFormat.setText(deck.getDeckFormat());
         if (!deck.getUrlDeckCover().isBlank() && deck.getUrlDeckCover() != null) {
@@ -53,50 +54,40 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.DeckViewHolder
         else {
             holder.deckCover.setImageResource(R.drawable.logo);
         }
-        holder.deleteButton.setOnClickListener(v -> {
-           this.deckList.remove(deck);
-           notifyDataSetChanged();
-           DecksAdmin db = new DecksAdmin();
-           db.deleteDeck(deck, new Callback<Boolean>() {
-               @Override
-               public void onSuccess(Boolean data) {
-               }
 
-               @Override
-               public void onFailure(Exception e) {
-
-               }
-           });
+        holder.copyButton.setOnClickListener(v ->{
+            fragment.copyDeck(deck);
         });
-        holder.editButton.setOnClickListener(v -> {
-           fragment.onEditDeck(deck);
+
+        holder.showButton.setOnClickListener(v -> {
+            fragment.showDeck(deck);
         });
     }
 
     @Override
     public int getItemCount() {
-        return deckList.size();
+        return friendDeckList.size();
     }
 
     public void setDecks(List<TDecks> decks) {
-        this.deckList.clear();
-        this.deckList.addAll(decks);
+        this.friendDeckList.clear();
+        this.friendDeckList.addAll(decks);
         notifyDataSetChanged();
     }
 
-    public static class DeckViewHolder extends RecyclerView.ViewHolder {
+    public static class FriendDeckViewHolder extends RecyclerView.ViewHolder {
         TextView deckName;
         TextView deckFormat;
         ImageView deckCover;
-        Button deleteButton;
-        Button editButton;
-        public DeckViewHolder(@NonNull View itemView) {
+        Button showButton;
+        Button copyButton;
+        public FriendDeckViewHolder(@NonNull View itemView) {
             super(itemView);
             deckName = itemView.findViewById(R.id.textViewDeckName);
             deckFormat = itemView.findViewById(R.id.textViewDeckFormat);
             deckCover = itemView.findViewById(R.id.imageDeckCover);
-            deleteButton = itemView.findViewById(R.id.buttonCopyDeck);
-            editButton = itemView.findViewById(R.id.buttonShowDeck);
+            copyButton = itemView.findViewById(R.id.buttonCopyDeck);
+            showButton = itemView.findViewById(R.id.buttonShowDeck);
         }
     }
 }
