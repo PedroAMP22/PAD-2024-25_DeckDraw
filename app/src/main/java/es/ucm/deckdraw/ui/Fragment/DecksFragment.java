@@ -3,11 +3,15 @@ package es.ucm.deckdraw.ui.Fragment;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -25,10 +29,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.loader.app.LoaderManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +50,7 @@ import es.ucm.deckdraw.data.dataBase.UsersAdmin;
 import es.ucm.deckdraw.ui.Activities.LogInActivity;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
+import es.ucm.deckdraw.ui.Activities.UserProfile;
 import es.ucm.deckdraw.ui.Adapter.DeckAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
@@ -65,6 +72,8 @@ public class DecksFragment extends Fragment {
         private List<TCard> commanders;
         private TUsers currentUser;
 
+        private SharedViewModel viewModel;
+
         private DeckAdapter deckAdapter;
         private List<TDecks> deckList =  new ArrayList<>();
 
@@ -75,9 +84,9 @@ public class DecksFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_decks, container, false);
         if (savedInstanceState != null && savedInstanceState.getBoolean("dialog_visible")) {
             // Recupera los datos guardados
-            deckName = savedInstanceState.getString("deck_name");
-            commanderName = savedInstanceState.getString("commander_name");
-            formatPosition = savedInstanceState.getInt("format_position");
+            deckName = savedInstanceState.getString("deck_name","");
+            commanderName = savedInstanceState.getString("commander_name","");
+            formatPosition = savedInstanceState.getInt("format_position",0);
             // Vuelve a mostrar el diálogo y restaura los datos
             showCreateDeckDialog();
         }
@@ -87,9 +96,10 @@ public class DecksFragment extends Fragment {
             formatPosition = 0;
         }
 
+        viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
         FloatingActionButton createDeckButton = view.findViewById(R.id.button_create_deck);
         createDeckButton.setOnClickListener(v -> {
-
             showCreateDeckDialog();
         });
         CurrentUserManager sessionManager = new CurrentUserManager(requireContext());
@@ -98,7 +108,15 @@ public class DecksFragment extends Fragment {
 
         deckAdapter = new DeckAdapter(deckList,this);
         RecyclerView recyclerView = view.findViewById(R.id.deckRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        int orientation = getResources().getConfiguration().orientation;
+
+        if(orientation == Configuration.ORIENTATION_PORTRAIT){ //movil en vertical
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        }
+        else if(orientation == Configuration.ORIENTATION_LANDSCAPE){ //movil en horizontal
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        }
 
         DecksAdmin db = new DecksAdmin();
         db.getUserDecks(currentUser.getIdusers(), new Callback<List<TDecks>>(){
@@ -117,10 +135,30 @@ public class DecksFragment extends Fragment {
             }
         });
 
+        setHasOptionsMenu(true);
+
         return view;
     }
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
+        // Inflar el menú de búsqueda
+        inflater.inflate(R.menu.top_nav_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_profile) { // Verifica si es el ítem de filtro.
+            Intent i = new Intent(getActivity(), UserProfile.class);
+
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void showCreateDeckDialog() {
+
         // Crear el diálog
         context = requireContext();
         dialog = new Dialog(context);
@@ -210,7 +248,7 @@ public class DecksFragment extends Fragment {
                 TDecks deck = new TDecks(currentUser.getIdusers(), "",0, formatSpinner.getSelectedItem().toString(),deckName,"id" );
                 if(formatSpinner.getSelectedItem().toString().equals("Commander")){
                     if(commanderAutoComplete.getText().toString().isEmpty()){
-                        deckNameEditText.setError("Por favor ingrese un commandante para el mazo.");
+                        deckNameEditText.setError(getString(R.string.enter_commander));
                         return;
                     }
                     String selectedCommander = commanderAutoComplete.getText().toString();
@@ -229,7 +267,7 @@ public class DecksFragment extends Fragment {
                 db.createDeck(currentUser.getIdusers(), deck);
                 dialog.dismiss();
             } else {
-                deckNameEditText.setError("Por favor ingrese un nombre para el mazo.");
+                deckNameEditText.setError(getString(R.string.enter_name));
             }
         });
 
@@ -240,7 +278,7 @@ public class DecksFragment extends Fragment {
         super.onResume();
         if (getActivity() instanceof MainScreenActivity) {
             MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
-            mainScreenActivity.setToolbarTitle("Tus mazos");
+            mainScreenActivity.setToolbarTitle(getString(R.string.your_decks));
             mainScreenActivity.setHomeAsUpEnabled(false);
         }
     }
@@ -267,7 +305,7 @@ public class DecksFragment extends Fragment {
 
                 // Guarda el texto de los campos
                 EditText editTextDeckName = dialog.findViewById(R.id.editTextDeckName);
-                MultiAutoCompleteTextView autoCompleteTextViewCommander = dialog.findViewById(R.id.multiAutoCompleteTextViewCommander);
+                MaterialAutoCompleteTextView autoCompleteTextViewCommander = dialog.findViewById(R.id.multiAutoCompleteTextViewCommander);
                 Spinner spinnerFormat = dialog.findViewById(R.id.spinnerFormat);
                 if (editTextDeckName != null) {
                     deckName = editTextDeckName.getText().toString();
@@ -285,7 +323,6 @@ public class DecksFragment extends Fragment {
         }
 
     public void onEditDeck(TDecks deck) {
-        SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         viewModel.setCurrentDeck(deck);
         // Navegar al fragmento de edición de mazo
         EditDeckFragment editDeckFragment = new EditDeckFragment();

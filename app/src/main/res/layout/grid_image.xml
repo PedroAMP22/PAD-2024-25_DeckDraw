@@ -7,12 +7,29 @@
     android:padding="8dp">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/card_description"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+        />
+
+        <!-- TextView superpuesto al ImageView -->
+    <TextView
+        android:id="@+id/cardsNumber"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"/>
+        android:layout_alignBottom="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_hexagon"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/zero_number"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

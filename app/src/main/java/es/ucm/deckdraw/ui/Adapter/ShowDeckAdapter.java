@@ -19,32 +19,32 @@ import java.util.Set;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
-import es.ucm.deckdraw.ui.Fragment.EditDeckFragment;
+import es.ucm.deckdraw.ui.Fragment.ShowDeckFragment;
 import es.ucm.deckdraw.ui.Fragment.FragmentViewerInterface;
 
-public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDeckViewHolder>{
+public class ShowDeckAdapter extends RecyclerView.Adapter<ShowDeckAdapter.ShowDeckViewHolder>{
 
 
     private List<TCard> cardList;
-    private EditDeckFragment sch_frag;
+    private ShowDeckFragment sch_frag;
     private List<Integer> cardQuantity;
     Set<String> duplicated = new HashSet<String>();
 
-    public CardDeckAdapter(List<TCard> cardList, EditDeckFragment frg) {
+    public ShowDeckAdapter(List<TCard> cardList, ShowDeckFragment frg) {
         this.cardList = cardList;
         this.sch_frag = frg;
     }
 
     @NonNull
     @Override
-    public CardDeckAdapter.CardDeckViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ShowDeckAdapter.ShowDeckViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_image, parent, false);
 
-        return new CardDeckAdapter.CardDeckViewHolder(view);
+        return new ShowDeckAdapter.ShowDeckViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CardDeckAdapter.CardDeckViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ShowDeckAdapter.ShowDeckViewHolder holder, int position) {
         TCard card = cardList.get(position);
 
         if(!duplicated.contains(card.getName())) {
@@ -59,23 +59,19 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
             if(holder.number.getText().equals("0")){
                 holder.number.setVisibility(View.GONE);
             }
-            //holder.quantityView.setText(deckCards.get(card));
-
         }
 
-
+        //holder.quantityView.setText(deckCards.get(card));
 
     }
 
-    public static class CardDeckViewHolder extends RecyclerView.ViewHolder {
+    public static class ShowDeckViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView number;
-
-        public CardDeckViewHolder(@NonNull View itemView) {
+        public ShowDeckViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.imageView);
             number = itemView.findViewById(R.id.cardsNumber);
-
         }
     }
 
@@ -89,4 +85,6 @@ public class CardDeckAdapter extends RecyclerView.Adapter<CardDeckAdapter.CardDe
     public int getItemCount() {
         return cardList.size();
     }
+
+
 }

@@ -5,20 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addCardFab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="21dp"
-        android:contentDescription="@string/addcard_text"
-        app:backgroundTint="@color/PrimaryColor"
-        android:src="@drawable/ic_add"
-        app:tint="@color/BackgroundColor"
-        />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewDeck"
         android:layout_width="match_parent"

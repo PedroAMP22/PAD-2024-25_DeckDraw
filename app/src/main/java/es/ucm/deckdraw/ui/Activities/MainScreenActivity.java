@@ -2,7 +2,9 @@ package es.ucm.deckdraw.ui.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Fragment.DecksFragment;
+import es.ucm.deckdraw.ui.Fragment.EditDeckFragment;
 import es.ucm.deckdraw.ui.Fragment.FriendsFragment;
 import com.google.firebase.FirebaseApp;
 
@@ -47,14 +50,6 @@ public class MainScreenActivity extends AppCompatActivity  {
             bottomNavigationView.setSelectedItemId(R.id.nav_deck);
         }
 
-        ImageView userIcon = findViewById(R.id.userIcon);
-
-        userIcon.setOnClickListener(v -> {
-            Intent i = new Intent(this, UserProfile.class);
-
-            startActivity(i);
-        });
-
 
         //Keep this to start the Firebase database
         FirebaseApp.initializeApp(this);
@@ -71,6 +66,13 @@ public class MainScreenActivity extends AppCompatActivity  {
 
     @Override
     public boolean onSupportNavigateUp() {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+
+        //para que la flecha para atras no destruya el fragment de editar mazo
+        if (currentFragment instanceof EditDeckFragment) {
+            ((EditDeckFragment) currentFragment).handleBackPressFromToolbar();
+            return true;
+        }
         getSupportFragmentManager().popBackStack();
         return true;
     }
@@ -86,5 +88,20 @@ public class MainScreenActivity extends AppCompatActivity  {
             getSupportActionBar().setDisplayHomeAsUpEnabled(enabled);
         }
     }
+
+    public void setBottomDeck(boolean show) {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        LinearLayout bottomDeckLayout = bottomNavigationView.findViewById(R.id.bottom_deck);
+
+        if (bottomDeckLayout != null) {
+            bottomDeckLayout.setVisibility(show ? View.VISIBLE : View.GONE);
+        }
+        if (!show) {
+            bottomNavigationView.inflateMenu(R.menu.bottom_nav_menu);
+        } else {
+            bottomNavigationView.getMenu().clear();
+        }
+    }
+
 }
 

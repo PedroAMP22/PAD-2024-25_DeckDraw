@@ -20,8 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import es.ucm.deckdraw.data.Objects.users.TUsers;
+
 import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
 import es.ucm.deckdraw.data.dataBase.UsersAdmin;
+
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 
@@ -58,6 +60,7 @@ public class FriendsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
 
         context = requireContext();
         dialog = new Dialog(context);
@@ -159,6 +162,7 @@ public class FriendsFragment extends Fragment {
         dialog.show();
 
 
+
     }
 
     @Override
@@ -166,7 +170,7 @@ public class FriendsFragment extends Fragment {
         super.onResume();
         if (getActivity() instanceof MainScreenActivity) {
             MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
-            mainScreenActivity.setToolbarTitle("Lista de amigos");
+            mainScreenActivity.setToolbarTitle(getString(R.string.friend_list));
             mainScreenActivity.setHomeAsUpEnabled(false);
         }
     }

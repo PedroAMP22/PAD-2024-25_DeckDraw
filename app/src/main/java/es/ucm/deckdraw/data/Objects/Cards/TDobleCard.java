@@ -58,7 +58,8 @@ public class TDobleCard extends TCard{
                 base.getRarity(),
                 base.getCmc(),
                 base.getText(),
-                base.getColors());
+                base.getColors(),
+                base.getQuantity());
 
         // Inicializa front y back en null
         this.front = null;

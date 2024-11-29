@@ -51,6 +51,7 @@ public class UserProfile extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbarUP);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getString(R.string.user_profile));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         bd = new UsersAdmin();
@@ -90,12 +91,12 @@ public class UserProfile extends AppCompatActivity {
         bd.updateUser(new TUsers(cUser.getIdusers(), username, null, email), new Callback<Boolean>() {
             @Override
             public void onSuccess(Boolean data) {
-                Toast.makeText(UserProfile.this, "User updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserProfile.this, getString(R.string.user_updated), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Exception e) {
-                Toast.makeText(UserProfile.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserProfile.this, getString(R.string.something_wrong), Toast.LENGTH_SHORT).show();
 
             }
         });
