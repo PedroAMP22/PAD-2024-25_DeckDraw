@@ -50,7 +50,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
             holder.acceptButton.setVisibility(View.GONE);
             holder.declineButton.setVisibility(View.GONE);
         }
-        else if(friend.getFriendsRequest().contains(currentUser.getIdusers())){
+        else if(currentUser.getFriendsSend().contains(friend.getIdusers())){
             holder.status.setText("Request sent");
             holder.acceptButton.setVisibility(View.GONE);
             holder.declineButton.setVisibility(View.GONE);
@@ -66,7 +66,12 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                     nA.acceptFriendRequest(currentUser.getIdusers(), friend.getIdusers(), new Callback<Boolean>() {
                         @Override
                         public void onSuccess(Boolean data) {
+                            currentUser.deleteRequest(friend.getIdusers());
+                            currentUser.addFriend(friend.getIdusers());
+                            currentUserManager.saveUserSession(currentUser);
+                            setFriends(currentUser);
                             sch_frag.showNotification("Friend request accepted");
+
                         }
 
                         @Override
@@ -82,7 +87,14 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                     nA.rejectFriendRequest(currentUser.getIdusers(), friend.getIdusers(), new Callback<Boolean>() {
                         @Override
                         public void onSuccess(Boolean data) {
+                            currentUser.deleteRequest(friend.getIdusers());
+                            setFriends(currentUser);
+                            currentUserManager.saveUserSession(currentUser);
+
                             sch_frag.showNotification("Friend request declined");
+
+
+
                         }
 
                         @Override
@@ -97,13 +109,13 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
 
     public void setFriends(TUsers user) {
         UsersAdmin uA = new UsersAdmin();
+        friends.clear();
         for (String friend : user.getFriends()) {
             uA.getUserByUid(friend, new Callback<TUsers>() {
                 @Override
                 public void onSuccess(TUsers data) {
                     friends.add(data);
-                    notifyDataSetChanged();
-
+                    notifyItemInserted(friends.size() - 1);
                 }
                 @Override
                 public void onFailure(Exception e) {
@@ -116,8 +128,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                 @Override
                 public void onSuccess(TUsers data) {
                     friends.add(data);
-                    notifyDataSetChanged();
-
+                    notifyItemInserted(friends.size() - 1);
                 }
                 @Override
                 public void onFailure(Exception e) {
@@ -130,8 +141,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                 @Override
                 public void onSuccess(TUsers data) {
                     friends.add(data);
-                    notifyDataSetChanged();
-
+                    notifyItemInserted(friends.size() - 1);
                 }
                 @Override
                 public void onFailure(Exception e) {

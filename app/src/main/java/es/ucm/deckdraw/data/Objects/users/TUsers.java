@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @IgnoreExtraProperties
-
 public class TUsers {
 
     private String idusers;
@@ -92,12 +91,28 @@ public class TUsers {
         return friends;
     }
 
+    public void addFriend(String uid) {
+        friends.add(uid);
+    }
+
+    public void deleteFriend(String uid) {
+        friends.remove(uid);
+    }
+
     public void setFriends(List<String> friends) {
         this.friends = friends;
     }
 
     public List<String> getFriendsRequest() {
         return receivedRequests;
+    }
+
+    public void addRequest(String uid) {
+        receivedRequests.add(uid);
+    }
+
+    public void deleteRequest(String uid) {
+        receivedRequests.remove(uid);
     }
 
     public void setFriendsRequest(List<String> friendsRequest) {
@@ -110,5 +125,13 @@ public class TUsers {
 
     public void setFriendsSend(List<String> friendsSend) {
         this.sentRequests = friendsSend;
+    }
+
+    public void addSend(String uid) {
+        sentRequests.add(uid);
+    }
+
+    public void deleteSend(String uid) {
+        sentRequests.remove(uid);
     }
 }

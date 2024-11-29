@@ -45,78 +45,76 @@ public class UsersAdmin{
             DatabaseReference userRef = db.getReference("users").child(uid);
 
             userRef.get().addOnCompleteListener(task -> {
-                if(task.isSuccessful()){
-                    TUsers user = task.getResult().getValue(TUsers.class);
+                if (task.isSuccessful()) {
+                    DataSnapshot snapshot = task.getResult();
+
+                    TUsers user = new TUsers();
                     user.setIdusers(uid);
                     user.setEmail(firebaseUser.getEmail());
+                    user.setUsername(snapshot.child("username").getValue(String.class));
+
                     List<String> friends = new ArrayList<>();
                     userRef.child("friends").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            for (DataSnapshot friendsSnapshot : snapshot.getChildren()) {
-                                String friendsUids = friendsSnapshot.getKey();
-                                friends.add(friendsUids);
+                            for (DataSnapshot friendSnapshot : snapshot.getChildren()) {
+                                String friendUid = friendSnapshot.getKey();
+                                friends.add(friendUid);
                             }
                             user.setFriends(friends);
 
-                            List<String> req = new ArrayList<>();
+                            List<String> receivedRequests = new ArrayList<>();
                             userRef.child("receivedRequests").addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    for (DataSnapshot friendsSnapshot : snapshot.getChildren()) {
-                                        String reqUids = friendsSnapshot.getKey();
-                                        req.add(reqUids);
+                                    for (DataSnapshot requestSnapshot : snapshot.getChildren()) {
+                                        String requestUid = requestSnapshot.getKey();
+                                        receivedRequests.add(requestUid);
                                     }
-                                    user.setFriendsRequest(req);
+                                    user.setFriendsRequest(receivedRequests);
 
-                                    List<String> send = new ArrayList<>();
-
+                                    List<String> sentRequests = new ArrayList<>();
                                     userRef.child("sentRequests").addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            for (DataSnapshot friendsSnapshot : snapshot.getChildren()) {
-                                                String sendUids = friendsSnapshot.getKey();
-                                                send.add(sendUids);
+                                            for (DataSnapshot requestSnapshot : snapshot.getChildren()) {
+                                                String requestUid = requestSnapshot.getKey();
+                                                sentRequests.add(requestUid);
                                             }
-                                            user.setFriendsSend(send);
+                                            user.setFriendsSend(sentRequests);
                                             callback.onSuccess(user);
-
                                         }
 
                                         @Override
                                         public void onCancelled(@NonNull DatabaseError error) {
-                                            user.setFriendsSend(send);
-                                            callback.onSuccess(user);
+                                            callback.onFailure(error.toException());
                                         }
                                     });
                                 }
 
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError error) {
-                                    user.setFriendsRequest(req);
-
+                                    callback.onFailure(error.toException());
                                 }
                             });
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            user.setFriends(friends);
+                            callback.onFailure(error.toException());
                         }
                     });
-
-                }
-                else{
-                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                } else {
+                    Log.w(TAG, "getUserData:failure", task.getException());
                     callback.onFailure(task.getException());
                 }
-
             });
         } else {
             Log.w(TAG, "No current user logged in");
             callback.onFailure(new Exception("No current user logged in"));
         }
     }
+
 
     public void createAccount(TUsers newUser, Callback<TUsers> callback) {
         String email = newUser.getEmail();
@@ -168,7 +166,77 @@ public class UsersAdmin{
                         FirebaseUser currentUser = mAuth.getCurrentUser();
                         if (currentUser != null) {
                             user.setIdusers(currentUser.getUid());
-                            callback.onSuccess(user);
+                            user.setEmail(currentUser.getEmail());
+                            List<String> friends = new ArrayList<>();
+                            List<String> receivedRequests = new ArrayList<>();
+                            List<String> sentRequests = new ArrayList<>();
+
+                            DatabaseReference userRef = db.getReference("users").child(currentUser.getUid());
+                            userRef.child("username").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    user.setUsername(snapshot.getValue(String.class));
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                            userRef.child("friends").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for (DataSnapshot friendSnapshot : snapshot.getChildren()) {
+                                        String friendUid = friendSnapshot.getKey();
+                                        friends.add(friendUid);
+                                    }
+
+
+                                    user.setFriends(friends);
+
+                                    // Obtener las solicitudes recibidas
+                                    userRef.child("receivedRequests").addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            for (DataSnapshot requestSnapshot : snapshot.getChildren()) {
+                                                String requestUid = requestSnapshot.getKey();
+                                                receivedRequests.add(requestUid);
+                                            }
+                                            user.setFriendsRequest(receivedRequests);
+
+                                            // Obtener las solicitudes enviadas
+                                            userRef.child("sentRequests").addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                    for (DataSnapshot requestSnapshot : snapshot.getChildren()) {
+                                                        String requestUid = requestSnapshot.getKey();
+                                                        sentRequests.add(requestUid);
+                                                    }
+                                                    user.setFriendsSend(sentRequests);
+
+                                                    // Una vez que todos los datos estén establecidos, llamar al callback
+                                                    callback.onSuccess(user);
+                                                }
+
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError error) {
+                                                    callback.onFailure(error.toException());
+                                                }
+                                            });
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            callback.onFailure(error.toException());
+                                        }
+                                    });
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+                                    callback.onFailure(error.toException());
+                                }
+                            });
                         }
                     } else {
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -176,6 +244,7 @@ public class UsersAdmin{
                     }
                 });
     }
+
 
     private void saveUsernameOnBD(String uid, TUsers user, Callback<Boolean> callback) {
         DatabaseReference userRef = db.getReference("users").child(uid);
@@ -204,22 +273,45 @@ public class UsersAdmin{
     }
 
 
-    public void getUserByUid(String uid, Callback<TUsers> callback){
-
+    public void getUserByUid(String uid, Callback<TUsers> callback) {
         DatabaseReference userRef = db.getReference("users").child(uid);
 
         userRef.get().addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
-                TUsers user = task.getResult().getValue(TUsers.class);
+            if (task.isSuccessful()) {
+                DataSnapshot snapshot = task.getResult();
+
+                TUsers user = new TUsers();
+
+                user.setIdusers(uid);
+                user.setUsername(snapshot.child("username").getValue(String.class));
+                user.setNotifitacionToken(snapshot.child("notifitacionToken").getValue(String.class));
+
+                List<String> friends = new ArrayList<>();
+                for (DataSnapshot friendSnapshot : snapshot.child("friends").getChildren()) {
+                    friends.add(friendSnapshot.getKey());
+                }
+                user.setFriends(friends);
+
+                List<String> receivedRequests = new ArrayList<>();
+                for (DataSnapshot requestSnapshot : snapshot.child("receivedRequests").getChildren()) {
+                    receivedRequests.add(requestSnapshot.getKey());
+                }
+                user.setFriendsRequest(receivedRequests);
+
+                List<String> sentRequests = new ArrayList<>();
+                for (DataSnapshot requestSnapshot : snapshot.child("sentRequests").getChildren()) {
+                    sentRequests.add(requestSnapshot.getKey());
+                }
+                user.setFriendsSend(sentRequests);
+
+                user.setEmail(mAuth.getCurrentUser().getEmail());
+
                 callback.onSuccess(user);
-            }
-            else{
+            } else {
                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
                 callback.onFailure(task.getException());
             }
-
         });
-
     }
 
     public void signOut(){

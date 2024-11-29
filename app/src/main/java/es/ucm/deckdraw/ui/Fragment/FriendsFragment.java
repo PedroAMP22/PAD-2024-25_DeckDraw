@@ -46,6 +46,8 @@ public class FriendsFragment extends Fragment {
 
     private String userUid;
 
+    private CurrentUserManager userManager;
+
     private NotificationsAdmin notiAdmin;
     private UsersAdmin usersAdmi;
 
@@ -64,7 +66,7 @@ public class FriendsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_friends, container, false);
 
-        CurrentUserManager userManager = new CurrentUserManager(context);
+        userManager = new CurrentUserManager(context);
 
         cUser = userManager.getCurrentUser();
 
@@ -120,37 +122,38 @@ public class FriendsFragment extends Fragment {
 
             String uidFriend = editTextUidFriend.getText().toString();
 
-            if(!uidFriend.isEmpty()){
-                dialog.dismiss();
-                notiAdmin.newFriendReq(userUid, uidFriend, new Callback<Boolean>() {
-                    @Override
-                    public void onSuccess(Boolean data) {
-                        usersAdmi.getUserByUid(uidFriend, new Callback<TUsers>() {
-                            @Override
-                            public void onSuccess(TUsers data) {
-                                notiAdmin.sendNotification(data.getNotifitacionToken(), userUid );
-                            }
+            if(!cUser.getFriends().contains(uidFriend) && !cUser.getFriendsSend().contains(uidFriend) && !cUser.getFriendsRequest().contains(uidFriend)){
+                if(!uidFriend.isEmpty()){
 
-                            @Override
-                            public void onFailure(Exception e) {
-                                Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
-                                Log.e("ADD_NEW_FRIEND", e.toString());
-                            }
-                        });
+                    notiAdmin.newFriendReq(userUid, uidFriend, new Callback<Boolean>() {
+                        @Override
+                        public void onSuccess(Boolean data) {
 
-                    }
+                            cUser.addSend(uidFriend);
+                            userManager.saveUserSession(cUser);
 
-                    @Override
-                    public void onFailure(Exception e) {
-                        Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
-                        Log.e("ADD_NEW_FRIEND", e.toString());
-                    }
-                });
+                            showNotification("Friend Request Sent");
+                            friendsAdapter.setFriends(cUser);
+
+                        }
+
+                        @Override
+                        public void onFailure(Exception e) {
+                            Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
+                            Log.e("ADD_NEW_FRIEND", e.toString());
+                        }
+                    });
+                }
+                else{
+                    Toast.makeText(context, "ID required", Toast.LENGTH_SHORT).show();
+                }
             }
             else{
-                Toast.makeText(context, "ID required", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Friendship already requested", Toast.LENGTH_SHORT).show();
+
             }
 
+            dialog.dismiss();
         });
 
         dialog.show();
@@ -170,5 +173,8 @@ public class FriendsFragment extends Fragment {
 
     public void showNotification(String message){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+
+
+
     }
 }

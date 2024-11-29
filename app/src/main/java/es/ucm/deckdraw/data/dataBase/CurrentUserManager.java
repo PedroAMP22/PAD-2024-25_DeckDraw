@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ucm.deckdraw.data.Objects.users.TUsers;
+import es.ucm.deckdraw.util.Callback;
 
 public class CurrentUserManager {
     private static final String PREF_NAME = "UserSession";
@@ -29,6 +30,20 @@ public class CurrentUserManager {
         sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         gson = new Gson();
+
+        UsersAdmin userA = new UsersAdmin();
+        userA.getCurrentUser(new Callback<TUsers>() {
+            @Override
+            public void onSuccess(TUsers data) {
+                saveUserSession(data);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+
+            }
+        });
+
     }
 
     public void saveUserSession(TUsers user) {
