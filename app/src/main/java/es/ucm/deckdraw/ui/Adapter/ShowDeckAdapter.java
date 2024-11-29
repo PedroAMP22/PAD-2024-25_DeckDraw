@@ -53,6 +53,12 @@ public class ShowDeckAdapter extends RecyclerView.Adapter<ShowDeckAdapter.ShowDe
                 sch_frag.openDetails(card);
             });
             duplicated.add(card.getName());
+
+            holder.number.setText(String.valueOf(card.getQuantity()));
+
+            if(holder.number.getText().equals("0")){
+                holder.number.setVisibility(View.GONE);
+            }
         }
 
         //holder.quantityView.setText(deckCards.get(card));
@@ -61,10 +67,11 @@ public class ShowDeckAdapter extends RecyclerView.Adapter<ShowDeckAdapter.ShowDe
 
     public static class ShowDeckViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
-
+        TextView number;
         public ShowDeckViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.imageView);
+            number = itemView.findViewById(R.id.cardsNumber);
         }
     }
 
@@ -78,4 +85,6 @@ public class ShowDeckAdapter extends RecyclerView.Adapter<ShowDeckAdapter.ShowDe
     public int getItemCount() {
         return cardList.size();
     }
+
+
 }

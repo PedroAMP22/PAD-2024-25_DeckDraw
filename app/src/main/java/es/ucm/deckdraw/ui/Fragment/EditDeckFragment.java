@@ -79,6 +79,8 @@ public class EditDeckFragment extends Fragment{
         leavingEditDeck = false;
 
         ImageView commanderImage = view.findViewById(R.id.commander);
+        commanderImage.setOnClickListener(v -> openDetailsCommander(deck.getCommander()));
+
 
         adapter = new CardDeckAdapter(cardList, this);
         // Configuración del RecyclerView
@@ -195,7 +197,7 @@ public class EditDeckFragment extends Fragment{
                     @Override
                     public void onSuccess(Boolean data) {
                         Toast.makeText(context, getString(R.string.changes_saved), Toast.LENGTH_SHORT).show();
-
+                        requireActivity().getSupportFragmentManager().popBackStack();
                     }
                     @Override
                     public void onFailure(Exception e) {
@@ -292,6 +294,16 @@ public class EditDeckFragment extends Fragment{
 
         sharedViewModel.setSelectedCard(card);
         sharedViewModel.setEditableCard(true);
+
+        CardDetailFragment frag = new CardDetailFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
+    }
+
+    public void openDetailsCommander(TCard card) {
+        leavingEditDeck = true;
+
+        sharedViewModel.setSelectedCard(card);
+        sharedViewModel.setEditableCard(false);
 
         CardDetailFragment frag = new CardDetailFragment();
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();

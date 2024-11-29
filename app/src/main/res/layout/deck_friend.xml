@@ -64,15 +64,14 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonCopyDeck"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/ErrorColor"
-                    android:text="@string/eliminar"
+                    android:backgroundTint="@color/PrimaryColor"
+                    android:text="@string/copiar"
                     android:textColor="@color/white"
-                    app:icon="@drawable/ic_delete"
-                    app:iconTint="@color/white"
-                    style="@style/Widget.MaterialComponents.Button.Icon"
-                    />
+                    app:icon="@drawable/ic_copy"
+                    app:iconTint="@color/white" />
 
                 <Space
                     android:layout_width="50dp"
@@ -81,14 +80,13 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonShowDeck"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/editar"
+                    android:text="@string/mostrar"
                     android:textColor="@color/white"
-                    app:icon="@drawable/ic_edit"
-                    app:iconTint="@color/white"
-                    style="@style/Widget.MaterialComponents.Button.Icon"
-                    />
+                    app:icon="@drawable/ic_show"
+                    app:iconTint="@color/white" />
             </LinearLayout>
 
         </LinearLayout>

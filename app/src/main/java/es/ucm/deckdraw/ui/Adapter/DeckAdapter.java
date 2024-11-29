@@ -95,8 +95,8 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.DeckViewHolder
             deckName = itemView.findViewById(R.id.textViewDeckName);
             deckFormat = itemView.findViewById(R.id.textViewDeckFormat);
             deckCover = itemView.findViewById(R.id.imageDeckCover);
-            deleteButton = itemView.findViewById(R.id.buttonCopyDeck);
-            editButton = itemView.findViewById(R.id.buttonShowDeck);
+            deleteButton = itemView.findViewById(R.id.buttonDeleteDeck);
+            editButton = itemView.findViewById(R.id.buttonEditDeck);
         }
     }
 }

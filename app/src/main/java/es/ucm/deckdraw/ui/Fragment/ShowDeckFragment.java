@@ -72,7 +72,7 @@ public class ShowDeckFragment extends Fragment{
         leavingEditDeck = false;
 
         ImageView commanderImage = view.findViewById(R.id.commander);
-
+        commanderImage.setOnClickListener(v -> openDetails(deck.getCommander()));
 
 
         adapter = new ShowDeckAdapter(cardList, this);
@@ -191,5 +191,7 @@ public class ShowDeckFragment extends Fragment{
         CardDetailFragment frag = new CardDetailFragment();
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).addToBackStack(null).commit();
     }
+
+
 
 }

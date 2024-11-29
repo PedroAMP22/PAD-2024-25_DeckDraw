@@ -128,6 +128,9 @@
     <string name="card_description">Selected card image</string>
     <string name="cancel">Cancel</string>
     <string name="error_saving">Error saving changes</string>
+    <string name="show">Show</string>
+    <string name="deck">"Deck "</string>
+    <string name="copy_library">copied to your library</string>
 
 
 </resources>

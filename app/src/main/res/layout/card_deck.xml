@@ -64,7 +64,7 @@
                 android:layout_gravity="center">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonCopyDeck"
+                    android:id="@+id/buttonDeleteDeck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/ErrorColor"
@@ -81,7 +81,7 @@
                     android:layout_weight="1" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonShowDeck"
+                    android:id="@+id/buttonEditDeck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/editar"

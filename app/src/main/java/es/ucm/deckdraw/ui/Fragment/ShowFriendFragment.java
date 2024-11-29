@@ -207,6 +207,7 @@ public class ShowFriendFragment extends Fragment {
     public void copyDeck(TDecks deck){
         deckList.add(deck);
         DecksAdmin db = new DecksAdmin();
+        Toast.makeText(this.getContext(), getString(R.string.deck) + deck.getDeckName() +" "+ getString(R.string.copy_library), Toast.LENGTH_SHORT).show();
         db.createDeck(currentUser.getIdusers(), deck);
     }
 

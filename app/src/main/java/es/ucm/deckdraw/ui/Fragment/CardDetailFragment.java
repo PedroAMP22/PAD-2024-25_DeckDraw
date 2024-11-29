@@ -109,6 +109,7 @@ public class CardDetailFragment extends Fragment {
                     if(card == (deck.getCommander())){
                         addCardButton.setVisibility(View.GONE);
                         removeCardButton.setVisibility(View.GONE);
+                        quantityText.setText("1");
                     }
                 }
             });
