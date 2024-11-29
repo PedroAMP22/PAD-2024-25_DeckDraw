@@ -5,7 +5,9 @@ import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
@@ -20,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import es.ucm.deckdraw.MainActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.util.Callback;
@@ -55,19 +58,47 @@ public class NotificationsService extends FirebaseMessagingService {
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         if (remoteMessage.getNotification() != null) {
             String title = remoteMessage.getNotification().getTitle();
-            String message = remoteMessage.getNotification().getBody();
 
+            Intent i = new Intent(this, MainActivity.class);
+
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                    | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            PendingIntent notificationPendingIntent =
+                    PendingIntent.getActivity(
+                            this,
+                            NOTIFICATION_ID,
+                            i,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
             NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                            .setSmallIcon(R.drawable.logo)
-                            .setContentTitle(title)
-                            .setContentText(message)
-                            .setAutoCancel(true);
+                    .setSmallIcon(R.drawable.notification_image)
+                    .setContentTitle(title)
+                    .setContentIntent(notificationPendingIntent)
+                    .setAutoCancel(true);
+            UsersAdmin ua = new UsersAdmin();
+            ua.getCurrentUser(new Callback<TUsers>() {
+                @Override
+                public void onSuccess(TUsers data) {
+                    if(!data.getFriendsRequest().isEmpty()){
 
-            Notification notification = mBuilder.build();
+                        String message = "You have " + data.getFriendsRequest().size()+ " pending friends requests!";
 
-            NotificationManager mNotifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                        mBuilder.setContentText(message);
 
-            mNotifyManager.notify(NOTIFICATION_ID, notification);
+                        Notification notification = mBuilder.build();
+
+                        NotificationManager mNotifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+                        mNotifyManager.notify(NOTIFICATION_ID, notification);
+                    }
+                }
+
+                @Override
+                public void onFailure(Exception e) {
+
+                }
+            });
+
 
         }
     }
