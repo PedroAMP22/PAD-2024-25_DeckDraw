@@ -14,6 +14,8 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -32,6 +34,7 @@ import org.checkerframework.checker.units.qual.C;
 import org.w3c.dom.Text;
 
 import es.ucm.deckdraw.data.dataBase.NotificationsAdmin;
+import es.ucm.deckdraw.ui.Adapter.FriendAdapter;
 import es.ucm.deckdraw.util.Callback;
 
 public class FriendsFragment extends Fragment {
@@ -45,6 +48,10 @@ public class FriendsFragment extends Fragment {
 
     private NotificationsAdmin notiAdmin;
     private UsersAdmin usersAdmi;
+
+    private RecyclerView recyclerView;
+    private FriendAdapter friendsAdapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -74,7 +81,11 @@ public class FriendsFragment extends Fragment {
             showAddFriendDialog();
         });
 
-
+        recyclerView = view.findViewById(R.id.recyclerViewFriends);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        friendsAdapter = new FriendAdapter(this);
+        recyclerView.setAdapter(friendsAdapter);
+        friendsAdapter.setFriends(cUser);
         return view;
     }
 
@@ -154,5 +165,9 @@ public class FriendsFragment extends Fragment {
             mainScreenActivity.setToolbarTitle("Lista de amigos");
             mainScreenActivity.setHomeAsUpEnabled(false);
         }
+    }
+
+    public void showNotification(String message){
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 }

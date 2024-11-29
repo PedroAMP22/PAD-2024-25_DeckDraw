@@ -86,6 +86,8 @@
     <string name="a_adir_amigo">Añadir amigo</string>
     <string name="id_de_amigo">ID de amigo</string>
     <string name="a_adir">Añadir</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
 
 
 </resources>
