@@ -48,7 +48,6 @@ public class DecksAdmin {
     public void updateDeck(TDecks deck, Callback<Boolean> callback) {
         String uid = deck.getDeckOwner();
         String deckId = deck.getIdDeck();
-        String newName = deck.getDeckName();
 
         Map<String, Object> updates = new HashMap<>();
         if (deck.getDeckName() != null) {

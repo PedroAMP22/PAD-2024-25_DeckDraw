@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.google.services)
     implementation(libs.firebase.auth)
+    //firebase notifications
+    implementation(libs.firebase.messaging)
 
     implementation(libs.picasso)
     implementation(libs.support.annotations)
@@ -58,6 +60,7 @@ dependencies {
     implementation(libs.firebase.common)
     implementation(libs.cronet.embedded)
     implementation(libs.androidx.navigation.runtime)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

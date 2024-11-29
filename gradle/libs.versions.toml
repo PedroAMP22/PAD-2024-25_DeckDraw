@@ -1,6 +1,7 @@
 [versions]
 agp = "8.5.1"
 firebaseBom = "33.5.1"
+firebaseMessagingVersion = "24.2.0"
 googleServices = "4.4.2"
 jbcrypt = "0.4"
 junit = "4.13.2"
@@ -19,12 +20,15 @@ firebaseCommon = "21.0.0"
 cronetEmbedded = "119.6045.31"
 navigationRuntime = "1.0.0"
 navigationRuntimeVersion = "2.8.3"
+firebaseMessaging = "24.1.0"
 
 [libraries]
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "squareupRetrofit" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth = { module = "com.google.firebase:firebase-auth" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+google-auth-library-oauth2-http = { module = "como.google.auth:google-auth-library-oauth2-http" }
+google-firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessagingVersion" }
 google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
 jbcrypt = { module = "org.mindrot:jbcrypt", version.ref = "jbcrypt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -44,6 +48,7 @@ firebase-common = { group = "com.google.firebase", name = "firebase-common", ver
 cronet-embedded = { group = "org.chromium.net", name = "cronet-embedded", version.ref = "cronetEmbedded" }
 navigation-runtime = { group = "android.arch.navigation", name = "navigation-runtime", version.ref = "navigationRuntime" }
 androidx-navigation-runtime = { group = "androidx.navigation", name = "navigation-runtime", version.ref = "navigationRuntimeVersion" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
 
 
 [plugins]

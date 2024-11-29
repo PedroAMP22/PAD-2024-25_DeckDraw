@@ -86,6 +86,7 @@
     <string name= "ok" translatable="false">OK</string>
     <string name="name">Name</string>
     <string name="description">Description</string>
+
     <string name="mana_cost">Mana cost</string>
     <string name="artist">Artist</string>
     <string name="set_name">Set name</string>
@@ -131,6 +132,13 @@
     <string name="show">Show</string>
     <string name="deck">"Deck "</string>
     <string name="copy_library">copied to your library</string>
+
+    <string name="a_adir_amigo">Añadir amigo</string>
+    <string name="id_de_amigo">ID de amigo</string>
+    <string name="a_adir">Añadir</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+
 
 
 </resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@android:color/white">
+
+    <!-- Imagen del amigo -->
+    <ImageView
+        android:id="@+id/imgFriend"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_usericon"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Contenedor de datos del amigo -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Nombre del amigo -->
+        <TextView
+            android:id="@+id/txtFriendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <!-- Estado del amigo -->
+        <TextView
+            android:id="@+id/txtFriendStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Botones de aceptar y declinar -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/accept"
+            android:backgroundTint="@color/PrimaryColor"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnDecline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/decline"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</LinearLayout>
