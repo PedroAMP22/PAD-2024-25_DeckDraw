@@ -98,7 +98,6 @@ public class MainScreenActivity extends AppCompatActivity  {
         }
         if (!show) {
             bottomNavigationView.inflateMenu(R.menu.bottom_nav_menu);
-            bottomNavigationView.setSelectedItemId(R.id.nav_deck);
         } else {
             bottomNavigationView.getMenu().clear();
         }

@@ -123,7 +123,10 @@ public class TDecks {
                 cardSearcher.remove(card.getID());
             }
             Cards.remove(card);
-            card.setQuantity(cardSearcher.get(card.getID()));
+            if(cardSearcher.containsKey(card.getID()))
+                card.setQuantity(cardSearcher.get(card.getID()));
+            else
+                card.setQuantity(0);
             removeNumCard(quantity);
         }
     }
