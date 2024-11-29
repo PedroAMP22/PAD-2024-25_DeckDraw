@@ -102,6 +102,8 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                 @Override
                 public void onSuccess(TUsers data) {
                     friends.add(data);
+                    notifyDataSetChanged();
+
                 }
                 @Override
                 public void onFailure(Exception e) {
@@ -114,6 +116,8 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                 @Override
                 public void onSuccess(TUsers data) {
                     friends.add(data);
+                    notifyDataSetChanged();
+
                 }
                 @Override
                 public void onFailure(Exception e) {
@@ -126,6 +130,8 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                 @Override
                 public void onSuccess(TUsers data) {
                     friends.add(data);
+                    notifyDataSetChanged();
+
                 }
                 @Override
                 public void onFailure(Exception e) {

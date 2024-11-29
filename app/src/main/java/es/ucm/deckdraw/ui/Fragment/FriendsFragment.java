@@ -121,7 +121,7 @@ public class FriendsFragment extends Fragment {
             String uidFriend = editTextUidFriend.getText().toString();
 
             if(!uidFriend.isEmpty()){
-
+                dialog.dismiss();
                 notiAdmin.newFriendReq(userUid, uidFriend, new Callback<Boolean>() {
                     @Override
                     public void onSuccess(Boolean data) {
@@ -137,6 +137,7 @@ public class FriendsFragment extends Fragment {
                                 Log.e("ADD_NEW_FRIEND", e.toString());
                             }
                         });
+
                     }
 
                     @Override

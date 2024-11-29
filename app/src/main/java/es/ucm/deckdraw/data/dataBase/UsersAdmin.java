@@ -3,16 +3,25 @@ package es.ucm.deckdraw.data.dataBase;
 import android.util.Log;
 
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.util.Callback;
 
@@ -33,17 +42,75 @@ public class UsersAdmin{
 
         if (firebaseUser != null) {
             String uid = firebaseUser.getUid();
-            DatabaseReference userRef = db.getReference("users").child(uid).child("username");
+            DatabaseReference userRef = db.getReference("users").child(uid);
 
             userRef.get().addOnCompleteListener(task -> {
-                if (task.isSuccessful() && task.getResult().exists()) {
-                    String username = task.getResult().getValue(String.class);
-                    TUsers currentUser = new TUsers(uid, username, "", firebaseUser.getEmail());
-                    callback.onSuccess(currentUser);
-                } else {
-                    Log.w(TAG, "Error getting username or username does not exist", task.getException());
+                if(task.isSuccessful()){
+                    TUsers user = task.getResult().getValue(TUsers.class);
+                    user.setIdusers(uid);
+                    user.setEmail(firebaseUser.getEmail());
+                    List<String> friends = new ArrayList<>();
+                    userRef.child("friends").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot friendsSnapshot : snapshot.getChildren()) {
+                                String friendsUids = friendsSnapshot.getKey();
+                                friends.add(friendsUids);
+                            }
+                            user.setFriends(friends);
+
+                            List<String> req = new ArrayList<>();
+                            userRef.child("receivedRequests").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for (DataSnapshot friendsSnapshot : snapshot.getChildren()) {
+                                        String reqUids = friendsSnapshot.getKey();
+                                        req.add(reqUids);
+                                    }
+                                    user.setFriendsRequest(req);
+
+                                    List<String> send = new ArrayList<>();
+
+                                    userRef.child("sentRequests").addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            for (DataSnapshot friendsSnapshot : snapshot.getChildren()) {
+                                                String sendUids = friendsSnapshot.getKey();
+                                                send.add(sendUids);
+                                            }
+                                            user.setFriendsSend(send);
+                                            callback.onSuccess(user);
+
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            user.setFriendsSend(send);
+                                            callback.onSuccess(user);
+                                        }
+                                    });
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+                                    user.setFriendsRequest(req);
+
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            user.setFriends(friends);
+                        }
+                    });
+
+                }
+                else{
+                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
                     callback.onFailure(task.getException());
                 }
+
             });
         } else {
             Log.w(TAG, "No current user logged in");
