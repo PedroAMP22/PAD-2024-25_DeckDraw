@@ -20,6 +20,7 @@ import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
 import es.ucm.deckdraw.data.dataBase.NotificationsAdmin;
 import es.ucm.deckdraw.data.dataBase.UsersAdmin;
 import es.ucm.deckdraw.ui.Fragment.FriendsFragment;
+import es.ucm.deckdraw.ui.Fragment.ShowFriendFragment;
 import es.ucm.deckdraw.util.Callback;
 
 public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendViewHolder>{
@@ -45,6 +46,15 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
         holder.name.setText(friend.getUsername());
         CurrentUserManager currentUserManager = new CurrentUserManager(sch_frag.getContext());
         TUsers currentUser = currentUserManager.getCurrentUser();
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sch_frag.onShowUser(friend);
+
+            }
+        });
+
         if(currentUser.getFriends().contains(friend.getIdusers())){
             holder.status.setText("Friend");
             holder.acceptButton.setVisibility(View.GONE);

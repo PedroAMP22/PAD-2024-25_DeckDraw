@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 
 import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
@@ -178,7 +179,13 @@ public class FriendsFragment extends Fragment {
     public void showNotification(String message){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
 
+    }
 
-
+    public void onShowUser(TUsers user) {
+        ShowFriendFragment showFriend = new ShowFriendFragment(user);
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, showFriend)
+                .addToBackStack(null)
+                .commit();
     }
 }

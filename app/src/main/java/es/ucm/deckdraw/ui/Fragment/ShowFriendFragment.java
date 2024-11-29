@@ -93,7 +93,7 @@ public class ShowFriendFragment extends Fragment {
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         CurrentUserManager sessionManager = new CurrentUserManager(requireContext());
-        friend = sessionManager.getCurrentUser();
+
         currentUser = sessionManager.getCurrentUser();
 
         deckAdapter = new FriendDeckAdapter(deckList,this);
@@ -107,7 +107,7 @@ public class ShowFriendFragment extends Fragment {
 
                 friendDeckList = data;
 
-                deckAdapter.setDecks(deckList);
+                deckAdapter.setDecks(friendDeckList);
                 recyclerView.setAdapter(deckAdapter);
             }
 

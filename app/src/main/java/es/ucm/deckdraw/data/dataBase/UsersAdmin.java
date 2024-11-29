@@ -304,8 +304,6 @@ public class UsersAdmin{
                 }
                 user.setFriendsSend(sentRequests);
 
-                user.setEmail(mAuth.getCurrentUser().getEmail());
-
                 callback.onSuccess(user);
             } else {
                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
