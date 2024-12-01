@@ -23,6 +23,8 @@ public class SharedViewModel extends ViewModel {
     // For selected Card
     private final MutableLiveData<TCard> selectedCard = new MutableLiveData<>();
     private final MutableLiveData<Boolean> editableCard = new MutableLiveData<>();
+    private final MutableLiveData<TUsers> currentFriend = new MutableLiveData<>();
+
 
 
 
@@ -43,6 +45,14 @@ public class SharedViewModel extends ViewModel {
     public  void setEditableCard (Boolean editable){editableCard.setValue(editable);}
 
     public LiveData<Boolean> getEditableCard() {return editableCard;}
+
+    public void setCurrentFriend(TUsers friend) {
+        currentFriend.setValue(friend);
+    }
+
+    public LiveData<TUsers> getCurrentFriend() {
+        return currentFriend;
+    }
 
 
     // Método para manejar el nombre del mazo

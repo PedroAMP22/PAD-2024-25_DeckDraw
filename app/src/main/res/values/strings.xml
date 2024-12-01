@@ -133,9 +133,9 @@
     <string name="deck">"Deck "</string>
     <string name="copy_library">copied to your library</string>
 
-    <string name="a_adir_amigo">Añadir amigo</string>
-    <string name="id_de_amigo">ID de amigo</string>
-    <string name="a_adir">Añadir</string>
+    <string name="a_adir_amigo">Add friend</string>
+    <string name="id_de_amigo">Friend ID</string>
+    <string name="a_adir">Add</string>
     <string name="accept">Accept</string>
     <string name="decline">Decline</string>
 

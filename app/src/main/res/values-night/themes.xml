@@ -8,6 +8,7 @@
 
     </style>
 
+
     <style name="TextViewStyle">
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textSize">16sp</item>
@@ -16,4 +17,5 @@
         <item name="android:lineSpacingExtra">2dp</item>
 
     </style>
+
 </resources>

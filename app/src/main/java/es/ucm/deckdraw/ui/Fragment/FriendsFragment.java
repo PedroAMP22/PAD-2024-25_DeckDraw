@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +39,7 @@ import org.w3c.dom.Text;
 
 import es.ucm.deckdraw.data.dataBase.NotificationsAdmin;
 import es.ucm.deckdraw.ui.Adapter.FriendAdapter;
+import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
 
 public class FriendsFragment extends Fragment {
@@ -56,6 +58,8 @@ public class FriendsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private FriendAdapter friendsAdapter;
+    private SharedViewModel sharedViewModel;
+
 
     @Nullable
     @Override
@@ -80,6 +84,7 @@ public class FriendsFragment extends Fragment {
 
         usersAdmi = new UsersAdmin();
 
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         FloatingActionButton buttonAddFriend = view.findViewById(R.id.buttonAddFriend);
 
@@ -182,7 +187,9 @@ public class FriendsFragment extends Fragment {
     }
 
     public void onShowUser(TUsers user) {
-        ShowFriendFragment showFriend = new ShowFriendFragment(user);
+        ShowFriendFragment showFriend = new ShowFriendFragment();
+        sharedViewModel.setCurrentFriend(user);
+
         getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, showFriend)
                 .addToBackStack(null)

@@ -70,7 +70,7 @@
                     android:backgroundTint="@color/PrimaryColor"
                     android:text="@string/copiar"
                     android:textColor="@color/white"
-                    app:icon="@drawable/ic_usericon"
+                    app:icon="@drawable/ic_copy"
                     app:iconTint="@color/white" />
 
                 <Space

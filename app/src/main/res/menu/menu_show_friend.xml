@@ -6,5 +6,6 @@
         android:title="Buscar"
         android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="android.widget.SearchView" />
+        app:actionViewClass="android.widget.SearchView"
+        app:iconTint="@color/white"/>
 </menu>

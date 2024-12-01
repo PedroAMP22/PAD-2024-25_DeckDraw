@@ -10,6 +10,10 @@
     <color name="TextColorSecondary">#666666</color>
     <color name="TextColorTertiary">#DDDDDD</color>
 
+    <color name="modalBackgroundNeutral">#ECECEC </color>
+
+
+
     <color name="SuccessColor">#4CAF50</color>
     <color name="WarningColor">#FF9800</color>
     <color name="ErrorColor">#F44336</color>

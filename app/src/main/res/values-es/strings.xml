@@ -114,6 +114,11 @@
     <string name="show">Mostrar</string>
     <string name="deck">"Mazo "</string>
     <string name="copy_library">copiado a tu biblioteca</string>
+    <string name="a_adir_amigo">Añadir amigo</string>
+    <string name="id_de_amigo">ID de amigo</string>
+    <string name="a_adir">Añadir</string>
+    <string name="accept">Aceptar</string>
+    <string name="decline">Rechazar</string>
 
 
 </resources>

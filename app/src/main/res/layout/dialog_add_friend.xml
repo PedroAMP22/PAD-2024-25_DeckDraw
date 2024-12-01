@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
     android:layout_height="200dp"
-    android:background="#FAF9F6"
     android:padding="16dp">
 
 
@@ -15,7 +14,6 @@
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/a_adir_amigo"
-        android:textColor="#333333"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +41,7 @@
         android:layout_width="91dp"
         android:layout_height="53dp"
         android:text="@string/a_adir"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
@@ -54,7 +53,7 @@
         android:id="@+id/friendID"
         android:layout_width="218dp"
         android:layout_height="20dp"
-        android:text=""
+        android:text="@string/id_de_amigo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -64,15 +63,19 @@
 
     <ImageButton
         android:id="@+id/copyIDButton"
-        android:layout_width="29dp"
-        android:layout_height="29dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/text_floating_button_busqueda"
+        android:scaleType="fitCenter"
+        app:backgroundTint="@color/PrimaryColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.942"
-        app:srcCompat="@drawable/ic_visibility" />
+        app:srcCompat="@drawable/ic_copy"
+        app:tint="@color/white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package es.ucm.deckdraw.ui.Fragment;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -29,6 +30,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.loader.app.LoaderManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -70,10 +72,6 @@ public class ShowFriendFragment extends Fragment {
     private List<TDecks> deckList =  new ArrayList<>();
     private List<TDecks> friendDeckList =  new ArrayList<>();
 
-    public  ShowFriendFragment(TUsers friend){
-        this.friend = friend;
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -98,7 +96,17 @@ public class ShowFriendFragment extends Fragment {
 
         deckAdapter = new FriendDeckAdapter(deckList,this);
         RecyclerView recyclerView = view.findViewById(R.id.deckRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        int orientation = getResources().getConfiguration().orientation;
+
+        if(orientation == Configuration.ORIENTATION_PORTRAIT){ //movil en vertical
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        }
+        else if(orientation == Configuration.ORIENTATION_LANDSCAPE){ //movil en horizontal
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        }
+
+        friend = sharedViewModel.getCurrentFriend().getValue();
 
         DecksAdmin db = new DecksAdmin();
         db.getUserDecks(friend.getIdusers(), new Callback<List<TDecks>>(){
