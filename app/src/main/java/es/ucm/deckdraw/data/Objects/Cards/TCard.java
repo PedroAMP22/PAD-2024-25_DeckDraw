@@ -301,13 +301,18 @@ public class TCard  implements Serializable {
 
         // Si TColor tiene un método para obtener los colores, por ejemplo, getColors(), puedes imprimirlos así:
         System.out.print("Colors: ");
-        if (colors.isEmpty()) {
+        if(colors == null){
             System.out.print("None/Colorless");
-        } else {
-            for (String color : colors) {
-                System.out.print(color + " ");
+        }else{
+            if (colors.isEmpty()) {
+                System.out.print("None/Colorless");
+            } else {
+                for (String color : colors) {
+                    System.out.print(color + " ");
+                }
             }
         }
+
         System.out.println("\n----------------------------------------------------------------------------------------------\n");
     }
 
@@ -338,13 +343,18 @@ public class TCard  implements Serializable {
 
         // Añadir detalles de los colores de la carta
         details.append("Colors: ");
-        if (colors.isEmpty()) {
+        if(colors == null){
             details.append("None/Colorless");
-        } else {
-            for (String color : colors) {
-                details.append(color).append(" ");
+        }else{
+            if (colors.isEmpty()) {
+                details.append("None/Colorless");
+            } else {
+                for (String color : colors) {
+                    details.append(color).append(" ");
+                }
             }
         }
+
         details.append("\n----------------------------------------------------\n");
 
         return details.toString();
