@@ -118,23 +118,12 @@ public class SearchFiltersDialogFragment extends BottomSheetDialogFragment {
     private void setupButtons(View view) {
         // Colores
 
-        if(deck.getDeckFormat().equalsIgnoreCase("commander")){
-            //si el formato es commander, los botones de colores no se pueden seleccionar
-            //Las cartas que aparecen en la busqueda tienen que ser del mismo color que el comandante
-            TCard commander = deck.getCommander();
-            if (commander != null){
-                ArrayList<String> colors = (ArrayList<String>) commander.getColors();
-                sharedViewModel.setManaColors(colors);
-            }
-        }
-        else{
-            setupFilterButton(view.findViewById(R.id.button_red_mana), "r", FILTER_COLORS_KEY);
-            setupFilterButton(view.findViewById(R.id.button_blue_mana), "u", FILTER_COLORS_KEY);
-            setupFilterButton(view.findViewById(R.id.button_green_mana), "g", FILTER_COLORS_KEY);
-            setupFilterButton(view.findViewById(R.id.button_white_mana), "w", FILTER_COLORS_KEY);
-            setupFilterButton(view.findViewById(R.id.button_black_mana), "b", FILTER_COLORS_KEY);
-            setupFilterButton(view.findViewById(R.id.button_colorless_mana), "c", FILTER_COLORS_KEY);
-        }
+        setupFilterButton(view.findViewById(R.id.button_red_mana), "r", FILTER_COLORS_KEY);
+        setupFilterButton(view.findViewById(R.id.button_blue_mana), "u", FILTER_COLORS_KEY);
+        setupFilterButton(view.findViewById(R.id.button_green_mana), "g", FILTER_COLORS_KEY);
+        setupFilterButton(view.findViewById(R.id.button_white_mana), "w", FILTER_COLORS_KEY);
+        setupFilterButton(view.findViewById(R.id.button_black_mana), "b", FILTER_COLORS_KEY);
+        setupFilterButton(view.findViewById(R.id.button_colorless_mana), "c", FILTER_COLORS_KEY);
 
         // Rarezas
         setupFilterButton(view.findViewById(R.id.button_common_rarity), "common", FILTER_RARITIES_KEY);

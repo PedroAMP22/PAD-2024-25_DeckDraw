@@ -81,8 +81,10 @@ public class TCard  implements Serializable {
     public String getAllColors(){
         String allCollors = "";
 
-        for(String c: this.colors){
-            allCollors += "{" + c + "} ";
+        if(colors != null){
+            for(String c: this.colors){
+                allCollors += "{" + c + "} ";
+            }
         }
 
         return allCollors;
@@ -91,11 +93,17 @@ public class TCard  implements Serializable {
     public String getSingleColor(){
         String color = "";
 
-        if (colors.isEmpty()) {
+        if (colors == null){
             color = "C";
-        } else {
-            color = colors.get(0);
         }
+        else {
+            if (colors.isEmpty()) {
+                color = "C";
+            } else {
+                color = colors.get(0);
+            }
+        }
+
 
         return color;
     }
