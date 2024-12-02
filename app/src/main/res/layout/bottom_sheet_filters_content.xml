@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+            <!-- Campo de texto para la búsqueda -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_busqueda"
+                app:startIconDrawable="@drawable/ic_search"
+                app:helperTextEnabled="true"
+                app:helperText="@string/helper_busqueda"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/busqueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Título de la sección de filtros -->
+            <TextView
+                android:id="@+id/filter_mana_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_mana_type"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <!-- Grupo de botones de filtro independientes con iconos y estilos seleccionables -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- Botón 1 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_red_mana"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/red_mana_text"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_red_mana"
+                    app:iconTint="@color/white"
+                    android:backgroundTint="@color/button_red_mana_selector" />
+
+                <!-- Botón 2 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_blue_mana"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/button_blue_mana_selector"
+                    android:text="@string/blue_mana_text"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_blue_mana"
+                    app:iconTint="@color/white" />
+
+                <!-- Botón 3 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_green_mana"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/green_mana_text"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_green_mana"
+                    app:iconTint="@color/white"
+                    android:backgroundTint="@color/button_green_mana_selector" />
+            </LinearLayout>
+
+            <!-- Segunda fila de botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp">
+
+                <!-- Botón 4 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_white_mana"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/white_mana_text"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_white_mana"
+                    app:iconTint="@color/white"
+                    android:backgroundTint="@color/button_white_mana_selector" />
+
+                <!-- Botón 5 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_black_mana"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/black_mana_text"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_black_mana"
+                    app:iconTint="@color/white"
+                    android:backgroundTint="@color/button_dark_mana_selector" />
+
+                <!-- Botón 6 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_colorless_mana"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colorless_mana_text"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_colorless_mana"
+                    app:iconTint="@color/white"
+                    android:backgroundTint="@color/button_colorless_mana_selector" />
+            </LinearLayout>
+
+            <!-- Título de la sección de filtros -->
+            <TextView
+                android:id="@+id/filter_rarity_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_rarity_type"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <!-- Grupo de botones de rareza independientes con iconos y estilos seleccionables -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- Botón 1 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_common_rarity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rarity_common_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 2 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_rare_rarity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/button_background_color_selector"
+                    android:text="@string/rarity_rare_text"
+                    android:textColor="@color/BackgroundColor"
+                    />
+
+                <!-- Botón 3 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_uncommon_rarity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rarity_uncommon_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+            </LinearLayout>
+
+            <!-- Segunda fila de botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp">
+
+                <!-- Botón 4 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_special_rarity"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rarity_special_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 5 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_mythic_rarity"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/rarity_mythic_text"
+                    android:textColor="@color/BackgroundColor"
+
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 6 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_bonus_rarity"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rarity_bonus_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+            </LinearLayout>
+
+            <!-- Título de la sección de Tipos de carta -->
+            <TextView
+                android:id="@+id/filter_card_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_card_type"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <!-- Grupo de botones de tipos de carta seleccionables -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- Botón 1 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_artifact_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_artifact_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 2 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_battle_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/button_background_color_selector"
+                    android:text="@string/card_type_battle_text"
+                    android:textColor="@color/BackgroundColor"
+                    />
+
+                <!-- Botón 3 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_conspiracy_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_conspiracy_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+            </LinearLayout>
+
+            <!-- Fila 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- Botón 4 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_creature_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_creature_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 5 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_dungeon_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/button_background_color_selector"
+                    android:text="@string/card_type_dungeon_text"
+                    android:textColor="@color/BackgroundColor" />
+
+                <!-- Botón 6 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_emblem_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_emblem_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+            </LinearLayout>
+
+            <!-- Fila 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- Botón 7 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_enchantment_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_enchantment_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 8 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_hero_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/button_background_color_selector"
+                    android:text="@string/card_type_hero_text"
+                    android:textColor="@color/BackgroundColor" />
+
+                <!-- Botón 9 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_instant_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_instant_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+            </LinearLayout>
+
+            <!-- Fila 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- Botón 10 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_kindred_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_kindred_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 11 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_land_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/button_background_color_selector"
+                    android:text="@string/card_type_land_text"
+                    android:textColor="@color/BackgroundColor" />
+
+                <!-- Botón 12 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_phenomenon_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_phenomenon_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+            </LinearLayout>
+
+            <!-- Fila 5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp">
+
+                <!-- Botón 13 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_plane_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_plane_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 14 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_planeswalker_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/button_background_color_selector"
+                    android:text="@string/card_type_planeswalker_text"
+                    android:textColor="@color/BackgroundColor" />
+
+                <!-- Botón 15 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_scheme_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_scheme_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+            </LinearLayout>
+
+            <!-- Fila 6 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginBottom="110dp">
+
+                <!-- Botón 16 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_sorcery_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/card_type_sorcery_text"
+                    android:textColor="@color/BackgroundColor"
+                    android:backgroundTint="@color/button_background_color_selector" />
+
+                <!-- Botón 17 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_vanguard_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/button_background_color_selector"
+                    android:text="@string/card_type_vanguard_text"
+                    android:textColor="@color/BackgroundColor" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+</LinearLayout>

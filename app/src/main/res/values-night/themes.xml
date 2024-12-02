@@ -2,6 +2,20 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.DeckDraw" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/PrimaryColor</item>
+
+
+
     </style>
+
+
+    <style name="TextViewStyle">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+
+    </style>
+
 </resources>

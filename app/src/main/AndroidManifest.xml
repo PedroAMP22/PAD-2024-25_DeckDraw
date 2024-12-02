@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +17,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DeckDraw"
         tools:targetApi="31">
+        <service
+            android:name=".data.dataBase.NotificationsService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+
+
+        <activity
+            android:name=".ui.Activities.UserProfile"
+            android:exported="false"
+            android:parentActivityName=".ui.Activities.MainScreenActivity"/>
+        <activity
+            android:name=".ui.Activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Activities.LogInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Activities.error_NetConnection"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Activities.MainScreenActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

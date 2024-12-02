@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/search_filter_bottom_sheet_dialog"
+    >
+
+
+
+    <!-- ConstraintLayout para posicionar el contenido debajo del drag_handle -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Drag handle -->
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:id="@+id/drag_handle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <!-- Este será el contenido del BottomSheet, que se cargará dinámicamente -->
+        <include
+            android:id="@+id/content_include"
+            layout="@layout/bottom_sheet_filters_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/drag_handle"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Botón para iniciar la búsqueda en la parte inferior fija -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/button_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_floating_button_busqueda"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/PrimaryColor"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

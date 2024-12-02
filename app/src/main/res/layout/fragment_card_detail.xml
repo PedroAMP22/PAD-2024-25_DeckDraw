@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/cardImageView"
+                android:layout_width="match_parent"
+                android:layout_height="530dp"
+                android:scaleType="fitCenter"
+                android:layout_margin="16dp"
+                android:contentDescription="@string/comandante"
+                android:src="@drawable/mtg_placeholder_card" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                >
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/removeCardFab"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/removecard_text"
+                        android:src="@drawable/ic_remove"
+                        app:backgroundTint="@color/PrimaryColor"
+                        app:tint="@color/BackgroundColor"/>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/quantityView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_hexagon"
+                        android:text="@string/zero_number"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/addCardFab"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/addcard_text"
+                        android:src="@drawable/ic_add"
+                        app:backgroundTint="@color/PrimaryColor"
+
+                        app:tint="@color/BackgroundColor"
+                    />
+        </LinearLayout>
+
+            <Button
+                android:id="@+id/okayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/PrimaryColor"
+                android:layout_marginBottom="16dp"
+                android:textStyle="bold"
+                style="@style/Widget.MaterialComponents.Button"
+            />
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_background"
+            android:gravity="start">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/name"
+                android:text="@string/name"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+
+            <TextView
+                android:id="@+id/name_card"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:contentDescription="@string/name"
+                android:text="@string/name"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/description"
+                android:text="@string/description"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/description_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/description"
+                android:textColor="@color/white"
+                android:text="@string/description"
+                />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/type"
+                android:text="@string/type"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/type_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/type"
+                android:textColor="@color/white"
+                android:text="@string/type"
+                />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/color"
+                android:text="@string/color"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/color_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/color"
+                android:textColor="@color/white"
+                android:text="@string/color"
+                />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/mana_cost"
+                android:text="@string/mana_cost"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/mana_cost_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/mana_cost"
+                android:textColor="@color/white"
+                android:text="@string/mana_cost"
+                />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/power"
+                android:text="@string/power"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/power_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/power"
+                android:textColor="@color/white"
+                android:text="@string/power"
+                />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/toughness"
+                android:text="@string/toughness"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/toughness_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/toughness"
+                android:textColor="@color/white"
+                android:text="@string/toughness"
+                />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/set_name"
+                android:text="@string/set_name"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/set_name_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/set_name"
+                android:textColor="@color/white"
+                android:text="@string/set_name"
+                />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/rarity"
+                android:text="@string/rarity"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/rarity_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/rarity"
+                android:textColor="@color/white"
+                android:text="@string/rarity"
+                />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:contentDescription="@string/artist"
+                android:text="@string/artist"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/artist_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:contentDescription="@string/artist"
+                android:textColor="@color/white"
+                android:text="@string/artist"
+                />
+
+
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

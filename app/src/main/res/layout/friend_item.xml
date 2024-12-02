@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/rounded_background"
+    android:backgroundTint="@color/modalBackgroundNeutral"
+    >
+
+    <!-- Imagen del amigo -->
+    <ImageView
+        android:id="@+id/imgFriend"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/user_icon"
+        android:src="@drawable/ic_profile"
+        android:scaleType="centerCrop"
+        app:tint="@color/PrimaryColor"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Contenedor de datos del amigo -->
+
+    <!-- Botones de aceptar y declinar -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <!-- Nombre del amigo -->
+        <TextView
+            android:id="@+id/txtFriendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            android:textColor="@color/material_on_background_emphasis_high_type"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Estado del amigo -->
+        <TextView
+            android:id="@+id/txtFriendStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/id_de_amigo"
+            android:textColor="@color/material_on_background_emphasis_medium"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/accept"
+            android:backgroundTint="@color/PrimaryColor"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnDecline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/decline"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/ErrorColor"/>
+    </LinearLayout>
+</LinearLayout>
