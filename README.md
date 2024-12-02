@@ -34,16 +34,7 @@ Para obtener la aplicación y empezar a disfrutar de **DeckDraw**, sigue estos p
 4. 🎉 **¡Disfruta de DeckDraw!**: Ya puedes empezar a gestionar tus mazos y compartirlos con tus amigos.
 
 ## Estructura del Proyecto
-app
-|-src
-  | 
-  |-main
-    |-java
-    |  |- es.ucm.deckdraw
-    |     |-data (referente a la parte lógica, objetos, base de datos, api...)
-    |     |-ui (logica de vistas, activities, fragments...)
-    |     |-util (clases adicionales como callback)
-    |- res (toda la parte visual, interfaces iconos...)      
+app ├─ src │ ├─ main │ ├─ java │ ├─ es.ucm.deckdraw │ ├─ data (referente a la parte lógica, objetos, base de datos, API...) │ ├─ ui (lógica de vistas, activities, fragments...) │ ├─ util (clases adicionales como callbacks) ├─ res (toda la parte visual, interfaces, iconos...)     
 
 ## Autores
 Este proyecto ha sido desarrollado por:
