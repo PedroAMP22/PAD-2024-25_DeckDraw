@@ -18,7 +18,9 @@ import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
 import es.ucm.deckdraw.data.dataBase.NotificationsAdmin;
+import es.ucm.deckdraw.data.dataBase.NotificationsLocalAdmin;
 import es.ucm.deckdraw.data.dataBase.UsersAdmin;
+import es.ucm.deckdraw.data.dataBase.UsersLocalAdmin;
 import es.ucm.deckdraw.ui.Fragment.FriendsFragment;
 import es.ucm.deckdraw.ui.Fragment.ShowFriendFragment;
 import es.ucm.deckdraw.util.Callback;
@@ -66,7 +68,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
             holder.declineButton.setVisibility(View.GONE);
         }
         else{
-            NotificationsAdmin nA = new NotificationsAdmin();
+            NotificationsLocalAdmin nA = new NotificationsLocalAdmin(sch_frag.getContext());
             holder.status.setText("Pending your response");
             holder.acceptButton.setVisibility(View.VISIBLE);
             holder.declineButton.setVisibility(View.VISIBLE);
@@ -81,7 +83,6 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                             currentUserManager.saveUserSession(currentUser);
                             setFriends(currentUser);
                             sch_frag.showNotification("Friend request accepted");
-
                         }
 
                         @Override
@@ -118,48 +119,29 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
     }
 
     public void setFriends(TUsers user) {
-        UsersAdmin uA = new UsersAdmin();
+        UsersLocalAdmin uA = new UsersLocalAdmin(sch_frag.getContext());
         friends.clear();
-        for (String friend : user.getFriends()) {
-            uA.getUserByUid(friend, new Callback<TUsers>() {
+
+
+        List<String> allUids = new ArrayList<>();
+        allUids.addAll(user.getFriends());
+        allUids.addAll(user.getFriendsRequest());
+        allUids.addAll(user.getFriendsSend());
+
+        for (String uid : allUids) {
+            uA.getUserByUid(uid, new Callback<TUsers>() {
                 @Override
                 public void onSuccess(TUsers data) {
                     friends.add(data);
-                    notifyItemInserted(friends.size() - 1);
+                    notifyDataSetChanged();
                 }
+
                 @Override
                 public void onFailure(Exception e) {
-
+                    // Log o ignorar
                 }
             });
         }
-        for (String friend : user.getFriendsRequest()) {
-            uA.getUserByUid(friend, new Callback<TUsers>() {
-                @Override
-                public void onSuccess(TUsers data) {
-                    friends.add(data);
-                    notifyItemInserted(friends.size() - 1);
-                }
-                @Override
-                public void onFailure(Exception e) {
-
-                }
-            });
-        }
-        for (String friend : user.getFriendsSend()) {
-            uA.getUserByUid(friend, new Callback<TUsers>() {
-                @Override
-                public void onSuccess(TUsers data) {
-                    friends.add(data);
-                    notifyItemInserted(friends.size() - 1);
-                }
-                @Override
-                public void onFailure(Exception e) {
-
-                }
-            });
-        }
-        notifyDataSetChanged();
     }
 
     @Override

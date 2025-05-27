@@ -24,8 +24,10 @@ import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 
 import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
-import es.ucm.deckdraw.data.dataBase.UsersAdmin;
+import es.ucm.deckdraw.data.dataBase.NotificationsLocalAdmin;
 
+
+import es.ucm.deckdraw.data.dataBase.UsersLocalAdmin;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 
@@ -37,7 +39,7 @@ import android.widget.Toast;
 import org.checkerframework.checker.units.qual.C;
 import org.w3c.dom.Text;
 
-import es.ucm.deckdraw.data.dataBase.NotificationsAdmin;
+
 import es.ucm.deckdraw.ui.Adapter.FriendAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
@@ -53,8 +55,8 @@ public class FriendsFragment extends Fragment {
 
     private CurrentUserManager userManager;
 
-    private NotificationsAdmin notiAdmin;
-    private UsersAdmin usersAdmi;
+    private NotificationsLocalAdmin notiAdmin;
+    private UsersLocalAdmin usersAdmi;
 
     private RecyclerView recyclerView;
     private FriendAdapter friendsAdapter;
@@ -80,9 +82,9 @@ public class FriendsFragment extends Fragment {
 
         userUid = cUser.getIdusers();
 
-        notiAdmin = new NotificationsAdmin();
+        notiAdmin = new NotificationsLocalAdmin(context);
 
-        usersAdmi = new UsersAdmin();
+        usersAdmi = new UsersLocalAdmin(context);
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 

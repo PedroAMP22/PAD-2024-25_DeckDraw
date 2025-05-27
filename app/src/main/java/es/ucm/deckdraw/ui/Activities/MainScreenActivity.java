@@ -15,7 +15,6 @@ import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Fragment.DecksFragment;
 import es.ucm.deckdraw.ui.Fragment.EditDeckFragment;
 import es.ucm.deckdraw.ui.Fragment.FriendsFragment;
-import com.google.firebase.FirebaseApp;
 
 public class MainScreenActivity extends AppCompatActivity  {
 
@@ -50,9 +49,6 @@ public class MainScreenActivity extends AppCompatActivity  {
             bottomNavigationView.setSelectedItemId(R.id.nav_deck);
         }
 
-
-        //Keep this to start the Firebase database
-        FirebaseApp.initializeApp(this);
     }
 
     @Override

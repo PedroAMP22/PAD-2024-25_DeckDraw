@@ -19,7 +19,7 @@ import androidx.lifecycle.ViewModelProvider;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
-import es.ucm.deckdraw.data.dataBase.UsersAdmin;
+import es.ucm.deckdraw.data.dataBase.UsersLocalAdmin;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
 
@@ -30,7 +30,7 @@ public class UserProfile extends AppCompatActivity {
     EditText usernameET;
     EditText emailET;
 
-    UsersAdmin bd;
+    UsersLocalAdmin bd;
 
     Toolbar toolbar;
 
@@ -54,7 +54,7 @@ public class UserProfile extends AppCompatActivity {
         getSupportActionBar().setTitle(getString(R.string.user_profile));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        bd = new UsersAdmin();
+        bd = new UsersLocalAdmin(this);
 
 
         Button updateB = findViewById(R.id.UpdateButton);

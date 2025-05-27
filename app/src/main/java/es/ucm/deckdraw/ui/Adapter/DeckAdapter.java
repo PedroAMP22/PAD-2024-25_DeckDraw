@@ -16,7 +16,7 @@ import java.util.List;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
-import es.ucm.deckdraw.data.dataBase.DecksAdmin;
+import es.ucm.deckdraw.data.dataBase.DecksLocalAdmin;
 import es.ucm.deckdraw.ui.Fragment.DecksFragment;
 import es.ucm.deckdraw.util.Callback;
 
@@ -56,7 +56,7 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.DeckViewHolder
         holder.deleteButton.setOnClickListener(v -> {
            this.deckList.remove(deck);
            notifyDataSetChanged();
-           DecksAdmin db = new DecksAdmin();
+           DecksLocalAdmin db = new DecksLocalAdmin(fragment.requireContext());
            db.deleteDeck(deck, new Callback<Boolean>() {
                @Override
                public void onSuccess(Boolean data) {

@@ -25,7 +25,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
-import es.ucm.deckdraw.data.dataBase.DecksAdmin;
+import es.ucm.deckdraw.data.dataBase.DecksLocalAdmin;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Adapter.CardDeckAdapter;
@@ -192,7 +192,7 @@ public class EditDeckFragment extends Fragment{
         builder.setPositiveButton(getString(R.string.save), (dialog, which) -> {
             if (toolbarEditText != null) {
 
-                DecksAdmin db = new DecksAdmin();
+                DecksLocalAdmin db = new DecksLocalAdmin(requireContext());
                 db.updateDeck(deck, new Callback<Boolean>() {
                     @Override
                     public void onSuccess(Boolean data) {

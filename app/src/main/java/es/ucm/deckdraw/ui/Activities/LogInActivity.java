@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
-import es.ucm.deckdraw.data.dataBase.UsersAdmin;
+import es.ucm.deckdraw.data.dataBase.UsersLocalAdmin;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.util.Callback;
 
@@ -20,7 +20,7 @@ import es.ucm.deckdraw.util.Callback;
 
     private static final String TAG = "UsersAdminActivity";
 
-    private UsersAdmin userService;
+    private UsersLocalAdmin userService;
     private EditText emailET;
     private EditText passwordET;
 
@@ -30,7 +30,7 @@ import es.ucm.deckdraw.util.Callback;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        userService = new UsersAdmin();
+        userService = new UsersLocalAdmin(this);
 
         emailET = findViewById(R.id.logInEmailET);
         passwordET = findViewById(R.id.logInPassET);

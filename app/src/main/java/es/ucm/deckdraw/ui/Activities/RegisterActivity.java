@@ -15,13 +15,13 @@ import java.util.regex.Pattern;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
-import es.ucm.deckdraw.data.dataBase.UsersAdmin;
+import es.ucm.deckdraw.data.dataBase.UsersLocalAdmin;
 import es.ucm.deckdraw.util.Callback;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText emailEditText, passwordEditText, usernameEditText;
     //private ImageView togglePasswordVisibility;
-    private UsersAdmin usersAdmin;
+    private UsersLocalAdmin usersAdmin;
 
     private static final Pattern PASSWORD_UPPERCASE = Pattern.compile(".*[A-Z].*");
     private static final Pattern PASSWORD_LOWERCASE = Pattern.compile(".*[a-z].*");
@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         criteriaDigit = findViewById(R.id.criteriaDigit);
         criteriaSpecialChar = findViewById(R.id.criteriaSpecialChar);
 
-        usersAdmin = new UsersAdmin();
+        usersAdmin = new UsersLocalAdmin(this);
 
         //togglePasswordVisibility.setOnClickListener(v -> togglePasswordVisibility());
         passwordEditText.addTextChangedListener(passwordWatcher);

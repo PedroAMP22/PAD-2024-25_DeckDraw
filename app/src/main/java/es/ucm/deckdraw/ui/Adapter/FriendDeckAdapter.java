@@ -16,9 +16,6 @@ import java.util.List;
 
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
-import es.ucm.deckdraw.data.Objects.users.TUsers;
-import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
-import es.ucm.deckdraw.ui.Fragment.DecksFragment;
 import es.ucm.deckdraw.ui.Fragment.ShowFriendFragment;
 
 public class FriendDeckAdapter extends RecyclerView.Adapter<FriendDeckAdapter.FriendDeckViewHolder> {

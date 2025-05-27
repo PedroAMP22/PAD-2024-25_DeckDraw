@@ -45,9 +45,7 @@ import es.ucm.deckdraw.data.Objects.users.TUsers;
 import es.ucm.deckdraw.data.Service.CommanderLoaderCallbacks;
 import es.ucm.deckdraw.data.Service.MTGServiceAPI;
 import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
-import es.ucm.deckdraw.data.dataBase.DecksAdmin;
-import es.ucm.deckdraw.data.dataBase.UsersAdmin;
-import es.ucm.deckdraw.ui.Activities.LogInActivity;
+import es.ucm.deckdraw.data.dataBase.DecksLocalAdmin;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
 import es.ucm.deckdraw.ui.Activities.UserProfile;
@@ -118,7 +116,7 @@ public class DecksFragment extends Fragment {
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         }
 
-        DecksAdmin db = new DecksAdmin();
+        DecksLocalAdmin db = new DecksLocalAdmin(requireContext());
         db.getUserDecks(currentUser.getIdusers(), new Callback<List<TDecks>>(){
             @Override
             public void onSuccess(List<TDecks> data) {
@@ -263,8 +261,20 @@ public class DecksFragment extends Fragment {
                 }
 
 
-                DecksAdmin db = new DecksAdmin();
+                DecksLocalAdmin db = new DecksLocalAdmin(requireContext());
                 db.createDeck(currentUser.getIdusers(), deck);
+                db.getUserDecks(currentUser.getIdusers(), new Callback<List<TDecks>>() {
+                    @Override
+                    public void onSuccess(List<TDecks> data) {
+                        deckList = data;
+                        deckAdapter.setDecks(deckList);
+                    }
+
+                    @Override
+                    public void onFailure(Exception e) {
+                        Toast.makeText(getContext(), "Error reloading decks", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 dialog.dismiss();
             } else {
                 deckNameEditText.setError(getString(R.string.enter_name));

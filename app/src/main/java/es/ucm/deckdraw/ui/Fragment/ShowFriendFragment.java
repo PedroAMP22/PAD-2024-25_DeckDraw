@@ -1,23 +1,17 @@
 package es.ucm.deckdraw.ui.Fragment;
 
 import android.app.Dialog;
-import android.content.Context;
-import android.content.Intent;
+
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.SearchView;
@@ -34,23 +28,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import es.ucm.deckdraw.data.Objects.Cards.TCard;
 import es.ucm.deckdraw.data.Objects.decks.TDecks;
 import es.ucm.deckdraw.data.Objects.users.TUsers;
-import es.ucm.deckdraw.data.Service.CommanderLoaderCallbacks;
-import es.ucm.deckdraw.data.Service.MTGServiceAPI;
 import es.ucm.deckdraw.data.dataBase.CurrentUserManager;
-import es.ucm.deckdraw.data.dataBase.DecksAdmin;
-import es.ucm.deckdraw.data.dataBase.UsersAdmin;
-import es.ucm.deckdraw.ui.Activities.LogInActivity;
+import es.ucm.deckdraw.data.dataBase.DecksLocalAdmin;
 import es.ucm.deckdraw.ui.Activities.MainScreenActivity;
 import es.ucm.deckdraw.R;
-import es.ucm.deckdraw.ui.Adapter.DeckAdapter;
 import es.ucm.deckdraw.ui.Adapter.FriendDeckAdapter;
 import es.ucm.deckdraw.ui.ViewModel.SharedViewModel;
 import es.ucm.deckdraw.util.Callback;
@@ -108,7 +95,7 @@ public class ShowFriendFragment extends Fragment {
 
         friend = sharedViewModel.getCurrentFriend().getValue();
 
-        DecksAdmin db = new DecksAdmin();
+        DecksLocalAdmin db = new DecksLocalAdmin(requireContext());
         db.getUserDecks(friend.getIdusers(), new Callback<List<TDecks>>(){
             @Override
             public void onSuccess(List<TDecks> data) {
@@ -214,7 +201,7 @@ public class ShowFriendFragment extends Fragment {
 
     public void copyDeck(TDecks deck){
         deckList.add(deck);
-        DecksAdmin db = new DecksAdmin();
+        DecksLocalAdmin db = new DecksLocalAdmin(requireContext());
         Toast.makeText(this.getContext(), getString(R.string.deck) + deck.getDeckName() +" "+ getString(R.string.copy_library), Toast.LENGTH_SHORT).show();
         db.createDeck(currentUser.getIdusers(), deck);
     }
